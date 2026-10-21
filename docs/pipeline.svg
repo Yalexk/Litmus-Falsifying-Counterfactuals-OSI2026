@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 820" width="1500" height="820" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52606D"/>
+    </marker>
+    <style>
+      .t  { font-size: 15px; font-weight: 700; fill: #1F2933; }
+      .s  { font-size: 12.5px; fill: #3E4C59; }
+      .lane { font-size: 14px; font-weight: 700; fill: #52606D; letter-spacing: 0.4px; }
+      .note { font-size: 11.5px; fill: #52606D; font-style: italic; }
+      .ln { stroke: #52606D; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .data  { fill: #EAF2FB; stroke: #3B7DD8; stroke-width: 1.5; }
+      .llm   { fill: #F1ECFB; stroke: #7A5BD6; stroke-width: 1.5; }
+      .harn  { fill: #E8F6EE; stroke: #2F9E5B; stroke-width: 2.2; }
+      .lit   { fill: #FDF3E3; stroke: #D9902B; stroke-width: 1.5; }
+      .test  { fill: #FDECEC; stroke: #D64545; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect width="1500" height="820" fill="#FFFFFF"/>
+
+  <text x="30" y="42" font-size="22" font-weight="700" fill="#1F2933">Falsifying LLM explanations of molecular property models</text>
+  <text x="30" y="68" class="s">An LLM turns counterfactual explanations into structure–property rules; every rule is compiled into an executable test and judged on held-out measurements and, independently, on the literature.</text>
+
+  <!-- ───────── Lane 1: explain the model ───────── -->
+  <text x="30" y="108" class="lane">1 · EXPLAIN THE MODEL</text>
+
+  <rect x="30" y="120" width="210" height="110" rx="10" class="data"/>
+  <text x="44" y="147" class="t">Dataset config</text>
+  <text x="44" y="169" class="s">configs/&lt;name&gt;.json</text>
+  <text x="44" y="187" class="s">pre-registered: noise floor,</text>
+  <text x="44" y="205" class="s">control descriptor, baseline</text>
+
+  <rect x="275" y="120" width="210" height="110" rx="10" class="data"/>
+  <text x="289" y="147" class="t">Data + scaffold split</text>
+  <text x="289" y="169" class="s">train / valid / test</text>
+  <text x="289" y="187" class="s">70% / 15% / 15%</text>
+  <text x="289" y="205" class="s">by Murcko scaffold</text>
+
+  <rect x="520" y="120" width="210" height="110" rx="10" class="data"/>
+  <text x="534" y="147" class="t">Black-box predictor</text>
+  <text x="534" y="169" class="s">random forest on ECFP4</text>
+  <text x="534" y="187" class="s">fit on train only</text>
+  <text x="534" y="205" class="s">(apparatus, not the point)</text>
+
+  <rect x="765" y="120" width="210" height="110" rx="10" class="data"/>
+  <text x="779" y="147" class="t">Counterfactuals</text>
+  <text x="779" y="169" class="s">exmol / STONED</text>
+  <text x="779" y="187" class="s">20 bases, one per scaffold</text>
+  <text x="779" y="205" class="s">look-alikes, very different ŷ</text>
+
+  <rect x="1010" y="120" width="210" height="110" rx="10" class="llm"/>
+  <text x="1024" y="147" class="t">LLM proposes rules</text>
+  <text x="1024" y="169" class="s">claude -p, zero tools,</text>
+  <text x="1024" y="187" class="s">empty working directory</text>
+  <text x="1024" y="205" class="s">sees counterfactuals only</text>
+
+  <rect x="1255" y="120" width="210" height="110" rx="10" class="llm"/>
+  <text x="1269" y="147" class="t">Rules</text>
+  <text x="1269" y="169" class="s">a sentence, plus an</text>
+  <text x="1269" y="187" class="s">executable condition</text>
+  <text x="1269" y="205" class="s">(descriptor / SMARTS)</text>
+
+  <path class="ln" d="M240,175 L273,175"/>
+  <path class="ln" d="M485,175 L518,175"/>
+  <path class="ln" d="M730,175 L763,175"/>
+  <path class="ln" d="M975,175 L1008,175"/>
+  <path class="ln" d="M1220,175 L1253,175"/>
+
+  <!-- ───────── Lane 2: falsify ───────── -->
+  <text x="30" y="338" class="lane">2 · FALSIFY ON HELD-OUT DATA</text>
+
+  <rect x="30" y="350" width="210" height="130" rx="10" class="data"/>
+  <text x="44" y="378" class="t">Textbook baseline</text>
+  <text x="44" y="402" class="s">published rules from the</text>
+  <text x="44" y="422" class="s">config, same harness</text>
+  <text x="44" y="442" class="s">yardstick + bug check</text>
+
+  <rect x="267" y="342" width="226" height="146" rx="14" fill="none" stroke="#D64545" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <rect x="275" y="350" width="210" height="130" rx="10" class="test"/>
+  <text x="289" y="378" class="t">Held-out test split</text>
+  <text x="289" y="402" class="s">scaffolds the model and</text>
+  <text x="289" y="422" class="s">the LLM never saw</text>
+  <text x="289" y="452" font-size="12.5" font-weight="700" fill="#B42318">information barrier</text>
+
+  <rect x="520" y="350" width="455" height="130" rx="10" class="harn"/>
+  <text x="536" y="378" class="t">Falsification harness · src/rules.py</text>
+  <text x="536" y="402" class="s">① Raw: do matching molecules differ in the claimed direction?</text>
+  <text x="536" y="422" class="s">② Within bins of the control descriptor (e.g. MolLogP):</text>
+  <text x="556" y="440" class="s">does the claim say anything beyond the obvious?</text>
+  <text x="536" y="462" class="s">③ Benjamini–Hochberg FDR, and effect ≥ noise floor</text>
+
+  <rect x="1010" y="350" width="210" height="130" rx="10" class="harn"/>
+  <text x="1024" y="378" class="t">One verdict per rule</text>
+  <text x="1024" y="402" class="s">survives beyond control</text>
+  <text x="1024" y="422" class="s">control only · untestable</text>
+  <text x="1024" y="442" class="s">fails</text>
+  <text x="1024" y="462" font-size="12.5" font-weight="700" fill="#B42318">contradicted (wrong sign)</text>
+
+  <rect x="1255" y="350" width="210" height="130" rx="10" class="llm"/>
+  <text x="1269" y="378" class="t">One revision (optional)</text>
+  <text x="1269" y="402" class="s">feedback from the valid</text>
+  <text x="1269" y="422" class="s">split only, never test</text>
+  <text x="1269" y="442" class="s">original rule still scored</text>
+  <text x="1269" y="462" class="s">for the record</text>
+
+  <!-- split feeds the test box -->
+  <path class="ln" d="M380,230 L380,340"/>
+  <!-- rules into the harness -->
+  <path class="ln" d="M1275,230 L1275,300 L748,300 L748,348"/>
+  <!-- rules to revision, revised rule back (once) -->
+  <path class="ln" d="M1330,230 L1330,348"/>
+  <path class="ln" d="M1430,350 L1430,232" stroke-dasharray="5 4"/>
+  <text x="1337" y="292" class="note">fails on valid?</text>
+  <text x="1437" y="292" class="note">once</text>
+  <!-- test and baseline into the harness -->
+  <path class="ln" d="M493,415 L518,415"/>
+  <path class="ln" d="M135,480 L135,510 L600,510 L600,482"/>
+  <!-- harness to verdicts -->
+  <path class="ln" d="M975,415 L1008,415"/>
+
+  <!-- ───────── Lane 3: literature ───────── -->
+  <text x="30" y="578" class="lane">3 · CROSS-CHECK AGAINST THE LITERATURE</text>
+
+  <rect x="1255" y="590" width="210" height="110" rx="10" class="lit"/>
+  <text x="1269" y="616" class="t">Claim text only</text>
+  <text x="1269" y="638" class="s">no verdicts, no data</text>
+  <text x="1269" y="656" class="s">attached</text>
+
+  <rect x="1010" y="590" width="210" height="110" rx="10" class="lit"/>
+  <text x="1024" y="616" class="t">Valency search</text>
+  <text x="1024" y="638" class="s">query = claim, verbatim</text>
+  <text x="1024" y="656" class="s">top 5 papers</text>
+  <text x="1024" y="674" class="s">request IDs logged</text>
+
+  <rect x="765" y="590" width="210" height="110" rx="10" class="lit"/>
+  <text x="779" y="616" class="t">PubMed abstracts</text>
+  <text x="779" y="638" class="s">fetched by paper ID</text>
+  <text x="779" y="656" class="s">cached for reruns</text>
+
+  <rect x="520" y="590" width="210" height="110" rx="10" class="llm"/>
+  <text x="534" y="616" class="t">Blind LLM judge</text>
+  <text x="534" y="638" class="s">zero tools, must quote</text>
+  <text x="534" y="656" class="s">each quote checked</text>
+  <text x="534" y="674" class="s">against its abstract</text>
+
+  <rect x="275" y="590" width="210" height="110" rx="10" class="harn"/>
+  <text x="289" y="616" class="t">Data vs literature</text>
+  <text x="289" y="638" class="s">agree · DISAGREE · n/a</text>
+  <text x="289" y="656" class="s">disagreements are the</text>
+  <text x="289" y="674" class="s">most interesting rows</text>
+
+  <rect x="30" y="590" width="210" height="110" rx="10" class="data"/>
+  <text x="44" y="616" class="t">Archived run</text>
+  <text x="44" y="638" class="s">results/&lt;dataset&gt;/&lt;run&gt;/</text>
+  <text x="44" y="656" class="s">manifest + config copy</text>
+  <text x="44" y="674" class="s">→ results/summary.md</text>
+
+  <!-- rules feed claims (right edge), lane 3 flows right to left -->
+  <path class="ln" d="M1465,175 L1487,175 L1487,645 L1467,645"/>
+  <path class="ln" d="M1255,645 L1222,645"/>
+  <path class="ln" d="M1010,645 L977,645"/>
+  <path class="ln" d="M765,645 L732,645"/>
+  <path class="ln" d="M520,645 L487,645"/>
+  <path class="ln" d="M275,645 L242,645"/>
+  <!-- verdicts meet the literature only in the table -->
+  <path class="ln" d="M1115,480 L1115,545 L380,545 L380,588"/>
+
+  <!-- ───────── Legend ───────── -->
+  <rect x="30" y="742" width="16" height="16" rx="3" class="data"/>
+  <text x="54" y="755" class="s">data, model, artefacts</text>
+  <rect x="230" y="742" width="16" height="16" rx="3" class="llm"/>
+  <text x="254" y="755" class="s">LLM calls (isolated, blind)</text>
+  <rect x="460" y="742" width="16" height="16" rx="3" class="harn"/>
+  <text x="484" y="755" class="s">evaluation harness: the contribution</text>
+  <rect x="740" y="742" width="16" height="16" rx="3" class="lit"/>
+  <text x="764" y="755" class="s">literature retrieval</text>
+  <rect x="930" y="742" width="16" height="16" rx="3" class="test"/>
+  <text x="954" y="755" class="s">held-out data, never shown to an LLM</text>
+
+  <text x="30" y="795" class="note">Everything dataset-specific lives in the config, so the same pipeline runs ESOL, Lipophilicity, FreeSolv and AqSolDB unchanged.</text>
+</svg>

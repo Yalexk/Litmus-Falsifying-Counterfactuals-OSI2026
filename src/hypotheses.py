@@ -95,13 +95,21 @@ def _ask_cli(prompt: str, system: str) -> str:
     public ESOL file. `--tools ""` only removes built-in tools; the strict
     empty MCP config is what removes the user's MCP servers (checked via the
     stream-json init event: tools == [])."""
-    with tempfile.TemporaryDirectory() as tmp:
-        r = subprocess.run(
-            ["claude", "-p", "--tools", "", "--strict-mcp-config",
-             "--mcp-config", '{"mcpServers":{}}', "--system-prompt", system,
-             "--model", MODEL, "--no-session-persistence", "--output-format", "text"],
-            input=prompt, capture_output=True, text=True, cwd=tmp, timeout=600,
-        )
+    cmd = ["claude", "-p", "--tools", "", "--strict-mcp-config",
+           "--mcp-config", '{"mcpServers":{}}', "--system-prompt", system,
+           "--model", MODEL, "--no-session-persistence", "--output-format", "text"]
+    # Proposal calls with prompt v2 sometimes run past 10 min (2 of ~5 timed
+    # out); allow 20 and retry once before giving up.
+    for attempt in (1, 2):
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                r = subprocess.run(cmd, input=prompt, capture_output=True,
+                                   text=True, cwd=tmp, timeout=1200)
+            break
+        except subprocess.TimeoutExpired:
+            if attempt == 2:
+                raise
+            print("  claude CLI timed out after 20 min; retrying once")
     if r.returncode != 0:
         raise RuntimeError(f"claude CLI failed: {r.stderr.strip()[:500]}")
     return r.stdout

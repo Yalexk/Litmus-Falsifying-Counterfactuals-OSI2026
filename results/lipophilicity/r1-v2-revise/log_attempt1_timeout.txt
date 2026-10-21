@@ -1,0 +1,64 @@
+[lipophilicity] 4200 molecules -> train 2940 valid 630 test 630
+[train] n=2940  R2=0.944  MAE=0.209
+[valid] n=630  R2=0.302  MAE=0.759
+[test] n=630  R2=0.328  MAE=0.803
+generating counterfactuals for 20 base molecules...
+  [1/20] Clc1ccc2c(c1)C(N1CCNCC1)=Nc1ccccc1O2 -> 5 cfs
+  [2/20] CCc1cc(C(=O)N[C@@H](Cc2cccc(Cl)c2)C(=O)NCC#N)n(C)n1 -> 5 cfs
+  [3/20] CN(C)c1nc(Cc2ccc(NC(=O)c3ccc(C(F)(F)F)cc3)cc2)nc(N(C)C)c1CC(=O)O -> 5 cfs
+  [4/20] CN(C(=O)Cc1ccc(-n2cnnn2)cc1)C1CCN(Cc2ccc(C(F)(F)F)cn2)CC1 -> 5 cfs
+  [5/20] CS(=O)(=O)n1c2ccccc2c2cc(NC(=O)N3CCOCC3)ccc21 -> 5 cfs
+  [6/20] CC(C)(C)OC(=O)N1CCC(c2ncc(OCc3ccc(S(C)(=O)=O)cc3)cn2)CC1 -> 5 cfs
+  [7/20] Oc1c2ncc3ccccc3c2nn1-c1ccc(Cl)cc1 -> 5 cfs
+  [8/20] CC1C(=O)Nc2ccccc2N1C(=O)c1ccccc1 -> 5 cfs
+  [9/20] CC1(C)N=C(N)N=C(N)N1c1ccc(Oc2ccc(Cl)cc2)c(Cl)c1 -> 5 cfs
+  [10/20] CCOC(=O)c1ccc(OCC2CN(c3ccc(C)nn3)C2)cc1 -> 5 cfs
+  [11/20] C#CC[C@@H](C(=O)N[C@H](/C=C/C(=O)OCC)C[C@@H]1CCNC1=O)n1cccc(NC(=O)c2cc(C)on2)c1=O -> 5 cfs
+  [12/20] CNc1cccc(CCCc2ccc(C[C@H](NC(=O)c3c(Cl)cccc3Cl)C(=O)O)s2)n1 -> 5 cfs
+  [13/20] CC(C)CNc1nc(C#N)nc(N2CCOCC2)c1N -> 5 cfs
+  [14/20] Cc1ccccc1C[C@@H](C(=O)O)N1CCC(CN2CCC(Oc3ccc(Cl)c(Cl)c3)CC2)CC1 -> 5 cfs
+  [15/20] COc1ccc(OC)c(CNc2[nH]nc3cccc(Oc4ccc(S(C)(=O)=O)cc4)c23)c1 -> 5 cfs
+  [16/20] COc1ccc(-c2c(F)ccc3c(N)c(C(=O)NC4CC4)nnc23)c(OC)n1 -> 5 cfs
+  [17/20] O=C(Nc1nnc(C(=O)Nc2ccc(N3CCOCC3)cc2)o1)c1ccccc1 -> 5 cfs
+  [18/20] CC1=C(C2=C(C)C(=O)c3c(cc(O)c(O)c3CCc3ccc(C)cc3)C2=O)C(=O)c2cc(O)c(O)c(CCc3ccc(C)cc3)c2C1=O -> 5 cfs
+  [19/20] CC(C)Cn1c(=O)n(C)c(=O)c2c(SC3CCCC3)c(Cc3ccccc3C(F)(F)F)sc21 -> 5 cfs
+  [20/20] CC[C@@H]1C(=O)OC[C@@H]1Cc1cncn1C -> 5 cfs
+
+3/4 textbook rules survived held-out testing (75%)
+3/4 survived beyond MolLogP, binned (75%); 1 untestable at coverage < 50%
+0/4 contradicted (wrong sign, real effect)
+  verdict                      raw    binned  cov   n  rule
+  untestable_beyond_control   +0.64    n/a   0% 281  Molecules with calculated LogP above the training median (3.30) have higher logD7.4.
+  survives_beyond_control     -1.28  -1.77  97%  58  Molecules containing a carboxylic acid have lower logD7.4 (ionised at pH 7.4).
+  survives_beyond_control     -0.34  -0.33 100% 314  Molecules with two or more hydrogen-bond donors have lower logD7.4.
+  fails                       -0.14  -0.48 100% 209  Molecules containing a basic aliphatic amine have lower logD7.4 (protonated at pH 7.4).
+Traceback (most recent call last):
+  File "/Users/alexy/CSE/Projects/OSI-Falsifying-Counterfactuals/run_pipeline.py", line 197, in <module>
+    main(p.parse_args())
+    ~~~~^^^^^^^^^^^^^^^^
+  File "/Users/alexy/CSE/Projects/OSI-Falsifying-Counterfactuals/run_pipeline.py", line 80, in main
+    rules = propose(records, cfg, n=a.n_rules)
+  File "/Users/alexy/CSE/Projects/OSI-Falsifying-Counterfactuals/src/hypotheses.py", line 129, in propose
+    data = _ask([{"role": "user", "content": prompt}], system_prompt(cfg))
+  File "/Users/alexy/CSE/Projects/OSI-Falsifying-Counterfactuals/src/hypotheses.py", line 117, in _ask
+    txt = _ask_cli(messages[-1]["content"], system)
+  File "/Users/alexy/CSE/Projects/OSI-Falsifying-Counterfactuals/src/hypotheses.py", line 99, in _ask_cli
+    r = subprocess.run(
+        ["claude", "-p", "--tools", "", "--strict-mcp-config",
+    ...<2 lines>...
+        input=prompt, capture_output=True, text=True, cwd=tmp, timeout=600,
+    )
+  File "/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 556, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 1220, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 2153, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 1267, in _check_timeout
+    raise TimeoutExpired(
+    ...<2 lines>...
+            stderr=b''.join(stderr_seq) if stderr_seq else None)
+subprocess.TimeoutExpired: Command '['claude', '-p', '--tools', '', '--strict-mcp-config', '--mcp-config', '{"mcpServers":{}}', '--system-prompt', 'You are generating falsifiable structure-property hypotheses from counterfactual explanations of a molecular property model.\n\nYou will see a base molecule, its predicted value, and nearby molecules whose predicted value differs. Propose general rules that would explain the pattern.\n\nHow your rules will be scored, on measured data you will not see:\n1. Raw test: do molecules matching the condition differ from the rest in the claimed direction, by more than experimental error (~0.3 log units)?\n2. Matched-cLogP test: the same comparison made only between molecules of similar MolLogP. Calculated lipophilicity alone explains most of this property, so a rule that is only a proxy for calculated lipophilicity (or for things that track it closely, such as overall size or overall polarity) passes the raw test and then shows no effect at matched MolLogP. Such rules count as restating something already known.\nAim for rules that would still hold between two molecules of the same MolLogP. A rule whose condition is nearly equivalent to a MolLogP threshold cannot be tested this way and earns nothing.\nA condition that matches very few molecules cannot be tested at all; aim for conditions that a reasonable fraction of small organic molecules satisfy.\n\nOutput JSON only. No prose, no markdown fences. Schema:\n{"hypotheses": [\n  {"text": "<one sentence claim a chemist could argue with>",\n   "direction": "higher" | "lower",\n   "condition": {"kind": "descriptor", "name": "<descriptor>", "op": ">"|"<", "value": <number>}\n             OR {"kind": "smarts", "pattern": "<valid SMARTS>"}}\n]}\n\nRules:\n- "direction" means: molecules MATCHING the condition have higher/lower property values than molecules that do not.\n- Prefer descriptor conditions. Use SMARTS only for a specific functional group.\n- Propose general rules, not restatements of one molecule pair.\n- Do not hedge. A vague hypothesis cannot be falsified and is worthless here.\n', '--model', 'claude-sonnet-4-6', '--no-session-persistence', '--output-format', 'text']' timed out after 600 seconds

@@ -39,10 +39,14 @@ def row(run: Path) -> str | None:
     llm = _counts(rules)
     base = _counts(json.loads((run / "baseline.json").read_text()))
     revised = sum("revised_from" in r for r in rules)
+    # Revision can reproduce an existing rule verbatim (same condition and
+    # direction); those inflate the counts, so show how many.
+    keys = [(json.dumps(r["condition"], sort_keys=True), r["direction"]) for r in rules]
+    dupes = len(keys) - len(set(keys))
     return (f"| {run.parent.name} | {run.name} | {man.get('control_descriptor', 'MolLogP')} "
             f"| {test.get('n', '')} | {test.get('r2', float('nan')):.2f} "
             f"| {_frac(llm['raw'], llm['n'])} | {_frac(llm['beyond'], llm['n'])} "
-            f"| {llm['untestable']} | {llm['contradicted']} | {revised} "
+            f"| {llm['untestable']} | {llm['contradicted']} | {revised} | {dupes} "
             f"| {_frac(base['raw'], base['n'])} | {_frac(base['beyond'], base['n'])} "
             f"| {'yes' if man.get('preregistered') else 'no'} |")
 
@@ -55,9 +59,9 @@ def main(paths: list[str]):
              "'beyond control' = survives within bins of the dataset's control descriptor "
              "at >=50% coverage.", "",
              "| dataset | run | control | test n | test R² | LLM raw | LLM beyond control "
-             "| untestable | contradicted | revised | textbook raw | textbook beyond control "
-             "| pre-registered |",
-             "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+             "| untestable | contradicted | revised | duplicates | textbook raw "
+             "| textbook beyond control | pre-registered |",
+             "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     lines += [r for r in map(row, runs) if r]
     Path("results/summary.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))

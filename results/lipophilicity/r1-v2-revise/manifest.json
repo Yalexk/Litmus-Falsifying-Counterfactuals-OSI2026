@@ -1,0 +1,36 @@
+{
+  "dataset": "lipophilicity",
+  "run_name": "r1-v2-revise",
+  "timestamp": "2026-10-21T14:09:01",
+  "git_commit": "e19147c",
+  "git_dirty": true,
+  "config_first_commit": "e19147c 2026-10-21T13:34:48+02:00",
+  "preregistered": true,
+  "args": {
+    "dataset": "configs/lipophilicity.json",
+    "n_bases": 10,
+    "n_rules": 8,
+    "num_samples": 1500,
+    "threshold": null,
+    "noise_floor": null,
+    "min_coverage": 0.5,
+    "run_name": "r1-v2-revise",
+    "refresh_cf": false,
+    "skip_llm": false,
+    "revise": true
+  },
+  "noise_floor_used": 0.3,
+  "cf_threshold_used": 0.5,
+  "control_descriptor": "MolLogP",
+  "baseline_verdicts": {
+    "untestable_beyond_control": 1,
+    "survives_beyond_control": 2,
+    "fails": 1
+  },
+  "llm_verdicts": {
+    "survives_beyond_control": 5,
+    "fails": 3
+  },
+  "prompt_version": "v2",
+  "llm_model": "claude-sonnet-4-6"
+}

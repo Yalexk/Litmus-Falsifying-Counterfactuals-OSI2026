@@ -1,0 +1,30 @@
+[esol] 1117 molecules -> train 781 valid 167 test 169
+[train] n=781  R2=0.948  MAE=0.308
+[valid] n=167  R2=0.249  MAE=1.318
+[test] n=169  R2=0.105  MAE=1.620
+reusing 20 cached counterfactual sets
+
+5/5 textbook rules survived held-out testing (100%)
+0/5 survived beyond MolLogP, binned (0%); 3 untestable at coverage < 50%
+0/5 contradicted (wrong sign, real effect)
+  verdict                      raw    binned  cov   n  rule
+  untestable_beyond_control   -2.97    n/a   0%  90  Molecules with LogP above the training median (2.25) are less soluble.
+  untestable_beyond_control   +2.26  +0.76  38%  99  Molecules with at least one hydrogen-bond donor are more soluble.
+  untestable_beyond_control   -2.58  -1.03  39% 145  Molecules heavier than the training median (156 Da) are less soluble.
+  control_only                -1.70  -0.36 100%  95  Molecules with two or more aromatic rings are less soluble.
+  control_only                +1.09  +0.45  95%  44  Molecules with sp3 fraction above the training median (0.45) are more soluble.
+
+8 well-formed hypotheses proposed
+Traceback (most recent call last):
+  File "/Users/alexy/CSE/Projects/OSI-Falsifying-Counterfactuals/run_pipeline.py", line 190, in <module>
+    main(p.parse_args())
+    ~~~~^^^^^^^^^^^^^^^^
+  File "/Users/alexy/CSE/Projects/OSI-Falsifying-Counterfactuals/run_pipeline.py", line 92, in main
+    r2 = revise(r, res_valid, cfg)
+  File "/Users/alexy/CSE/Projects/OSI-Falsifying-Counterfactuals/src/hypotheses.py", line 157, in revise
+    data = _ask([{"role": "user", "content": prompt}], system_prompt(cfg))
+  File "/Users/alexy/CSE/Projects/OSI-Falsifying-Counterfactuals/src/hypotheses.py", line 117, in _ask
+    txt = _ask_cli(messages[-1]["content"], system)
+  File "/Users/alexy/CSE/Projects/OSI-Falsifying-Counterfactuals/src/hypotheses.py", line 106, in _ask_cli
+    raise RuntimeError(f"claude CLI failed: {r.stderr.strip()[:500]}")
+RuntimeError: claude CLI failed: 

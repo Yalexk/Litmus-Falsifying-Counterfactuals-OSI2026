@@ -1,0 +1,32 @@
+[esol] 1117 molecules -> train 781 valid 167 test 169
+[train] n=781  R2=0.948  MAE=0.308
+[valid] n=167  R2=0.249  MAE=1.318
+[test] n=169  R2=0.105  MAE=1.620
+reusing 20 cached counterfactual sets
+
+5/5 textbook rules survived held-out testing (100%)
+0/5 survived beyond MolLogP, binned (0%); 3 untestable at coverage < 50%
+0/5 contradicted (wrong sign, real effect)
+  verdict                      raw    binned  cov   n  rule
+  untestable_beyond_control   -2.97    n/a   0%  90  Molecules with LogP above the training median (2.25) are less soluble.
+  untestable_beyond_control   +2.26  +0.76  38%  99  Molecules with at least one hydrogen-bond donor are more soluble.
+  untestable_beyond_control   -2.58  -1.03  39% 145  Molecules heavier than the training median (156 Da) are less soluble.
+  control_only                -1.70  -0.36 100%  95  Molecules with two or more aromatic rings are less soluble.
+  control_only                +1.09  +0.45  95%  44  Molecules with sp3 fraction above the training median (0.45) are more soluble.
+
+8 well-formed hypotheses proposed
+
+6/8 LLM hypotheses survived held-out testing (75%)
+0/8 survived beyond MolLogP, binned (0%); 0 untestable at coverage < 50%
+0/8 contradicted (wrong sign, real effect)
+  verdict                      raw    binned  cov   n  rule
+  control_only                -3.02  -0.90  88%  34  Molecules with more than three rings are less soluble than lower-ring-count analogues at matched MolLogP, because rigid polycyclic scaffolds pack tightly in crystals and display elevated melting points that limit dissolution.
+  control_only                +1.70  -0.44 100%  65  Molecules with TPSA > 60 Å² have higher aqueous solubility than those with TPSA ≤ 60 Å², because greater polar surface area promotes direct hydrogen-bond interactions with water that improve solubility independently of lipophilicity.
+  control_only                +1.70  -0.44 100%  65  Molecules with TPSA greater than 60 Å² have higher aqueous solubility than molecules with TPSA ≤ 60 Å², even at matched MolLogP, because greater polar surface area improves hydration shell formation independently of overall lipophilicity.
+  control_only                -1.70  -0.36 100%  95  Molecules with two or more aromatic rings are less soluble than those with at most one aromatic ring at matched MolLogP, because extended aromatic systems promote pi-stacking in the crystal lattice and raise melting points independently of lipophilicity.
+  control_only                +1.71  -0.09  86%  22  Molecules with more than 2 hydrogen-bond donors are more soluble than molecules with 2 or fewer hydrogen-bond donors at matched MolLogP, because multiple NH/OH groups create strong directional interactions with water that favour aqueous solvation over crystal-lattice cohesion independently of overall lipophilicity.
+  control_only                -0.94  -0.16 100%  91  Molecules with low sp3 character (FractionCSP3 < 0.25) have lower aqueous solubility than more saturated molecules at matched MolLogP, because highly aromatic flat scaffolds promote tight crystal packing and raise the melting point, increasing the energetic cost of dissolution.
+  fails                       -0.71  +0.01  59%  17  Molecules bearing an aromatic C–Cl bond are less soluble than those without one at matched MolLogP, because chlorine's size and polarizability enhance crystal-lattice cohesion more than its modest lipophilicity contribution accounts for.
+  fails                       -0.02  +0.63  82%  11  Molecules containing a pyridine ring are more soluble than structurally analogous molecules bearing benzene in its place, even when MolLogP is matched, because the ring nitrogen provides hydrogen-bond acceptance that drives aqueous solvation beyond what lipophilicity predicts.
+
+archived to results/esol/final-v2-revise/

@@ -1,0 +1,307 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2200 1150" width="2200" height="1150" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="mr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#1E293B"/></marker>
+    <marker id="my" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#8FA3C0"/></marker>
+    <style>
+      .ctr  { fill: #F5F7FC; stroke: #3D5A98; stroke-width: 3; }
+      .ctrG { fill: #F0FAF7; stroke: #0E9F88; stroke-width: 3; }
+      .ctab { fill: #3D5A98; } .ctabG { fill: #0E9F88; } .ctabR { fill: #C23B5A; }
+      .ct   { font-size: 25px; font-weight: 700; fill: #fff; text-anchor: middle; letter-spacing: 0.3px; }
+      .box  { fill: #fff; stroke: #8EA2CC; stroke-width: 2; }
+      .boxG { fill: #fff; stroke: #6CCAB8; stroke-width: 2; }
+      .boxR { fill: #FFF4F6; stroke: #C23B5A; stroke-width: 2.5; }
+      .tab  { font-size: 17px; font-weight: 700; fill: #fff; text-anchor: middle; }
+      .cap  { font-size: 17px; fill: #1E293B; text-anchor: middle; }
+      .red  { stroke: #1E293B; stroke-width: 3.5; fill: none; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#mr); }
+      .yel  { stroke: #8FA3C0; stroke-width: 2.5; fill: none; stroke-linecap: round; marker-end: url(#my); }
+      .lbl  { font-size: 16px; fill: #475569; font-style: italic; }
+      .out  { font-size: 17px; fill: #1E293B; }
+    </style>
+
+    <!-- ── icons, drawn from scratch ── -->
+    <symbol id="i-mol" viewBox="0 0 80 80">
+      <polygon points="62.5,27 62.5,53 40,66 17.5,53 17.5,27 40,14" fill="#ECEFF1" stroke="#37474F" stroke-width="3.5"/>
+      <line x1="56" y1="31" x2="56" y2="49" stroke="#37474F" stroke-width="2.5"/>
+      <line x1="62.5" y1="27" x2="73" y2="18" stroke="#37474F" stroke-width="3.5"/>
+      <circle cx="74" cy="15" r="7" fill="#E53935"/>
+      <circle cx="17.5" cy="53" r="7" fill="#1E88E5"/>
+    </symbol>
+    <symbol id="i-table" viewBox="0 0 80 80">
+      <rect x="6" y="10" width="68" height="60" rx="5" fill="#fff" stroke="#37474F" stroke-width="3"/>
+      <path d="M6,24 V15 a5,5 0 0 1 5,-5 H69 a5,5 0 0 1 5,5 V24 Z" fill="#4FC3F7"/>
+      <path d="M6,38 H74 M6,52 H74 M40,24 V70" stroke="#90A4AE" stroke-width="2.5"/>
+    </symbol>
+    <symbol id="i-config" viewBox="0 0 80 80">
+      <path d="M14,6 H50 L66,22 V74 H14 Z" fill="#fff" stroke="#37474F" stroke-width="3"/>
+      <path d="M50,6 V22 H66" fill="#CFD8DC" stroke="#37474F" stroke-width="3"/>
+      <text x="38" y="52" font-size="22" font-weight="700" fill="#3D5A98" text-anchor="middle">{ }</text>
+      <circle cx="62" cy="62" r="13" fill="#2E7D32"/>
+      <path d="M55,62 L60,67 L69,57" stroke="#fff" stroke-width="3.5" fill="none"/>
+    </symbol>
+    <symbol id="i-split" viewBox="0 0 120 80">
+      <rect x="8" y="16" width="74" height="26" fill="#29B6F6"/>
+      <rect x="82" y="16" width="14" height="26" fill="#81D4FA"/>
+      <rect x="96" y="16" width="16" height="26" fill="#EF5350"/>
+      <rect x="8" y="16" width="104" height="26" rx="3" fill="none" stroke="#37474F" stroke-width="2.5"/>
+      <text x="45" y="62" font-size="12" fill="#37474F" text-anchor="middle">train</text>
+      <rect x="96" y="56" width="16" height="14" rx="2" fill="#455A64"/>
+      <path d="M99,56 V51 a5,5 0 0 1 10,0 V56" stroke="#455A64" stroke-width="3" fill="none"/>
+    </symbol>
+    <symbol id="i-forest" viewBox="0 0 120 80">
+      <g fill="#43A047"><polygon points="25,6 9,36 41,36"/><polygon points="60,6 44,36 76,36"/><polygon points="95,6 79,36 111,36"/></g>
+      <g fill="#2E7D32"><polygon points="25,18 6,48 44,48"/><polygon points="60,18 41,48 79,48"/><polygon points="95,18 76,48 114,48"/></g>
+      <g fill="#795548"><rect x="22" y="48" width="6" height="8"/><rect x="57" y="48" width="6" height="8"/><rect x="92" y="48" width="6" height="8"/></g>
+      <g><rect x="10" y="64" width="8" height="8" fill="#263238"/><rect x="21" y="64" width="8" height="8" fill="#B0BEC5"/><rect x="32" y="64" width="8" height="8" fill="#263238"/><rect x="43" y="64" width="8" height="8" fill="#263238"/><rect x="54" y="64" width="8" height="8" fill="#B0BEC5"/><rect x="65" y="64" width="8" height="8" fill="#B0BEC5"/><rect x="76" y="64" width="8" height="8" fill="#263238"/><rect x="87" y="64" width="8" height="8" fill="#B0BEC5"/><rect x="98" y="64" width="8" height="8" fill="#263238"/></g>
+    </symbol>
+    <symbol id="i-cf" viewBox="0 0 140 80">
+      <use href="#i-mol" xlink:href="#i-mol" x="0" y="8" width="60" height="60"/>
+      <line x1="60" y1="40" x2="80" y2="40" stroke="#3D5A98" stroke-width="4"/>
+      <polygon points="80,32 92,40 80,48" fill="#3D5A98"/>
+      <text x="76" y="24" font-size="16" font-weight="700" fill="#C23B5A" text-anchor="middle">Δŷ</text>
+      <use href="#i-mol" xlink:href="#i-mol" x="90" y="8" width="60" height="60"/>
+      <line x1="120" y1="57" x2="120" y2="68" stroke="#37474F" stroke-width="2.6"/>
+      <circle cx="120" cy="72" r="6" fill="#43A047"/>
+    </symbol>
+    <symbol id="i-llm" viewBox="0 0 100 80">
+      <path d="M18,10 H78 Q86,10 86,18 V48 Q86,56 78,56 H40 L26,70 L28,56 H18 Q10,56 10,48 V18 Q10,10 18,10 Z" fill="#7E57C2"/>
+      <circle cx="34" cy="33" r="4.5" fill="#fff"/><circle cx="48" cy="33" r="4.5" fill="#fff"/><circle cx="62" cy="33" r="4.5" fill="#fff"/>
+      <path d="M90,0 L93,8 L100,11 L93,14 L90,22 L87,14 L80,11 L87,8 Z" fill="#FFC107"/>
+      <rect x="74" y="64" width="14" height="11" rx="2" fill="#546E7A"/>
+      <path d="M77,64 V60 a4,4 0 0 1 8,0 V64" stroke="#546E7A" stroke-width="2.5" fill="none"/>
+    </symbol>
+    <symbol id="i-rules" viewBox="0 0 80 80">
+      <path d="M12,4 H56 L68,16 V76 H12 Z" fill="#fff" stroke="#37474F" stroke-width="3"/>
+      <rect x="18" y="20" width="20" height="13" rx="3" fill="#29B6F6"/><text x="28" y="30" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">IF</text>
+      <line x1="42" y1="27" x2="62" y2="27" stroke="#90A4AE" stroke-width="3"/>
+      <rect x="18" y="40" width="32" height="13" rx="3" fill="#7E57C2"/><text x="34" y="50" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">THEN</text>
+      <line x1="54" y1="47" x2="62" y2="47" stroke="#90A4AE" stroke-width="3"/>
+      <text x="40" y="70" font-size="13" font-weight="700" fill="#2E7D32" text-anchor="middle">↑ y</text>
+    </symbol>
+    <symbol id="i-cycle" viewBox="0 0 80 80">
+      <path d="M62,28 A25,25 0 0 0 17,30" stroke="#F57C00" stroke-width="6" fill="none"/>
+      <polygon points="8,24 18,42 27,26" fill="#F57C00"/>
+      <path d="M18,52 A25,25 0 0 0 63,50" stroke="#F57C00" stroke-width="6" fill="none"/>
+      <polygon points="72,56 62,38 53,54" fill="#F57C00"/>
+      <text x="40" y="47" font-size="17" font-weight="700" fill="#37474F" text-anchor="middle">1×</text>
+    </symbol>
+    <symbol id="i-lockdb" viewBox="0 0 80 80">
+      <rect x="14" y="14" width="48" height="46" fill="#EF5350"/>
+      <ellipse cx="38" cy="60" rx="24" ry="8" fill="#EF5350"/>
+      <ellipse cx="38" cy="14" rx="24" ry="8" fill="#EF9A9A" stroke="#C62828" stroke-width="2"/>
+      <path d="M14,30 a24,8 0 0 0 48,0 M14,45 a24,8 0 0 0 48,0" stroke="#FFCDD2" stroke-width="2.5" fill="none"/>
+      <rect x="50" y="54" width="24" height="20" rx="3" fill="#37474F"/>
+      <path d="M55,54 V48 a7,7 0 0 1 14,0 V54" stroke="#37474F" stroke-width="3.5" fill="none"/>
+    </symbol>
+    <symbol id="i-book" viewBox="0 0 80 80">
+      <path d="M40,20 Q24,12 8,16 V64 Q24,60 40,68 Z" fill="#FFF8E1" stroke="#6D4C41" stroke-width="3"/>
+      <path d="M40,20 Q56,12 72,16 V64 Q56,60 40,68 Z" fill="#FFF8E1" stroke="#6D4C41" stroke-width="3"/>
+      <path d="M14,28 Q24,25 34,29 M14,38 Q24,35 34,39 M14,48 Q24,45 34,49 M46,29 Q56,25 66,28 M46,39 Q56,35 66,38 M46,49 Q56,45 66,48" stroke="#BCAAA4" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-curves" viewBox="0 0 120 80">
+      <path d="M10,6 V70 H114" stroke="#37474F" stroke-width="2.5" fill="none"/>
+      <path d="M14,68 C34,68 34,18 50,18 C66,18 66,68 86,68" stroke="#29B6F6" stroke-width="3.5" fill="#29B6F6" fill-opacity="0.2"/>
+      <path d="M36,68 C56,68 56,30 72,30 C88,30 88,68 108,68" stroke="#FF7043" stroke-width="3.5" fill="#FF7043" fill-opacity="0.2"/>
+      <text x="61" y="14" font-size="14" font-weight="700" fill="#C23B5A" text-anchor="middle">Δ</text>
+    </symbol>
+    <symbol id="i-bins" viewBox="0 0 120 80">
+      <path d="M6,70 H116" stroke="#37474F" stroke-width="2.5"/>
+      <path d="M42,6 V70 M80,6 V70" stroke="#90A4AE" stroke-width="2" stroke-dasharray="4 3"/>
+      <g fill="#29B6F6"><rect x="12" y="46" width="11" height="24"/><rect x="50" y="32" width="11" height="38"/><rect x="88" y="20" width="11" height="50"/></g>
+      <g fill="#FF7043"><rect x="24" y="40" width="11" height="30"/><rect x="62" y="28" width="11" height="42"/><rect x="100" y="16" width="11" height="54"/></g>
+    </symbol>
+    <symbol id="i-funnel" viewBox="0 0 80 80">
+      <g fill="#90A4AE"><circle cx="16" cy="8" r="4"/><circle cx="28" cy="13" r="4"/><circle cx="40" cy="6" r="4"/><circle cx="52" cy="13" r="4"/><circle cx="64" cy="8" r="4"/></g>
+      <path d="M8,20 H72 L47,46 V66 L33,74 V46 Z" fill="#26A69A"/>
+      <circle cx="64" cy="64" r="10" fill="#2E7D32"/>
+      <path d="M59,64 L63,68 L70,60" stroke="#fff" stroke-width="3" fill="none"/>
+    </symbol>
+    <symbol id="i-quote" viewBox="0 0 80 80">
+      <path d="M10,10 H70 Q76,10 76,16 V50 Q76,56 70,56 H32 L20,68 L22,56 H10 Q4,56 4,50 V16 Q4,10 10,10 Z" fill="#FFB74D"/>
+      <text x="40" y="50" font-size="38" font-weight="700" fill="#fff" text-anchor="middle">“ ”</text>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 100 80">
+      <rect x="10" y="16" width="44" height="56" fill="#fff" stroke="#90A4AE" stroke-width="2.5"/>
+      <rect x="18" y="6" width="44" height="56" fill="#fff" stroke="#37474F" stroke-width="2.5"/>
+      <path d="M24,18 H56 M24,26 H56 M24,34 H50 M24,42 H56" stroke="#B0BEC5" stroke-width="2.5"/>
+      <circle cx="66" cy="46" r="16" fill="#E1F5FE" fill-opacity="0.85" stroke="#F57C00" stroke-width="5"/>
+      <line x1="77" y1="57" x2="92" y2="72" stroke="#F57C00" stroke-width="7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-docs" viewBox="0 0 80 80">
+      <rect x="24" y="4" width="46" height="58" fill="#FFE0B2" stroke="#EF6C00" stroke-width="2"/>
+      <rect x="17" y="10" width="46" height="58" fill="#FFF3E0" stroke="#EF6C00" stroke-width="2"/>
+      <rect x="10" y="16" width="46" height="58" fill="#fff" stroke="#37474F" stroke-width="2.5"/>
+      <text x="33" y="34" font-size="10" font-weight="700" fill="#3D5A98" text-anchor="middle">PMID</text>
+      <path d="M16,44 H50 M16,52 H50 M16,60 H42" stroke="#B0BEC5" stroke-width="2.5"/>
+    </symbol>
+    <symbol id="i-scale" viewBox="0 0 80 80">
+      <line x1="40" y1="12" x2="40" y2="68" stroke="#5D4037" stroke-width="4"/>
+      <rect x="24" y="66" width="32" height="7" rx="2" fill="#5D4037"/>
+      <line x1="10" y1="20" x2="70" y2="20" stroke="#5D4037" stroke-width="4"/>
+      <circle cx="40" cy="12" r="5" fill="#FFB300"/>
+      <path d="M10,20 L4,42 M10,20 L16,42 M70,20 L64,42 M70,20 L76,42" stroke="#8D6E63" stroke-width="2"/>
+      <path d="M2,42 H18 Q10,54 2,42 Z M62,42 H78 Q70,54 62,42 Z" fill="#FFB300"/>
+    </symbol>
+    <symbol id="i-report" viewBox="0 0 80 80">
+      <rect x="12" y="10" width="56" height="66" rx="6" fill="#fff" stroke="#37474F" stroke-width="3"/>
+      <rect x="28" y="4" width="24" height="12" rx="3" fill="#90A4AE"/>
+      <path d="M20,30 l4,4 l8,-8 M20,62 l4,4 l8,-8" stroke="#2E7D32" stroke-width="3.5" fill="none"/>
+      <path d="M21,42 l8,8 M29,42 l-8,8" stroke="#E53935" stroke-width="3.5"/>
+      <path d="M38,30 H60 M38,46 H60 M38,62 H60" stroke="#B0BEC5" stroke-width="3"/>
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 80 80">
+      <path d="M8,6 V70 H76" stroke="#37474F" stroke-width="3" fill="none"/>
+      <rect x="16" y="38" width="13" height="32" fill="#29B6F6"/>
+      <rect x="35" y="22" width="13" height="48" fill="#1FA855"/>
+      <rect x="54" y="48" width="13" height="22" fill="#EF5350"/>
+    </symbol>
+  </defs>
+
+  <rect width="2200" height="1150" fill="#fff"/>
+
+  <!-- ═════════ Input ═════════ -->
+  <rect x="40" y="500" width="310" height="230" rx="22" class="box" stroke-width="4"/>
+  <rect x="62" y="481" width="210" height="38" rx="19" class="ctab"/>
+  <text x="167" y="507" class="tab" font-size="19">Dataset + Config</text>
+  <use href="#i-mol" xlink:href="#i-mol" x="50" y="540" width="90" height="90"/>
+  <use href="#i-table" xlink:href="#i-table" x="98" y="582" width="50" height="50"/>
+  <use href="#i-config" xlink:href="#i-config" x="210" y="545" width="85" height="85"/>
+  <text x="103" y="666" class="cap">molecules +</text>
+  <text x="103" y="688" class="cap">measurements</text>
+  <text x="252" y="666" class="cap">pre-registered</text>
+  <text x="252" y="688" class="cap">config</text>
+
+  <!-- ═════════ Container 1: explain the model ═════════ -->
+  <rect x="400" y="60" width="820" height="575" rx="32" class="ctr"/>
+  <rect x="430" y="38" width="320" height="46" rx="23" class="ctab"/>
+  <text x="590" y="70" class="ct">Explain the Model</text>
+
+  <rect x="430" y="125" width="360" height="140" rx="14" class="box"/>
+  <rect x="460" y="107" width="170" height="34" rx="17" class="ctab"/><text x="545" y="130" class="tab">Scaffold Split</text>
+  <use href="#i-split" xlink:href="#i-split" x="550" y="150" width="120" height="80"/>
+  <text x="610" y="252" class="cap">train 70% · valid 15% · test 15%</text>
+
+  <rect x="830" y="125" width="360" height="140" rx="14" class="box"/>
+  <rect x="860" y="107" width="190" height="34" rx="17" class="ctab"/><text x="955" y="130" class="tab">Black-box Model</text>
+  <use href="#i-forest" xlink:href="#i-forest" x="950" y="150" width="120" height="80"/>
+  <text x="1010" y="252" class="cap">random forest on ECFP4 bits</text>
+
+  <rect x="830" y="295" width="360" height="140" rx="14" class="box"/>
+  <rect x="860" y="277" width="180" height="34" rx="17" class="ctab"/><text x="950" y="300" class="tab">Counterfactuals</text>
+  <use href="#i-cf" xlink:href="#i-cf" x="940" y="318" width="140" height="80"/>
+  <text x="1010" y="422" class="cap">exmol: look-alikes, very different ŷ</text>
+
+  <rect x="430" y="295" width="360" height="140" rx="14" class="box"/>
+  <rect x="460" y="277" width="270" height="34" rx="17" class="ctab"/><text x="595" y="300" class="tab">LLM Hypothesis Generator</text>
+  <use href="#i-llm" xlink:href="#i-llm" x="560" y="320" width="100" height="80"/>
+  <text x="610" y="422" class="cap">zero tools · sees counterfactuals only</text>
+
+  <rect x="430" y="465" width="360" height="140" rx="14" class="box"/>
+  <rect x="460" y="447" width="190" height="34" rx="17" class="ctab"/><text x="555" y="470" class="tab">Executable Rules</text>
+  <use href="#i-rules" xlink:href="#i-rules" x="570" y="490" width="80" height="80"/>
+  <text x="610" y="592" class="cap">sentence + condition + direction</text>
+
+  <rect x="830" y="465" width="360" height="140" rx="14" class="box"/>
+  <rect x="860" y="447" width="160" height="34" rx="17" class="ctab"/><text x="940" y="470" class="tab">One Revision</text>
+  <use href="#i-cycle" xlink:href="#i-cycle" x="970" y="490" width="80" height="80"/>
+  <text x="1010" y="592" class="cap">feedback from the valid split only</text>
+
+  <path class="yel" d="M790,195 L824,195"/>
+  <path class="yel" d="M1150,265 L1150,289"/>
+  <path class="yel" d="M830,365 L796,365"/>
+  <path class="yel" d="M740,435 L740,459"/>
+  <path class="yel" d="M790,515 L824,515"/>
+  <path class="yel" d="M830,560 L796,560"/>
+  <text x="810" y="584" font-size="14" fill="#64748B" font-style="italic" text-anchor="middle">once</text>
+
+  <!-- ═════════ Container 3: literature ═════════ -->
+  <rect x="400" y="700" width="820" height="400" rx="32" class="ctr"/>
+  <rect x="430" y="678" width="400" height="46" rx="23" class="ctab"/>
+  <text x="630" y="710" class="ct">Cross-check vs Literature</text>
+
+  <rect x="430" y="765" width="360" height="140" rx="14" class="box"/>
+  <rect x="460" y="747" width="180" height="34" rx="17" class="ctab"/><text x="550" y="770" class="tab">Claim Text Only</text>
+  <use href="#i-quote" xlink:href="#i-quote" x="570" y="790" width="80" height="80"/>
+  <text x="610" y="892" class="cap">no verdicts, no data attached</text>
+
+  <rect x="830" y="765" width="360" height="140" rx="14" class="box"/>
+  <rect x="860" y="747" width="180" height="34" rx="17" class="ctab"/><text x="950" y="770" class="tab">Valency Search</text>
+  <use href="#i-search" xlink:href="#i-search" x="960" y="790" width="100" height="80"/>
+  <text x="1010" y="892" class="cap">query = claim verbatim · top 5</text>
+
+  <rect x="830" y="935" width="360" height="140" rx="14" class="box"/>
+  <rect x="860" y="917" width="200" height="34" rx="17" class="ctab"/><text x="960" y="940" class="tab">PubMed Abstracts</text>
+  <use href="#i-docs" xlink:href="#i-docs" x="970" y="960" width="80" height="80"/>
+  <text x="1010" y="1062" class="cap">fetched by paper ID, cached</text>
+
+  <rect x="430" y="935" width="360" height="140" rx="14" class="box"/>
+  <rect x="460" y="917" width="190" height="34" rx="17" class="ctab"/><text x="555" y="940" class="tab">Blind LLM Judge</text>
+  <use href="#i-scale" xlink:href="#i-scale" x="570" y="960" width="80" height="80"/>
+  <text x="610" y="1062" class="cap">must quote · every quote verified</text>
+
+  <path class="yel" d="M790,835 L824,835"/>
+  <path class="yel" d="M1150,905 L1150,929"/>
+  <path class="yel" d="M830,1005 L796,1005"/>
+
+  <!-- ═════════ Container 2: falsification harness ═════════ -->
+  <rect x="1290" y="60" width="440" height="870" rx="32" class="ctrG"/>
+  <rect x="1440" y="38" width="270" height="46" rx="23" class="ctabG"/>
+  <text x="1575" y="70" class="ct">Falsification</text>
+  <rect x="1440" y="908" width="270" height="40" rx="20" class="ctabG"/>
+  <text x="1575" y="935" class="tab" font-size="19">★ our contribution</text>
+
+  <rect x="1320" y="130" width="180" height="170" rx="14" class="boxR"/>
+  <rect x="1335" y="112" width="150" height="34" rx="17" class="ctabR"/><text x="1410" y="135" class="tab">Held-out Test</text>
+  <use href="#i-lockdb" xlink:href="#i-lockdb" x="1370" y="158" width="80" height="80"/>
+  <text x="1410" y="262" class="cap">never shown</text>
+  <text x="1410" y="283" class="cap">to an LLM</text>
+
+  <rect x="1520" y="130" width="180" height="170" rx="14" class="boxG"/>
+  <rect x="1535" y="112" width="150" height="34" rx="17" class="ctabG"/><text x="1610" y="135" class="tab">Textbook Rules</text>
+  <use href="#i-book" xlink:href="#i-book" x="1570" y="158" width="80" height="80"/>
+  <text x="1610" y="262" class="cap">yardstick +</text>
+  <text x="1610" y="283" class="cap">bug check</text>
+
+  <rect x="1320" y="340" width="380" height="160" rx="14" class="boxG"/>
+  <rect x="1350" y="322" width="150" height="34" rx="17" class="ctabG"/><text x="1425" y="345" class="tab">① Raw Test</text>
+  <use href="#i-curves" xlink:href="#i-curves" x="1450" y="368" width="120" height="80"/>
+  <text x="1510" y="480" class="cap">matches vs rest: right direction?</text>
+
+  <rect x="1320" y="540" width="380" height="160" rx="14" class="boxG"/>
+  <rect x="1350" y="522" width="240" height="34" rx="17" class="ctabG"/><text x="1470" y="545" class="tab">② Within Control Bins</text>
+  <use href="#i-bins" xlink:href="#i-bins" x="1450" y="568" width="120" height="80"/>
+  <text x="1510" y="680" class="cap">beyond the obvious (e.g. MolLogP)?</text>
+
+  <rect x="1320" y="740" width="380" height="160" rx="14" class="boxG"/>
+  <rect x="1350" y="722" width="230" height="34" rx="17" class="ctabG"/><text x="1465" y="745" class="tab">③ FDR + Noise Floor</text>
+  <use href="#i-funnel" xlink:href="#i-funnel" x="1470" y="768" width="80" height="80"/>
+  <text x="1510" y="880" class="cap">Benjamini–Hochberg · effect ≥ noise</text>
+
+  <path class="yel" d="M1338,300 L1338,334"/>
+  <path class="yel" d="M1610,300 L1610,334"/>
+  <path class="yel" d="M1650,500 L1650,534"/>
+  <path class="yel" d="M1650,700 L1650,734"/>
+
+  <!-- ═════════ Output ═════════ -->
+  <rect x="1800" y="410" width="360" height="400" rx="22" class="box" stroke-width="4"/>
+  <rect x="1822" y="391" width="230" height="38" rx="19" class="ctab"/>
+  <text x="1937" y="417" class="tab" font-size="19">Verdicts &amp; Report</text>
+  <use href="#i-report" xlink:href="#i-report" x="1845" y="450" width="105" height="105"/>
+  <use href="#i-chart" xlink:href="#i-chart" x="1995" y="455" width="100" height="100"/>
+  <text x="1830" y="605" class="out"><tspan fill="#1FA855" font-weight="700">✔</tspan> survives beyond control</text>
+  <text x="1830" y="637" class="out"><tspan fill="#78909C" font-weight="700">◐</tspan> control only · untestable</text>
+  <text x="1830" y="669" class="out"><tspan fill="#78909C" font-weight="700">✘</tspan> fails</text>
+  <text x="1830" y="701" class="out" fill="#C62828" font-weight="700">⚠ contradicted (wrong sign)</text>
+  <text x="1830" y="745" class="out">+ data vs literature table</text>
+  <text x="1830" y="777" class="out">+ cross-dataset summary</text>
+
+  <!-- ═════════ Red flows between stages ═════════ -->
+  <path class="red" d="M350,615 L380,615 L380,195 L424,195"/>
+  <path class="red" d="M320,500 L320,20 L1410,20 L1410,106"/>
+  <text x="790" y="44" class="lbl">held-out molecules, routed around every LLM</text>
+  <path class="red" d="M680,605 L680,656 L1284,656"/>
+  <text x="1090" y="650" class="lbl">rules</text>
+  <path class="red" d="M430,580 L414,580 L414,835 L424,835"/>
+  <path class="red" d="M1730,610 L1794,610"/>
+  <path class="red" d="M610,1075 L610,1125 L1980,1125 L1980,816"/>
+  <text x="1300" y="1117" class="lbl">literature stance per claim</text>
+</svg>

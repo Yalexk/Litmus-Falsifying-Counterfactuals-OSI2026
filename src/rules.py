@@ -272,7 +272,9 @@ def report(results: list[dict], alpha: float = 0.05, noise_floor: float = 0.6,
                      verdict="insufficient_support")
     n = max(len(results), 1)
     n_sur = sum(r["survives"] for r in ev)
-    n_st = sum(r["survives_strat"] for r in ev)
+    # Must agree with the verdict, which also requires raw survival; counting
+    # survives_strat alone over-reported (6/8 printed vs 5/8 verdicts, lipo r1).
+    n_st = sum(r["verdict"] == "survives_beyond_control" for r in ev)
     n_con = sum(r["contradicted"] for r in ev)
     print(f"\n{n_sur}/{len(results)} {label} survived held-out testing ({n_sur / n:.0%})")
     print(f"{n_st}/{len(results)} survived beyond {control_label}, binned ({n_st / n:.0%}); "

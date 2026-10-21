@@ -1,0 +1,31 @@
+[lipophilicity] 4200 molecules -> train 2940 valid 630 test 630
+[train] n=2940  R2=0.944  MAE=0.209
+[valid] n=630  R2=0.302  MAE=0.759
+[test] n=630  R2=0.328  MAE=0.803
+reusing 20 cached counterfactual sets
+
+3/4 textbook rules survived held-out testing (75%)
+3/4 survived beyond MolLogP, binned (75%); 1 untestable at coverage < 50%
+0/4 contradicted (wrong sign, real effect)
+  verdict                      raw    binned  cov   n  rule
+  untestable_beyond_control   +0.64    n/a   0% 281  Molecules with calculated LogP above the training median (3.30) have higher logD7.4.
+  survives_beyond_control     -1.28  -1.77  97%  58  Molecules containing a carboxylic acid have lower logD7.4 (ionised at pH 7.4).
+  survives_beyond_control     -0.34  -0.33 100% 314  Molecules with two or more hydrogen-bond donors have lower logD7.4.
+  fails                       -0.14  -0.48 100% 209  Molecules containing a basic aliphatic amine have lower logD7.4 (protonated at pH 7.4).
+
+8 well-formed hypotheses proposed
+
+5/8 LLM hypotheses survived held-out testing (62%)
+6/8 survived beyond MolLogP, binned (75%); 0 untestable at coverage < 50%
+0/8 contradicted (wrong sign, real effect)
+  verdict                      raw    binned  cov   n  rule
+  survives_beyond_control     -1.28  -1.77  97%  58  Molecules containing a carboxylic acid group have lower logD7.4 than structurally comparable molecules without one, because the acid is substantially ionized at pH 7.4 and the charged form does not partition into octanol.
+  survives_beyond_control     -1.28  -1.77  97%  58  Molecules containing a carboxylic acid group have lower logD7.4 than molecules without one at the same calculated lipophilicity, because carboxylic acids (pKa ~4–5) are fully deprotonated at pH 7.4, imposing a ~2–3 log-unit ionization penalty that is not captured by MolLogP.
+  survives_beyond_control     +0.60  +0.60 100%  86  Molecules with zero hydrogen bond donors have higher logD7.4 than molecules possessing one or more hydrogen bond donors at similar calculated lipophilicity.
+  survives_beyond_control     -0.52  -0.51 100% 128  Molecules with more than two hydrogen bond donors have lower logD7.4 than molecules with two or fewer hydrogen bond donors, even when calculated lipophilicity is matched.
+  survives_beyond_control     -0.51  -0.49 100%  65  Molecules containing a primary aliphatic amine (not on an aromatic ring and not adjacent to a carbonyl) have lower logD7.4 than molecules without this group at the same calculated lipophilicity, because aliphatic primary amines have pKa ~9–11 and are substantially protonated at pH 7.4, depressing logD relative to logP.
+  fails                       -0.19  -0.33 100%  77  Molecules containing a phenolic hydroxyl group (O-H directly attached to an aromatic ring) have lower logD7.4 than molecules without this group at similar calculated lipophilicity.
+  fails                       -0.10  +0.04 100%  82  Molecules with more than six hydrogen bond acceptors have higher logD7.4 than molecules with six or fewer acceptors at similar calculated lipophilicity, because at the same cLogP a high acceptor count implies compensating lipophilic scaffolding and the acceptors are predominantly non-ionizable carbonyls or ethers that may engage in intramolecular hydrogen bonding, shielding polarity from water.
+  fails                       -0.11  -0.14 100%  30  Molecules containing a sulfonamide N-H group have lower logD7.4 than molecules with N-alkylated sulfonamides at similar calculated lipophilicity.
+
+archived to results/lipophilicity/r1-v2-revise/
