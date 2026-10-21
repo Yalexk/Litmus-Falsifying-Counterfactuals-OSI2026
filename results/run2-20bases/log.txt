@@ -1,0 +1,52 @@
+1117 molecules -> train 781 valid 167 test 169
+[train] n=781  R2=0.948  MAE=0.308
+[valid] n=167  R2=0.249  MAE=1.318
+[test] n=169  R2=0.105  MAE=1.620
+generating counterfactuals for 20 base molecules...
+  [1/20] C#CC1(OC(C)=O)CCC2C3CCC4=CC(=O)CCC4C3CCC21C -> 5 cfs
+  [2/20] CCNc1nc(NC(C)(C)C)nc(SC)n1 -> 5 cfs
+  [3/20] CC1(C)C(=O)NC(=O)NC1=O -> 5 cfs
+  [4/20] CC1CCCCC1 -> 5 cfs
+  [5/20] CCOC(=O)NCCOc1ccc(Oc2ccccc2)cc1 -> 5 cfs
+  [6/20] COc1ccccc1[N+](=O)[O-] -> 5 cfs
+  [7/20] CC1(C)C(C=C(Cl)Cl)C1C(=O)OC(C#N)c1cccc(Oc2ccccc2)c1 -> 5 cfs
+  [8/20] Clc1ccccc1-c1ccccc1Cl -> 5 cfs
+  [9/20] O=c1[nH]cc(F)c(=O)[nH]1 -> 5 cfs
+  [10/20] CCCC(=O)OCN1C(=O)NC(c2ccccc2)(c2ccccc2)C1=O -> 5 cfs
+  [11/20] CCC(C)CC -> 5 cfs
+  [12/20] OC(c1ccccc1)c1ccccc1 -> 5 cfs
+  [13/20] CN1C(=O)CN=C(c2ccccc2)c2cc([N+](=O)[O-])ccc21 -> 5 cfs
+  [14/20] CC(=O)OCC(=O)C1(O)C(C)CC2C3CCC4=CC(=O)C=CC4(C)C3(F)C(O)CC21C -> 5 cfs
+  [15/20] Oc1ncc2nccnc2n1 -> 5 cfs
+  [16/20] NNC(=O)c1ccncc1 -> 5 cfs
+  [17/20] Nc1ccc2cc3ccccc3cc2c1 -> 5 cfs
+  [18/20] CCN1c2ncccc2C(=O)N(C)c2ccc(Cl)nc21 -> 5 cfs
+  [19/20] C#CC1(O)CCC2C3CCC4=Cc5oncc5CC4(C)C3CCC21C -> 5 cfs
+  [20/20] Cc1ccc(C)c2ccccc12 -> 5 cfs
+
+5/5 textbook rules survived held-out testing (100%)
+0/5 survived beyond LogP, binned (0%); 3 untestable at coverage < 50%
+0/5 contradicted (wrong sign, real effect)
+  verdict                 raw    binned  cov   n  rule
+  untestable_beyond_logp  -2.97    n/a   0%  90  Molecules with LogP above the training median (2.25) are less soluble.
+  untestable_beyond_logp  +2.26  +0.76  38%  99  Molecules with at least one hydrogen-bond donor are more soluble.
+  untestable_beyond_logp  -2.58  -1.03  39% 145  Molecules heavier than the training median (156 Da) are less soluble.
+  logp_only               -1.70  -0.36 100%  95  Molecules with two or more aromatic rings are less soluble.
+  logp_only               +1.09  +0.45  95%  44  Molecules with sp3 fraction above the training median (0.45) are more soluble.
+
+8 well-formed hypotheses proposed
+
+6/8 LLM hypotheses survived held-out testing (75%)
+1/8 survived beyond LogP, binned (12%); 1 untestable at coverage < 50%
+2/8 contradicted (wrong sign, real effect)
+  verdict                 raw    binned  cov   n  rule
+  untestable_beyond_logp  -3.19  -0.48  25%  68  Molecules with MolLogP above 3.0 have lower aqueous solubility than structurally similar molecules with MolLogP at or below 3.0.
+  logp_only               -3.02  -0.90  88%  34  Molecules with more than three rings in their ring system have lower aqueous solubility than less fused analogs, independent of molecular weight.
+  contradicted            +1.61  -0.06 100%  56  Molecules with more than one hydrogen-bond donor have lower aqueous solubility than those with one or zero donors, because high donor count co-occurs with large, rigid, polyphenolic or polyol scaffolds whose lattice energy outweighs the hydration benefit.
+  contradicted            -2.19  -0.68  95%  55  Molecules with TPSA below 30 Å² have higher aqueous solubility than molecules with greater polar surface area.
+  logp_only               -1.70  -0.36 100%  95  Molecules with more than one aromatic ring have lower aqueous solubility than monocyclic or non-aromatic analogs of similar molecular weight.
+  logp_only               -1.30  -0.14  90%  29  Molecules bearing at least one chlorine, bromine, or iodine substituent have lower aqueous solubility than analogous molecules substituted with fluorine or hydrogen at the same position.
+  survives_beyond_logp    +1.01  +0.77  90%  40  Molecules containing a hydroxyl group have higher aqueous solubility than otherwise equivalent molecules lacking one.
+  logp_only               -0.92  -0.06 100%  52  Molecules with molecular weight above 300 Da have lower aqueous solubility than lighter analogs with comparable polarity.
+
+archived to results/run2-20bases/

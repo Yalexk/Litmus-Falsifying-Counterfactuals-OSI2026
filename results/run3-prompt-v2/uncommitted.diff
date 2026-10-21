@@ -1,0 +1,75 @@
+diff --git a/run_pipeline.py b/run_pipeline.py
+index 5916282..863f06d 100644
+--- a/run_pipeline.py
++++ b/run_pipeline.py
+@@ -12,6 +12,7 @@ import argparse
+ import json
+ import shutil
+ import subprocess
++import warnings
+ from collections import Counter
+ from datetime import datetime
+ from pathlib import Path
+@@ -24,6 +25,10 @@ from src.rules import Rule, evaluate, fit_logp_baseline, logp_bin_edges, report
+ 
+ PROPERTY = "aqueous solubility, log mol/L (higher = more soluble)"
+ 
++# exmol calls the model ~1M times; this sklearn warning fires on every call
++# and produced a 344 MB log in run2.
++warnings.filterwarnings("ignore", message=".*sklearn.utils.parallel.delayed.*")
++
+ 
+ def main(a):
+     Path("out").mkdir(exist_ok=True)
+@@ -122,6 +127,14 @@ def archive(a, base, scored):
+         "baseline_verdicts": verdicts(base),
+         "llm_verdicts": verdicts(scored),
+     }
++    if manifest["git_dirty"]:
++        # The commit hash alone can't reproduce a dirty run; keep the diff.
++        (dest / "uncommitted.diff").write_text(git("diff", "HEAD"))
++    if scored is not None:
++        from src import hypotheses as H
++        manifest["prompt_version"] = H.PROMPT_VERSION
++        manifest["llm_model"] = H.MODEL
++        (dest / "system_prompt.txt").write_text(H.SYSTEM)
+     (dest / "manifest.json").write_text(json.dumps(manifest, indent=2))
+     print(f"\narchived to {dest}/")
+ 
+diff --git a/src/hypotheses.py b/src/hypotheses.py
+index 548e8ec..d521459 100644
+--- a/src/hypotheses.py
++++ b/src/hypotheses.py
+@@ -18,12 +18,32 @@ from .rules import GROUP_SMARTS, Rule, validate
+ 
+ MODEL = os.environ.get("CF_MODEL", "claude-sonnet-4-6")
+ 
++# Bump PROMPT_VERSION with every SYSTEM change; it is recorded in each run's
++# manifest. The prompt may describe HOW rules are scored, never WHICH chemistry
++# to propose -- whoever edits it has seen test results.
++PROMPT_VERSION = "v2"
++
+ SYSTEM = """You are generating falsifiable structure-property hypotheses from \
+ counterfactual explanations of a molecular property model.
+ 
+ You will see a base molecule, its predicted value, and nearby molecules whose \
+ predicted value differs. Propose general rules that would explain the pattern.
+ 
++How your rules will be scored, on measured data you will not see:
++1. Raw test: do molecules matching the condition differ from the rest in the \
++claimed direction, by more than experimental error (~0.6 log units)?
++2. Matched-lipophilicity test: the same comparison made only between \
++molecules of similar MolLogP. Lipophilicity alone explains most of this \
++property, so a rule that is only a proxy for lipophilicity (or for things \
++that track it closely, such as overall size or overall polarity) passes the \
++raw test and then shows no effect at matched MolLogP. Such rules count as \
++restating something already known.
++Aim for rules that would still hold between two molecules of the same \
++MolLogP. A rule whose condition is nearly equivalent to a MolLogP threshold \
++cannot be tested this way and earns nothing.
++A condition that matches very few molecules cannot be tested at all; aim for \
++conditions that a reasonable fraction of small organic molecules satisfy.
++
+ Output JSON only. No prose, no markdown fences. Schema:
+ {"hypotheses": [
+   {"text": "<one sentence claim a chemist could argue with>",

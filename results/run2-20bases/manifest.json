@@ -1,0 +1,31 @@
+{
+  "run_name": "run2-20bases",
+  "timestamp": "2026-10-21T12:38:05",
+  "git_commit": "cb34b3e",
+  "git_dirty": false,
+  "args": {
+    "csv": null,
+    "n_bases": 20,
+    "n_rules": 8,
+    "num_samples": 1500,
+    "threshold": 1.0,
+    "noise_floor": 0.6,
+    "min_coverage": 0.5,
+    "run_name": "run2-20bases",
+    "refresh_cf": true,
+    "skip_llm": false,
+    "revise": true
+  },
+  "baseline_verdicts": {
+    "untestable_beyond_logp": 3,
+    "logp_only": 2
+  },
+  "llm_verdicts": {
+    "untestable_beyond_logp": 1,
+    "logp_only": 4,
+    "contradicted": 2,
+    "survives_beyond_logp": 1
+  },
+  "prompt_version": "v1",
+  "llm_model": "claude-sonnet-4-6"
+}

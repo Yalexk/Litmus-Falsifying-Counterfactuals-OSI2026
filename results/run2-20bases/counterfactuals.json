@@ -1,0 +1,2042 @@
+[
+  {
+    "base_smiles": "C#CC1(OC(C)=O)CCC2C3CCC4=CC(=O)CCC4C3CCC12C",
+    "base_yhat": -4.816834000000008,
+    "base_descriptors": {
+      "MolWt": 340.46300000000014,
+      "MolLogP": 4.0633000000000035,
+      "TPSA": 43.370000000000005,
+      "NumHDonors": 0,
+      "NumHAcceptors": 3,
+      "NumRotatableBonds": 1,
+      "NumAromaticRings": 0,
+      "FractionCSP3": 0.7272727272727273,
+      "RingCount": 4
+    },
+    "counterfactuals": [
+      {
+        "smiles": "C1C2C(C3C(C)(C(OC(C)=O)(C#C)CC3)CC2)C1",
+        "yhat": -2.4804359999999948,
+        "similarity": 0.5789473684210527,
+        "delta": 2.3363980000000133,
+        "descriptors": {
+          "MolWt": 246.3499999999999,
+          "MolLogP": 3.1578000000000017,
+          "TPSA": 26.3,
+          "NumHDonors": 0,
+          "NumHAcceptors": 2,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.8125,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C1C(C)C2CCC3C4CCC(C#C)(OC(=O)C)C4(C)CCC3C2C1",
+        "yhat": -2.5231299999999965,
+        "similarity": 0.5747126436781609,
+        "delta": 2.2937040000000115,
+        "descriptors": {
+          "MolWt": 328.4960000000001,
+          "MolLogP": 4.8201000000000045,
+          "TPSA": 26.3,
+          "NumHDonors": 0,
+          "NumHAcceptors": 2,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.8636363636363636,
+          "RingCount": 4
+        }
+      },
+      {
+        "smiles": "C12C(C)(C(C#C)(OC(=O)C)CC1)CCC1CC(F)CCC21",
+        "yhat": -2.7666099999999965,
+        "similarity": 0.5609756097560976,
+        "delta": 2.0502240000000116,
+        "descriptors": {
+          "MolWt": 292.394,
+          "MolLogP": 3.8860000000000037,
+          "TPSA": 26.3,
+          "NumHDonors": 0,
+          "NumHAcceptors": 2,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.8333333333333334,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C12C3CCC(C1CCC2C)CC1(C)C(C#C)(OC(C)=O)CCC31",
+        "yhat": -2.5369959999999967,
+        "similarity": 0.4888888888888889,
+        "delta": 2.2798380000000114,
+        "descriptors": {
+          "MolWt": 314.46900000000005,
+          "MolLogP": 4.430000000000004,
+          "TPSA": 26.3,
+          "NumHDonors": 0,
+          "NumHAcceptors": 2,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.8571428571428571,
+          "RingCount": 5
+        }
+      },
+      {
+        "smiles": "C12CCCCCCC1C1C2(C)C(OC(=O)C)(C#C)CC1",
+        "yhat": -2.3923879999999977,
+        "similarity": 0.4482758620689655,
+        "delta": 2.4244460000000103,
+        "descriptors": {
+          "MolWt": 274.40400000000005,
+          "MolLogP": 3.9380000000000033,
+          "TPSA": 26.3,
+          "NumHDonors": 0,
+          "NumHAcceptors": 2,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.8333333333333334,
+          "RingCount": 3
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "CCNC1=NC(NC(C)(C)C)=NC(SC)=N1",
+    "base_yhat": -3.7900899999999993,
+    "base_descriptors": {
+      "MolWt": 241.364,
+      "MolLogP": 2.2356999999999996,
+      "TPSA": 62.730000000000004,
+      "NumHDonors": 2,
+      "NumHAcceptors": 6,
+      "NumRotatableBonds": 4,
+      "NumAromaticRings": 1,
+      "FractionCSP3": 0.7,
+      "RingCount": 1
+    },
+    "counterfactuals": [
+      {
+        "smiles": "CSC1=NC(NCC)=NC(NC(N)CC)=N1",
+        "yhat": -2.5227539999999995,
+        "similarity": 0.5818181818181818,
+        "delta": 1.2673359999999998,
+        "descriptors": {
+          "MolWt": 242.352,
+          "MolLogP": 1.132,
+          "TPSA": 88.75,
+          "NumHDonors": 3,
+          "NumHAcceptors": 7,
+          "NumRotatableBonds": 6,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.6666666666666666,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "N1(CC)N=C(SC)N=C1NC(C)(C)C",
+        "yhat": -2.3728540000000002,
+        "similarity": 0.45454545454545453,
+        "delta": 1.417235999999999,
+        "descriptors": {
+          "MolWt": 214.338,
+          "MolLogP": 2.2302999999999997,
+          "TPSA": 42.74,
+          "NumHDonors": 1,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 3,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.7777777777777778,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "N1=CN=C(SC)N=C1NCC",
+        "yhat": -2.717705999999993,
+        "similarity": 0.4230769230769231,
+        "delta": 1.0723840000000062,
+        "descriptors": {
+          "MolWt": 170.24099999999999,
+          "MolLogP": 1.0252999999999999,
+          "TPSA": 50.7,
+          "NumHDonors": 1,
+          "NumHAcceptors": 5,
+          "NumRotatableBonds": 3,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.5,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C1(=NC(C)C)N=C(NCC)N=C(SC)N1",
+        "yhat": -2.5036979999999947,
+        "similarity": 0.3770491803278688,
+        "delta": 1.2863920000000046,
+        "descriptors": {
+          "MolWt": 227.33700000000002,
+          "MolLogP": 1.2674999999999998,
+          "TPSA": 65.96000000000001,
+          "NumHDonors": 2,
+          "NumHAcceptors": 5,
+          "NumRotatableBonds": 4,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.6666666666666666,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "N1=C(NCC)N=C(SC)N1",
+        "yhat": -2.4552539999999983,
+        "similarity": 0.33962264150943394,
+        "delta": 1.334836000000001,
+        "descriptors": {
+          "MolWt": 158.23000000000002,
+          "MolLogP": 0.9583999999999999,
+          "TPSA": 53.6,
+          "NumHDonors": 2,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 3,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.6,
+          "RingCount": 1
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "CC1(C)C(=O)NC(=O)NC1=O",
+    "base_yhat": -1.8588359999999897,
+    "base_descriptors": {
+      "MolWt": 156.141,
+      "MolLogP": -0.6214000000000002,
+      "TPSA": 75.27000000000001,
+      "NumHDonors": 2,
+      "NumHAcceptors": 3,
+      "NumRotatableBonds": 0,
+      "NumAromaticRings": 0,
+      "FractionCSP3": 0.5,
+      "RingCount": 1
+    },
+    "counterfactuals": [
+      {
+        "smiles": "N1C(=O)C(C)(C)C(=O)NC1C=O",
+        "yhat": -3.6566260000000015,
+        "similarity": 0.43902439024390244,
+        "delta": -1.7977900000000118,
+        "descriptors": {
+          "MolWt": 170.168,
+          "MolLogP": -1.2164000000000004,
+          "TPSA": 75.27000000000001,
+          "NumHDonors": 2,
+          "NumHAcceptors": 3,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.5714285714285714,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "N1C(=O)C(C)(C)C(=O)NC1O",
+        "yhat": -3.6011020000000005,
+        "similarity": 0.4358974358974359,
+        "delta": -1.7422660000000108,
+        "descriptors": {
+          "MolWt": 158.157,
+          "MolLogP": -1.4655000000000002,
+          "TPSA": 78.43,
+          "NumHDonors": 3,
+          "NumHAcceptors": 3,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.6666666666666666,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C1(=O)NC(C=O)C(C)(O)C(O)N1",
+        "yhat": -3.5864200000000017,
+        "similarity": 0.20408163265306123,
+        "delta": -1.727584000000012,
+        "descriptors": {
+          "MolWt": 174.15600000000003,
+          "MolLogP": -2.0639,
+          "TPSA": 98.66000000000001,
+          "NumHDonors": 4,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.6666666666666666,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "O=CN1C(=O)NC([O-])OC1(C)C",
+        "yhat": -3.608930000000003,
+        "similarity": 0.20408163265306123,
+        "delta": -1.7500940000000134,
+        "descriptors": {
+          "MolWt": 173.14799999999997,
+          "MolLogP": -1.4353999999999998,
+          "TPSA": 81.7,
+          "NumHDonors": 1,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.6666666666666666,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "N1CNCC(O)(O)C1=O",
+        "yhat": -3.0598140000000082,
+        "similarity": 0.15555555555555556,
+        "delta": -1.2009780000000185,
+        "descriptors": {
+          "MolWt": 132.11899999999997,
+          "MolLogP": -2.6557999999999993,
+          "TPSA": 81.59,
+          "NumHDonors": 4,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.75,
+          "RingCount": 1
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "CC1CCCCC1",
+    "base_yhat": -3.981029999999976,
+    "base_descriptors": {
+      "MolWt": 98.18900000000001,
+      "MolLogP": 2.5866000000000007,
+      "TPSA": 0.0,
+      "NumHDonors": 0,
+      "NumHAcceptors": 0,
+      "NumRotatableBonds": 0,
+      "NumAromaticRings": 0,
+      "FractionCSP3": 1.0,
+      "RingCount": 1
+    },
+    "counterfactuals": [
+      {
+        "smiles": "C1CC(O)CCC1",
+        "yhat": -1.194300000000002,
+        "similarity": 0.5384615384615384,
+        "delta": 2.786729999999974,
+        "descriptors": {
+          "MolWt": 100.16100000000002,
+          "MolLogP": 1.3114,
+          "TPSA": 20.23,
+          "NumHDonors": 1,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 1.0,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C1CCCC(CO)C1",
+        "yhat": -1.8649580000000014,
+        "similarity": 0.4827586206896552,
+        "delta": 2.1160719999999746,
+        "descriptors": {
+          "MolWt": 114.18799999999999,
+          "MolLogP": 1.559,
+          "TPSA": 20.23,
+          "NumHDonors": 1,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 1.0,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C1CCC1",
+        "yhat": -2.4187980000000002,
+        "similarity": 0.38095238095238093,
+        "delta": 1.5622319999999759,
+        "descriptors": {
+          "MolWt": 56.108,
+          "MolLogP": 1.5604,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 0,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 1.0,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C1CCCCC1",
+        "yhat": -2.4187980000000002,
+        "similarity": 0.3103448275862069,
+        "delta": 1.5622319999999759,
+        "descriptors": {
+          "MolWt": 84.162,
+          "MolLogP": 2.3406000000000002,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 0,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 1.0,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C12=C(C1)CC=CC2",
+        "yhat": -2.8102060000000026,
+        "similarity": 0.07894736842105263,
+        "delta": 1.1708239999999734,
+        "descriptors": {
+          "MolWt": 92.14099999999999,
+          "MolLogP": 2.0367,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 0,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.42857142857142855,
+          "RingCount": 2
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "CCOC(=O)NCCOC1=CC=C(OC2=CC=CC=C2)C=C1",
+    "base_yhat": -4.035950000000021,
+    "base_descriptors": {
+      "MolWt": 301.34200000000004,
+      "MolLogP": 3.6038000000000023,
+      "TPSA": 56.790000000000006,
+      "NumHDonors": 1,
+      "NumHAcceptors": 4,
+      "NumRotatableBonds": 7,
+      "NumAromaticRings": 2,
+      "FractionCSP3": 0.23529411764705882,
+      "RingCount": 2
+    },
+    "counterfactuals": [
+      {
+        "smiles": "OC1=C(C2=CC=CC=C2)C=C(OCCNC(=O)OCC)C=C1",
+        "yhat": -2.6017780000000013,
+        "similarity": 0.6075949367088608,
+        "delta": 1.4341720000000198,
+        "descriptors": {
+          "MolWt": 301.342,
+          "MolLogP": 3.184100000000001,
+          "TPSA": 67.79,
+          "NumHDonors": 2,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 6,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.23529411764705882,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "O(CC)C(=O)NCCOC1=CC=C(OCF)C=C1",
+        "yhat": -2.854096000000003,
+        "similarity": 0.5972222222222222,
+        "delta": 1.1818540000000182,
+        "descriptors": {
+          "MolWt": 257.26099999999997,
+          "MolLogP": 2.1173,
+          "TPSA": 56.790000000000006,
+          "NumHDonors": 1,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 7,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.4166666666666667,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C=S1(OC2=CC=CC=C2)=CC=C(OCCNC(=O)OCC)C=C1",
+        "yhat": -2.999306000000001,
+        "similarity": 0.5662650602409639,
+        "delta": 1.0366440000000199,
+        "descriptors": {
+          "MolWt": 335.42500000000007,
+          "MolLogP": 3.193100000000001,
+          "TPSA": 56.790000000000006,
+          "NumHDonors": 1,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 7,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.23529411764705882,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "C=C=CC=C(OC1=CC=C(OCCNC(OCC)=O)C=C1)C=C",
+        "yhat": -1.7758820000000044,
+        "similarity": 0.5,
+        "delta": 2.2600680000000164,
+        "descriptors": {
+          "MolWt": 315.369,
+          "MolLogP": 3.601300000000002,
+          "TPSA": 56.79,
+          "NumHDonors": 1,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 9,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.2222222222222222,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C1=C=S1OC1=CC=C(OCOCNC(OCC)=O)C=C1",
+        "yhat": -2.521180000000001,
+        "similarity": 0.4578313253012048,
+        "delta": 1.51477000000002,
+        "descriptors": {
+          "MolWt": 297.33199999999994,
+          "MolLogP": 2.2342000000000004,
+          "TPSA": 66.02000000000001,
+          "NumHDonors": 1,
+          "NumHAcceptors": 5,
+          "NumRotatableBonds": 8,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.3076923076923077,
+          "RingCount": 2
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "COC1=CC=CC=C1[N+](=O)[O-]",
+    "base_yhat": -2.121008000000011,
+    "base_descriptors": {
+      "MolWt": 153.13699999999997,
+      "MolLogP": 1.6033999999999997,
+      "TPSA": 52.370000000000005,
+      "NumHDonors": 0,
+      "NumHAcceptors": 3,
+      "NumRotatableBonds": 2,
+      "NumAromaticRings": 1,
+      "FractionCSP3": 0.14285714285714285,
+      "RingCount": 1
+    },
+    "counterfactuals": [
+      {
+        "smiles": "[O-]C1=CC([N+](=O)[O-])=C(OC)C=C1",
+        "yhat": -3.3499060000000003,
+        "similarity": 0.55,
+        "delta": -1.2288979999999894,
+        "descriptors": {
+          "MolWt": 168.12800000000001,
+          "MolLogP": 0.6769999999999998,
+          "TPSA": 75.43,
+          "NumHDonors": 0,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.14285714285714285,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "[O-][N+](C1=CC=CC=C1Cl)OC=O",
+        "yhat": -3.13858399999999,
+        "similarity": 0.4318181818181818,
+        "delta": -1.0175759999999792,
+        "descriptors": {
+          "MolWt": 186.57399999999996,
+          "MolLogP": 1.6973999999999998,
+          "TPSA": 55.26,
+          "NumHDonors": 0,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 3,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.0,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C1=C([N+](=O)[O-])CC=C1OC",
+        "yhat": -4.334216000000011,
+        "similarity": 0.32558139534883723,
+        "delta": -2.2132080000000003,
+        "descriptors": {
+          "MolWt": 141.12599999999998,
+          "MolLogP": 1.081,
+          "TPSA": 52.370000000000005,
+          "NumHDonors": 0,
+          "NumHAcceptors": 3,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.3333333333333333,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C1=C(OC)CC1[N+]([O-])=O",
+        "yhat": -4.273010000000013,
+        "similarity": 0.2619047619047619,
+        "delta": -2.1520020000000017,
+        "descriptors": {
+          "MolWt": 129.11499999999998,
+          "MolLogP": 0.5656999999999999,
+          "TPSA": 52.37,
+          "NumHDonors": 0,
+          "NumHAcceptors": 3,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.6,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C1=CC([N+]([O-])C)C(OC)=C1",
+        "yhat": -4.049774000000012,
+        "similarity": 0.2391304347826087,
+        "delta": -1.9287660000000009,
+        "descriptors": {
+          "MolWt": 140.16199999999998,
+          "MolLogP": 0.7227999999999999,
+          "TPSA": 38.19,
+          "NumHDonors": 0,
+          "NumHAcceptors": 3,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.42857142857142855,
+          "RingCount": 1
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "CC1(C)C(C=C(Cl)Cl)C1C(=O)OC(C#N)C1=CC=CC(OC2=CC=CC=C2)=C1",
+    "base_yhat": -7.79369199999996,
+    "base_descriptors": {
+      "MolWt": 416.30400000000014,
+      "MolLogP": 6.177980000000004,
+      "TPSA": 59.32000000000001,
+      "NumHDonors": 0,
+      "NumHAcceptors": 4,
+      "NumRotatableBonds": 6,
+      "NumAromaticRings": 2,
+      "FractionCSP3": 0.2727272727272727,
+      "RingCount": 3
+    },
+    "counterfactuals": [
+      {
+        "smiles": "C1(OC2=CC=CC=C2)=CC(C(C#N)C(C2C(C)(C)C2C=C(Cl)Cl)=O)=CC=C1",
+        "yhat": -6.541624000000011,
+        "similarity": 0.8,
+        "delta": 1.2520679999999489,
+        "descriptors": {
+          "MolWt": 400.30499999999995,
+          "MolLogP": 6.246380000000003,
+          "TPSA": 50.089999999999996,
+          "NumHDonors": 0,
+          "NumHAcceptors": 3,
+          "NumRotatableBonds": 6,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.2727272727272727,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C1=C(OC2=CC=CC=C2)C=CC=C1C(OS(=O)C1C(C)(C)C1C=C(Cl)Cl)C#N",
+        "yhat": -6.416242000000012,
+        "similarity": 0.7528089887640449,
+        "delta": 1.377449999999948,
+        "descriptors": {
+          "MolWt": 436.3600000000001,
+          "MolLogP": 6.067480000000003,
+          "TPSA": 59.32,
+          "NumHDonors": 0,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 7,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.2857142857142857,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C(C#N)(C1=CC=CC(OC2=CC=CC=C2)=C1)OC(=O)C1C(C=C(Cl)Cl)C1",
+        "yhat": -6.230918000000012,
+        "similarity": 0.7471264367816092,
+        "delta": 1.5627739999999477,
+        "descriptors": {
+          "MolWt": 388.25,
+          "MolLogP": 5.5418800000000035,
+          "TPSA": 59.32,
+          "NumHDonors": 0,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 6,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.2,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C(Cl)(Cl)=CC1CCC1C(OC(C#N)C1=CC=CC(OC2=CC=CC=C2)=C1)=O",
+        "yhat": -6.212494000000012,
+        "similarity": 0.7222222222222222,
+        "delta": 1.5811979999999481,
+        "descriptors": {
+          "MolWt": 402.2770000000001,
+          "MolLogP": 5.931980000000005,
+          "TPSA": 59.32,
+          "NumHDonors": 0,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 6,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.23809523809523808,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C1=CC(OC2=CC(C(C#N)OC(=O)C3C(C)(C)C3C=C(Cl)Cl)=CC=C2)C=C1",
+        "yhat": -6.791245999999977,
+        "similarity": 0.6630434782608695,
+        "delta": 1.002445999999983,
+        "descriptors": {
+          "MolWt": 404.293,
+          "MolLogP": 5.259080000000004,
+          "TPSA": 59.32,
+          "NumHDonors": 0,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 6,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.3333333333333333,
+          "RingCount": 3
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "ClC1=CC=CC=C1C1=CC=CC=C1Cl",
+    "base_yhat": -5.070281999999993,
+    "base_descriptors": {
+      "MolWt": 223.102,
+      "MolLogP": 4.660400000000002,
+      "TPSA": 0.0,
+      "NumHDonors": 0,
+      "NumHAcceptors": 0,
+      "NumRotatableBonds": 1,
+      "NumAromaticRings": 2,
+      "FractionCSP3": 0.0,
+      "RingCount": 2
+    },
+    "counterfactuals": [
+      {
+        "smiles": "C1(SC2=CC=CC=C2Cl)=CC=CC=C1Cl",
+        "yhat": -3.329745999999992,
+        "similarity": 0.6274509803921569,
+        "delta": 1.7405360000000005,
+        "descriptors": {
+          "MolWt": 255.16899999999998,
+          "MolLogP": 5.144600000000001,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.0,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "C1=CC=C(CC2=CC=CC=C2Cl)C(Cl)=C1",
+        "yhat": -3.4302339999999925,
+        "similarity": 0.6274509803921569,
+        "delta": 1.6400480000000002,
+        "descriptors": {
+          "MolWt": 237.129,
+          "MolLogP": 4.584200000000002,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 0,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.07692307692307693,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "BrC1=CC=CC=C1C1=CC=CC=C1",
+        "yhat": -3.334016000000003,
+        "similarity": 0.4716981132075472,
+        "delta": 1.7362659999999894,
+        "descriptors": {
+          "MolWt": 233.108,
+          "MolLogP": 4.116100000000002,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 0,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.0,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "C1=CC2=C(Cl)C(=C1)C(Cl)=CC=CC=C2",
+        "yhat": -6.3432980000000185,
+        "similarity": 0.3559322033898305,
+        "delta": -1.273016000000026,
+        "descriptors": {
+          "MolWt": 223.102,
+          "MolLogP": 4.502700000000002,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 0,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.0,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "C1=CC=C(F)C(Cl)=C1",
+        "yhat": -3.2655939999999934,
+        "similarity": 0.34782608695652173,
+        "delta": 1.8046879999999992,
+        "descriptors": {
+          "MolWt": 130.549,
+          "MolLogP": 2.4791000000000007,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 0,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.0,
+          "RingCount": 1
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "O=C1NC=C(F)C(=O)N1",
+    "base_yhat": -1.3618039999999971,
+    "base_descriptors": {
+      "MolWt": 130.078,
+      "MolLogP": -0.7977000000000001,
+      "TPSA": 65.72,
+      "NumHDonors": 2,
+      "NumHAcceptors": 2,
+      "NumRotatableBonds": 0,
+      "NumAromaticRings": 1,
+      "FractionCSP3": 0.0,
+      "RingCount": 1
+    },
+    "counterfactuals": [
+      {
+        "smiles": "N1C(=O)C(Cl)=CNC1=O",
+        "yhat": -3.8724319999999923,
+        "similarity": 0.6,
+        "delta": -2.510627999999995,
+        "descriptors": {
+          "MolWt": 146.533,
+          "MolLogP": -0.28340000000000004,
+          "TPSA": 65.72,
+          "NumHDonors": 2,
+          "NumHAcceptors": 2,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.0,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "FC=C1NC(=O)NNC1=O",
+        "yhat": -2.556904000000001,
+        "similarity": 0.24390243902439024,
+        "delta": -1.195100000000004,
+        "descriptors": {
+          "MolWt": 145.093,
+          "MolLogP": -0.8587000000000002,
+          "TPSA": 70.23,
+          "NumHDonors": 3,
+          "NumHAcceptors": 2,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.0,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C=NC1NC=C=CN1",
+        "yhat": -3.271828000000016,
+        "similarity": 0.06818181818181818,
+        "delta": -1.910024000000019,
+        "descriptors": {
+          "MolWt": 109.13199999999999,
+          "MolLogP": -0.21029999999999988,
+          "TPSA": 36.42,
+          "NumHDonors": 2,
+          "NumHAcceptors": 3,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.2,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "OF",
+        "yhat": -0.2071740000000004,
+        "similarity": 0.038461538461538464,
+        "delta": 1.1546299999999967,
+        "descriptors": {
+          "MolWt": 36.005,
+          "MolLogP": -0.13679999999999998,
+          "TPSA": 20.23,
+          "NumHDonors": 1,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.0,
+          "RingCount": 0
+        }
+      },
+      {
+        "smiles": "N1C(=O)C(Cl)=CNC1=O",
+        "yhat": -3.8724319999999923,
+        "similarity": 0.6,
+        "delta": -2.510627999999995,
+        "descriptors": {
+          "MolWt": 146.533,
+          "MolLogP": -0.28340000000000004,
+          "TPSA": 65.72,
+          "NumHDonors": 2,
+          "NumHAcceptors": 2,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.0,
+          "RingCount": 1
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "CCCC(=O)OCN1C(=O)NC(C2=CC=CC=C2)(C2=CC=CC=C2)C1=O",
+    "base_yhat": -4.812091999999972,
+    "base_descriptors": {
+      "MolWt": 352.3900000000001,
+      "MolLogP": 2.782800000000001,
+      "TPSA": 75.71000000000001,
+      "NumHDonors": 1,
+      "NumHAcceptors": 4,
+      "NumRotatableBonds": 6,
+      "NumAromaticRings": 2,
+      "FractionCSP3": 0.25,
+      "RingCount": 3
+    },
+    "counterfactuals": [
+      {
+        "smiles": "O=C1C(C2=CC=CN=C2)(C2=CC=CC=C2)NC(=O)N1COC(CCC)=O",
+        "yhat": -1.6091420000000034,
+        "similarity": 0.7831325301204819,
+        "delta": 3.202949999999969,
+        "descriptors": {
+          "MolWt": 353.3780000000002,
+          "MolLogP": 2.1778000000000004,
+          "TPSA": 88.6,
+          "NumHDonors": 1,
+          "NumHAcceptors": 5,
+          "NumRotatableBonds": 6,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.2631578947368421,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C1=CC=CC(C2(C3=CC=CC#S3)NC(=O)N(COC(CCC)=O)C2=O)=C1",
+        "yhat": -2.969527999999995,
+        "similarity": 0.6629213483146067,
+        "delta": 1.8425639999999772,
+        "descriptors": {
+          "MolWt": 370.4300000000002,
+          "MolLogP": 2.880600000000001,
+          "TPSA": 75.71000000000001,
+          "NumHDonors": 1,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 6,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.2631578947368421,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "O=C1N(COC(CCC)=O)C(=O)N=C1C1=CC=CC=C1",
+        "yhat": -3.808806999999994,
+        "similarity": 0.4772727272727273,
+        "delta": 1.0032849999999782,
+        "descriptors": {
+          "MolWt": 274.276,
+          "MolLogP": 1.7387000000000001,
+          "TPSA": 76.03999999999999,
+          "NumHDonors": 0,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 5,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.2857142857142857,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "C12=CC=CC=C1C(=O)N(COC(=O)CCCC1=CC=CC=C1)C(=O)C2",
+        "yhat": -3.589286999999999,
+        "similarity": 0.47474747474747475,
+        "delta": 1.2228049999999735,
+        "descriptors": {
+          "MolWt": 337.37500000000006,
+          "MolLogP": 2.735100000000001,
+          "TPSA": 63.68,
+          "NumHDonors": 0,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 6,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.25,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "O=C1N(COC(CCC)=O)C(=O)NC1(OC1=CC=CC=C1)C=CC=CC=CN",
+        "yhat": -3.4265959999999995,
+        "similarity": 0.45714285714285713,
+        "delta": 1.3854959999999727,
+        "descriptors": {
+          "MolWt": 385.4200000000001,
+          "MolLogP": 2.1990999999999996,
+          "TPSA": 110.96,
+          "NumHDonors": 2,
+          "NumHAcceptors": 6,
+          "NumRotatableBonds": 9,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.25,
+          "RingCount": 2
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "CCC(C)CC",
+    "base_yhat": -3.163580000000004,
+    "base_descriptors": {
+      "MolWt": 86.178,
+      "MolLogP": 2.442500000000001,
+      "TPSA": 0.0,
+      "NumHDonors": 0,
+      "NumHAcceptors": 0,
+      "NumRotatableBonds": 2,
+      "NumAromaticRings": 0,
+      "FractionCSP3": 1.0,
+      "RingCount": 0
+    },
+    "counterfactuals": [
+      {
+        "smiles": "CCC(CO)C",
+        "yhat": -0.5528000000000005,
+        "similarity": 0.5,
+        "delta": 2.6107800000000037,
+        "descriptors": {
+          "MolWt": 88.14999999999999,
+          "MolLogP": 1.0248,
+          "TPSA": 20.23,
+          "NumHDonors": 1,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 1.0,
+          "RingCount": 0
+        }
+      },
+      {
+        "smiles": "CCCCC(C)CC",
+        "yhat": -4.417220000000012,
+        "similarity": 0.5,
+        "delta": -1.2536400000000079,
+        "descriptors": {
+          "MolWt": 114.23199999999999,
+          "MolLogP": 3.2227000000000023,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 0,
+          "NumRotatableBonds": 4,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 1.0,
+          "RingCount": 0
+        }
+      },
+      {
+        "smiles": "CCC(CC)CC",
+        "yhat": -1.9750600000000025,
+        "similarity": 0.43478260869565216,
+        "delta": 1.1885200000000016,
+        "descriptors": {
+          "MolWt": 100.205,
+          "MolLogP": 2.832600000000001,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 0,
+          "NumRotatableBonds": 3,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 1.0,
+          "RingCount": 0
+        }
+      },
+      {
+        "smiles": "C(C#N)C(C)CC",
+        "yhat": -1.4867400000000006,
+        "similarity": 0.43478260869565216,
+        "delta": 1.6768400000000034,
+        "descriptors": {
+          "MolWt": 97.161,
+          "MolLogP": 1.94618,
+          "TPSA": 23.79,
+          "NumHDonors": 0,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.8333333333333334,
+          "RingCount": 0
+        }
+      },
+      {
+        "smiles": "CCC(SC)CC",
+        "yhat": -2.042692000000005,
+        "similarity": 0.43478260869565216,
+        "delta": 1.120887999999999,
+        "descriptors": {
+          "MolWt": 118.24499999999999,
+          "MolLogP": 2.538000000000001,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 3,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 1.0,
+          "RingCount": 0
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "OC(C1=CC=CC=C1)C1=CC=CC=C1",
+    "base_yhat": -2.371857999999988,
+    "base_descriptors": {
+      "MolWt": 184.238,
+      "MolLogP": 2.768300000000001,
+      "TPSA": 20.23,
+      "NumHDonors": 1,
+      "NumHAcceptors": 1,
+      "NumRotatableBonds": 2,
+      "NumAromaticRings": 2,
+      "FractionCSP3": 0.07692307692307693,
+      "RingCount": 2
+    },
+    "counterfactuals": [
+      {
+        "smiles": "C1=CC=CC=C1C(O)C1=CC=NC=C1",
+        "yhat": -0.05310600000000014,
+        "similarity": 0.64,
+        "delta": 2.318751999999988,
+        "descriptors": {
+          "MolWt": 185.226,
+          "MolLogP": 2.1632999999999996,
+          "TPSA": 33.120000000000005,
+          "NumHDonors": 1,
+          "NumHAcceptors": 2,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.08333333333333333,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "C1=C(CC2=CC=CC=C2)C=CC=C1",
+        "yhat": -3.569725999999985,
+        "similarity": 0.5384615384615384,
+        "delta": -1.197867999999997,
+        "descriptors": {
+          "MolWt": 168.23899999999998,
+          "MolLogP": 3.277400000000002,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 0,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.07692307692307693,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "C12=C(C(C3=CC=CC=C3)O)C1C=C2",
+        "yhat": -3.6988680000000036,
+        "similarity": 0.4716981132075472,
+        "delta": -1.3270100000000156,
+        "descriptors": {
+          "MolWt": 170.211,
+          "MolLogP": 2.2161999999999997,
+          "TPSA": 20.23,
+          "NumHDonors": 1,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.16666666666666666,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C1(C(O)CC=C=C)=CC=CC=C1",
+        "yhat": -3.5319479999999914,
+        "similarity": 0.36363636363636365,
+        "delta": -1.1600900000000034,
+        "descriptors": {
+          "MolWt": 160.216,
+          "MolLogP": 2.4512,
+          "TPSA": 20.23,
+          "NumHDonors": 1,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 3,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.18181818181818182,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C(C(C1=CC=CC=C1)O)C=C=C=C",
+        "yhat": -3.5878279999999916,
+        "similarity": 0.3448275862068966,
+        "delta": -1.2159700000000035,
+        "descriptors": {
+          "MolWt": 172.22699999999995,
+          "MolLogP": 2.606300000000001,
+          "TPSA": 20.23,
+          "NumHDonors": 1,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 3,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.16666666666666666,
+          "RingCount": 1
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "CN1C(=O)CN=C(C2=CC=CC=C2)C2=C1C=CC([N+](=O)[O-])=C2",
+    "base_yhat": -3.651072000000025,
+    "base_descriptors": {
+      "MolWt": 295.29800000000006,
+      "MolLogP": 2.4086000000000007,
+      "TPSA": 75.81,
+      "NumHDonors": 0,
+      "NumHAcceptors": 4,
+      "NumRotatableBonds": 2,
+      "NumAromaticRings": 2,
+      "FractionCSP3": 0.125,
+      "RingCount": 3
+    },
+    "counterfactuals": [
+      {
+        "smiles": "C12=C(N(C)C(=O)CN=C1C1=CC=CC=N1)C=CC([N+](=O)[O-])=C2",
+        "yhat": -2.4303240000000086,
+        "similarity": 0.7222222222222222,
+        "delta": 1.2207480000000164,
+        "descriptors": {
+          "MolWt": 296.28600000000006,
+          "MolLogP": 1.8035999999999999,
+          "TPSA": 88.7,
+          "NumHDonors": 0,
+          "NumHAcceptors": 5,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.13333333333333333,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C1=C(C2=NC=C(O)N(C)C3=C2C=C([N+](=O)[O-])C=C3)C=CC=C1",
+        "yhat": -2.2550140000000054,
+        "similarity": 0.6986301369863014,
+        "delta": 1.3960580000000196,
+        "descriptors": {
+          "MolWt": 295.298,
+          "MolLogP": 3.238900000000002,
+          "TPSA": 78.97,
+          "NumHDonors": 1,
+          "NumHAcceptors": 5,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.0625,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C1([N+](=O)[O-])=CC2=C(C=C1)N(C)C1=C(O)C(=CC=CC)C2=NC1",
+        "yhat": -1.3151720000000005,
+        "similarity": 0.4470588235294118,
+        "delta": 2.3359000000000245,
+        "descriptors": {
+          "MolWt": 297.314,
+          "MolLogP": 3.1194000000000015,
+          "TPSA": 78.97,
+          "NumHDonors": 1,
+          "NumHAcceptors": 5,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.1875,
+          "RingCount": 4
+        }
+      },
+      {
+        "smiles": "C=CC=C1C2=C(C=CC([N+](=O)[O-])=C2)N(C)C(=O)CN1",
+        "yhat": -2.6488460000000065,
+        "similarity": 0.4430379746835443,
+        "delta": 1.0022260000000185,
+        "descriptors": {
+          "MolWt": 259.26499999999993,
+          "MolLogP": 1.6876999999999998,
+          "TPSA": 75.48,
+          "NumHDonors": 1,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.15384615384615385,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "C1=C(C#C[N+](=O)[O-])C(SC2=CC=CC=C2)=NCC(=O)N1C",
+        "yhat": -2.5846440000000004,
+        "similarity": 0.39080459770114945,
+        "delta": 1.0664280000000246,
+        "descriptors": {
+          "MolWt": 301.32700000000006,
+          "MolLogP": 1.7706999999999997,
+          "TPSA": 75.80999999999999,
+          "NumHDonors": 0,
+          "NumHAcceptors": 5,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.14285714285714285,
+          "RingCount": 2
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "CC(=O)OCC(=O)C1(O)C(C)CC2C3CCC4=CC(=O)C=CC4(C)C3(F)C(O)CC12C",
+    "base_yhat": -4.685520000000041,
+    "base_descriptors": {
+      "MolWt": 434.5040000000002,
+      "MolLogP": 2.466500000000001,
+      "TPSA": 100.90000000000002,
+      "NumHDonors": 2,
+      "NumHAcceptors": 6,
+      "NumRotatableBonds": 3,
+      "NumAromaticRings": 0,
+      "FractionCSP3": 0.7083333333333334,
+      "RingCount": 4
+    },
+    "counterfactuals": [
+      {
+        "smiles": "C1CC2C3CC(C)C(O)(C(COC(=O)C)=O)C3(C)CC(O)C2(F)C1(C)C=C=C=O",
+        "yhat": -2.732222000000002,
+        "similarity": 0.6161616161616161,
+        "delta": 1.9532980000000393,
+        "descriptors": {
+          "MolWt": 408.4660000000001,
+          "MolLogP": 1.9441,
+          "TPSA": 100.9,
+          "NumHDonors": 2,
+          "NumHAcceptors": 6,
+          "NumRotatableBonds": 4,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.7727272727272727,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C12(F)C(CCC1C)C1CC(C)C(C(COC(C)=O)=O)(O)C1(C)CC2O",
+        "yhat": -2.6913140000000033,
+        "similarity": 0.5851063829787234,
+        "delta": 1.994206000000038,
+        "descriptors": {
+          "MolWt": 356.4340000000001,
+          "MolLogP": 2.031,
+          "TPSA": 83.83000000000001,
+          "NumHDonors": 2,
+          "NumHAcceptors": 5,
+          "NumRotatableBonds": 3,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.8947368421052632,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "CC1(C)OC=CC2(C)C1CCC1C2(F)COCC2(C)C1CC(C)C2(C(COC(=O)C)=O)O",
+        "yhat": -2.9670240000000025,
+        "similarity": 0.46956521739130436,
+        "delta": 1.7184960000000387,
+        "descriptors": {
+          "MolWt": 452.5630000000002,
+          "MolLogP": 3.6055000000000033,
+          "TPSA": 82.06,
+          "NumHDonors": 1,
+          "NumHAcceptors": 6,
+          "NumRotatableBonds": 3,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.84,
+          "RingCount": 4
+        }
+      },
+      {
+        "smiles": "CC(C=CC1(C)C2C(C3C(C)(CC2O)C(C(COC(C)=O)=O)(O)C(C)C3)CCC1NF)=O",
+        "yhat": -2.69377,
+        "similarity": 0.4482758620689655,
+        "delta": 1.991750000000041,
+        "descriptors": {
+          "MolWt": 453.5510000000002,
+          "MolLogP": 2.2969999999999997,
+          "TPSA": 112.93,
+          "NumHDonors": 3,
+          "NumHAcceptors": 7,
+          "NumRotatableBonds": 6,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.7916666666666666,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C(C(O)C1(C)CCCC(F)(CI)C2(C)C(=CC(=O)C=C2)CS1)(COC(=O)C)=O",
+        "yhat": -3.0132460000000054,
+        "similarity": 0.4107142857142857,
+        "delta": 1.6722740000000358,
+        "descriptors": {
+          "MolWt": 524.3920000000003,
+          "MolLogP": 3.3702000000000023,
+          "TPSA": 80.67,
+          "NumHDonors": 1,
+          "NumHAcceptors": 6,
+          "NumRotatableBonds": 5,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.65,
+          "RingCount": 2
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "OC1=NC2=NC=CN=C2C=N1",
+    "base_yhat": -1.2928720000000038,
+    "base_descriptors": {
+      "MolWt": 148.125,
+      "MolLogP": 0.12539999999999984,
+      "TPSA": 71.79,
+      "NumHDonors": 1,
+      "NumHAcceptors": 5,
+      "NumRotatableBonds": 0,
+      "NumAromaticRings": 2,
+      "FractionCSP3": 0.0,
+      "RingCount": 2
+    },
+    "counterfactuals": [
+      {
+        "smiles": "C1=NC(Cl)=NC2=NC=CN=C12",
+        "yhat": -3.588509999999998,
+        "similarity": 0.6842105263157895,
+        "delta": -2.295637999999994,
+        "descriptors": {
+          "MolWt": 166.571,
+          "MolLogP": 1.0732,
+          "TPSA": 51.56,
+          "NumHDonors": 0,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.0,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "N1=CC2=NC=C2N=CN=C1O",
+        "yhat": -3.578839838411584,
+        "similarity": 0.391304347826087,
+        "delta": -2.2859678384115805,
+        "descriptors": {
+          "MolWt": 148.125,
+          "MolLogP": 0.07699999999999979,
+          "TPSA": 71.79,
+          "NumHDonors": 1,
+          "NumHAcceptors": 5,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.0,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "N1=C2C=NC3=CN=C(N=C13)O2",
+        "yhat": -2.421364000000001,
+        "similarity": 0.3541666666666667,
+        "delta": -1.1284919999999972,
+        "descriptors": {
+          "MolWt": 146.10899999999998,
+          "MolLogP": 0.5254999999999999,
+          "TPSA": 60.790000000000006,
+          "NumHDonors": 0,
+          "NumHAcceptors": 5,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.0,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C1(=NC2=NC=CN=C2)C=N1",
+        "yhat": 0.01840799999999999,
+        "similarity": 0.2978723404255319,
+        "delta": 1.3112800000000038,
+        "descriptors": {
+          "MolWt": 132.12599999999998,
+          "MolLogP": -0.020400000000000196,
+          "TPSA": 51.03,
+          "NumHDonors": 0,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.0,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "C(=NC1=NC=CN=C1Cl)O",
+        "yhat": -3.2151199999999984,
+        "similarity": 0.2765957446808511,
+        "delta": -1.9222479999999946,
+        "descriptors": {
+          "MolWt": 157.56,
+          "MolLogP": 1.3477999999999999,
+          "TPSA": 58.370000000000005,
+          "NumHDonors": 1,
+          "NumHAcceptors": 3,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.0,
+          "RingCount": 1
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "NNC(=O)C1=CC=NC=C1",
+    "base_yhat": -0.035853999999999935,
+    "base_descriptors": {
+      "MolWt": 137.142,
+      "MolLogP": -0.3149000000000006,
+      "TPSA": 68.00999999999999,
+      "NumHDonors": 2,
+      "NumHAcceptors": 3,
+      "NumRotatableBonds": 1,
+      "NumAromaticRings": 1,
+      "FractionCSP3": 0.0,
+      "RingCount": 1
+    },
+    "counterfactuals": [
+      {
+        "smiles": "O=C(I)C1=CC=NC=C1",
+        "yhat": -2.5466499999999956,
+        "similarity": 0.6060606060606061,
+        "delta": -2.5107959999999956,
+        "descriptors": {
+          "MolWt": 233.008,
+          "MolLogP": 1.6567999999999996,
+          "TPSA": 29.96,
+          "NumHDonors": 0,
+          "NumHAcceptors": 2,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.0,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C1=CC(C(NN)=O)=CN1",
+        "yhat": -1.6338180000000013,
+        "similarity": 0.43243243243243246,
+        "delta": -1.5979640000000015,
+        "descriptors": {
+          "MolWt": 125.13099999999999,
+          "MolLogP": -0.3818000000000003,
+          "TPSA": 70.91,
+          "NumHDonors": 3,
+          "NumHAcceptors": 2,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.0,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C1C(C(=O)NN)=CC1",
+        "yhat": -1.966628000000002,
+        "similarity": 0.2894736842105263,
+        "delta": -1.9307740000000022,
+        "descriptors": {
+          "MolWt": 112.13199999999999,
+          "MolLogP": -0.3034999999999999,
+          "TPSA": 55.120000000000005,
+          "NumHDonors": 2,
+          "NumHAcceptors": 2,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.4,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C1(C(=O)NN)C=CN=CC1",
+        "yhat": -1.7075119999999964,
+        "similarity": 0.24444444444444444,
+        "delta": -1.6716579999999965,
+        "descriptors": {
+          "MolWt": 139.158,
+          "MolLogP": -0.41930000000000023,
+          "TPSA": 67.48,
+          "NumHDonors": 2,
+          "NumHAcceptors": 3,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.3333333333333333,
+          "RingCount": 1
+        }
+      },
+      {
+        "smiles": "C=C1NOCC=C1C(=O)NN",
+        "yhat": -1.9259320000000022,
+        "similarity": 0.23404255319148937,
+        "delta": -1.8900780000000024,
+        "descriptors": {
+          "MolWt": 155.15699999999998,
+          "MolLogP": -1.0487999999999997,
+          "TPSA": 76.38,
+          "NumHDonors": 3,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.16666666666666666,
+          "RingCount": 1
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "NC1=CC2=CC3=CC=CC=C3C=C2C=C1",
+    "base_yhat": -5.09277000000002,
+    "base_descriptors": {
+      "MolWt": 193.249,
+      "MolLogP": 3.5752000000000015,
+      "TPSA": 26.02,
+      "NumHDonors": 1,
+      "NumHAcceptors": 1,
+      "NumRotatableBonds": 0,
+      "NumAromaticRings": 3,
+      "FractionCSP3": 0.0,
+      "RingCount": 3
+    },
+    "counterfactuals": [
+      {
+        "smiles": "C1=C(C)C=CC2=CC3=CC=CC=C3C=C12",
+        "yhat": -6.2908000000000115,
+        "similarity": 0.76,
+        "delta": -1.1980299999999913,
+        "descriptors": {
+          "MolWt": 192.261,
+          "MolLogP": 4.301420000000002,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 0,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 3,
+          "FractionCSP3": 0.06666666666666667,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "ClC1=CC=C2C(=C1)C=C1C=CC(N)=CC1=C2",
+        "yhat": -2.96386,
+        "similarity": 0.6666666666666666,
+        "delta": 2.1289100000000203,
+        "descriptors": {
+          "MolWt": 227.694,
+          "MolLogP": 4.228600000000002,
+          "TPSA": 26.02,
+          "NumHDonors": 1,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 3,
+          "FractionCSP3": 0.0,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C1(N)=CC2=CC=CC=CC=CC=C2C=C1",
+        "yhat": -3.5291940000000053,
+        "similarity": 0.6,
+        "delta": 1.563576000000015,
+        "descriptors": {
+          "MolWt": 195.265,
+          "MolLogP": 3.546400000000002,
+          "TPSA": 26.02,
+          "NumHDonors": 1,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.0,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "C12=CC3=CC=CC=C3C=C1C=C2N",
+        "yhat": -4.010150000000003,
+        "similarity": 0.5185185185185185,
+        "delta": 1.0826200000000172,
+        "descriptors": {
+          "MolWt": 167.21099999999998,
+          "MolLogP": 2.6100000000000003,
+          "TPSA": 26.02,
+          "NumHDonors": 1,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.0,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C1=CC=CC(N)=CC2=CC=CC=C12",
+        "yhat": -1.858198000000005,
+        "similarity": 0.3225806451612903,
+        "delta": 3.234572000000015,
+        "descriptors": {
+          "MolWt": 169.227,
+          "MolLogP": 2.5692000000000013,
+          "TPSA": 26.02,
+          "NumHDonors": 1,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.0,
+          "RingCount": 2
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "CCN1C2=NC=CC=C2C(=O)N(C)C2=C1N=C(Cl)C=C2",
+    "base_yhat": -4.567402000000012,
+    "base_descriptors": {
+      "MolWt": 288.73799999999994,
+      "MolLogP": 2.878000000000001,
+      "TPSA": 49.330000000000005,
+      "NumHDonors": 0,
+      "NumHAcceptors": 4,
+      "NumRotatableBonds": 1,
+      "NumAromaticRings": 2,
+      "FractionCSP3": 0.21428571428571427,
+      "RingCount": 3
+    },
+    "counterfactuals": [
+      {
+        "smiles": "C1=C2C(=NC=C1)N(CC)C1=NC=CC=C1C(=O)N2C",
+        "yhat": -2.5971699999999864,
+        "similarity": 0.6923076923076923,
+        "delta": 1.9702320000000255,
+        "descriptors": {
+          "MolWt": 254.293,
+          "MolLogP": 2.2245999999999997,
+          "TPSA": 49.330000000000005,
+          "NumHDonors": 0,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.21428571428571427,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C1=CC(Cl)=NC2=C1N(OC)C(C)C1=CC=CN=C1N2CC",
+        "yhat": -3.4686079999999992,
+        "similarity": 0.5972222222222222,
+        "delta": 1.0987940000000127,
+        "descriptors": {
+          "MolWt": 304.7810000000001,
+          "MolLogP": 3.730400000000003,
+          "TPSA": 41.49,
+          "NumHDonors": 0,
+          "NumHAcceptors": 5,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.3333333333333333,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C1=CC2=C(N=C1Cl)N(CC)C1=C(C(=O)N2C)C1=NC=C",
+        "yhat": -5.639198000000007,
+        "similarity": 0.5205479452054794,
+        "delta": -1.0717959999999946,
+        "descriptors": {
+          "MolWt": 288.738,
+          "MolLogP": 2.4028,
+          "TPSA": 48.800000000000004,
+          "NumHDonors": 0,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.21428571428571427,
+          "RingCount": 3
+        }
+      },
+      {
+        "smiles": "C12=NC=CC=C1C(=O)N(C)C=C(N=CCl)N2CC",
+        "yhat": -2.485727999999997,
+        "similarity": 0.49295774647887325,
+        "delta": 2.081674000000015,
+        "descriptors": {
+          "MolWt": 264.716,
+          "MolLogP": 2.0595,
+          "TPSA": 48.800000000000004,
+          "NumHDonors": 0,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 2,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.25,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "CN1C2=CC=C(Cl)N=C2N(CC)C2=NC=CC=C2O1",
+        "yhat": -3.2704420000000005,
+        "similarity": 0.4473684210526316,
+        "delta": 1.2969600000000114,
+        "descriptors": {
+          "MolWt": 276.72700000000003,
+          "MolLogP": 3.3137000000000016,
+          "TPSA": 48.78,
+          "NumHDonors": 0,
+          "NumHAcceptors": 3,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 3,
+          "FractionCSP3": 0.23076923076923078,
+          "RingCount": 3
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "C#CC1(O)CCC2C3CCC4=CC5=C(C=NO5)CC4(C)C3CCC12C",
+    "base_yhat": -5.086658000000013,
+    "base_descriptors": {
+      "MolWt": 337.46300000000014,
+      "MolLogP": 4.221000000000004,
+      "TPSA": 46.260000000000005,
+      "NumHDonors": 1,
+      "NumHAcceptors": 3,
+      "NumRotatableBonds": 0,
+      "NumAromaticRings": 1,
+      "FractionCSP3": 0.6818181818181818,
+      "RingCount": 5
+    },
+    "counterfactuals": [
+      {
+        "smiles": "C12C3(C)C(=CC4=C(C=NO4)C3)CCC1C1CCC(C)(CO)C1(C)CC2",
+        "yhat": -4.050794000000012,
+        "similarity": 0.7530864197530864,
+        "delta": 1.035864000000001,
+        "descriptors": {
+          "MolWt": 341.49500000000006,
+          "MolLogP": 4.855300000000004,
+          "TPSA": 46.260000000000005,
+          "NumHDonors": 1,
+          "NumHAcceptors": 3,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.7727272727272727,
+          "RingCount": 5
+        }
+      },
+      {
+        "smiles": "C1=C2C(C)(CC3=C1ON=C3)C1C(CN2)C2CCC(O)(C#C)C2(C)CC1",
+        "yhat": -4.0657220000000125,
+        "similarity": 0.7530864197530864,
+        "delta": 1.0209360000000007,
+        "descriptors": {
+          "MolWt": 338.45100000000014,
+          "MolLogP": 2.9879000000000016,
+          "TPSA": 58.290000000000006,
+          "NumHDonors": 2,
+          "NumHAcceptors": 4,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.6666666666666666,
+          "RingCount": 5
+        }
+      },
+      {
+        "smiles": "OC1=C(C)CC2(C)C3C(C4CCC(C#C)(O)C4(C)CC3)CCC2=C1",
+        "yhat": -4.05943400000001,
+        "similarity": 0.691358024691358,
+        "delta": 1.027224000000003,
+        "descriptors": {
+          "MolWt": 326.48000000000013,
+          "MolLogP": 4.755400000000005,
+          "TPSA": 40.46,
+          "NumHDonors": 2,
+          "NumHAcceptors": 2,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.7272727272727273,
+          "RingCount": 4
+        }
+      },
+      {
+        "smiles": "C123CCC1=C(O)C2(C)CCC1C3CCC2=CC3=C(CC12C)C=NO3",
+        "yhat": -3.4754220000000027,
+        "similarity": 0.5730337078651685,
+        "delta": 1.6112360000000105,
+        "descriptors": {
+          "MolWt": 323.436,
+          "MolLogP": 5.052600000000004,
+          "TPSA": 46.260000000000005,
+          "NumHDonors": 1,
+          "NumHAcceptors": 3,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.6666666666666666,
+          "RingCount": 6
+        }
+      },
+      {
+        "smiles": "CC12CCC3C4(C)C5C=C(C=C4CCC3C1CCC2(CO)O)N=C5",
+        "yhat": -3.98349000000001,
+        "similarity": 0.4329896907216495,
+        "delta": 1.1031680000000033,
+        "descriptors": {
+          "MolWt": 327.46799999999996,
+          "MolLogP": 3.4769000000000023,
+          "TPSA": 52.82,
+          "NumHDonors": 2,
+          "NumHAcceptors": 3,
+          "NumRotatableBonds": 1,
+          "NumAromaticRings": 0,
+          "FractionCSP3": 0.7619047619047619,
+          "RingCount": 5
+        }
+      }
+    ]
+  },
+  {
+    "base_smiles": "CC1=CC=C(C)C2=CC=CC=C12",
+    "base_yhat": -4.127144000000032,
+    "base_descriptors": {
+      "MolWt": 156.228,
+      "MolLogP": 3.456640000000002,
+      "TPSA": 0.0,
+      "NumHDonors": 0,
+      "NumHAcceptors": 0,
+      "NumRotatableBonds": 0,
+      "NumAromaticRings": 2,
+      "FractionCSP3": 0.16666666666666666,
+      "RingCount": 2
+    },
+    "counterfactuals": [
+      {
+        "smiles": "C1(C)=CC=C(N)C2=CC=CC=C12",
+        "yhat": -2.8069880000000116,
+        "similarity": 0.7,
+        "delta": 1.3201560000000208,
+        "descriptors": {
+          "MolWt": 157.216,
+          "MolLogP": 2.7304200000000005,
+          "TPSA": 26.02,
+          "NumHDonors": 1,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.09090909090909091,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "C1=CC=C2C(=C1)C(C)=NC=C2C",
+        "yhat": -2.955182000000004,
+        "similarity": 0.5813953488372093,
+        "delta": 1.1719620000000281,
+        "descriptors": {
+          "MolWt": 157.21599999999998,
+          "MolLogP": 2.8516400000000006,
+          "TPSA": 12.89,
+          "NumHDonors": 0,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.18181818181818182,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "C1=NC=CC2=C(C)C=CC(C)=C12",
+        "yhat": -0.17294400000000057,
+        "similarity": 0.5813953488372093,
+        "delta": 3.9542000000000317,
+        "descriptors": {
+          "MolWt": 157.21599999999998,
+          "MolLogP": 2.8516400000000015,
+          "TPSA": 12.89,
+          "NumHDonors": 0,
+          "NumHAcceptors": 1,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 2,
+          "FractionCSP3": 0.18181818181818182,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "C1=C2C(=C1)C(C)=CC=C2C",
+        "yhat": -2.831448,
+        "similarity": 0.4090909090909091,
+        "delta": 1.2956960000000324,
+        "descriptors": {
+          "MolWt": 130.18999999999997,
+          "MolLogP": 0.8780400000000002,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 0,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.2,
+          "RingCount": 2
+        }
+      },
+      {
+        "smiles": "CC1=CC=C(C)C2=CC=CC=C2C1",
+        "yhat": -3.042798000000001,
+        "similarity": 0.39215686274509803,
+        "delta": 1.0843460000000316,
+        "descriptors": {
+          "MolWt": 170.255,
+          "MolLogP": 3.5923000000000025,
+          "TPSA": 0.0,
+          "NumHDonors": 0,
+          "NumHAcceptors": 0,
+          "NumRotatableBonds": 0,
+          "NumAromaticRings": 1,
+          "FractionCSP3": 0.23076923076923078,
+          "RingCount": 2
+        }
+      }
+    ]
+  }
+]

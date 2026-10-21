@@ -1,0 +1,68 @@
+[
+  {
+    "original": {
+      "text": "Molecules bearing at least two hydrogen-bond donors have higher aqueous solubility than those with one or zero donors.",
+      "condition": {
+        "kind": "descriptor",
+        "name": "NumHDonors",
+        "op": ">",
+        "value": 1
+      },
+      "direction": "higher",
+      "support": 56,
+      "support_frac": 0.33136094674556216,
+      "status": "evaluated",
+      "effect": 1.6116488621997473,
+      "cohens_d": 0.8625715596259121,
+      "p_value": 2.8467233299115565e-08,
+      "mean_match": -2.7166785714285715,
+      "mean_other": -4.328327433628319,
+      "holds": true,
+      "effect_adj": -1.365036057079823,
+      "cohens_d_adj": -0.8254947894275149,
+      "p_value_adj": 1.64878551018031e-05,
+      "mean_match_adj": -2.0004170914965376,
+      "mean_other_adj": -0.6353810344167147,
+      "holds_adj": false,
+      "effect_strat": -0.05847887936772866,
+      "p_value_strat": 0.7971014492753623,
+      "holds_strat": false,
+      "strat_bins_used": 6,
+      "strat_coverage": 1.0
+    },
+    "revised_text": "Molecules with more than one hydrogen-bond donor have lower aqueous solubility than those with one or zero donors, because high donor count co-occurs with large, rigid, polyphenolic or polyol scaffolds whose lattice energy outweighs the hydration benefit."
+  },
+  {
+    "original": {
+      "text": "Molecules with TPSA below 30 \u00c5\u00b2 have lower aqueous solubility than molecules with greater polar surface area.",
+      "condition": {
+        "kind": "descriptor",
+        "name": "TPSA",
+        "op": "<",
+        "value": 30
+      },
+      "direction": "lower",
+      "support": 55,
+      "support_frac": 0.3254437869822485,
+      "status": "evaluated",
+      "effect": -2.1936052631578953,
+      "cohens_d": -1.046044292934301,
+      "p_value": 1.113857940044741e-07,
+      "mean_match": -5.274,
+      "mean_other": -3.0803947368421047,
+      "holds": true,
+      "effect_adj": 0.6682550820244383,
+      "cohens_d_adj": 0.4535181664511203,
+      "p_value_adj": 0.003014300224621589,
+      "mean_match_adj": -0.6369250571722421,
+      "mean_other_adj": -1.3051801391966804,
+      "holds_adj": false,
+      "effect_strat": -0.6775242626311685,
+      "p_value_strat": 0.01899050474762619,
+      "holds_strat": true,
+      "strat_bins_used": 4,
+      "strat_coverage": 0.9454545454545454
+    },
+    "revised_text": "Molecules with TPSA below 30 \u00c5\u00b2 have higher aqueous solubility than molecules with greater polar surface area."
+  }
+]

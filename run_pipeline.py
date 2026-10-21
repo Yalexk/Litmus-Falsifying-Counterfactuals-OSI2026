@@ -12,6 +12,7 @@ import argparse
 import json
 import shutil
 import subprocess
+import warnings
 from collections import Counter
 from datetime import datetime
 from pathlib import Path
@@ -23,6 +24,10 @@ from src.baseline import textbook_rules
 from src.rules import Rule, evaluate, fit_logp_baseline, logp_bin_edges, report
 
 PROPERTY = "aqueous solubility, log mol/L (higher = more soluble)"
+
+# exmol calls the model ~1M times; this sklearn warning fires on every call
+# and produced a 344 MB log in run2.
+warnings.filterwarnings("ignore", message=".*sklearn.utils.parallel.delayed.*")
 
 
 def main(a):
@@ -122,6 +127,14 @@ def archive(a, base, scored):
         "baseline_verdicts": verdicts(base),
         "llm_verdicts": verdicts(scored),
     }
+    if manifest["git_dirty"]:
+        # The commit hash alone can't reproduce a dirty run; keep the diff.
+        (dest / "uncommitted.diff").write_text(git("diff", "HEAD"))
+    if scored is not None:
+        from src import hypotheses as H
+        manifest["prompt_version"] = H.PROMPT_VERSION
+        manifest["llm_model"] = H.MODEL
+        (dest / "system_prompt.txt").write_text(H.SYSTEM)
     (dest / "manifest.json").write_text(json.dumps(manifest, indent=2))
     print(f"\narchived to {dest}/")
 

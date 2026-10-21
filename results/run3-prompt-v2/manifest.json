@@ -1,0 +1,31 @@
+{
+  "run_name": "run3-prompt-v2",
+  "timestamp": "2026-10-21T12:54:24",
+  "git_commit": "cb34b3e",
+  "git_dirty": true,
+  "args": {
+    "csv": null,
+    "n_bases": 10,
+    "n_rules": 8,
+    "num_samples": 1500,
+    "threshold": 1.0,
+    "noise_floor": 0.6,
+    "min_coverage": 0.5,
+    "run_name": "run3-prompt-v2",
+    "refresh_cf": false,
+    "skip_llm": false,
+    "revise": false
+  },
+  "baseline_verdicts": {
+    "untestable_beyond_logp": 3,
+    "logp_only": 2
+  },
+  "llm_verdicts": {
+    "survives_beyond_logp": 1,
+    "logp_only": 4,
+    "fails": 1,
+    "insufficient_support": 2
+  },
+  "prompt_version": "v2",
+  "llm_model": "claude-sonnet-4-6"
+}

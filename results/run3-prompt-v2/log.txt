@@ -1,0 +1,32 @@
+1117 molecules -> train 781 valid 167 test 169
+[train] n=781  R2=0.948  MAE=0.308
+[valid] n=167  R2=0.249  MAE=1.318
+[test] n=169  R2=0.105  MAE=1.620
+reusing 20 cached counterfactual sets
+
+5/5 textbook rules survived held-out testing (100%)
+0/5 survived beyond LogP, binned (0%); 3 untestable at coverage < 50%
+0/5 contradicted (wrong sign, real effect)
+  verdict                 raw    binned  cov   n  rule
+  untestable_beyond_logp  -2.97    n/a   0%  90  Molecules with LogP above the training median (2.25) are less soluble.
+  untestable_beyond_logp  +2.26  +0.76  38%  99  Molecules with at least one hydrogen-bond donor are more soluble.
+  untestable_beyond_logp  -2.58  -1.03  39% 145  Molecules heavier than the training median (156 Da) are less soluble.
+  logp_only               -1.70  -0.36 100%  95  Molecules with two or more aromatic rings are less soluble.
+  logp_only               +1.09  +0.45  95%  44  Molecules with sp3 fraction above the training median (0.45) are more soluble.
+
+8 well-formed hypotheses proposed
+
+5/8 LLM hypotheses survived held-out testing (62%)
+1/8 survived beyond LogP, binned (12%); 0 untestable at coverage < 50%
+0/8 contradicted (wrong sign, real effect)
+  verdict                 raw    binned  cov   n  rule
+  survives_beyond_logp    -3.70  -2.17  88%  26  Molecules with TPSA below 3 Å² are less soluble than molecules with any polar surface area at matched MolLogP, because the complete absence of H-bonding atoms eliminates all aqueous solvation pathways beyond cavity formation.
+  logp_only               -3.02  -0.90  88%  34  Molecules with four or more rings are less soluble than those with fewer rings at matched MolLogP, because high ring count enforces molecular rigidity that promotes tight crystal packing and increases the lattice energy that must be overcome during dissolution.
+  logp_only               +1.61  -0.06 100%  56  Molecules with more than one hydrogen-bond donor are more soluble than those with zero or one donor at matched MolLogP, because multiple donor sites provide cooperative first-shell water coordination that goes beyond what lipophilicity captures.
+  logp_only               -1.70  -0.36 100%  95  Molecules with more than one aromatic ring are less soluble than molecules with one or zero aromatic rings at comparable MolLogP, because polycyclic aromatic systems adopt tight crystal-lattice stacking that resists aqueous dissolution.
+  logp_only               +0.91  +0.49  92%  36  Molecules with FractionCSP3 above 0.5 are more soluble than flatter molecules at matched MolLogP, because high sp3 character introduces three-dimensional shape irregularity that disrupts crystal packing and lowers lattice energy relative to solvation energy.
+  fails                   -0.02  +0.63  82%  11  Molecules containing a pyridine ring are more soluble than structurally similar molecules bearing only carbocyclic aromatic rings, because the ring nitrogen provides a geometrically directed H-bond acceptor that improves water solvation independently of lipophilicity.
+  insufficient_support      n/a    n/a   0%   6  Molecules in which a nitro group is bonded directly to an aromatic carbon are more soluble than molecules where the nitro group is attached to a non-aromatic carbon, because aromatic conjugation delocalizes the nitro dipole and improves its hydration shell.
+  insufficient_support      n/a    n/a   0%   4  Molecules containing an aromatic C–F bond are more soluble than molecules of comparable MolLogP without this motif, because aromatic fluorine acts as a weak H-bond acceptor toward water while also disrupting strong edge-to-face aromatic crystal contacts.
+
+archived to results/run3-prompt-v2/

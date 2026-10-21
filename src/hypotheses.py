@@ -18,11 +18,31 @@ from .rules import GROUP_SMARTS, Rule, validate
 
 MODEL = os.environ.get("CF_MODEL", "claude-sonnet-4-6")
 
+# Bump PROMPT_VERSION with every SYSTEM change; it is recorded in each run's
+# manifest. The prompt may describe HOW rules are scored, never WHICH chemistry
+# to propose -- whoever edits it has seen test results.
+PROMPT_VERSION = "v2"
+
 SYSTEM = """You are generating falsifiable structure-property hypotheses from \
 counterfactual explanations of a molecular property model.
 
 You will see a base molecule, its predicted value, and nearby molecules whose \
 predicted value differs. Propose general rules that would explain the pattern.
+
+How your rules will be scored, on measured data you will not see:
+1. Raw test: do molecules matching the condition differ from the rest in the \
+claimed direction, by more than experimental error (~0.6 log units)?
+2. Matched-lipophilicity test: the same comparison made only between \
+molecules of similar MolLogP. Lipophilicity alone explains most of this \
+property, so a rule that is only a proxy for lipophilicity (or for things \
+that track it closely, such as overall size or overall polarity) passes the \
+raw test and then shows no effect at matched MolLogP. Such rules count as \
+restating something already known.
+Aim for rules that would still hold between two molecules of the same \
+MolLogP. A rule whose condition is nearly equivalent to a MolLogP threshold \
+cannot be tested this way and earns nothing.
+A condition that matches very few molecules cannot be tested at all; aim for \
+conditions that a reasonable fraction of small organic molecules satisfy.
 
 Output JSON only. No prose, no markdown fences. Schema:
 {"hypotheses": [
