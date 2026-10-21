@@ -89,11 +89,21 @@ def main(a):
             beyond_control_fails = (res_valid.get("strat_coverage", 0) >= a.min_coverage
                                     and not res_valid.get("holds_strat"))
             if not res_valid.get("holds") or beyond_control_fails:
-                r2 = revise(r, res_valid, cfg)
+                try:
+                    r2 = revise(r, res_valid, cfg)
+                except Exception as e:  # one flaky CLI call shouldn't cost the run
+                    print(f"  revise failed, keeping original: {e}")
+                    res = evaluate(r, test, control=control)
+                    res["revise_failed"] = str(e)[:300]
+                    results.append(res)
+                    continue
                 if r2:
                     res2 = evaluate(r2, test, control=control)
                     res2["revised_from"] = r.text
                     res2["parent_valid"] = res_valid
+                    # Scored for the record only, never shown to the LLM: did
+                    # revision turn a right claim wrong, or a wrong one right?
+                    res2["parent_test"] = evaluate(r, test, control=control)
                     results.append(res2)
                     continue
         results.append(evaluate(r, test, control=control))

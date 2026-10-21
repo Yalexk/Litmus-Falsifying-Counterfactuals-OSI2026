@@ -27,19 +27,23 @@ def load_dataset(cfg: dict) -> pd.DataFrame:
     """Load any dataset described by a config (see src/config.py).
 
     Reads the CSV from source.path if given, else source.url (cached under
-    data/<name>.csv so reruns don't refetch), keeps the SMILES and target
+    data/<name>.csv so reruns don't refetch), with any source.read_csv
+    options passed to pandas, keeps the SMILES and target
     columns as smiles / y, then canonicalises and dedupes via clean().
     """
     src = cfg["source"]
+    opts = src.get("read_csv", {})  # passed to pandas, e.g. sep / comment / names
     if src.get("path"):
-        df = pd.read_csv(src["path"])
+        df = pd.read_csv(src["path"], **opts)
     else:
         cache = Path("data") / f"{cfg['name']}.csv"
         if not cache.exists():
             cache.parent.mkdir(exist_ok=True)
-            with urllib.request.urlopen(src["url"]) as r:
+            # Some hosts (Harvard Dataverse) refuse urllib's default agent.
+            req = urllib.request.Request(src["url"], headers={"User-Agent": "osi-falsifying-cf/0.1"})
+            with urllib.request.urlopen(req, timeout=120) as r:
                 cache.write_bytes(r.read())
-        df = pd.read_csv(cache)
+        df = pd.read_csv(cache, **opts)
     missing = {cfg["smiles_col"], cfg["target_col"]} - set(df.columns)
     if missing:
         raise ValueError(f"{cfg['name']}: columns {missing} not in {list(df.columns)[:20]}")

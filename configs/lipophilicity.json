@@ -1,0 +1,40 @@
+{
+  "name": "lipophilicity",
+  "preregistered": true,
+  "preregistration_note": "Drafted 2026-10-21 before any run on this dataset; only the CSV header was inspected. Noise floor, control and baseline come from the cited literature; cf_threshold follows the fixed rule 5/3 x noise floor rounded to 0.1 (ESOL's ratio).",
+  "source": {
+    "url": "https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/Lipophilicity.csv",
+    "citation": "AstraZeneca logD7.4 deposition in ChEMBL, distributed with MoleculeNet (Wu et al. 2018)"
+  },
+  "smiles_col": "smiles",
+  "target_col": "exp",
+  "property": "octanol/water distribution coefficient at pH 7.4 (logD7.4)",
+  "units": "log units",
+  "unit_word": "log units",
+  "higher_means": "more lipophilic",
+  "noise_floor": 0.3,
+  "noise_floor_source": "Andres et al. 2015, Eur. J. Pharm. Sci., PMID 25968358: shake-flask logD7.4 values 'show a standard deviation lower than 0.3'.",
+  "cf_threshold": 0.5,
+  "control": {
+    "descriptor": "MolLogP",
+    "name": "calculated lipophilicity",
+    "test_name": "Matched-cLogP",
+    "proxies": "overall size or overall polarity",
+    "rationale": "logD is logP corrected for ionisation at the measurement pH, so calculated logP is the first-order predictor; rules should say something beyond it.",
+    "ref": "Scherrer & Howard 1977, J. Med. Chem., PMID 13215"
+  },
+  "baseline": [
+    {"text": "Molecules with calculated LogP above the training median ({value:.2f}) have higher logD7.4.",
+     "condition": {"kind": "descriptor", "name": "MolLogP", "op": ">", "value": "train_median"},
+     "direction": "higher", "ref": "Scherrer & Howard 1977 (PMID 13215)"},
+    {"text": "Molecules containing a carboxylic acid have lower logD7.4 (ionised at pH 7.4).",
+     "condition": {"kind": "smarts", "pattern": "[CX3](=O)[OX2H1]"},
+     "direction": "lower", "ref": "Scherrer & Howard 1977 (PMID 13215); Wenlock et al. 2011 (PMID 21601448)"},
+    {"text": "Molecules containing a basic aliphatic amine have lower logD7.4 (protonated at pH 7.4).",
+     "condition": {"kind": "smarts", "pattern": "[NX3;!$(N-[a]);!$(N-C=[O,S,N]);!$(N-S(=O)=O);!$(N-[#7,#8])]([#6])"},
+     "direction": "lower", "ref": "Scherrer & Howard 1977 (PMID 13215)"},
+    {"text": "Molecules with two or more hydrogen-bond donors have lower logD7.4.",
+     "condition": {"kind": "descriptor", "name": "NumHDonors", "op": ">=", "value": 2},
+     "direction": "lower", "ref": "textbook (H-bond donors favour water over octanol)"}
+  ]
+}

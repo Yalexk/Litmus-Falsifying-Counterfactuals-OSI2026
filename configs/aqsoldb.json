@@ -1,0 +1,43 @@
+{
+  "name": "aqsoldb",
+  "preregistered": true,
+  "preregistration_note": "Drafted 2026-10-21 before any run on this dataset; only the CSV header was inspected. Same property as ESOL, so the control and baseline are ESOL's, fixed a priori; noise floor from the cited literature; cf_threshold follows the fixed rule 5/3 x noise floor rounded to 0.1. AqSolDB merges nine sources and likely overlaps ESOL's molecules, so it tests generality across data more than independence from ESOL.",
+  "source": {
+    "url": "https://dataverse.harvard.edu/api/access/datafile/3407241?format=original",
+    "citation": "Sorkun, Khetan & Er 2019, Sci. Data, PMID 31395888 (AqSolDB)"
+  },
+  "smiles_col": "SMILES",
+  "target_col": "Solubility",
+  "property": "aqueous solubility",
+  "units": "log mol/L",
+  "unit_word": "log units",
+  "higher_means": "more soluble",
+  "noise_floor": 0.6,
+  "noise_floor_source": "Palmer & Mitchell 2014, Mol. Pharm., PMID 24919008: literature solubility data carry 'experimental uncertainty ... estimated to be 0.6-0.7 log S units'; Llinas & Avdeef 2019 (PMID 31042031): ~0.62 log for loosely curated shake-flask data.",
+  "cf_threshold": 1.0,
+  "control": {
+    "descriptor": "MolLogP",
+    "name": "lipophilicity",
+    "test_name": "Matched-lipophilicity",
+    "proxies": "overall size or overall polarity",
+    "rationale": "logS is dominated by lipophilicity; the ESOL equation's largest term is cLogP.",
+    "ref": "Delaney 2004"
+  },
+  "baseline": [
+    {"text": "Molecules with LogP above the training median ({value:.2f}) are less soluble.",
+     "condition": {"kind": "descriptor", "name": "MolLogP", "op": ">", "value": "train_median"},
+     "direction": "lower", "ref": "Delaney 2004"},
+    {"text": "Molecules heavier than the training median ({value:.0f} Da) are less soluble.",
+     "condition": {"kind": "descriptor", "name": "MolWt", "op": ">", "value": "train_median"},
+     "direction": "lower", "ref": "Delaney 2004"},
+    {"text": "Molecules with two or more aromatic rings are less soluble.",
+     "condition": {"kind": "descriptor", "name": "NumAromaticRings", "op": ">=", "value": 2},
+     "direction": "lower", "ref": "Delaney 2004"},
+    {"text": "Molecules with sp3 fraction above the training median ({value:.2f}) are more soluble.",
+     "condition": {"kind": "descriptor", "name": "FractionCSP3", "op": ">", "value": "train_median"},
+     "direction": "higher", "ref": "Lovering 2009"},
+    {"text": "Molecules with at least one hydrogen-bond donor are more soluble.",
+     "condition": {"kind": "descriptor", "name": "NumHDonors", "op": ">=", "value": 1},
+     "direction": "higher", "ref": "textbook"}
+  ]
+}
