@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2200 1150" width="2200" height="1150" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2000 1110" width="2000" height="1110" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
   <defs>
     <marker id="mr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#1E293B"/></marker>
     <marker id="my" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#8FA3C0"/></marker>
@@ -16,6 +16,7 @@
       .yel  { stroke: #8FA3C0; stroke-width: 2.5; fill: none; stroke-linecap: round; marker-end: url(#my); }
       .lbl  { font-size: 16px; fill: #475569; font-style: italic; }
       .out  { font-size: 17px; fill: #1E293B; }
+      .capL { font-size: 17px; fill: #1E293B; }
     </style>
 
     <!-- ── icons, drawn from scratch ── -->
@@ -156,152 +157,155 @@
     </symbol>
   </defs>
 
-  <rect width="2200" height="1150" fill="#fff"/>
+  <rect width="2000" height="1110" fill="#fff"/>
 
-  <!-- ═════════ Input ═════════ -->
-  <rect x="40" y="500" width="310" height="230" rx="22" class="box" stroke-width="4"/>
-  <rect x="62" y="481" width="210" height="38" rx="19" class="ctab"/>
-  <text x="167" y="507" class="tab" font-size="19">Dataset + Config</text>
-  <use href="#i-mol" xlink:href="#i-mol" x="50" y="540" width="90" height="90"/>
-  <use href="#i-table" xlink:href="#i-table" x="98" y="582" width="50" height="50"/>
-  <use href="#i-config" xlink:href="#i-config" x="210" y="545" width="85" height="85"/>
-  <text x="103" y="666" class="cap">molecules +</text>
-  <text x="103" y="688" class="cap">measurements</text>
-  <text x="252" y="666" class="cap">pre-registered</text>
-  <text x="252" y="688" class="cap">config</text>
+  <rect x="40" y="110" width="280" height="230" rx="22" class="box" stroke-width="3"/>
+  <rect x="62" y="92" width="200" height="36" rx="18" class="ctab"/><text x="162" y="117" class="tab" font-size="18">Dataset + Config</text>
+  <use href="#i-mol" xlink:href="#i-mol" x="55" y="145" width="85" height="85"/>
+  <use href="#i-table" xlink:href="#i-table" x="100" y="185" width="48" height="48"/>
+  <use href="#i-config" xlink:href="#i-config" x="200" y="150" width="80" height="80"/>
+  <text x="100" y="272" class="cap">molecules +</text><text x="100" y="293" class="cap">measurements</text>
+  <text x="240" y="272" class="cap">pre-registered</text><text x="240" y="293" class="cap">config</text>
+  <rect x="40" y="540" width="280" height="210" rx="22" class="boxR"/>
+  <rect x="62" y="522" width="170" height="36" rx="18" class="ctabR"/><text x="147" y="547" class="tab" font-size="18">Held-out Test</text>
+  <use href="#i-lockdb" xlink:href="#i-lockdb" x="135" y="572" width="90" height="90"/>
+  <text x="180" y="690" class="cap">test split, sealed:</text><text x="180" y="712" class="cap">never shown to an LLM</text>
 
-  <!-- ═════════ Container 1: explain the model ═════════ -->
-  <rect x="400" y="60" width="820" height="575" rx="32" class="ctr"/>
-  <rect x="430" y="38" width="320" height="46" rx="23" class="ctab"/>
-  <text x="590" y="70" class="ct">Explain the Model</text>
+  <rect x="360" y="60" width="1140" height="330" rx="30" class="ctr"/>
 
-  <rect x="430" y="125" width="360" height="140" rx="14" class="box"/>
-  <rect x="460" y="107" width="170" height="34" rx="17" class="ctab"/><text x="545" y="130" class="tab">Scaffold Split</text>
-  <use href="#i-split" xlink:href="#i-split" x="550" y="150" width="120" height="80"/>
-  <text x="610" y="252" class="cap">train 70% · valid 15% · test 15%</text>
+  <rect x="390" y="38" width="330" height="46" rx="23" class="ctab"/><text x="555" y="70" class="ct">1 · Explain the Model</text>
 
-  <rect x="830" y="125" width="360" height="140" rx="14" class="box"/>
-  <rect x="860" y="107" width="190" height="34" rx="17" class="ctab"/><text x="955" y="130" class="tab">Black-box Model</text>
-  <use href="#i-forest" xlink:href="#i-forest" x="950" y="150" width="120" height="80"/>
-  <text x="1010" y="252" class="cap">random forest on ECFP4 bits</text>
+  <rect x="395" y="120" width="235" height="210" rx="14" class="box"/>
+  <rect x="415" y="103" width="165" height="34" rx="17" class="ctab"/>
+  <text x="497.5" y="126" class="tab">Scaffold Split</text>
+  <use href="#i-split" xlink:href="#i-split" x="452" y="165" width="120" height="80"/>
+  <text x="512.5" y="285" class="cap">train / valid / test</text>
+  <text x="512.5" y="307" class="cap">by molecular scaffold</text>
 
-  <rect x="830" y="295" width="360" height="140" rx="14" class="box"/>
-  <rect x="860" y="277" width="180" height="34" rx="17" class="ctab"/><text x="950" y="300" class="tab">Counterfactuals</text>
-  <use href="#i-cf" xlink:href="#i-cf" x="940" y="318" width="140" height="80"/>
-  <text x="1010" y="422" class="cap">exmol: look-alikes, very different ŷ</text>
+  <rect x="675" y="120" width="235" height="210" rx="14" class="box"/>
+  <rect x="695" y="103" width="180" height="34" rx="17" class="ctab"/>
+  <text x="785.0" y="126" class="tab">Black-box Model</text>
+  <use href="#i-forest" xlink:href="#i-forest" x="732" y="165" width="120" height="80"/>
+  <text x="792.5" y="285" class="cap">random forest on</text>
+  <text x="792.5" y="307" class="cap">ECFP4 fingerprints</text>
 
-  <rect x="430" y="295" width="360" height="140" rx="14" class="box"/>
-  <rect x="460" y="277" width="270" height="34" rx="17" class="ctab"/><text x="595" y="300" class="tab">LLM Hypothesis Generator</text>
-  <use href="#i-llm" xlink:href="#i-llm" x="560" y="320" width="100" height="80"/>
-  <text x="610" y="422" class="cap">zero tools · sees counterfactuals only</text>
+  <rect x="955" y="120" width="235" height="210" rx="14" class="box"/>
+  <rect x="975" y="103" width="175" height="34" rx="17" class="ctab"/>
+  <text x="1062.5" y="126" class="tab">Counterfactuals</text>
+  <use href="#i-cf" xlink:href="#i-cf" x="1002" y="165" width="140" height="80"/>
+  <text x="1072.5" y="285" class="cap">look-alikes the model</text>
+  <text x="1072.5" y="307" class="cap">scores very differently</text>
 
-  <rect x="430" y="465" width="360" height="140" rx="14" class="box"/>
-  <rect x="460" y="447" width="190" height="34" rx="17" class="ctab"/><text x="555" y="470" class="tab">Executable Rules</text>
-  <use href="#i-rules" xlink:href="#i-rules" x="570" y="490" width="80" height="80"/>
-  <text x="610" y="592" class="cap">sentence + condition + direction</text>
+  <rect x="1235" y="120" width="235" height="210" rx="14" class="box"/>
+  <rect x="1255" y="103" width="200" height="34" rx="17" class="ctab"/>
+  <text x="1355.0" y="126" class="tab">LLM Proposes Rules</text>
+  <use href="#i-llm" xlink:href="#i-llm" x="1302" y="165" width="100" height="80"/>
+  <text x="1352.5" y="285" class="cap">reads counterfactuals</text>
+  <text x="1352.5" y="307" class="cap">only · zero tools</text>
 
-  <rect x="830" y="465" width="360" height="140" rx="14" class="box"/>
-  <rect x="860" y="447" width="160" height="34" rx="17" class="ctab"/><text x="940" y="470" class="tab">One Revision</text>
-  <use href="#i-cycle" xlink:href="#i-cycle" x="970" y="490" width="80" height="80"/>
-  <text x="1010" y="592" class="cap">feedback from the valid split only</text>
+  <path class="yel" d="M630,225 L666,225"/>
 
-  <path class="yel" d="M790,195 L824,195"/>
-  <path class="yel" d="M1150,265 L1150,289"/>
-  <path class="yel" d="M830,365 L796,365"/>
-  <path class="yel" d="M740,435 L740,459"/>
-  <path class="yel" d="M790,515 L824,515"/>
-  <path class="yel" d="M830,560 L796,560"/>
-  <text x="810" y="584" font-size="14" fill="#64748B" font-style="italic" text-anchor="middle">once</text>
+  <path class="yel" d="M910,225 L946,225"/>
 
-  <!-- ═════════ Container 3: literature ═════════ -->
-  <rect x="400" y="700" width="820" height="400" rx="32" class="ctr"/>
-  <rect x="430" y="678" width="400" height="46" rx="23" class="ctab"/>
-  <text x="630" y="710" class="ct">Cross-check vs Literature</text>
+  <path class="yel" d="M1190,225 L1226,225"/>
 
-  <rect x="430" y="765" width="360" height="140" rx="14" class="box"/>
-  <rect x="460" y="747" width="180" height="34" rx="17" class="ctab"/><text x="550" y="770" class="tab">Claim Text Only</text>
-  <use href="#i-quote" xlink:href="#i-quote" x="570" y="790" width="80" height="80"/>
-  <text x="610" y="892" class="cap">no verdicts, no data attached</text>
+  <rect x="360" y="480" width="1140" height="330" rx="30" class="ctrG"/>
 
-  <rect x="830" y="765" width="360" height="140" rx="14" class="box"/>
-  <rect x="860" y="747" width="180" height="34" rx="17" class="ctab"/><text x="950" y="770" class="tab">Valency Search</text>
-  <use href="#i-search" xlink:href="#i-search" x="960" y="790" width="100" height="80"/>
-  <text x="1010" y="892" class="cap">query = claim verbatim · top 5</text>
+  <rect x="1060" y="458" width="410" height="46" rx="23" class="ctabG"/><text x="1265" y="490" class="ct">2 · Falsify on Held-out Data</text>
 
-  <rect x="830" y="935" width="360" height="140" rx="14" class="box"/>
-  <rect x="860" y="917" width="200" height="34" rx="17" class="ctab"/><text x="960" y="940" class="tab">PubMed Abstracts</text>
-  <use href="#i-docs" xlink:href="#i-docs" x="970" y="960" width="80" height="80"/>
-  <text x="1010" y="1062" class="cap">fetched by paper ID, cached</text>
+  <rect x="400" y="790" width="250" height="40" rx="20" class="ctabG"/><text x="525" y="817" class="tab" font-size="19">★ our contribution</text>
 
-  <rect x="430" y="935" width="360" height="140" rx="14" class="box"/>
-  <rect x="460" y="917" width="190" height="34" rx="17" class="ctab"/><text x="555" y="940" class="tab">Blind LLM Judge</text>
-  <use href="#i-scale" xlink:href="#i-scale" x="570" y="960" width="80" height="80"/>
-  <text x="610" y="1062" class="cap">must quote · every quote verified</text>
+  <rect x="395" y="540" width="235" height="210" rx="14" class="boxG"/>
+  <rect x="415" y="523" width="185" height="34" rx="17" class="ctabG"/>
+  <text x="507.5" y="546" class="tab">Rules Under Test</text>
+  <use href="#i-rules" xlink:href="#i-rules" x="425" y="585" width="80" height="80"/>
+  <use href="#i-book" xlink:href="#i-book" x="520" y="585" width="80" height="80"/>
+  <text x="512.5" y="705" class="cap">LLM rules +</text>
+  <text x="512.5" y="727" class="cap">textbook rules</text>
 
-  <path class="yel" d="M790,835 L824,835"/>
-  <path class="yel" d="M1150,905 L1150,929"/>
-  <path class="yel" d="M830,1005 L796,1005"/>
+  <rect x="675" y="540" width="235" height="210" rx="14" class="boxG"/>
+  <rect x="695" y="523" width="150" height="34" rx="17" class="ctabG"/>
+  <text x="770.0" y="546" class="tab">① Raw Test</text>
+  <use href="#i-curves" xlink:href="#i-curves" x="732" y="585" width="120" height="80"/>
+  <text x="792.5" y="705" class="cap">matching vs rest:</text>
+  <text x="792.5" y="727" class="cap">right direction?</text>
 
-  <!-- ═════════ Container 2: falsification harness ═════════ -->
-  <rect x="1290" y="60" width="440" height="870" rx="32" class="ctrG"/>
-  <rect x="1440" y="38" width="270" height="46" rx="23" class="ctabG"/>
-  <text x="1575" y="70" class="ct">Falsification</text>
-  <rect x="1440" y="908" width="270" height="40" rx="20" class="ctabG"/>
-  <text x="1575" y="935" class="tab" font-size="19">★ our contribution</text>
+  <rect x="955" y="540" width="235" height="210" rx="14" class="boxG"/>
+  <rect x="975" y="523" width="195" height="34" rx="17" class="ctabG"/>
+  <text x="1072.5" y="546" class="tab">② Matched Control</text>
+  <use href="#i-bins" xlink:href="#i-bins" x="1012" y="585" width="120" height="80"/>
+  <text x="1072.5" y="705" class="cap">still true at matched</text>
+  <text x="1072.5" y="727" class="cap">MolLogP / TPSA?</text>
 
-  <rect x="1320" y="130" width="180" height="170" rx="14" class="boxR"/>
-  <rect x="1335" y="112" width="150" height="34" rx="17" class="ctabR"/><text x="1410" y="135" class="tab">Held-out Test</text>
-  <use href="#i-lockdb" xlink:href="#i-lockdb" x="1370" y="158" width="80" height="80"/>
-  <text x="1410" y="262" class="cap">never shown</text>
-  <text x="1410" y="283" class="cap">to an LLM</text>
+  <rect x="1235" y="540" width="235" height="210" rx="14" class="boxG"/>
+  <rect x="1255" y="523" width="170" height="34" rx="17" class="ctabG"/>
+  <text x="1340.0" y="546" class="tab">③ FDR + Noise</text>
+  <use href="#i-funnel" xlink:href="#i-funnel" x="1312" y="585" width="80" height="80"/>
+  <text x="1352.5" y="705" class="cap">Benjamini–Hochberg,</text>
+  <text x="1352.5" y="727" class="cap">effect ≥ noise floor</text>
 
-  <rect x="1520" y="130" width="180" height="170" rx="14" class="boxG"/>
-  <rect x="1535" y="112" width="150" height="34" rx="17" class="ctabG"/><text x="1610" y="135" class="tab">Textbook Rules</text>
-  <use href="#i-book" xlink:href="#i-book" x="1570" y="158" width="80" height="80"/>
-  <text x="1610" y="262" class="cap">yardstick +</text>
-  <text x="1610" y="283" class="cap">bug check</text>
+  <path class="yel" d="M630,645 L666,645"/>
 
-  <rect x="1320" y="340" width="380" height="160" rx="14" class="boxG"/>
-  <rect x="1350" y="322" width="150" height="34" rx="17" class="ctabG"/><text x="1425" y="345" class="tab">① Raw Test</text>
-  <use href="#i-curves" xlink:href="#i-curves" x="1450" y="368" width="120" height="80"/>
-  <text x="1510" y="480" class="cap">matches vs rest: right direction?</text>
+  <path class="yel" d="M910,645 L946,645"/>
 
-  <rect x="1320" y="540" width="380" height="160" rx="14" class="boxG"/>
-  <rect x="1350" y="522" width="240" height="34" rx="17" class="ctabG"/><text x="1470" y="545" class="tab">② Within Control Bins</text>
-  <use href="#i-bins" xlink:href="#i-bins" x="1450" y="568" width="120" height="80"/>
-  <text x="1510" y="680" class="cap">beyond the obvious (e.g. MolLogP)?</text>
+  <path class="yel" d="M1190,645 L1226,645"/>
 
-  <rect x="1320" y="740" width="380" height="160" rx="14" class="boxG"/>
-  <rect x="1350" y="722" width="230" height="34" rx="17" class="ctabG"/><text x="1465" y="745" class="tab">③ FDR + Noise Floor</text>
-  <use href="#i-funnel" xlink:href="#i-funnel" x="1470" y="768" width="80" height="80"/>
-  <text x="1510" y="880" class="cap">Benjamini–Hochberg · effect ≥ noise</text>
+  <rect x="1560" y="60" width="400" height="770" rx="30" class="ctr"/>
 
-  <path class="yel" d="M1338,300 L1338,334"/>
-  <path class="yel" d="M1610,300 L1610,334"/>
-  <path class="yel" d="M1650,500 L1650,534"/>
-  <path class="yel" d="M1650,700 L1650,734"/>
+  <rect x="1590" y="38" width="290" height="46" rx="23" class="ctab"/><text x="1735" y="70" class="ct">3 · Literature Check</text>
 
-  <!-- ═════════ Output ═════════ -->
-  <rect x="1800" y="410" width="360" height="400" rx="22" class="box" stroke-width="4"/>
-  <rect x="1822" y="391" width="230" height="38" rx="19" class="ctab"/>
-  <text x="1937" y="417" class="tab" font-size="19">Verdicts &amp; Report</text>
-  <use href="#i-report" xlink:href="#i-report" x="1845" y="450" width="105" height="105"/>
-  <use href="#i-chart" xlink:href="#i-chart" x="1995" y="455" width="100" height="100"/>
-  <text x="1830" y="605" class="out"><tspan fill="#1FA855" font-weight="700">✔</tspan> survives beyond control</text>
-  <text x="1830" y="637" class="out"><tspan fill="#78909C" font-weight="700">◐</tspan> control only · untestable</text>
-  <text x="1830" y="669" class="out"><tspan fill="#78909C" font-weight="700">✘</tspan> fails</text>
-  <text x="1830" y="701" class="out" fill="#C62828" font-weight="700">⚠ contradicted (wrong sign)</text>
-  <text x="1830" y="745" class="out">+ data vs literature table</text>
-  <text x="1830" y="777" class="out">+ cross-dataset summary</text>
+  <rect x="1595" y="115" width="330" height="140" rx="14" class="box"/>
+  <rect x="1615" y="98" width="180" height="34" rx="17" class="ctab"/>
+  <text x="1705.0" y="121" class="tab">Claim Text Only</text>
+  <use href="#i-quote" xlink:href="#i-quote" x="1613" y="147" width="80" height="80"/>
+  <text x="1713" y="183" class="capL">no data, no verdicts</text>
+  <text x="1713" y="205" class="capL">attached</text>
 
-  <!-- ═════════ Red flows between stages ═════════ -->
-  <path class="red" d="M350,615 L380,615 L380,195 L424,195"/>
-  <path class="red" d="M320,500 L320,20 L1410,20 L1410,106"/>
-  <text x="790" y="44" class="lbl">held-out molecules, routed around every LLM</text>
-  <path class="red" d="M680,605 L680,656 L1284,656"/>
-  <text x="1090" y="650" class="lbl">rules</text>
-  <path class="red" d="M430,580 L414,580 L414,835 L424,835"/>
-  <path class="red" d="M1730,610 L1794,610"/>
-  <path class="red" d="M610,1075 L610,1125 L1980,1125 L1980,816"/>
-  <text x="1300" y="1117" class="lbl">literature stance per claim</text>
+  <rect x="1595" y="290" width="330" height="140" rx="14" class="box"/>
+  <rect x="1615" y="273" width="175" height="34" rx="17" class="ctab"/>
+  <text x="1702.5" y="296" class="tab">Valency Search</text>
+  <use href="#i-search" xlink:href="#i-search" x="1607" y="326" width="95" height="76"/>
+  <text x="1713" y="358" class="capL">claim text as query,</text>
+  <text x="1713" y="380" class="capL">top 5 papers</text>
+
+  <rect x="1595" y="465" width="330" height="140" rx="14" class="box"/>
+  <rect x="1615" y="448" width="195" height="34" rx="17" class="ctab"/>
+  <text x="1712.5" y="471" class="tab">PubMed Abstracts</text>
+  <use href="#i-docs" xlink:href="#i-docs" x="1613" y="497" width="80" height="80"/>
+  <text x="1713" y="533" class="capL">fetched by paper ID</text>
+
+  <rect x="1595" y="640" width="330" height="140" rx="14" class="box"/>
+  <rect x="1615" y="623" width="185" height="34" rx="17" class="ctab"/>
+  <text x="1707.5" y="646" class="tab">Blind LLM Judge</text>
+  <use href="#i-scale" xlink:href="#i-scale" x="1613" y="672" width="80" height="80"/>
+  <text x="1713" y="708" class="capL">must quote; quotes</text>
+  <text x="1713" y="730" class="capL">checked verbatim</text>
+
+  <path class="yel" d="M1890,255 L1890,286"/>
+
+  <path class="yel" d="M1890,430 L1890,461"/>
+
+  <path class="yel" d="M1890,605 L1890,636"/>
+
+  <rect x="360" y="890" width="1600" height="190" rx="22" class="box" stroke-width="3"/>
+  <rect x="382" y="872" width="210" height="36" rx="18" class="ctab"/><text x="487" y="897" class="tab" font-size="18">Verdicts &amp; Report</text>
+  <use href="#i-report" xlink:href="#i-report" x="400" y="925" width="95" height="95"/>
+  <use href="#i-chart" xlink:href="#i-chart" x="510" y="930" width="90" height="90"/>
+  <text x="660" y="955" class="out"><tspan fill="#0E9F88" font-weight="700">✔</tspan> survives beyond control</text>
+  <text x="660" y="990" class="out"><tspan fill="#78909C" font-weight="700">◐</tspan> control only · untestable</text>
+  <text x="660" y="1025" class="out"><tspan fill="#78909C" font-weight="700">✘</tspan> fails · too rare to test</text>
+  <text x="1010" y="955" class="out" fill="#C23B5A" font-weight="700">⚠ contradicted (wrong sign)</text>
+  <text x="1010" y="990" class="out">+ data vs literature table</text>
+  <text x="1010" y="1025" class="out">+ cross-dataset summary</text>
+  <text x="1370" y="955" class="lbl">every run archived to results/:</text><text x="1370" y="990" class="lbl">config copy, prompt, rules,</text><text x="1370" y="1025" class="lbl">manifest with git commit</text>
+
+  <path class="red" d="M320,225 L389,225"/>
+  <path class="red" d="M470,330 L470,425 L180,425 L180,516"/>
+  <text x="200" y="417" class="lbl">sealed test split</text>
+  <path class="red" d="M320,645 L389,645"/>
+  <path class="red" d="M1352,330 L1352,440 L615,440 L615,534"/>
+  <text x="640" y="432" class="lbl">rules (+ one optional revision, valid split only)</text>
+  <path class="red" d="M1470,190 L1589,190"/>
+  <path class="red" d="M1352,750 L1352,884"/>
+  <path class="red" d="M1760,780 L1760,884"/>
 </svg>
