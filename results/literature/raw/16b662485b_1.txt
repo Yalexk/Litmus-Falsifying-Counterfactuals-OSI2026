@@ -1,0 +1,40 @@
+
+{"papers": [
+  {
+    "id": "pubmed:19729075",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "even within a defined lipophilicity range, increased aromatic ring count leads to decreased aqueous solubility",
+    "rationale": ""
+  },
+  {
+    "id": "pubmed:21129497",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "increasing ring counts have detrimental effects on developability in the order carboaromatics≫heteroaromatics>carboaliphatics>heteroaliphatics, with heteroaliphatics exerting a beneficial effect in many cases. Increasing aromatic ring count exerts effects on several developability parameters that are lipophilicity- and size-independent",
+    "rationale": ""
+  },
+  {
+    "id": "pubmed:18396854",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures.",
+    "rationale": ""
+  },
+  {
+    "id": "pubmed:33331380",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": "",
+    "rationale": ""
+  },
+  {
+    "id": "pubmed:35370193",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": "",
+    "rationale": ""
+  }
+],
+"overall": "supported",
+"rationale": "Three independent papers directly support the claim: one explicitly states that increased aromatic ring count decreases aqueous solubility even within a controlled lipophilicity range, one shows aromatic rings have size- and lipophilicity-independent detrimental effects on solubility, and one links extended aromatic/conjugated ring systems to lower solubility via crystal packing stability."}

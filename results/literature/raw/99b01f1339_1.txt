@@ -1,0 +1,35 @@
+
+{"papers": [
+  {
+    "id": "pubmed:17569522",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:27490387",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:21906951",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:24919008",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:23121381",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  }
+],
+"overall": "no_evidence",
+"rationale": "All five abstracts discuss QSPR/solubility modelling methodology in general terms; none specifically addresses the MolLogP = 3.0 threshold or reports a directional comparison of solubility between structurally similar molecules above versus at/below that threshold."}

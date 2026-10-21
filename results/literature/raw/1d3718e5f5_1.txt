@@ -1,0 +1,38 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:38460313",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "Iodination was observed to have the greatest effect on solubility, followed by chlorination, bromination, and fluorination.",
+      "rationale_note": "In a paper framing halogenation as generally lipophilicity-increasing (solubility-decreasing), this ordering places Cl/Br/I as having a greater solubility-reducing effect than F, supporting the claim."
+    },
+    {
+      "id": "pubmed:19325840",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:41561465",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "Effects on binding constants, physicochemical properties such as lipophilicity and solubility, as well as on metabolic properties will show the differences and similarities between the elements in a medicinal context."
+    },
+    {
+      "id": "pubmed:18461988",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:29100802",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "These include, excising hydrophobic groups which do not efficiently contribute to binding, modifying stereo- and regiochemistry, increasing or decreasing the degree of unsaturation or adding small hydrophobic groups such as fluorine or methyl."
+    }
+  ],
+  "overall": "supported",
+  "rationale": "The most directly relevant abstract (pubmed:38460313) explicitly ranks the solubility-reducing effects of halogens as I > Cl > Br > F, supporting the claim that Cl, Br, and I substituents reduce aqueous solubility more than fluorine; pubmed:41561465 addresses the F vs Cl comparison but provides no directional quote, and pubmed:29100802 is off-claim."
+}

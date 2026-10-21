@@ -1,0 +1,37 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:19729075",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "more than three aromatic rings in a molecule correlates with poorer compound developability and, thus, an increased risk of attrition in development. Data are also presented that demonstrate that even within a defined lipophilicity range, increased aromatic ring count leads to decreased aqueous solubility."
+    },
+    {
+      "id": "pubmed:18396854",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures."
+    },
+    {
+      "id": "pubmed:33331380",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:21129497",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "Increasing aromatic ring count exerts effects on several developability parameters that are lipophilicity- and size-independent, and fused aromatic systems have a beneficial effect relative to their nonfused counterparts."
+    },
+    {
+      "id": "pubmed:18484495",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "increasing molecular size, rigidity and lipophilicity decrease solubility whereas increasing conformational flexibility and the presence of a non-conjugated amine group increase the solubility of drug-like compounds."
+    }
+  ],
+  "overall": "supported",
+  "rationale": "pubmed:19729075 directly supports that more than three aromatic rings correlates with decreased aqueous solubility even within a defined lipophilicity range, and pubmed:21129497 confirms ring count effects are size-independent, together backing the claim's two key assertions; pubmed:18396854 provides additional corroboration for extended ring systems reducing solubility."
+}

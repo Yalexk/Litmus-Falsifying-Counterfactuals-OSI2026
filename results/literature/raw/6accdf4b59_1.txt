@@ -1,0 +1,8 @@
+
+{"papers": [{"id": "pubmed:23121381", "relevant": false, "stance": "neutral", "evidence": "", "rationale": "Discusses TPSA as a descriptor in a solubility QSPR model but never addresses the specific regime of TPSA < 3 Å² or comparisons at matched logP."},
+            {"id": "pubmed:22196228", "relevant": false, "stance": "neutral", "evidence": "", "rationale": "Proposes replacing melting point with TPSA in the GSE and shows TPSA improves solubility prediction generally, but makes no statement about TPSA < 3 Å² or the mechanistic claim about H-bonding absence."},
+            {"id": "pubmed:19149561", "relevant": false, "stance": "neutral", "evidence": "", "rationale": "Addresses TPSA as a 2D-QSAR descriptor for pharmacological activity, not aqueous solubility, and does not discuss the TPSA < 3 Å² threshold."},
+            {"id": "pubmed:11020286", "relevant": false, "stance": "neutral", "evidence": "", "rationale": "Introduces the TPSA fragment-based calculation method and validates it against membrane transport (intestinal absorption, Caco-2, BBB), not aqueous solubility, and does not address TPSA < 3 Å²."},
+            {"id": "pubmed:17569522", "relevant": false, "stance": "neutral", "evidence": "", "rationale": "Builds aqueous solubility models from atom-typed solvent-accessible surface areas but does not examine the near-zero TPSA regime or compare solubility at matched logP across TPSA groups."}],
+ "overall": "no_evidence",
+ "rationale": "None of the retrieved abstracts address the specific claim that TPSA < 3 Å² predicts lower solubility relative to any nonzero TPSA at matched logP, nor do any discuss the mechanistic absence of H-bonding solvation at that threshold."}

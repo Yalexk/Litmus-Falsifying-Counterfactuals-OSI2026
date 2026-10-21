@@ -1,0 +1,37 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:24871926",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "The hydration numbers of various nitro compounds, such as nitromethane, nitroethane and 1-nitropropane, were also evaluated to be ca. 0. These findings clearly reveal that neither cyano nor nitro functional groups form strong hydrogen bonds to water molecules."
+    },
+    {
+      "id": "pubmed:22519334",
+      "relevant": true,
+      "stance": "contradicts",
+      "evidence": "The hydration structures around the functional groups in MNA in water are different from those that have been found for methylamine, nitrobenzene, and benzene in aqueous solutions, and these differences together with weak hydrogen bonds explain the lower solubility of MNA in water."
+    },
+    {
+      "id": "pubmed:11031037",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:1474393",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:26208247",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    }
+  ],
+  "overall": "contradicted",
+  "rationale": "No abstract directly compares aqueous solubility of aromatic vs. aliphatic nitro compounds, but pubmed:24871926 shows aliphatic nitro groups form essentially no hydration shell (number ~0), and pubmed:22519334 shows that an aromatic nitro compound (MNA) also forms only weak hydrogen bonds with water, explicitly linking this to lower solubility—contradicting the claim's proposed mechanism that aromatic conjugation improves hydration of the nitro group."
+}

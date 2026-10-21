@@ -1,0 +1,37 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:19827778",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "we further demonstrate that saturation correlates with solubility, an experimental physical property important to success in the drug discovery setting."
+    },
+    {
+      "id": "pubmed:42425067",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "we analyze Fsp3's influence on lipophilicity, permeability, solubility, and off-target potency and compare these findings with previous studies. Leveraging MSD's compound collection (millions of small molecules), we provide further context for the originally reported correlations and novel insights into incorporating Fsp3 effectively in future drug designs."
+    },
+    {
+      "id": "pubmed:33661005",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "incorporating predicted crystal structures in thermodynamic solubility prediction is necessary to differentiate (up to 4 log unit) between solubility of molecules within the series"
+    },
+    {
+      "id": "pubmed:33331380",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "meta-isomers bearing non-flat substituents tend to possess the lowest melting point and the highest thermodynamic aqueous solubility among the regioisomers"
+    },
+    {
+      "id": "pubmed:35370193",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "we found that disruption of intermolecular interaction resulted in better aqueous solubility than a decrease of hydrophobicity in some cases"
+    }
+  ],
+  "overall": "supported",
+  "rationale": "Multiple abstracts support both the directional claim (higher sp3/non-flat character correlates with improved aqueous solubility) and the proposed crystal-packing mechanism (disrupting molecular planarity weakens intermolecular interactions, lowers melting point, and improves solubility independent of—and sometimes more than—reducing lipophilicity), though none precisely tests the Fsp3 > 0.5 threshold at strictly matched MolLogP."
+}

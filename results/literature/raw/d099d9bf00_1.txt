@@ -1,0 +1,40 @@
+
+{"papers": [
+  {
+    "id": "pubmed:10479348",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "The hydrogen-bond propensity of a compound always leads to an increase in solubility, even though the Sigma alpha(2)(H) x Sigma beta(2)(H) term opposes solubility due to interactions in the liquid or solid.",
+    "note": "Supports the directional claim that HB donors (captured by Σα) increase solubility, but does not test >1 vs ≤1 HBD at matched logP, and the multiplicative Σα×Σβ formulation means donors only contribute when acceptors are also present. No mention of cooperative first-shell water coordination."
+  },
+  {
+    "id": "pubmed:36282210",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "Most of the polarity in drug-like compounds comes from hydrogen-bond acceptors since they typically exceed the hydrogen-bond donors in number and are more heavily solvated on an individual basis.",
+    "note": "Discusses HBD effects on aqueous solubility but does not compare >1 vs ≤1 HBD at matched logP. Emphasises acceptors as the dominant solvation contributors per group, which is at best tangential to the claim."
+  },
+  {
+    "id": "pubmed:21906951",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "",
+    "note": "Topic-relevant (matched-pair solubility analysis that could in principle test the HBD-count claim), but the abstract reports only methodology and general goals, not specific findings about HBD count effects at matched logP."
+  },
+  {
+    "id": "pubmed:28054187",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": "",
+    "note": "Focuses on partition coefficients (alkane/water and octanol/water), not aqueous solubility. Provides no evidence for or against the claim."
+  },
+  {
+    "id": "pubmed:32787270",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": "",
+    "note": "Modifies the general solubility equation using H-bond acceptor (B) and flexibility descriptors for large/bRo5 molecules; H-bond donor count and cooperative water coordination are not discussed."
+  }
+],
+"overall": "supported",
+"rationale": "Only pubmed:10479348 bears directly on the claim, providing indirect support that hydrogen-bond donor capacity (Σα) consistently raises aqueous solubility, but none of the abstracts test the specific threshold of >1 vs ≤1 HBD at matched logP, and no abstract addresses the proposed cooperative first-shell water-coordination mechanism."}

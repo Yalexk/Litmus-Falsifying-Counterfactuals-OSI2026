@@ -1,0 +1,37 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:36282210",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "The implications of this polarity imbalance for optimization of permeability and aqueous solubility are discussed."
+    },
+    {
+      "id": "pubmed:35370193",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "the solubility of a solid solute in water is also dependent on the crystal packing of the solute suggesting the existence of another principle of solvation. We have developed alternative strategies to improve solubility by means of chemical modification to weaken intermolecular interaction in the solid state, thereby lowering the melting point and increasing the solubility."
+    },
+    {
+      "id": "pubmed:10479348",
+      "relevant": true,
+      "stance": "contradicts",
+      "evidence": "The hydrogen-bond propensity of a compound always leads to an increase in solubility, even though the Sigma alpha(2)(H) x Sigma beta(2)(H) term opposes solubility due to interactions in the liquid or solid."
+    },
+    {
+      "id": "pubmed:33331380",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:35300304",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "The water sorbed into crystals suspended in aqueous solution may enhance solubility by way of intra-lattice solute-water interactions involving the numerous H-bond acceptors in the big molecules studied."
+    }
+  ],
+  "overall": "mixed",
+  "rationale": "One abstract directly contradicts the claim by stating that hydrogen-bond propensity always increases aqueous solubility, while another supports the claim's proposed mechanism that crystal packing (lattice energy) is a key determinant of solubility, leaving the evidence mixed."
+}

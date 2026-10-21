@@ -1,0 +1,36 @@
+
+{"papers": [
+  {
+    "id": "pubmed:36758178",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:19827778",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "we further demonstrate that saturation correlates with solubility, an experimental physical property important to success in the drug discovery setting."
+  },
+  {
+    "id": "pubmed:18484495",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "increasing molecular size, rigidity and lipophilicity decrease solubility whereas increasing conformational flexibility and the presence of a non-conjugated amine group increase the solubility of drug-like compounds."
+  },
+  {
+    "id": "pubmed:33437941",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:32685821",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  }
+],
+"overall": "supported",
+"rationale": "One directly relevant paper (pubmed:19827778) explicitly demonstrates that carbon bond saturation (Fsp3) positively correlates with solubility, supporting the claim's direction, though the specific 0.45 median threshold is not addressed in any abstract."
+}

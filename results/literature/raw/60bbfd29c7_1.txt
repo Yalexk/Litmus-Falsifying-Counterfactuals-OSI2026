@@ -1,0 +1,35 @@
+
+{"papers": [
+  {
+    "id": "pubmed:16918463",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:17181174",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "Our results show that aromatic fluorine can participate in significant hydrogen bonds and can also interact with charged molecules."
+  },
+  {
+    "id": "pubmed:22262517",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "The hydrogen bonds involving fluorine are relevant, not only for the recognition mechanism and stabilization of a preferred conformation, but also for improvement in the permeability of the molecules"
+  },
+  {
+    "id": "pubmed:34213355",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:38460313",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "Iodination was observed to have the greatest effect on solubility, followed by chlorination, bromination, and fluorination."
+  }
+],
+"overall": "mixed",
+"rationale": "One abstract (pubmed:17181174) supports the H-bond acceptor mechanism central to the claim, but no abstract directly tests aqueous solubility at comparable MolLogP for aromatic C-F compounds, and the solubility study (pubmed:38460313) ranks fluorination as having the weakest solubility-enhancing effect among all halogens without isolating the aromatic C-F motif or controlling for logP."}

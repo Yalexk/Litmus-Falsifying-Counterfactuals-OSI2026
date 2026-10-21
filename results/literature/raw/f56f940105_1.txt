@@ -1,0 +1,37 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:18396854",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures."
+    },
+    {
+      "id": "pubmed:19729075",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "Data are also presented that demonstrate that even within a defined lipophilicity range, increased aromatic ring count leads to decreased aqueous solubility."
+    },
+    {
+      "id": "pubmed:35370193",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "the solubility of a solid solute in water is also dependent on the crystal packing of the solute suggesting the existence of another principle of solvation."
+    },
+    {
+      "id": "pubmed:21129497",
+      "relevant": true,
+      "stance": "contradicts",
+      "evidence": "fused aromatic systems have a beneficial effect relative to their nonfused counterparts"
+    },
+    {
+      "id": "pubmed:33331380",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "meta-isomers bearing non-flat substituents tend to possess the lowest melting point and the highest thermodynamic aqueous solubility among the regioisomers."
+    }
+  ],
+  "overall": "mixed",
+  "rationale": "Two abstracts directly support the claim that higher aromatic ring count reduces aqueous solubility even at comparable lipophilicity, and the crystal-packing mechanism is corroborated, but one abstract notes that fused (polycyclic) aromatic systems are actually less detrimental than non-fused aromatics of the same ring count, partially contradicting the specific mechanistic claim about tight polycyclic stacking."
+}

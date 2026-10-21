@@ -1,0 +1,35 @@
+
+{"papers": [
+  {
+    "id": "pubmed:22196228",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "Replacing the melting point descriptor of the GSE with a descriptor which accounts for topographical polar surface area (TPSA) produces a model of comparable quality to the GSE (the solubility of 81% of compounds in the full data set predicted accurately)."
+  },
+  {
+    "id": "pubmed:11020286",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:23121381",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "the generally positive contribution to aqueous solubility made by phenolic moieties"
+  },
+  {
+    "id": "pubmed:19149561",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:26891978",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "good solubility requires a topological polar surface area (TPSA, in Å(2)) of ≥0.2×molecular weight (MW)"
+  }
+],
+"overall": "supported",
+"rationale": "Two abstracts support the general direction of the claim—that higher TPSA correlates with better aqueous solubility—though neither explicitly evaluates the specific 30 Å² threshold stated in the claim."}

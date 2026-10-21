@@ -70,12 +70,16 @@ def _client():
 
 
 def _ask_cli(prompt: str) -> str:
-    """No API key: use the Claude Code CLI. All tools are disabled and it runs
-    from an empty temp dir, so the model sees only this prompt -- it cannot
-    read the test split, this repo, or its CLAUDE.md."""
+    """No API key: use the Claude Code CLI. It runs from an empty temp dir
+    with no tools at all, so the model sees only this prompt -- it cannot
+    read the test split, this repo, or its CLAUDE.md, or browse to the
+    public ESOL file. `--tools ""` only removes built-in tools; the strict
+    empty MCP config is what removes the user's MCP servers (checked via the
+    stream-json init event: tools == [])."""
     with tempfile.TemporaryDirectory() as tmp:
         r = subprocess.run(
-            ["claude", "-p", "--tools", "", "--system-prompt", SYSTEM,
+            ["claude", "-p", "--tools", "", "--strict-mcp-config",
+             "--mcp-config", '{"mcpServers":{}}', "--system-prompt", SYSTEM,
              "--model", MODEL, "--no-session-persistence", "--output-format", "text"],
             input=prompt, capture_output=True, text=True, cwd=tmp, timeout=600,
         )

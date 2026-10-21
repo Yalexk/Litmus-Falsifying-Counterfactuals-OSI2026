@@ -1,0 +1,37 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:18484495",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "increasing molecular size, rigidity and lipophilicity decrease solubility whereas increasing conformational flexibility and the presence of a non-conjugated amine group increase the solubility of drug-like compounds"
+    },
+    {
+      "id": "pubmed:26891978",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "good solubility requires a topological polar surface area (TPSA, in Å(2)) of ≥0.2×molecular weight (MW)"
+    },
+    {
+      "id": "pubmed:32787270",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "the coefficient of log P (normally fixed at -1.0) varies smoothly from -1.1 for rigid nonionizable molecules (Φ+B = 0) to -0.39 for typically flexible (Φ ∼ 20, B ∼ 6) large molecules. The intercept (traditionally fixed at +0.5) varies smoothly from +1.9 for completely inflexible small molecules to -2.2 for typically flexible large molecules"
+    },
+    {
+      "id": "pubmed:16146352",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:35300304",
+      "relevant": true,
+      "stance": "contradicts",
+      "evidence": "It was demonstrated that the General Solubility Equation (GSE) and the Abraham Solvation Equation (ABSOLV) underpredict solubility in systematic but slightly ways."
+    }
+  ],
+  "overall": "mixed",
+  "rationale": "Two papers support the claim (MW negatively contributes to solubility in QSPR models controlling for lipophilicity, and good solubility requires TPSA to scale with MW), while one paper contradicts it by showing that large beyond-Ro5 molecules are systematically more soluble than models calibrated on small molecules predict, suggesting the MW penalty is overstated for larger compounds."
+}

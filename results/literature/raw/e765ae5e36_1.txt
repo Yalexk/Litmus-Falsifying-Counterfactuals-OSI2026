@@ -1,0 +1,37 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:25963824",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "Neighboring group participation influences logD, so the results are isomer dependent. The logD and logP differences observed between isomeric pyrimidines 1, 2 and 3 presumably result when the carbonyl or ether lone pairs are in close proximity to a heterocyclic nitrogen lone pair, recruiting water to bridge between the electron rich atoms."
+    },
+    {
+      "id": "pubmed:30189136",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:35569689",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:40236529",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "measured chromatographic log D 7.4 values show that 9-acridones are more hydrophobic and less soluble than their 4-quinolone and 4-pyridone counterparts."
+    },
+    {
+      "id": "pubmed:35370193",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "we found that disruption of intermolecular interaction resulted in better aqueous solubility than a decrease of hydrophobicity in some cases."
+    }
+  ],
+  "overall": "no_evidence",
+  "rationale": "No abstract directly compares pyridine-ring molecules to purely carbocyclic aromatic analogs for aqueous solubility; pubmed:25963824 discusses nitrogen-driven water solvation in pyrimidines but frames the effect through changes in lipophilicity (logD) rather than independently of it, pubmed:40236529 compares nitrogen-containing heterocycles only among themselves, and pubmed:35370193 attributes solubility variation primarily to crystal-packing effects rather than H-bond acceptor geometry."
+}

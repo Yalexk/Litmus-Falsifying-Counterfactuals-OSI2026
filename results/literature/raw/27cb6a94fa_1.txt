@@ -1,0 +1,8 @@
+
+{"papers": [{"id": "pubmed:31083946", "relevant": false, "stance": "neutral", "evidence": "", "rationale": "Abstract focuses on hydroxyl groups' role in protein-ligand binding affinity and medicinal chemistry design, not on aqueous solubility comparisons between OH-bearing and non-OH molecules."},
+            {"id": "pubmed:10479348", "relevant": true, "stance": "supports", "evidence": "The hydrogen-bond propensity of a compound always leads to an increase in solubility, even though the Sigma alpha(2)(H) x Sigma beta(2)(H) term opposes solubility due to interactions in the liquid or solid."},
+            {"id": "pubmed:23121381", "relevant": true, "stance": "supports", "evidence": "the generally positive contribution to aqueous solubility made by phenolic moieties"},
+            {"id": "pubmed:20652341", "relevant": false, "stance": "neutral", "evidence": ""},
+            {"id": "pubmed:3723354", "relevant": true, "stance": "supports", "evidence": "log Sw congruent to log (Sg/Kgw) = 0.54 - 3.32V/100 + 0.46 pi* + 5.17 (beta or beta m)"}],
+ "overall": "supported",
+ "rationale": "Two abstracts directly support the claim: one states hydrogen-bond propensity (characteristic of OH groups) always increases aqueous solubility, another notes the generally positive solubility contribution of phenolic (OH-bearing) moieties, and a third shows a positive coefficient on the hydrogen-bond basicity parameter (beta) for aliphatic solutes including alkanols."}

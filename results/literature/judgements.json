@@ -1,0 +1,1020 @@
+{
+  "15bafbb52a": {
+    "papers": [
+      {
+        "id": "pubmed:18484495",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "increasing molecular size, rigidity and lipophilicity decrease solubility whereas increasing conformational flexibility and the presence of a non-conjugated amine group increase the solubility of drug-like compounds",
+        "rationale": "LogP is a direct measure of lipophilicity; higher LogP implies higher lipophilicity, which this model explicitly links to lower solubility.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:32685821",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Abstract describes Bayesian classifier construction and pruning methodology but does not discuss LogP or the direction of the lipophilicity\u2013solubility relationship.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:31176566",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Abstract focuses on SVC models and atom-type descriptors for kinetic solubility; LogP and the training-median threshold are not mentioned.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:18419111",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Model is built solely on molecular weight and aromatic proportion; LogP is not used or discussed.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:17569522",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "ASMS-LOGP was slightly better than ASMS (q(2) = 0.886, RMSE = 0.705)",
+        "rationale": "Abstract confirms ClogP is a useful solubility descriptor but does not explicitly state whether higher LogP is associated with lower or higher solubility, so the directional claim cannot be extracted from this text alone.",
+        "quote_verified": true
+      }
+    ],
+    "overall": "supported",
+    "rationale": "At least one abstract (pubmed:18484495) explicitly states that increasing lipophilicity\u2014quantified by ClogP/LogP\u2014decreases solubility, directly supporting the claim's directional assertion; no abstract contradicts it, though none mention the specific 2.25 median threshold.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "44a0b868ab": {
+    "papers": [
+      {
+        "id": "pubmed:36282210",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "The implications of this polarity imbalance for optimization of permeability and aqueous solubility are discussed.",
+        "note": "Discusses HBDs in the context of aqueous solubility but does not state the directional effect on solubility.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:10479348",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "The hydrogen-bond propensity of a compound always leads to an increase in solubility, even though the Sigma alpha(2)(H) x Sigma beta(2)(H) term opposes solubility due to interactions in the liquid or solid.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:32787270",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:12115811",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "A series of molecular descriptors was calculated directly from chemical structures and a set of eight descriptors, including dipole moment, surface area, volume, molecular weight, number of rotatable bonds/total bonds, number of hydrogen-bond acceptors, number of hydrogen-bond donors and density, was chosen for the final model.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:35370193",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      }
+    ],
+    "overall": "supported",
+    "rationale": "pubmed:10479348 explicitly states that hydrogen-bond propensity (which includes hydrogen-bond donor character, parameterised as \u03a3\u03b1\u2082\u1d34) always increases aqueous solubility, directly supporting the claim.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "dc8a0961a6": {
+    "papers": [
+      {
+        "id": "pubmed:18484495",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "increasing molecular size, rigidity and lipophilicity decrease solubility whereas increasing conformational flexibility and the presence of a non-conjugated amine group increase the solubility of drug-like compounds",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:18419111",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "The final model was based on only two descriptors: the molecular weight (MW) and the aromatic proportion (AP).",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:32685821",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:15154768",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "The most significant parameter was calculated logP(octanol), followed by molecular weight, proportion of heavy atoms in aromatic systems, and number of rotatable bonds.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:35300304",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "the ABSOLV equation (trained with small molecules) underpredicts the solubility of big molecules in all cases tested",
+        "quote_verified": true
+      }
+    ],
+    "overall": "supported",
+    "rationale": "One paper (pubmed:18484495) explicitly states that increasing molecular size decreases solubility, directly supporting the claim; the others identify molecular weight as a predictor but do not state its directional effect, and the bRo5 paper notes complexities for very large molecules without contradicting the general trend.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "d48058757a": {
+    "papers": [
+      {
+        "id": "pubmed:19729075",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "Data are also presented that demonstrate that even within a defined lipophilicity range, increased aromatic ring count leads to decreased aqueous solubility.",
+        "confidence": "high",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:18396854",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:21129497",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "increasing ring counts have detrimental effects on developability in the order carboaromatics\u226bheteroaromatics>carboaliphatics>heteroaliphatics",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:512858",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:1474393",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "the solubilities of polycyclic aromatic hydrocarbons in water predicted in absence of solute-solvent hydrogen (H) bonds are systematically too low. This shows the contribution of weak specific interactions between the OH groups and the pi electrons of the aromatic substances.",
+        "quote_verified": true
+      }
+    ],
+    "overall": "supported",
+    "rationale": "Three directly relevant papers consistently show that increasing aromatic ring count decreases aqueous solubility, while the fourth relevant paper merely notes that weak pi\u2013water hydrogen bonds partially offset hydrophobic penalties in polycyclic aromatics without contradicting the general trend.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "2da0262ec5": {
+    "papers": [
+      {
+        "id": "pubmed:36758178",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:19827778",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "we further demonstrate that saturation correlates with solubility, an experimental physical property important to success in the drug discovery setting.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:18484495",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "increasing molecular size, rigidity and lipophilicity decrease solubility whereas increasing conformational flexibility and the presence of a non-conjugated amine group increase the solubility of drug-like compounds.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:33437941",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:32685821",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      }
+    ],
+    "overall": "supported",
+    "rationale": "One directly relevant paper (pubmed:19827778) explicitly demonstrates that carbon bond saturation (Fsp3) positively correlates with solubility, supporting the claim's direction, though the specific 0.45 median threshold is not addressed in any abstract.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "99b01f1339": {
+    "papers": [
+      {
+        "id": "pubmed:17569522",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:27490387",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:21906951",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:24919008",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:23121381",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      }
+    ],
+    "overall": "no_evidence",
+    "rationale": "All five abstracts discuss QSPR/solubility modelling methodology in general terms; none specifically addresses the MolLogP = 3.0 threshold or reports a directional comparison of solubility between structurally similar molecules above versus at/below that threshold.",
+    "overall_verified": "no_evidence",
+    "model": "claude-sonnet-4-6"
+  },
+  "877edb25bf": {
+    "papers": [
+      {
+        "id": "pubmed:19729075",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "more than three aromatic rings in a molecule correlates with poorer compound developability and, thus, an increased risk of attrition in development. Data are also presented that demonstrate that even within a defined lipophilicity range, increased aromatic ring count leads to decreased aqueous solubility.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:18396854",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:33331380",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:21129497",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "Increasing aromatic ring count exerts effects on several developability parameters that are lipophilicity- and size-independent, and fused aromatic systems have a beneficial effect relative to their nonfused counterparts.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:18484495",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "increasing molecular size, rigidity and lipophilicity decrease solubility whereas increasing conformational flexibility and the presence of a non-conjugated amine group increase the solubility of drug-like compounds.",
+        "quote_verified": true
+      }
+    ],
+    "overall": "supported",
+    "rationale": "pubmed:19729075 directly supports that more than three aromatic rings correlates with decreased aqueous solubility even within a defined lipophilicity range, and pubmed:21129497 confirms ring count effects are size-independent, together backing the claim's two key assertions; pubmed:18396854 provides additional corroboration for extended ring systems reducing solubility.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "4431d9cf74": {
+    "papers": [
+      {
+        "id": "pubmed:36282210",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "The implications of this polarity imbalance for optimization of permeability and aqueous solubility are discussed.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:35370193",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "the solubility of a solid solute in water is also dependent on the crystal packing of the solute suggesting the existence of another principle of solvation. We have developed alternative strategies to improve solubility by means of chemical modification to weaken intermolecular interaction in the solid state, thereby lowering the melting point and increasing the solubility.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:10479348",
+        "relevant": true,
+        "stance": "contradicts",
+        "evidence": "The hydrogen-bond propensity of a compound always leads to an increase in solubility, even though the Sigma alpha(2)(H) x Sigma beta(2)(H) term opposes solubility due to interactions in the liquid or solid.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:33331380",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:35300304",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "The water sorbed into crystals suspended in aqueous solution may enhance solubility by way of intra-lattice solute-water interactions involving the numerous H-bond acceptors in the big molecules studied.",
+        "quote_verified": true
+      }
+    ],
+    "overall": "mixed",
+    "rationale": "One abstract directly contradicts the claim by stating that hydrogen-bond propensity always increases aqueous solubility, while another supports the claim's proposed mechanism that crystal packing (lattice energy) is a key determinant of solubility, leaving the evidence mixed.",
+    "overall_verified": "mixed",
+    "model": "claude-sonnet-4-6"
+  },
+  "96d65df7f7": {
+    "papers": [
+      {
+        "id": "pubmed:22196228",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "Replacing the melting point descriptor of the GSE with a descriptor which accounts for topographical polar surface area (TPSA) produces a model of comparable quality to the GSE (the solubility of 81% of compounds in the full data set predicted accurately).",
+        "rationale_note": "Confirms TPSA is predictive of solubility but does not state the direction of the TPSA\u2013solubility relationship.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:23121381",
+        "relevant": true,
+        "stance": "contradicts",
+        "evidence": "the generally positive contribution to aqueous solubility made by phenolic moieties",
+        "rationale_note": "Phenolic groups raise TPSA; their positive contribution to solubility implies higher TPSA associates with higher solubility, contradicting the claim.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:11020286",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale_note": "Focuses on membrane transport (intestinal absorption, Caco-2, BBB), not aqueous solubility.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:19149561",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale_note": "Addresses TPSA in QSAR for pharmacological activity, not aqueous solubility.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:26891978",
+        "relevant": true,
+        "stance": "contradicts",
+        "evidence": "good solubility requires a topological polar surface area (TPSA, in \u00c5(2)) of \u22650.2\u00d7molecular weight (MW)",
+        "quote_verified": true
+      }
+    ],
+    "overall": "contradicted",
+    "rationale": "The one abstract that explicitly addresses the direction of the TPSA\u2013solubility relationship states that good solubility requires higher (not lower) TPSA relative to molecular weight, directly contradicting the claim that low TPSA (below 30 \u00c5\u00b2) predicts higher aqueous solubility.",
+    "overall_verified": "contradicted",
+    "model": "claude-sonnet-4-6"
+  },
+  "16b662485b": {
+    "papers": [
+      {
+        "id": "pubmed:19729075",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "even within a defined lipophilicity range, increased aromatic ring count leads to decreased aqueous solubility",
+        "rationale": "",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:21129497",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "increasing ring counts have detrimental effects on developability in the order carboaromatics\u226bheteroaromatics>carboaliphatics>heteroaliphatics, with heteroaliphatics exerting a beneficial effect in many cases. Increasing aromatic ring count exerts effects on several developability parameters that are lipophilicity- and size-independent",
+        "rationale": "",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:18396854",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures.",
+        "rationale": "",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:33331380",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:35370193",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "",
+        "quote_verified": false
+      }
+    ],
+    "overall": "supported",
+    "rationale": "Three independent papers directly support the claim: one explicitly states that increased aromatic ring count decreases aqueous solubility even within a controlled lipophilicity range, one shows aromatic rings have size- and lipophilicity-independent detrimental effects on solubility, and one links extended aromatic/conjugated ring systems to lower solubility via crystal packing stability.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "1d3718e5f5": {
+    "papers": [
+      {
+        "id": "pubmed:38460313",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "Iodination was observed to have the greatest effect on solubility, followed by chlorination, bromination, and fluorination.",
+        "rationale_note": "In a paper framing halogenation as generally lipophilicity-increasing (solubility-decreasing), this ordering places Cl/Br/I as having a greater solubility-reducing effect than F, supporting the claim.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:19325840",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:41561465",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "Effects on binding constants, physicochemical properties such as lipophilicity and solubility, as well as on metabolic properties will show the differences and similarities between the elements in a medicinal context.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:18461988",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:29100802",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "These include, excising hydrophobic groups which do not efficiently contribute to binding, modifying stereo- and regiochemistry, increasing or decreasing the degree of unsaturation or adding small hydrophobic groups such as fluorine or methyl.",
+        "quote_verified": true
+      }
+    ],
+    "overall": "supported",
+    "rationale": "The most directly relevant abstract (pubmed:38460313) explicitly ranks the solubility-reducing effects of halogens as I > Cl > Br > F, supporting the claim that Cl, Br, and I substituents reduce aqueous solubility more than fluorine; pubmed:41561465 addresses the F vs Cl comparison but provides no directional quote, and pubmed:29100802 is off-claim.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "27cb6a94fa": {
+    "papers": [
+      {
+        "id": "pubmed:31083946",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Abstract focuses on hydroxyl groups' role in protein-ligand binding affinity and medicinal chemistry design, not on aqueous solubility comparisons between OH-bearing and non-OH molecules.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:10479348",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "The hydrogen-bond propensity of a compound always leads to an increase in solubility, even though the Sigma alpha(2)(H) x Sigma beta(2)(H) term opposes solubility due to interactions in the liquid or solid.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:23121381",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "the generally positive contribution to aqueous solubility made by phenolic moieties",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:20652341",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:3723354",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "log Sw congruent to log (Sg/Kgw) = 0.54 - 3.32V/100 + 0.46 pi* + 5.17 (beta or beta m)",
+        "quote_verified": true
+      }
+    ],
+    "overall": "supported",
+    "rationale": "Two abstracts directly support the claim: one states hydrogen-bond propensity (characteristic of OH groups) always increases aqueous solubility, another notes the generally positive solubility contribution of phenolic (OH-bearing) moieties, and a third shows a positive coefficient on the hydrogen-bond basicity parameter (beta) for aliphatic solutes including alkanols.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "7f2af75024": {
+    "papers": [
+      {
+        "id": "pubmed:18484495",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "increasing molecular size, rigidity and lipophilicity decrease solubility whereas increasing conformational flexibility and the presence of a non-conjugated amine group increase the solubility of drug-like compounds",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:26891978",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "good solubility requires a topological polar surface area (TPSA, in \u00c5(2)) of \u22650.2\u00d7molecular weight (MW)",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:32787270",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "the coefficient of log P (normally fixed at -1.0) varies smoothly from -1.1 for rigid nonionizable molecules (\u03a6+B = 0) to -0.39 for typically flexible (\u03a6 \u223c 20, B \u223c 6) large molecules. The intercept (traditionally fixed at +0.5) varies smoothly from +1.9 for completely inflexible small molecules to -2.2 for typically flexible large molecules",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:16146352",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:35300304",
+        "relevant": true,
+        "stance": "contradicts",
+        "evidence": "It was demonstrated that the General Solubility Equation (GSE) and the Abraham Solvation Equation (ABSOLV) underpredict solubility in systematic but slightly ways.",
+        "quote_verified": true
+      }
+    ],
+    "overall": "mixed",
+    "rationale": "Two papers support the claim (MW negatively contributes to solubility in QSPR models controlling for lipophilicity, and good solubility requires TPSA to scale with MW), while one paper contradicts it by showing that large beyond-Ro5 molecules are systematically more soluble than models calibrated on small molecules predict, suggesting the MW penalty is overstated for larger compounds.",
+    "overall_verified": "mixed",
+    "model": "claude-sonnet-4-6"
+  },
+  "972f6ce1b3": {
+    "papers": [
+      {
+        "id": "pubmed:36282210",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "The implications of this polarity imbalance for optimization of permeability and aqueous solubility are discussed.",
+        "relevant_note": "Discusses HBDs in relation to solubility but makes no directional claim about HBD count.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:10479348",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "The hydrogen-bond propensity of a compound always leads to an increase in solubility, even though the Sigma alpha(2)(H) x Sigma beta(2)(H) term opposes solubility due to interactions in the liquid or solid.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:35370193",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:12115811",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "A series of molecular descriptors was calculated directly from chemical structures and a set of eight descriptors, including dipole moment, surface area, volume, molecular weight, number of rotatable bonds/total bonds, number of hydrogen-bond acceptors, number of hydrogen-bond donors and density, was chosen for the final model.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:28105287",
+        "relevant": true,
+        "stance": "contradicts",
+        "evidence": "Removal of the hydrogen bond yields a 3-fold increase in solubility, but a 7-fold drop in activity.",
+        "quote_verified": true
+      }
+    ],
+    "overall": "mixed",
+    "rationale": "One abstract states that hydrogen-bond propensity always increases solubility (supporting the claim), while another demonstrates that removing a hydrogen-bond donor from a specific molecule produced a 3-fold solubility increase (contradicting it), yielding mixed overall evidence.",
+    "overall_verified": "mixed",
+    "model": "claude-sonnet-4-6"
+  },
+  "51b4ce5eb1": {
+    "papers": [
+      {
+        "id": "pubmed:22196228",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "Replacing the melting point descriptor of the GSE with a descriptor which accounts for topographical polar surface area (TPSA) produces a model of comparable quality to the GSE (the solubility of 81% of compounds in the full data set predicted accurately).",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:11020286",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:23121381",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "the generally positive contribution to aqueous solubility made by phenolic moieties",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:19149561",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:26891978",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "good solubility requires a topological polar surface area (TPSA, in \u00c5(2)) of \u22650.2\u00d7molecular weight (MW)",
+        "quote_verified": true
+      }
+    ],
+    "overall": "supported",
+    "rationale": "Two abstracts support the general direction of the claim\u2014that higher TPSA correlates with better aqueous solubility\u2014though neither explicitly evaluates the specific 30 \u00c5\u00b2 threshold stated in the claim.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "6accdf4b59": {
+    "papers": [
+      {
+        "id": "pubmed:23121381",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Discusses TPSA as a descriptor in a solubility QSPR model but never addresses the specific regime of TPSA < 3 \u00c5\u00b2 or comparisons at matched logP.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:22196228",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Proposes replacing melting point with TPSA in the GSE and shows TPSA improves solubility prediction generally, but makes no statement about TPSA < 3 \u00c5\u00b2 or the mechanistic claim about H-bonding absence.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:19149561",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Addresses TPSA as a 2D-QSAR descriptor for pharmacological activity, not aqueous solubility, and does not discuss the TPSA < 3 \u00c5\u00b2 threshold.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:11020286",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Introduces the TPSA fragment-based calculation method and validates it against membrane transport (intestinal absorption, Caco-2, BBB), not aqueous solubility, and does not address TPSA < 3 \u00c5\u00b2.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:17569522",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Builds aqueous solubility models from atom-typed solvent-accessible surface areas but does not examine the near-zero TPSA regime or compare solubility at matched logP across TPSA groups.",
+        "quote_verified": false
+      }
+    ],
+    "overall": "no_evidence",
+    "rationale": "None of the retrieved abstracts address the specific claim that TPSA < 3 \u00c5\u00b2 predicts lower solubility relative to any nonzero TPSA at matched logP, nor do any discuss the mechanistic absence of H-bonding solvation at that threshold.",
+    "overall_verified": "no_evidence",
+    "model": "claude-sonnet-4-6"
+  },
+  "4c0969e454": {
+    "papers": [
+      {
+        "id": "pubmed:18396854",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:35370193",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "the solubility of a solid solute in water is also dependent on the crystal packing of the solute suggesting the existence of another principle of solvation.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:25880016",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "Lattice energies were calculated via force-field based approaches using Materials Studio.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:33331380",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:19729075",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "more than three aromatic rings in a molecule correlates with poorer compound developability and, thus, an increased risk of attrition in development. Data are also presented that demonstrate that even within a defined lipophilicity range, increased aromatic ring count leads to decreased aqueous solubility.",
+        "quote_verified": true
+      }
+    ],
+    "overall": "supported",
+    "rationale": "pubmed:19729075 directly supports the lipophilicity-controlled ring-count/solubility relationship (>3 rings \u2192 lower solubility even within a defined lipophilicity range), and pubmed:18396854 supports the mechanistic link between extended ring systems, molecular rigidity, and stable crystal structures restricting solubility.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "d099d9bf00": {
+    "papers": [
+      {
+        "id": "pubmed:10479348",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "The hydrogen-bond propensity of a compound always leads to an increase in solubility, even though the Sigma alpha(2)(H) x Sigma beta(2)(H) term opposes solubility due to interactions in the liquid or solid.",
+        "note": "Supports the directional claim that HB donors (captured by \u03a3\u03b1) increase solubility, but does not test >1 vs \u22641 HBD at matched logP, and the multiplicative \u03a3\u03b1\u00d7\u03a3\u03b2 formulation means donors only contribute when acceptors are also present. No mention of cooperative first-shell water coordination.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:36282210",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "Most of the polarity in drug-like compounds comes from hydrogen-bond acceptors since they typically exceed the hydrogen-bond donors in number and are more heavily solvated on an individual basis.",
+        "note": "Discusses HBD effects on aqueous solubility but does not compare >1 vs \u22641 HBD at matched logP. Emphasises acceptors as the dominant solvation contributors per group, which is at best tangential to the claim.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:21906951",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "",
+        "note": "Topic-relevant (matched-pair solubility analysis that could in principle test the HBD-count claim), but the abstract reports only methodology and general goals, not specific findings about HBD count effects at matched logP.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:28054187",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "note": "Focuses on partition coefficients (alkane/water and octanol/water), not aqueous solubility. Provides no evidence for or against the claim.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:32787270",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "note": "Modifies the general solubility equation using H-bond acceptor (B) and flexibility descriptors for large/bRo5 molecules; H-bond donor count and cooperative water coordination are not discussed.",
+        "quote_verified": false
+      }
+    ],
+    "overall": "supported",
+    "rationale": "Only pubmed:10479348 bears directly on the claim, providing indirect support that hydrogen-bond donor capacity (\u03a3\u03b1) consistently raises aqueous solubility, but none of the abstracts test the specific threshold of >1 vs \u22641 HBD at matched logP, and no abstract addresses the proposed cooperative first-shell water-coordination mechanism.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "f56f940105": {
+    "papers": [
+      {
+        "id": "pubmed:18396854",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:19729075",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "Data are also presented that demonstrate that even within a defined lipophilicity range, increased aromatic ring count leads to decreased aqueous solubility.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:35370193",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "the solubility of a solid solute in water is also dependent on the crystal packing of the solute suggesting the existence of another principle of solvation.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:21129497",
+        "relevant": true,
+        "stance": "contradicts",
+        "evidence": "fused aromatic systems have a beneficial effect relative to their nonfused counterparts",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:33331380",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "meta-isomers bearing non-flat substituents tend to possess the lowest melting point and the highest thermodynamic aqueous solubility among the regioisomers.",
+        "quote_verified": true
+      }
+    ],
+    "overall": "mixed",
+    "rationale": "Two abstracts directly support the claim that higher aromatic ring count reduces aqueous solubility even at comparable lipophilicity, and the crystal-packing mechanism is corroborated, but one abstract notes that fused (polycyclic) aromatic systems are actually less detrimental than non-fused aromatics of the same ring count, partially contradicting the specific mechanistic claim about tight polycyclic stacking.",
+    "overall_verified": "mixed",
+    "model": "claude-sonnet-4-6"
+  },
+  "707ce1885b": {
+    "papers": [
+      {
+        "id": "pubmed:19827778",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "we further demonstrate that saturation correlates with solubility, an experimental physical property important to success in the drug discovery setting.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:42425067",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "we analyze Fsp3's influence on lipophilicity, permeability, solubility, and off-target potency and compare these findings with previous studies. Leveraging MSD's compound collection (millions of small molecules), we provide further context for the originally reported correlations and novel insights into incorporating Fsp3 effectively in future drug designs.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:33661005",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "incorporating predicted crystal structures in thermodynamic solubility prediction is necessary to differentiate (up to 4 log unit) between solubility of molecules within the series",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:33331380",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "meta-isomers bearing non-flat substituents tend to possess the lowest melting point and the highest thermodynamic aqueous solubility among the regioisomers",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:35370193",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "we found that disruption of intermolecular interaction resulted in better aqueous solubility than a decrease of hydrophobicity in some cases",
+        "quote_verified": true
+      }
+    ],
+    "overall": "supported",
+    "rationale": "Multiple abstracts support both the directional claim (higher sp3/non-flat character correlates with improved aqueous solubility) and the proposed crystal-packing mechanism (disrupting molecular planarity weakens intermolecular interactions, lowers melting point, and improves solubility independent of\u2014and sometimes more than\u2014reducing lipophilicity), though none precisely tests the Fsp3 > 0.5 threshold at strictly matched MolLogP.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "e765ae5e36": {
+    "papers": [
+      {
+        "id": "pubmed:25963824",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "Neighboring group participation influences logD, so the results are isomer dependent. The logD and logP differences observed between isomeric pyrimidines 1, 2 and 3 presumably result when the carbonyl or ether lone pairs are in close proximity to a heterocyclic nitrogen lone pair, recruiting water to bridge between the electron rich atoms.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:30189136",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:35569689",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:40236529",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "measured chromatographic log D 7.4 values show that 9-acridones are more hydrophobic and less soluble than their 4-quinolone and 4-pyridone counterparts.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:35370193",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "we found that disruption of intermolecular interaction resulted in better aqueous solubility than a decrease of hydrophobicity in some cases.",
+        "quote_verified": true
+      }
+    ],
+    "overall": "no_evidence",
+    "rationale": "No abstract directly compares pyridine-ring molecules to purely carbocyclic aromatic analogs for aqueous solubility; pubmed:25963824 discusses nitrogen-driven water solvation in pyrimidines but frames the effect through changes in lipophilicity (logD) rather than independently of it, pubmed:40236529 compares nitrogen-containing heterocycles only among themselves, and pubmed:35370193 attributes solubility variation primarily to crystal-packing effects rather than H-bond acceptor geometry.",
+    "overall_verified": "no_evidence",
+    "model": "claude-sonnet-4-6"
+  },
+  "e6e7cf3a8a": {
+    "papers": [
+      {
+        "id": "pubmed:24871926",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "The hydration numbers of various nitro compounds, such as nitromethane, nitroethane and 1-nitropropane, were also evaluated to be ca. 0. These findings clearly reveal that neither cyano nor nitro functional groups form strong hydrogen bonds to water molecules.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:22519334",
+        "relevant": true,
+        "stance": "contradicts",
+        "evidence": "The hydration structures around the functional groups in MNA in water are different from those that have been found for methylamine, nitrobenzene, and benzene in aqueous solutions, and these differences together with weak hydrogen bonds explain the lower solubility of MNA in water.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:11031037",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:1474393",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:26208247",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      }
+    ],
+    "overall": "contradicted",
+    "rationale": "No abstract directly compares aqueous solubility of aromatic vs. aliphatic nitro compounds, but pubmed:24871926 shows aliphatic nitro groups form essentially no hydration shell (number ~0), and pubmed:22519334 shows that an aromatic nitro compound (MNA) also forms only weak hydrogen bonds with water, explicitly linking this to lower solubility\u2014contradicting the claim's proposed mechanism that aromatic conjugation improves hydration of the nitro group.",
+    "overall_verified": "contradicted",
+    "model": "claude-sonnet-4-6"
+  },
+  "60bbfd29c7": {
+    "papers": [
+      {
+        "id": "pubmed:16918463",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:17181174",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "Our results show that aromatic fluorine can participate in significant hydrogen bonds and can also interact with charged molecules.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:22262517",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "The hydrogen bonds involving fluorine are relevant, not only for the recognition mechanism and stabilization of a preferred conformation, but also for improvement in the permeability of the molecules",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:34213355",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:38460313",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "Iodination was observed to have the greatest effect on solubility, followed by chlorination, bromination, and fluorination.",
+        "quote_verified": true
+      }
+    ],
+    "overall": "mixed",
+    "rationale": "One abstract (pubmed:17181174) supports the H-bond acceptor mechanism central to the claim, but no abstract directly tests aqueous solubility at comparable MolLogP for aromatic C-F compounds, and the solubility study (pubmed:38460313) ranks fluorination as having the weakest solubility-enhancing effect among all halogens without isolating the aromatic C-F motif or controlling for logP.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  }
+}

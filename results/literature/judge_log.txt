@@ -1,0 +1,23 @@
+  supported    (model said supported) Molecules with LogP above the training median (2.25) are less soluble.
+  supported    (model said supported) Molecules with at least one hydrogen-bond donor are more soluble.
+  supported    (model said supported) Molecules heavier than the training median (156 Da) are less soluble.
+  supported    (model said supported) Molecules with two or more aromatic rings are less soluble.
+  supported    (model said supported) Molecules with sp3 fraction above the training median (0.45) are more 
+  no_evidence  (model said no_evidence) Molecules with MolLogP above 3.0 have lower aqueous solubility than st
+  supported    (model said supported) Molecules with more than three rings in their ring system have lower a
+  mixed        (model said mixed) Molecules with more than one hydrogen-bond donor have lower aqueous so
+  contradicted (model said contradicted) Molecules with TPSA below 30 Å² have higher aqueous solubility than mo
+  supported    (model said supported) Molecules with more than one aromatic ring have lower aqueous solubili
+  supported    (model said supported) Molecules bearing at least one chlorine, bromine, or iodine substituen
+  supported    (model said supported) Molecules containing a hydroxyl group have higher aqueous solubility t
+  mixed        (model said mixed) Molecules with molecular weight above 300 Da have lower aqueous solubi
+  mixed        (model said mixed) Molecules bearing at least two hydrogen-bond donors have higher aqueou
+  supported    (model said supported) Molecules with TPSA below 30 Å² have lower aqueous solubility than mol
+  no_evidence  (model said no_evidence) Molecules with TPSA below 3 Å² are less soluble than molecules with an
+  supported    (model said supported) Molecules with four or more rings are less soluble than those with few
+  supported    (model said supported) Molecules with more than one hydrogen-bond donor are more soluble than
+  mixed        (model said mixed) Molecules with more than one aromatic ring are less soluble than molec
+  supported    (model said supported) Molecules with FractionCSP3 above 0.5 are more soluble than flatter mo
+  no_evidence  (model said no_evidence) Molecules containing a pyridine ring are more soluble than structurall
+  contradicted (model said contradicted) Molecules in which a nitro group is bonded directly to an aromatic car
+  supported    (model said mixed) Molecules containing an aromatic C–F bond are more soluble than molecu

@@ -1,0 +1,35 @@
+
+{"papers": [
+  {
+    "id": "pubmed:18396854",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures."
+  },
+  {
+    "id": "pubmed:35370193",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "the solubility of a solid solute in water is also dependent on the crystal packing of the solute suggesting the existence of another principle of solvation."
+  },
+  {
+    "id": "pubmed:25880016",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "Lattice energies were calculated via force-field based approaches using Materials Studio."
+  },
+  {
+    "id": "pubmed:33331380",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:19729075",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "more than three aromatic rings in a molecule correlates with poorer compound developability and, thus, an increased risk of attrition in development. Data are also presented that demonstrate that even within a defined lipophilicity range, increased aromatic ring count leads to decreased aqueous solubility."
+  }
+],
+"overall": "supported",
+"rationale": "pubmed:19729075 directly supports the lipophilicity-controlled ring-count/solubility relationship (>3 rings → lower solubility even within a defined lipophilicity range), and pubmed:18396854 supports the mechanistic link between extended ring systems, molecular rigidity, and stable crystal structures restricting solubility."}
