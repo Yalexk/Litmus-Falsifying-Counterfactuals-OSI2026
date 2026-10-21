@@ -214,53 +214,61 @@ def _bh(rows: list[dict], p_key: str, alpha: float) -> None:
         r[out_key] = i <= k
 
 
-def report(results: list[dict], alpha: float = 0.05, noise_floor: float = 0.6):
+def report(results: list[dict], alpha: float = 0.05, noise_floor: float = 0.6,
+           min_coverage: float = 0.5, label: str = "LLM hypotheses"):
     """Benjamini-Hochberg across all tested rules, plus a noise floor.
 
     noise_floor is in target units -- for ESOL logS, experimental error is
     ~0.6, so an effect smaller than that is not a finding no matter what the
     p-value says. This single line is what separates your submission from a
     demo that launders noise into confident chemistry prose.
+
+    Call once per family (LLM rules, textbook baseline) -- each call is its
+    own BH family.
     """
     ev = [r for r in results if r.get("status") == "evaluated"]
     ev.sort(key=lambda r: r["p_value"])
-    adjusted = bool(ev) and "p_value_adj" in ev[0]
     _bh(ev, "p_value", alpha)
-    if adjusted:
-        _bh(ev, "p_value_adj", alpha)
-    strat = [r for r in ev if r.get("p_value_strat") is not None]
+    # Beyond-LogP is judged by the binned test, and only where it has enough
+    # coverage to mean anything. The linear _adj fields stay in the output
+    # as a diagnostic: the line is miscalibrated at high LogP.
+    strat = [r for r in ev if r.get("p_value_strat") is not None
+             and r["strat_coverage"] >= min_coverage]
     _bh(strat, "p_value_strat", alpha)
+
+    def finding(r, sfx):
+        return (r.get("bh_significant" + sfx)
+                and abs(r["effect" + sfx]) >= noise_floor)
+
     for r in ev:
+        r["survives"] = bool(r["holds"] and finding(r, ""))
+        r["strat_testable"] = any(r is s for s in strat)
         r["survives_strat"] = bool(
-            r.get("holds_strat") and r.get("bh_significant_strat")
-            and abs(r["effect_strat"]) >= noise_floor
-        )
-    for r in ev:
-        r["survives"] = bool(
-            r["holds"] and r["bh_significant"] and abs(r["effect"]) >= noise_floor
-        )
-        if adjusted:
-            r["survives_adj"] = bool(
-                r["holds_adj"] and r["bh_significant_adj"]
-                and abs(r["effect_adj"]) >= noise_floor
-            )
+            r["strat_testable"] and r["holds_strat"] and finding(r, "_strat"))
+        # Wrong sign AND a real effect: the claim is contradicted, not just
+        # unsupported. These rows are deliverable 3.
+        r["contradicted"] = bool(
+            (not r["holds"] and finding(r, "")) or
+            (r["strat_testable"] and not r["holds_strat"] and finding(r, "_strat")))
+        r["verdict"] = (
+            "contradicted" if r["contradicted"] else
+            "fails" if not r["survives"] else
+            "survives_beyond_logp" if r["survives_strat"] else
+            "logp_only" if r["strat_testable"] else
+            "untestable_beyond_logp")
     for r in results:
         if r.get("status") != "evaluated":
-            r["bh_significant"] = False
-            r["survives"] = False
-            r["survives_strat"] = False
-            if adjusted:
-                r["survives_adj"] = False
+            r.update(bh_significant=False, survives=False, survives_strat=False,
+                     strat_testable=False, contradicted=False,
+                     verdict="insufficient_support")
     n = max(len(results), 1)
     n_sur = sum(r["survives"] for r in ev)
-    print(f"\n{n_sur}/{len(results)} LLM hypotheses survived held-out testing "
-          f"({n_sur / n:.0%})")
-    if adjusted:
-        n_adj = sum(r["survives_adj"] for r in ev)
-        print(f"{n_adj}/{len(results)} survived beyond LogP ({n_adj / n:.0%})")
-    if strat:
-        n_st = sum(r["survives_strat"] for r in ev)
-        print(f"{n_st}/{len(results)} survived within LogP bins ({n_st / n:.0%})")
+    n_st = sum(r["survives_strat"] for r in ev)
+    n_con = sum(r["contradicted"] for r in ev)
+    print(f"\n{n_sur}/{len(results)} {label} survived held-out testing ({n_sur / n:.0%})")
+    print(f"{n_st}/{len(results)} survived beyond LogP, binned ({n_st / n:.0%}); "
+          f"{len(ev) - len(strat)} untestable at coverage < {min_coverage:.0%}")
+    print(f"{n_con}/{len(results)} contradicted (wrong sign, real effect)")
     # Return every rule, including insufficient-support ones, so the saved
     # artefact has the same denominator as the headline.
     return ev + [r for r in results if r.get("status") != "evaluated"]

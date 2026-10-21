@@ -15,6 +15,7 @@ from pathlib import Path
 from src import counterfactuals as cf
 from src import data as D
 from src.model import BlackBox
+from src.baseline import textbook_rules
 from src.rules import Rule, evaluate, fit_logp_baseline, logp_bin_edges, report
 
 PROPERTY = "aqueous solubility, log mol/L (higher = more soluble)"
@@ -41,6 +42,18 @@ def main(a):
         records = cf.run_batch(bases, box, str(cf_path),
                                threshold=a.threshold, num_samples=a.num_samples)
 
+    logp_fit = fit_logp_baseline(train)
+    logp_edges = logp_bin_edges(train)
+    ev = dict(logp_fit=logp_fit, logp_edges=logp_edges)
+
+    # Textbook baseline: same harness, own BH family. Needs no LLM.
+    base = report([evaluate(r, test, **ev) | {"ref": r.provenance["ref"]}
+                   for r in textbook_rules(train)],
+                  noise_floor=a.noise_floor, min_coverage=a.min_coverage,
+                  label="textbook rules")
+    Path("out/baseline.json").write_text(json.dumps(base, indent=2))
+    show(base)
+
     if a.skip_llm:
         print("\n--skip-llm set; stopping before hypothesis generation.")
         return
@@ -50,18 +63,15 @@ def main(a):
     rules = propose(records, PROPERTY, n=a.n_rules)
     print(f"\n{len(rules)} well-formed hypotheses proposed")
 
-    logp_fit = fit_logp_baseline(train)
-    print(f"LogP baseline (train): y = {logp_fit[0]:.2f}*LogP + {logp_fit[1]:.2f}")
-    logp_edges = logp_bin_edges(train)
-    ev = dict(logp_fit=logp_fit, logp_edges=logp_edges)
-
     # Revision feedback comes from the valid split only. The test split is
     # scored exactly once per final rule and never shown to the LLM.
     results, final = [], []
     for r in rules:
         if a.revise:
             res_valid = evaluate(r, valid, **ev)
-            if not (res_valid.get("holds") and res_valid.get("holds_adj")):
+            beyond_logp_fails = (res_valid.get("strat_coverage", 0) >= a.min_coverage
+                                 and not res_valid.get("holds_strat"))
+            if not res_valid.get("holds") or beyond_logp_fails:
                 r2 = revise(r, res_valid, PROPERTY)
                 if r2:
                     res2 = evaluate(r2, test, **ev)
@@ -73,20 +83,19 @@ def main(a):
         results.append(evaluate(r, test, **ev))
         final.append(r)
 
-    scored = report(results, noise_floor=a.noise_floor)
+    scored = report(results, noise_floor=a.noise_floor, min_coverage=a.min_coverage)
     Path("out/rules.json").write_text(json.dumps(scored, indent=2))
+    show(scored)
 
-    print("\nRules (raw / beyond-LogP / within-LogP-bins effect):")
+
+def show(scored):
+    print("  verdict                 raw    binned  cov   n  rule")
     for r in scored:
-        if r.get("status") != "evaluated":
-            print(f"  [insufficient support, n={r['support']}] {r['text']}")
-            continue
-        tag = ("SURVIVES" if r["survives_adj"] else
-               "raw only" if r["survives"] else "fails")
-        st = r["effect_strat"]
-        st = "n/a" if st is None else f"{st:+.2f}"
-        print(f"  {tag:8} [{r['effect']:+.2f} / {r['effect_adj']:+.2f} / {st}, "
-              f"n={r['support']}] {r['text']}")
+        st = r.get("effect_strat")
+        raw = f"{r['effect']:+.2f}" if "effect" in r else "  n/a"
+        st = "  n/a" if st is None else f"{st:+.2f}"
+        cov = f"{r.get('strat_coverage', 0):.0%}"
+        print(f"  {r['verdict']:22} {raw:>6} {st:>6} {cov:>4} {r['support']:>3}  {r['text']}")
 
 
 if __name__ == "__main__":
@@ -99,6 +108,9 @@ if __name__ == "__main__":
                    help="min |delta| in target units to count as a counterfactual")
     p.add_argument("--noise-floor", type=float, default=0.6,
                    help="effects smaller than this are not findings")
+    p.add_argument("--min-coverage", type=float, default=0.5,
+                   help="min fraction of matching molecules in usable LogP bins "
+                        "for a rule to be testable beyond LogP")
     p.add_argument("--refresh-cf", action="store_true")
     p.add_argument("--skip-llm", action="store_true")
     p.add_argument("--revise", action="store_true")
