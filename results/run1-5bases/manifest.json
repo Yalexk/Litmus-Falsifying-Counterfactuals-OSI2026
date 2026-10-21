@@ -1,0 +1,6 @@
+{
+  "run_name": "run1-5bases",
+  "note": "Archived by hand. Counterfactuals from 5 bases picked with train.head() (pre spread_bases); LLM stage run once without --revise at commit 99118f3. rules.json was rescored at d060a1e with the binned verdicts; baseline.json is from d060a1e.",
+  "baseline_verdicts": {"untestable_beyond_logp": 3, "logp_only": 2},
+  "llm_verdicts": {"untestable_beyond_logp": 4, "logp_only": 3, "survives_beyond_logp": 1}
+}

@@ -10,6 +10,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
+import subprocess
+from collections import Counter
+from datetime import datetime
 from pathlib import Path
 
 from src import counterfactuals as cf
@@ -37,7 +41,7 @@ def main(a):
         records = json.loads(cf_path.read_text())
         print(f"reusing {len(records)} cached counterfactual sets")
     else:
-        bases = train["smiles"].head(a.n_bases).tolist()
+        bases = D.spread_bases(train, a.n_bases)
         print(f"generating counterfactuals for {len(bases)} base molecules...")
         records = cf.run_batch(bases, box, str(cf_path),
                                threshold=a.threshold, num_samples=a.num_samples)
@@ -56,6 +60,7 @@ def main(a):
 
     if a.skip_llm:
         print("\n--skip-llm set; stopping before hypothesis generation.")
+        archive(a, base, None)
         return
 
     from src.hypotheses import propose, revise
@@ -86,6 +91,39 @@ def main(a):
     scored = report(results, noise_floor=a.noise_floor, min_coverage=a.min_coverage)
     Path("out/rules.json").write_text(json.dumps(scored, indent=2))
     show(scored)
+    archive(a, base, scored)
+
+
+def archive(a, base, scored):
+    """Copy this run's artefacts from out/ into results/<run-name>/ with a
+    manifest. out/ is scratch and gets overwritten; results/ is committed."""
+    if not a.run_name:
+        return
+    dest = Path("results") / a.run_name
+    dest.mkdir(parents=True, exist_ok=True)
+    files = ["model_metrics.json", "counterfactuals.json", "baseline.json"]
+    if scored is not None:
+        files.append("rules.json")
+    for f in files:
+        shutil.copy(Path("out") / f, dest / f)
+
+    def git(*cmd):
+        return subprocess.run(["git", *cmd], capture_output=True, text=True).stdout.strip()
+
+    def verdicts(rows):
+        return None if rows is None else dict(Counter(r["verdict"] for r in rows))
+
+    manifest = {
+        "run_name": a.run_name,
+        "timestamp": datetime.now().isoformat(timespec="seconds"),
+        "git_commit": git("rev-parse", "--short", "HEAD"),
+        "git_dirty": bool(git("status", "--porcelain", "--untracked-files=no")),
+        "args": vars(a),
+        "baseline_verdicts": verdicts(base),
+        "llm_verdicts": verdicts(scored),
+    }
+    (dest / "manifest.json").write_text(json.dumps(manifest, indent=2))
+    print(f"\narchived to {dest}/")
 
 
 def show(scored):
@@ -111,6 +149,8 @@ if __name__ == "__main__":
     p.add_argument("--min-coverage", type=float, default=0.5,
                    help="min fraction of matching molecules in usable LogP bins "
                         "for a rule to be testable beyond LogP")
+    p.add_argument("--run-name", default=None,
+                   help="archive this run's artefacts to results/<run-name>/")
     p.add_argument("--refresh-cf", action="store_true")
     p.add_argument("--skip-llm", action="store_true")
     p.add_argument("--revise", action="store_true")

@@ -125,6 +125,21 @@ def scaffold_split(df: pd.DataFrame, frac_train=0.7, frac_valid=0.15, seed=0):
     )
 
 
+def spread_bases(df: pd.DataFrame, n: int, seed: int = 0) -> list[str]:
+    """n base SMILES, one per distinct scaffold, scaffolds chosen at random.
+
+    A plain random sample is dominated by the commonest scaffolds (benzene,
+    acyclic), so the LLM would see the same chemistry over and over.
+    """
+    groups: dict[str, list[int]] = defaultdict(list)
+    for i, s in enumerate(df["smiles"]):
+        groups[murcko_scaffold(s)].append(i)
+    rng = np.random.default_rng(seed)
+    keys = sorted(groups)
+    rng.shuffle(keys)
+    return [df["smiles"].iloc[int(rng.choice(groups[k]))] for k in keys[:n]]
+
+
 if __name__ == "__main__":
     d = load_esol()
     tr, va, te = scaffold_split(d)
