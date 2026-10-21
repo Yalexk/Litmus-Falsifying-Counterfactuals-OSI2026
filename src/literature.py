@@ -1,12 +1,12 @@
 """Literature column: a second adjudicator for each rule, independent of the data.
 
-    python -m src.literature export results/run2-20bases results/run3-prompt-v2
+    python -m src.literature configs/esol.json export results/esol/run2-20bases ...
     [retrieval -- see below]
-    python -m src.literature fetch
-    python -m src.literature judge
-    python -m src.literature table
+    python -m src.literature configs/esol.json fetch
+    python -m src.literature configs/esol.json judge
+    python -m src.literature configs/esol.json table
 
-Everything lives in results/literature/ and is committed.
+Everything lives in results/<dataset>/literature/ and is committed.
 
 export   claims.json: id + claim text only. No data verdicts, so nothing
          downstream can be steered by them.
@@ -37,7 +37,10 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-LIT = Path("results/literature")
+from .config import load as load_config
+from .rules import LEGACY_VERDICTS
+
+LIT =Path("results/literature")  # set per dataset in __main__
 FAMILIES = {"baseline.json": "textbook", "rules.json": "llm",
             "rules_prerevision.json": "llm_prerevision"}
 
@@ -134,7 +137,7 @@ def fetch():
 
 
 JUDGE_SYSTEM = """You judge whether published literature supports a claim about \
-the aqueous solubility of organic molecules. You see the claim and a few \
+the {property} of organic molecules. You see the claim and a few \
 abstracts returned by a search engine. Judge ONLY from the text of the \
 abstracts, not from your own knowledge. Many abstracts will be off-topic; say so.
 
@@ -153,7 +156,7 @@ contradicts the claim.
 """
 
 
-def _judge_one(text: str, papers: list[dict], model: str, cid: str) -> dict:
+def _judge_one(text: str, papers: list[dict], model: str, cid: str, system: str) -> dict:
     """One retry on unparseable JSON (verbatim quotes often contain unescaped
     double quotes). Raw responses are kept in raw/ for audit."""
     blocks = [f"[{p['source']}:{p['id']}] {p['title']}\n{p['abstract'] or '(no abstract)'}"
@@ -161,7 +164,7 @@ def _judge_one(text: str, papers: list[dict], model: str, cid: str) -> dict:
     prompt = f"Claim: {text}\n\nAbstracts:\n\n" + "\n\n".join(blocks)
     (LIT / "raw").mkdir(exist_ok=True)
     for attempt in (1, 2):
-        txt = _call_judge(prompt, model)
+        txt = _call_judge(prompt, model, system)
         (LIT / "raw" / f"{cid}_{attempt}.txt").write_text(txt)
         try:
             return json.loads(txt)
@@ -172,11 +175,11 @@ def _judge_one(text: str, papers: list[dict], model: str, cid: str) -> dict:
                        "with valid JSON only; escape any double quotes inside strings.")
 
 
-def _call_judge(prompt: str, model: str) -> str:
+def _call_judge(prompt: str, model: str, system: str) -> str:
     with tempfile.TemporaryDirectory() as tmp:
         r = subprocess.run(
             ["claude", "-p", "--tools", "", "--strict-mcp-config",
-             "--mcp-config", '{"mcpServers":{}}', "--system-prompt", JUDGE_SYSTEM,
+             "--mcp-config", '{"mcpServers":{}}', "--system-prompt", system,
              "--model", model, "--no-session-persistence", "--output-format", "text"],
             input=prompt, capture_output=True, text=True, cwd=tmp, timeout=600,
         )
@@ -189,7 +192,7 @@ def _norm(s: str) -> str:
     return " ".join(s.split()).lower()
 
 
-def judge(model: str = "claude-sonnet-4-6"):
+def judge(cfg: dict, model: str = "claude-sonnet-4-6"):
     claims = json.loads((LIT / "claims.json").read_text())
     hits = json.loads((LIT / "hits.json").read_text())
     abstracts = json.loads((LIT / "abstracts.json").read_text())
@@ -200,7 +203,8 @@ def judge(model: str = "claude-sonnet-4-6"):
             continue
         papers = [dict(p, abstract=abstracts.get(f"{p['source']}:{p['id']}", ""))
                   for p in hits[c["id"]]["papers"]]
-        j = _judge_one(c["text"], papers, model, c["id"])
+        j = _judge_one(c["text"], papers, model, c["id"],
+                       JUDGE_SYSTEM.replace("{property}", cfg["property"]))
         # Quote check: a stance only counts if its quote is really in the abstract.
         by_id = {f"{p['source']}:{p['id']}": p["abstract"] for p in papers}
         by_id.update({p["id"]: p["abstract"] for p in papers})
@@ -220,21 +224,26 @@ def judge(model: str = "claude-sonnet-4-6"):
         print(f"  {j['overall_verified']:12} (model said {j.get('overall')}) {c['text'][:70]}")
 
 
-# Claims that explicitly assert an effect beyond lipophilicity (prompt v2
-# wording). For these, raw survival is not support: the data must show the
-# effect at matched LogP too.
-BEYOND_LOGP = re.compile(r"(matched|comparable) MolLogP|independently of lipophilicity|"
-                         r"beyond what lipophilicity", re.I)
+def _beyond_control_re(cfg: dict):
+    """Claims that explicitly assert an effect beyond the control descriptor
+    (prompt v2 wording, e.g. "at matched MolLogP"). For these, raw survival
+    is not support: the data must show the effect within control bins too."""
+    c = cfg["control"]
+    if c is None:
+        return None
+    d, name = re.escape(c["descriptor"]), re.escape(c["name"])
+    return re.compile(rf"(matched|comparable) {d}|independently of {name}|"
+                      rf"beyond what {name}", re.I)
 
 
-def _data_says(row) -> str:
-    v = row.get("verdict", "")
+def _data_says(row, beyond_re) -> str:
+    v = LEGACY_VERDICTS.get(row.get("verdict", ""), row.get("verdict", ""))
     if v == "contradicted":
         return "contradicted"
-    if BEYOND_LOGP.search(row["text"]):
-        return {"survives_beyond_logp": "supported",
-                "logp_only": "not supported beyond LogP"}.get(v, "unclear")
-    if v in ("survives_beyond_logp", "logp_only", "untestable_beyond_logp"):
+    if beyond_re and beyond_re.search(row["text"]):
+        return {"survives_beyond_control": "supported",
+                "control_only": "not supported beyond control"}.get(v, "unclear")
+    if v in ("survives_beyond_control", "control_only", "untestable_beyond_control"):
         return "supported"
     return "unclear"
 
@@ -242,12 +251,13 @@ def _data_says(row) -> str:
 def _agree(data: str, lit: str) -> str:
     if lit in ("no_evidence", "mixed", "not judged") or data == "unclear":
         return "n/a"
-    if data == "not supported beyond LogP":
+    if data == "not supported beyond control":
         return "DISAGREE" if lit == "supported" else "agree"
     return "agree" if lit == data else "DISAGREE"
 
 
-def table():
+def table(cfg: dict):
+    beyond_re = _beyond_control_re(cfg)
     runs = json.loads((LIT / "runs.json").read_text())
     judg = json.loads((LIT / "judgements.json").read_text())
     hits = json.loads((LIT / "hits.json").read_text())
@@ -263,7 +273,7 @@ def table():
         cid = claim_id(row["text"])
         j = judg.get(cid)
         lit = j["overall_verified"] if j else "not judged"
-        data = _data_says(row)
+        data = _data_says(row, beyond_re)
         agree = _agree(data, lit)
         n[agree] += 1
         cited = [p for p in (j or {}).get("papers", []) if p.get("stance") != "neutral"]
@@ -271,7 +281,8 @@ def table():
         refs = " ".join(f"[{p['id']}]({urls.get(p['id'].split(':')[-1], '')}) {p['stance']}"
                         for p in cited)
         fmt = lambda x: "" if x is None else f"{x:+.2f}"
-        lines.append(f"| {run} | {family} | {row.get('verdict')} | {data} | "
+        verdict = LEGACY_VERDICTS.get(row.get("verdict"), row.get("verdict"))
+        lines.append(f"| {run} | {family} | {verdict} | {data} | "
                      f"{fmt(row.get('effect'))} | "
                      f"{fmt(row.get('effect_strat'))} | {lit} | {agree} | "
                      f"{row['text'].replace('|', '/')} | {refs} |")
@@ -281,5 +292,8 @@ def table():
 
 
 if __name__ == "__main__":
-    cmd, *args = sys.argv[1:]
-    {"export": lambda: export(args), "fetch": fetch, "judge": judge, "table": table}[cmd]()
+    cfg_path, cmd, *args = sys.argv[1:]
+    cfg = load_config(cfg_path)
+    LIT = Path("results") / cfg["name"] / "literature"
+    {"export": lambda: export(args), "fetch": fetch, "judge": lambda: judge(cfg),
+     "table": lambda: table(cfg)}[cmd]()

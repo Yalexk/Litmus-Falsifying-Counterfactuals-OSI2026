@@ -9,6 +9,7 @@ from __future__ import annotations
 import io
 import urllib.request
 from collections import defaultdict
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -20,6 +21,31 @@ RDLogger.DisableLog("rdApp.*")
 ESOL_URL = (
     "https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/delaney-processed.csv"
 )
+
+
+def load_dataset(cfg: dict) -> pd.DataFrame:
+    """Load any dataset described by a config (see src/config.py).
+
+    Reads the CSV from source.path if given, else source.url (cached under
+    data/<name>.csv so reruns don't refetch), keeps the SMILES and target
+    columns as smiles / y, then canonicalises and dedupes via clean().
+    """
+    src = cfg["source"]
+    if src.get("path"):
+        df = pd.read_csv(src["path"])
+    else:
+        cache = Path("data") / f"{cfg['name']}.csv"
+        if not cache.exists():
+            cache.parent.mkdir(exist_ok=True)
+            with urllib.request.urlopen(src["url"]) as r:
+                cache.write_bytes(r.read())
+        df = pd.read_csv(cache)
+    missing = {cfg["smiles_col"], cfg["target_col"]} - set(df.columns)
+    if missing:
+        raise ValueError(f"{cfg['name']}: columns {missing} not in {list(df.columns)[:20]}")
+    df = df.rename(columns={cfg["smiles_col"]: "smiles", cfg["target_col"]: "y"})
+    df["y"] = pd.to_numeric(df["y"], errors="coerce")
+    return clean(df[["smiles", "y"]])
 
 
 def load_esol(path: str | None = None) -> pd.DataFrame:

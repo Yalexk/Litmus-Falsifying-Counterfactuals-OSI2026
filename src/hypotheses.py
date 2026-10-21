@@ -14,6 +14,7 @@ import tempfile
 
 import anthropic
 
+from .config import property_line
 from .rules import GROUP_SMARTS, Rule, validate
 
 MODEL = os.environ.get("CF_MODEL", "claude-sonnet-4-6")
@@ -23,25 +24,38 @@ MODEL = os.environ.get("CF_MODEL", "claude-sonnet-4-6")
 # to propose -- whoever edits it has seen test results.
 PROMPT_VERSION = "v2"
 
-SYSTEM = """You are generating falsifiable structure-property hypotheses from \
+_HEAD = """You are generating falsifiable structure-property hypotheses from \
 counterfactual explanations of a molecular property model.
 
 You will see a base molecule, its predicted value, and nearby molecules whose \
 predicted value differs. Propose general rules that would explain the pattern.
 
 How your rules will be scored, on measured data you will not see:
-1. Raw test: do molecules matching the condition differ from the rest in the \
-claimed direction, by more than experimental error (~0.6 log units)?
-2. Matched-lipophilicity test: the same comparison made only between \
-molecules of similar MolLogP. Lipophilicity alone explains most of this \
-property, so a rule that is only a proxy for lipophilicity (or for things \
-that track it closely, such as overall size or overall polarity) passes the \
-raw test and then shows no effect at matched MolLogP. Such rules count as \
-restating something already known.
-Aim for rules that would still hold between two molecules of the same \
-MolLogP. A rule whose condition is nearly equivalent to a MolLogP threshold \
-cannot be tested this way and earns nothing.
-A condition that matches very few molecules cannot be tested at all; aim for \
+"""
+
+
+def _scoring(cfg: dict) -> str:
+    """The dataset-specific part: noise floor and the control descriptor."""
+    raw = ("1. Raw test: do molecules matching the condition differ from the rest in the "
+           "claimed direction, by more than experimental error "
+           f"(~{cfg['noise_floor']:g} {cfg['unit_word']})?\n")
+    c = cfg["control"]
+    if c is None:
+        return raw
+    d = c["descriptor"]
+    return raw + (
+        f"2. {c['test_name']} test: the same comparison made only between "
+        f"molecules of similar {d}. {c['name'].capitalize()} alone explains most of this "
+        f"property, so a rule that is only a proxy for {c['name']} (or for things "
+        f"that track it closely, such as {c['proxies']}) passes the "
+        f"raw test and then shows no effect at matched {d}. Such rules count as "
+        "restating something already known.\n"
+        "Aim for rules that would still hold between two molecules of the same "
+        f"{d}. A rule whose condition is nearly equivalent to a {d} threshold "
+        "cannot be tested this way and earns nothing.\n")
+
+
+_TAIL = """A condition that matches very few molecules cannot be tested at all; aim for \
 conditions that a reasonable fraction of small organic molecules satisfy.
 
 Output JSON only. No prose, no markdown fences. Schema:
@@ -60,6 +74,11 @@ property values than molecules that do not.
 - Do not hedge. A vague hypothesis cannot be falsified and is worthless here.
 """
 
+
+def system_prompt(cfg: dict) -> str:
+    return _HEAD + _scoring(cfg) + _TAIL
+
+
 DESCRIPTORS_DOC = """Available descriptors: MolWt, MolLogP, TPSA, NumHDonors, \
 NumHAcceptors, NumRotatableBonds, NumAromaticRings, FractionCSP3, RingCount.
 Known-good SMARTS for common groups: """ + json.dumps(GROUP_SMARTS)
@@ -69,7 +88,7 @@ def _client():
     return anthropic.Anthropic()
 
 
-def _ask_cli(prompt: str) -> str:
+def _ask_cli(prompt: str, system: str) -> str:
     """No API key: use the Claude Code CLI. It runs from an empty temp dir
     with no tools at all, so the model sees only this prompt -- it cannot
     read the test split, this repo, or its CLAUDE.md, or browse to the
@@ -79,7 +98,7 @@ def _ask_cli(prompt: str) -> str:
     with tempfile.TemporaryDirectory() as tmp:
         r = subprocess.run(
             ["claude", "-p", "--tools", "", "--strict-mcp-config",
-             "--mcp-config", '{"mcpServers":{}}', "--system-prompt", SYSTEM,
+             "--mcp-config", '{"mcpServers":{}}', "--system-prompt", system,
              "--model", MODEL, "--no-session-persistence", "--output-format", "text"],
             input=prompt, capture_output=True, text=True, cwd=tmp, timeout=600,
         )
@@ -88,26 +107,26 @@ def _ask_cli(prompt: str) -> str:
     return r.stdout
 
 
-def _ask(messages, max_tokens=2000) -> dict:
+def _ask(messages, system: str, max_tokens=2000) -> dict:
     if os.environ.get("ANTHROPIC_API_KEY"):
         r = _client().messages.create(
-            model=MODEL, max_tokens=max_tokens, system=SYSTEM, messages=messages
+            model=MODEL, max_tokens=max_tokens, system=system, messages=messages
         )
         txt = "".join(b.text for b in r.content if b.type == "text")
     else:
-        txt = _ask_cli(messages[-1]["content"])
+        txt = _ask_cli(messages[-1]["content"], system)
     txt = txt.strip().removeprefix("```json").removeprefix("```").removesuffix("```")
     return json.loads(txt)
 
 
-def propose(cf_records: list[dict], property_name: str, n: int = 8) -> list[Rule]:
+def propose(cf_records: list[dict], cfg: dict, n: int = 8) -> list[Rule]:
     """One call over a batch of counterfactual sets -> candidate rules."""
     prompt = (
-        f"Property being modelled: {property_name}\n\n{DESCRIPTORS_DOC}\n\n"
+        f"Property being modelled: {property_line(cfg)}\n\n{DESCRIPTORS_DOC}\n\n"
         f"Counterfactual evidence:\n{json.dumps(cf_records, indent=1)[:40000]}\n\n"
         f"Propose at most {n} hypotheses."
     )
-    data = _ask([{"role": "user", "content": prompt}])
+    data = _ask([{"role": "user", "content": prompt}], system_prompt(cfg))
     rules = []
     for h in data.get("hypotheses", []):
         r = Rule(
@@ -124,18 +143,18 @@ def propose(cf_records: list[dict], property_name: str, n: int = 8) -> list[Rule
     return rules
 
 
-def revise(rule: Rule, result: dict, property_name: str) -> Rule | None:
+def revise(rule: Rule, result: dict, cfg: dict) -> Rule | None:
     """Feed a failed rule back with its evidence. One retry, not a loop --
     unbounded revision just overfits to the validation split."""
     prompt = (
-        f"Property: {property_name}\n"
+        f"Property: {property_line(cfg)}\n"
         f"This hypothesis failed held-out testing:\n{json.dumps(result, indent=1)}\n\n"
         f"{DESCRIPTORS_DOC}\n\n"
         "Propose exactly one revised hypothesis. If the original claim is simply "
         "wrong, say so by proposing the opposite direction rather than narrowing "
         "the condition until it fits."
     )
-    data = _ask([{"role": "user", "content": prompt}])
+    data = _ask([{"role": "user", "content": prompt}], system_prompt(cfg))
     hs = data.get("hypotheses", [])
     if not hs:
         return None

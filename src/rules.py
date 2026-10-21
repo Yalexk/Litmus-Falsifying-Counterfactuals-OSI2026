@@ -82,22 +82,33 @@ def validate(rule: Rule) -> str | None:
     return None
 
 
-def fit_logp_baseline(train) -> tuple[float, float]:
-    """Fit y ~ MolLogP on the TRAIN split only. Returns (slope, intercept).
+@dataclass
+class Control:
+    """The descriptor that dominates the property (MolLogP for solubility).
 
-    LogP alone explains most of ESOL, so almost any polarity-flavoured rule
-    survives the raw test. Scoring rules on the residual y - f(LogP) asks
-    whether a claim says anything beyond "greasy molecules don't dissolve".
+    One descriptor often explains most of a property, so almost any rule
+    that tracks it survives the raw test. The control asks whether a claim
+    says anything beyond it. Both the line (slope, intercept; diagnostic
+    only) and the bin edges are fitted on the TRAIN split only.
     """
-    x = np.array([descriptors(s)["MolLogP"] for s in train["smiles"]])
-    slope, intercept = np.polyfit(x, train["y"].values, 1)
-    return float(slope), float(intercept)
+    descriptor: str
+    slope: float
+    intercept: float
+    edges: np.ndarray
+
+    @classmethod
+    def fit(cls, train, descriptor: str, n_bins: int = 6) -> "Control":
+        x = np.array([descriptors(s)[descriptor] for s in train["smiles"]])
+        slope, intercept = np.polyfit(x, train["y"].values, 1)
+        edges = np.quantile(x, np.linspace(0, 1, n_bins + 1)[1:-1])
+        return cls(descriptor, float(slope), float(intercept), edges)
 
 
-def logp_bin_edges(train, n_bins: int = 6) -> np.ndarray:
-    """Interior LogP quantile edges from the TRAIN split, for stratified tests."""
-    x = np.array([descriptors(s)["MolLogP"] for s in train["smiles"]])
-    return np.quantile(x, np.linspace(0, 1, n_bins + 1)[1:-1])
+# Verdict names before the control descriptor was configurable (ESOL runs
+# 1-3 used MolLogP). Apply when reading old results.
+LEGACY_VERDICTS = {"survives_beyond_logp": "survives_beyond_control",
+                   "logp_only": "control_only",
+                   "untestable_beyond_logp": "untestable_beyond_control"}
 
 
 def _stratified(y, mask, bins, direction: str, min_per_side: int = 3,
@@ -160,8 +171,8 @@ def _compare(a, b, direction: str) -> dict:
     )
 
 
-def evaluate(rule: Rule, df, min_support: int = 10, logp_fit=None,
-             logp_edges=None) -> dict:
+def evaluate(rule: Rule, df, min_support: int = 10,
+             control: Control | None = None) -> dict:
     """Score a rule on data the LLM never saw.
 
     effect   : mean(y | match) - mean(y | no match), in target units
@@ -170,11 +181,11 @@ def evaluate(rule: Rule, df, min_support: int = 10, logp_fit=None,
     p_value  : Welch t-test. With many rules this needs correcting --
                use Benjamini-Hochberg in report(), not a bare 0.05 cutoff.
 
-    With logp_fit=(slope, intercept) from fit_logp_baseline, the same stats
-    are also computed on the LogP residual and stored with an _adj suffix.
-    With logp_edges from logp_bin_edges, a line-free LogP-stratified effect
-    is stored with a _strat suffix -- use it to confirm or kill an _adj
-    sign reversal, since the linear fit is miscalibrated at high LogP.
+    With a Control, the same stats are also computed on the residual of the
+    control's linear fit (_adj suffix, diagnostic only -- the line can be
+    miscalibrated, e.g. ESOL at high LogP), and a line-free effect within
+    bins of the control descriptor is stored with a _strat suffix. _strat
+    is what the beyond-control verdict uses.
     """
     mask = np.array([rule.matches(s) for s in df["smiles"]])
     y = df["y"].values
@@ -190,17 +201,13 @@ def evaluate(rule: Rule, df, min_support: int = 10, logp_fit=None,
         res.update(status="insufficient_support", holds=False)
         return res
     res.update(status="evaluated", **_compare(y[mask], y[~mask], rule.direction))
-    if logp_fit is None and logp_edges is None:
+    if control is None:
         return res
-    logp = np.array([descriptors(s)["MolLogP"] for s in df["smiles"]])
-    if logp_fit is not None:
-        slope, intercept = logp_fit
-        resid = y - (slope * logp + intercept)
-        adj = _compare(resid[mask], resid[~mask], rule.direction)
-        res.update({f"{k}_adj": v for k, v in adj.items()})
-    if logp_edges is not None:
-        bins = np.digitize(logp, logp_edges)
-        res.update(_stratified(y, mask, bins, rule.direction))
+    x = np.array([descriptors(s)[control.descriptor] for s in df["smiles"]])
+    resid = y - (control.slope * x + control.intercept)
+    adj = _compare(resid[mask], resid[~mask], rule.direction)
+    res.update({f"{k}_adj": v for k, v in adj.items()})
+    res.update(_stratified(y, mask, np.digitize(x, control.edges), rule.direction))
     return res
 
 
@@ -215,11 +222,13 @@ def _bh(rows: list[dict], p_key: str, alpha: float) -> None:
 
 
 def report(results: list[dict], alpha: float = 0.05, noise_floor: float = 0.6,
-           min_coverage: float = 0.5, label: str = "LLM hypotheses"):
+           min_coverage: float = 0.5, label: str = "LLM hypotheses",
+           control_label: str = "the control"):
     """Benjamini-Hochberg across all tested rules, plus a noise floor.
 
-    noise_floor is in target units -- for ESOL logS, experimental error is
-    ~0.6, so an effect smaller than that is not a finding no matter what the
+    noise_floor is in target units and comes from the dataset config -- for
+    ESOL logS, experimental error is ~0.6, so an effect smaller than that is
+    not a finding no matter what the
     p-value says. This single line is what separates your submission from a
     demo that launders noise into confident chemistry prose.
 
@@ -229,9 +238,9 @@ def report(results: list[dict], alpha: float = 0.05, noise_floor: float = 0.6,
     ev = [r for r in results if r.get("status") == "evaluated"]
     ev.sort(key=lambda r: r["p_value"])
     _bh(ev, "p_value", alpha)
-    # Beyond-LogP is judged by the binned test, and only where it has enough
-    # coverage to mean anything. The linear _adj fields stay in the output
-    # as a diagnostic: the line is miscalibrated at high LogP.
+    # Beyond-control is judged by the binned test, and only where it has
+    # enough coverage to mean anything. The linear _adj fields stay in the
+    # output as a diagnostic only.
     strat = [r for r in ev if r.get("p_value_strat") is not None
              and r["strat_coverage"] >= min_coverage]
     _bh(strat, "p_value_strat", alpha)
@@ -253,9 +262,9 @@ def report(results: list[dict], alpha: float = 0.05, noise_floor: float = 0.6,
         r["verdict"] = (
             "contradicted" if r["contradicted"] else
             "fails" if not r["survives"] else
-            "survives_beyond_logp" if r["survives_strat"] else
-            "logp_only" if r["strat_testable"] else
-            "untestable_beyond_logp")
+            "survives_beyond_control" if r["survives_strat"] else
+            "control_only" if r["strat_testable"] else
+            "untestable_beyond_control")
     for r in results:
         if r.get("status") != "evaluated":
             r.update(bh_significant=False, survives=False, survives_strat=False,
@@ -266,7 +275,7 @@ def report(results: list[dict], alpha: float = 0.05, noise_floor: float = 0.6,
     n_st = sum(r["survives_strat"] for r in ev)
     n_con = sum(r["contradicted"] for r in ev)
     print(f"\n{n_sur}/{len(results)} {label} survived held-out testing ({n_sur / n:.0%})")
-    print(f"{n_st}/{len(results)} survived beyond LogP, binned ({n_st / n:.0%}); "
+    print(f"{n_st}/{len(results)} survived beyond {control_label}, binned ({n_st / n:.0%}); "
           f"{len(ev) - len(strat)} untestable at coverage < {min_coverage:.0%}")
     print(f"{n_con}/{len(results)} contradicted (wrong sign, real effect)")
     # Return every rule, including insufficient-support ones, so the saved
