@@ -45,7 +45,8 @@ calculated LogP (TPSA for FreeSolv). LLM output varies between runs (ESOL:
 - **Literature and data catch different failures.** The blind judge rules on
   a claim's *mechanism*, the data on its *effect*: a claim with a plausible
   mechanism can pass the literature and fail on data, and vice versa
-  (final runs: agree 20, disagree 3, no evidence 25; 166/169 quotes verified).
+  (final runs: agree 20, disagree 3, no evidence 25; 166/169 quotes verified;
+  articles retrieved with Bond Valency).
 - **One surviving rule worth a chemist's look:** *"TPSA < 10 Å² → less
   soluble at matched LogP"* (ESOL, −2.17 within LogP bins, found in two runs).
 
@@ -85,8 +86,9 @@ connector; see the module docstring).
    dataset's noise floor. Verdicts: `survives_beyond_control`,
    `control_only`, `untestable_beyond_control`, `fails`, `contradicted`,
    `insufficient_support`.
-4. **Cross-check**: Valency search → PubMed/chemRxiv abstracts → blind
-   zero-tool judge whose quotes must appear verbatim.
+4. **Cross-check**: articles for each claim are retrieved with
+   **Bond Valency** semantic search (top 5) → PubMed/chemRxiv abstracts →
+   blind zero-tool judge whose quotes must appear verbatim.
 
 **Kept honest by:** the test split never reaches an LLM (revision sees
 validation only); noise floors, controls and textbook rules are committed in
@@ -116,7 +118,8 @@ LLM's pretraining data. One run per dataset.
 
 ## Acknowledgements
 
-exmol/MMACE (Wellawatte, Seshadri & White); datasets by Delaney (ESOL),
+Bond Valency for literature retrieval in the cross-check; exmol/MMACE
+(Wellawatte, Seshadri & White); datasets by Delaney (ESOL),
 AstraZeneca via ChEMBL/MoleculeNet (Lipophilicity), Mobley & Guthrie
 (FreeSolv), Sorkun, Khetan & Er (AqSolDB); sources for noise floors and
 textbook rules are cited in the configs.
