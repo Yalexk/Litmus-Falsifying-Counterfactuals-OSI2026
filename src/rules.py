@@ -94,6 +94,56 @@ def fit_logp_baseline(train) -> tuple[float, float]:
     return float(slope), float(intercept)
 
 
+def logp_bin_edges(train, n_bins: int = 6) -> np.ndarray:
+    """Interior LogP quantile edges from the TRAIN split, for stratified tests."""
+    x = np.array([descriptors(s)["MolLogP"] for s in train["smiles"]])
+    return np.quantile(x, np.linspace(0, 1, n_bins + 1)[1:-1])
+
+
+def _stratified(y, mask, bins, direction: str, min_per_side: int = 3,
+                n_perm: int = 2000, seed: int = 0) -> dict:
+    """Match-vs-rest effect within LogP bins, no line fitted.
+
+    Effect is the weighted mean of within-bin differences, weights
+    n_match*n_rest/(n_match+n_rest). p-value is a two-sided permutation test
+    that shuffles the match labels within each bin. Bins without at least
+    min_per_side molecules on each side are skipped.
+    """
+    used = [b for b in np.unique(bins)
+            if min(mask[bins == b].sum(), (~mask[bins == b]).sum()) >= min_per_side]
+    if not used:
+        return dict(effect_strat=None, p_value_strat=None, holds_strat=False,
+                    strat_bins_used=0, strat_coverage=0.0)
+
+    def effect(m):
+        num = den = 0.0
+        for b in used:
+            yb, mb = y[bins == b], m[bins == b]
+            k, j = mb.sum(), (~mb).sum()
+            w = k * j / (k + j)
+            num += w * (yb[mb].mean() - yb[~mb].mean())
+            den += w
+        return num / den
+
+    obs = effect(mask)
+    rng = np.random.default_rng(seed)
+    perm = mask.copy()
+    hits = 0
+    for _ in range(n_perm):
+        for b in used:
+            idx = np.flatnonzero(bins == b)
+            perm[idx] = rng.permutation(mask[idx])
+        hits += abs(effect(perm)) >= abs(obs)
+    covered = np.isin(bins, used) & mask
+    return dict(
+        effect_strat=float(obs),
+        p_value_strat=float((hits + 1) / (n_perm + 1)),
+        holds_strat=bool((obs > 0) == (direction == "higher")),
+        strat_bins_used=len(used),
+        strat_coverage=float(covered.sum() / max(mask.sum(), 1)),
+    )
+
+
 def _compare(a, b, direction: str) -> dict:
     from scipy import stats
 
@@ -110,7 +160,8 @@ def _compare(a, b, direction: str) -> dict:
     )
 
 
-def evaluate(rule: Rule, df, min_support: int = 10, logp_fit=None) -> dict:
+def evaluate(rule: Rule, df, min_support: int = 10, logp_fit=None,
+             logp_edges=None) -> dict:
     """Score a rule on data the LLM never saw.
 
     effect   : mean(y | match) - mean(y | no match), in target units
@@ -121,6 +172,9 @@ def evaluate(rule: Rule, df, min_support: int = 10, logp_fit=None) -> dict:
 
     With logp_fit=(slope, intercept) from fit_logp_baseline, the same stats
     are also computed on the LogP residual and stored with an _adj suffix.
+    With logp_edges from logp_bin_edges, a line-free LogP-stratified effect
+    is stored with a _strat suffix -- use it to confirm or kill an _adj
+    sign reversal, since the linear fit is miscalibrated at high LogP.
     """
     mask = np.array([rule.matches(s) for s in df["smiles"]])
     y = df["y"].values
@@ -136,12 +190,17 @@ def evaluate(rule: Rule, df, min_support: int = 10, logp_fit=None) -> dict:
         res.update(status="insufficient_support", holds=False)
         return res
     res.update(status="evaluated", **_compare(y[mask], y[~mask], rule.direction))
+    if logp_fit is None and logp_edges is None:
+        return res
+    logp = np.array([descriptors(s)["MolLogP"] for s in df["smiles"]])
     if logp_fit is not None:
         slope, intercept = logp_fit
-        logp = np.array([descriptors(s)["MolLogP"] for s in df["smiles"]])
         resid = y - (slope * logp + intercept)
         adj = _compare(resid[mask], resid[~mask], rule.direction)
         res.update({f"{k}_adj": v for k, v in adj.items()})
+    if logp_edges is not None:
+        bins = np.digitize(logp, logp_edges)
+        res.update(_stratified(y, mask, bins, rule.direction))
     return res
 
 
@@ -169,6 +228,13 @@ def report(results: list[dict], alpha: float = 0.05, noise_floor: float = 0.6):
     _bh(ev, "p_value", alpha)
     if adjusted:
         _bh(ev, "p_value_adj", alpha)
+    strat = [r for r in ev if r.get("p_value_strat") is not None]
+    _bh(strat, "p_value_strat", alpha)
+    for r in ev:
+        r["survives_strat"] = bool(
+            r.get("holds_strat") and r.get("bh_significant_strat")
+            and abs(r["effect_strat"]) >= noise_floor
+        )
     for r in ev:
         r["survives"] = bool(
             r["holds"] and r["bh_significant"] and abs(r["effect"]) >= noise_floor
@@ -182,6 +248,7 @@ def report(results: list[dict], alpha: float = 0.05, noise_floor: float = 0.6):
         if r.get("status") != "evaluated":
             r["bh_significant"] = False
             r["survives"] = False
+            r["survives_strat"] = False
             if adjusted:
                 r["survives_adj"] = False
     n = max(len(results), 1)
@@ -191,6 +258,9 @@ def report(results: list[dict], alpha: float = 0.05, noise_floor: float = 0.6):
     if adjusted:
         n_adj = sum(r["survives_adj"] for r in ev)
         print(f"{n_adj}/{len(results)} survived beyond LogP ({n_adj / n:.0%})")
+    if strat:
+        n_st = sum(r["survives_strat"] for r in ev)
+        print(f"{n_st}/{len(results)} survived within LogP bins ({n_st / n:.0%})")
     # Return every rule, including insufficient-support ones, so the saved
     # artefact has the same denominator as the headline.
     return ev + [r for r in results if r.get("status") != "evaluated"]

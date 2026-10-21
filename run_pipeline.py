@@ -15,7 +15,7 @@ from pathlib import Path
 from src import counterfactuals as cf
 from src import data as D
 from src.model import BlackBox
-from src.rules import Rule, evaluate, fit_logp_baseline, report
+from src.rules import Rule, evaluate, fit_logp_baseline, logp_bin_edges, report
 
 PROPERTY = "aqueous solubility, log mol/L (higher = more soluble)"
 
@@ -52,36 +52,40 @@ def main(a):
 
     logp_fit = fit_logp_baseline(train)
     print(f"LogP baseline (train): y = {logp_fit[0]:.2f}*LogP + {logp_fit[1]:.2f}")
+    logp_edges = logp_bin_edges(train)
+    ev = dict(logp_fit=logp_fit, logp_edges=logp_edges)
 
     # Revision feedback comes from the valid split only. The test split is
     # scored exactly once per final rule and never shown to the LLM.
     results, final = [], []
     for r in rules:
         if a.revise:
-            res_valid = evaluate(r, valid, logp_fit=logp_fit)
+            res_valid = evaluate(r, valid, **ev)
             if not (res_valid.get("holds") and res_valid.get("holds_adj")):
                 r2 = revise(r, res_valid, PROPERTY)
                 if r2:
-                    res2 = evaluate(r2, test, logp_fit=logp_fit)
+                    res2 = evaluate(r2, test, **ev)
                     res2["revised_from"] = r.text
                     res2["parent_valid"] = res_valid
                     results.append(res2)
                     final.append(r2)
                     continue
-        results.append(evaluate(r, test, logp_fit=logp_fit))
+        results.append(evaluate(r, test, **ev))
         final.append(r)
 
     scored = report(results, noise_floor=a.noise_floor)
     Path("out/rules.json").write_text(json.dumps(scored, indent=2))
 
-    print("\nRules (raw effect / beyond-LogP effect):")
+    print("\nRules (raw / beyond-LogP / within-LogP-bins effect):")
     for r in scored:
         if r.get("status") != "evaluated":
             print(f"  [insufficient support, n={r['support']}] {r['text']}")
             continue
         tag = ("SURVIVES" if r["survives_adj"] else
                "raw only" if r["survives"] else "fails")
-        print(f"  {tag:8} [{r['effect']:+.2f} / {r['effect_adj']:+.2f}, "
+        st = r["effect_strat"]
+        st = "n/a" if st is None else f"{st:+.2f}"
+        print(f"  {tag:8} [{r['effect']:+.2f} / {r['effect_adj']:+.2f} / {st}, "
               f"n={r['support']}] {r['text']}")
 
 
