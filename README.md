@@ -323,6 +323,10 @@ OSI-Falsifying-Counterfactuals/
 - **LLM:** Claude, via the Anthropic SDK or the Claude Code CLI
 - **Literature:** Valency search, NCBI E-utilities (PubMed)
 
+## License
+
+[MIT](LICENSE).
+
 ## Acknowledgements
 
 - Wellawatte, Seshadri & White for MMACE/exmol counterfactuals.
