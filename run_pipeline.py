@@ -15,7 +15,7 @@ from pathlib import Path
 from src import counterfactuals as cf
 from src import data as D
 from src.model import BlackBox
-from src.rules import Rule, evaluate, report
+from src.rules import Rule, evaluate, fit_logp_baseline, report
 
 PROPERTY = "aqueous solubility, log mol/L (higher = more soluble)"
 
@@ -50,31 +50,39 @@ def main(a):
     rules = propose(records, PROPERTY, n=a.n_rules)
     print(f"\n{len(rules)} well-formed hypotheses proposed")
 
+    logp_fit = fit_logp_baseline(train)
+    print(f"LogP baseline (train): y = {logp_fit[0]:.2f}*LogP + {logp_fit[1]:.2f}")
+
     # Revision feedback comes from the valid split only. The test split is
     # scored exactly once per final rule and never shown to the LLM.
     results, final = [], []
     for r in rules:
         if a.revise:
-            res_valid = evaluate(r, valid)
-            if not res_valid.get("holds"):
+            res_valid = evaluate(r, valid, logp_fit=logp_fit)
+            if not (res_valid.get("holds") and res_valid.get("holds_adj")):
                 r2 = revise(r, res_valid, PROPERTY)
                 if r2:
-                    res2 = evaluate(r2, test)
+                    res2 = evaluate(r2, test, logp_fit=logp_fit)
                     res2["revised_from"] = r.text
                     res2["parent_valid"] = res_valid
                     results.append(res2)
                     final.append(r2)
                     continue
-        results.append(evaluate(r, test))
+        results.append(evaluate(r, test, logp_fit=logp_fit))
         final.append(r)
 
     scored = report(results, noise_floor=a.noise_floor)
     Path("out/rules.json").write_text(json.dumps(scored, indent=2))
 
-    print("\nSurviving rules:")
+    print("\nRules (raw effect / beyond-LogP effect):")
     for r in scored:
-        if r.get("survives"):
-            print(f"  [{r['effect']:+.2f}, n={r['support']}] {r['text']}")
+        if r.get("status") != "evaluated":
+            print(f"  [insufficient support, n={r['support']}] {r['text']}")
+            continue
+        tag = ("SURVIVES" if r["survives_adj"] else
+               "raw only" if r["survives"] else "fails")
+        print(f"  {tag:8} [{r['effect']:+.2f} / {r['effect_adj']:+.2f}, "
+              f"n={r['support']}] {r['text']}")
 
 
 if __name__ == "__main__":
