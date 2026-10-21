@@ -1,0 +1,42 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:38460313",
+      "relevant": true,
+      "stance": "contradicts",
+      "evidence": "Unexpectedly, 19.9% of the compounds increased their water solubility upon halogenation. Iodination was observed to have the greatest effect on solubility, followed by chlorination, bromination, and fluorination.",
+      "rationale_note": "Shows chlorination can increase aqueous solubility; attributes effect to polarity/polarizability, not crystal lattice C-Cl dipole effects"
+    },
+    {
+      "id": "pubmed:23718811",
+      "relevant": true,
+      "stance": "contradicts",
+      "evidence": "Surprisingly, including descriptors that captured crystal lattice interactions did not significantly improve the quality of these aqueous solubility models.",
+      "rationale_note": "Directly contradicts the proposed mechanism that crystal lattice interactions explain solubility beyond logP"
+    },
+    {
+      "id": "pubmed:11604037",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": "",
+      "rationale_note": "Discusses general solubility prediction descriptors; does not address aryl C-Cl bonds or crystal lattice stabilization by bond dipoles"
+    },
+    {
+      "id": "pubmed:20166998",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "log P alone is only half of the solution, and that there is a need to include the melting point when dealing with crystalline solutes.",
+      "rationale_note": "Supports that crystal packing matters beyond logP in general, but says nothing specific about aryl C-Cl bond dipoles"
+    },
+    {
+      "id": "pubmed:18290628",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "The model includes a calculated crystal lattice energy which provides a computational method to account for the interactions in the solid state.",
+      "rationale_note": "Supports crystal lattice energy as a useful descriptor generally, but does not address aryl C-Cl bond dipoles specifically"
+    }
+  ],
+  "overall": "contradicted",
+  "rationale": "No abstract supports the specific claim that aryl C-Cl bond dipoles stabilize the crystal lattice beyond what logP captures; [pubmed:23718811] directly contradicts the proposed crystal-lattice mechanism, and [pubmed:38460313] contradicts the premise that chlorination reliably reduces solubility more than lipophilicity predicts."
+}

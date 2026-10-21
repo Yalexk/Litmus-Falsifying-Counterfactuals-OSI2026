@@ -1,0 +1,11 @@
+  no_evidence  (model said no_evidence) Molecules with calculated LogP above the training median (3.30) have h
+  supported    (model said supported) Molecules containing a carboxylic acid have lower logD7.4 (ionised at 
+  no_evidence  (model said no_evidence) Molecules with two or more hydrogen-bond donors have lower logD7.4.
+  no_evidence  (model said no_evidence) Molecules containing a basic aliphatic amine have lower logD7.4 (proto
+  supported    (model said mixed) Molecules containing a carboxylic acid group have lower logD7.4 than s
+  contradicted (model said contradicted) Molecules with zero hydrogen bond donors have higher logD7.4 than mole
+  contradicted (model said contradicted) Molecules with more than two hydrogen bond donors have lower logD7.4 t
+  no_evidence  (model said no_evidence) Molecules with TPSA above 110 Å² have lower logD7.4 than molecules wit
+  no_evidence  (model said no_evidence) Molecules containing a guanidine or amidine motif (NH2 attached to an 
+  supported    (model said supported) Molecules containing a primary aliphatic amine (NH2 on sp3 carbon, not
+  contradicted (model said contradicted) Molecules bearing a secondary sulfonamide NH group have lower logD7.4 

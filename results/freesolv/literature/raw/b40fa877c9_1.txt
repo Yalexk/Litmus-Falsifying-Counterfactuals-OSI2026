@@ -1,0 +1,36 @@
+
+{"papers": [
+  {
+    "id": "pubmed:26613005",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "These improvements are made possible by reducing the overestimation of attractive interactions between water and the solute molecules involving IHBs.",
+    "note": "Addresses intramolecular HBs specifically; suggests IHBs compete with intermolecular H-bonding to water, reducing hydration favourability—but does not generalise to all HB-donor-bearing molecules."
+  },
+  {
+    "id": "pubmed:27492087",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:36914670",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "hydrogen bonding can impact drug-like properties such as target affinity and oral availability which are critical to developing effective pharmaceuticals"
+  },
+  {
+    "id": "pubmed:29561152",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "the contribution from the hydrogen bond (HB) between a solute and a solvent to the solvation free energy was calculated as the product of the acidity of the donor and the basicity of the acceptor of an HB pair"
+  },
+  {
+    "id": "pubmed:39841935",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "it was found that the descriptor describing the electrostatics and the polar surface area, followed by the hydrogen bond donors and acceptors, are the most important factors for the calculation of hydration free energy"
+  }
+],
+"overall": "mixed",
+"rationale": "One abstract (pubmed:29561152) explicitly models the HB-donor–solvent interaction as a positive contribution to solvation free energy, lending support to the claim, but no abstract directly compares hydration free energies of molecules with versus without HB donors, and pubmed:26613005 notes that intramolecular HBs reduce favourable water–solute interactions, complicating a blanket generalisation."}

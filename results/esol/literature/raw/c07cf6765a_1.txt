@@ -1,0 +1,36 @@
+
+{"papers": [
+  {
+    "id": "pubmed:19729075",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "Data are also presented that demonstrate that even within a defined lipophilicity range, increased aromatic ring count leads to decreased aqueous solubility.",
+    "rationale_note": "directly addresses both the ring count effect and lipophilicity-independence"
+  },
+  {
+    "id": "pubmed:18396854",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures."
+  },
+  {
+    "id": "pubmed:33331380",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "meta-isomers bearing non-flat substituents tend to possess the lowest melting point and the highest thermodynamic aqueous solubility among the regioisomers."
+  },
+  {
+    "id": "pubmed:35370193",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "We showed that these strategies can increase the aqueous solubility of molecules even if their hydrophobicity is concomitantly increased."
+  },
+  {
+    "id": "pubmed:21129497",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "Increasing aromatic ring count exerts effects on several developability parameters that are lipophilicity- and size-independent"
+  }
+],
+"overall": "supported",
+"rationale": "Multiple abstracts directly confirm that increased aromatic ring count reduces aqueous solubility independently of lipophilicity, and that the mechanism involves crystal-packing stability driven by planarity and conjugation, supporting both the directional claim and its mechanistic basis."}

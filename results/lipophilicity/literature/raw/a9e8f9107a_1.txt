@@ -1,0 +1,36 @@
+
+{"papers": [
+  {
+    "id": "chemrxiv:10.26434/chemrxiv-2022-0mzxq",
+    "relevant": true,
+    "stance": "contradicts",
+    "evidence": "Hydrogen bond donors are generally less polar than hydrogen bond acceptors and desolvation penalty is therefore an implausible explanation for deleterious effects of hydrogen bond donors. The weaker hydration of hydrogen bond donors implies that attempts to address polarity surfeit in optimization of permeability should be focused on hydrogen bond acceptors."
+  },
+  {
+    "id": "pubmed:10479348",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:36282210",
+    "relevant": true,
+    "stance": "contradicts",
+    "evidence": "Most of the polarity in drug-like compounds comes from hydrogen-bond acceptors since they typically exceed the hydrogen-bond donors in number and are more heavily solvated on an individual basis."
+  },
+  {
+    "id": "pubmed:23710574",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:24355253",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  }
+],
+"overall": "contradicted",
+"rationale": "Two relevant papers directly contradict the claim's mechanism, stating that hydrogen bond donors are less polar than acceptors, are more weakly hydrated, and that their desolvation penalty is 'implausible'—the opposite of the claimed aqueous solvation increase; neither paper addresses a logD7.4 threshold at two HBDs, leaving the directional claim unsupported."
+}

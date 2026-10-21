@@ -1,0 +1,37 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:25963824",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "Incorporation of nitrogen is a common medicinal chemistry tactic to reduce logD values. Neighboring group participation influences logD, so the results are isomer dependent."
+    },
+    {
+      "id": "pubmed:30189136",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:40236529",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "measured chromatographic log D 7.4 values show that 9-acridones are more hydrophobic and less soluble than their 4-quinolone and 4-pyridone counterparts."
+    },
+    {
+      "id": "pubmed:28054187",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "calculated hydrogen bond basicity can be used to model the effect of aromatic aza-substitution on octanol/water partition coefficients."
+    },
+    {
+      "id": "pubmed:10479348",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "The hydrogen-bond propensity of a compound always leads to an increase in solubility, even though the Sigma alpha(2)(H) x Sigma beta(2)(H) term opposes solubility due to interactions in the liquid or solid."
+    }
+  ],
+  "overall": "no_evidence",
+  "rationale": "While pubmed:10479348 confirms that hydrogen-bond acceptor character generally increases aqueous solubility, no abstract directly compares pyridine-containing molecules to carbocyclic aromatic analogues at matched lipophilicity, nor establishes that the ring-nitrogen solubility benefit operates beyond (rather than through) its logP contribution."
+}

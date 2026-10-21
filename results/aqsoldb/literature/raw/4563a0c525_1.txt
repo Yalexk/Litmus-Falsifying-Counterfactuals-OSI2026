@@ -1,0 +1,37 @@
+
+{
+  "papers": [
+    {
+      "id": "chemrxiv:10.26434/chemrxiv-2022-0mzxq",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "Elimination of redundant hydrogen bond donors can potentially reduce active efflux and destabilize the solid state without resulting in unacceptable increases in lipophilicity."
+    },
+    {
+      "id": "pubmed:36282210",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "The implications of this polarity imbalance for optimization of permeability and aqueous solubility are discussed."
+    },
+    {
+      "id": "pubmed:35370193",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "We have developed alternative strategies to improve solubility by means of chemical modification to weaken intermolecular interaction in the solid state, thereby lowering the melting point and increasing the solubility."
+    },
+    {
+      "id": "pubmed:10479348",
+      "relevant": true,
+      "stance": "contradicts",
+      "evidence": "The hydrogen-bond propensity of a compound always leads to an increase in solubility, even though the Sigma alpha(2)(H) x Sigma beta(2)(H) term opposes solubility due to interactions in the liquid or solid."
+    },
+    {
+      "id": "pubmed:33331380",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    }
+  ],
+  "overall": "mixed",
+  "rationale": "One paper supports the mechanism that HBDs stabilise the solid state (reducing solubility independently of lipophilicity), but another directly contradicts the directional claim by stating that hydrogen-bond propensity always increases net aqueous solubility, even though the lattice cross-term partially opposes it; no abstract specifically addresses a three-donor threshold."
+}

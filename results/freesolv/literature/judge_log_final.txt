@@ -1,0 +1,7 @@
+  no_evidence  (model said no_evidence) Molecules with polar surface area above the training median (17.1 A^2)
+  supported    (model said mixed) Molecules with at least one hydrogen-bond donor have more favourable h
+  no_evidence  (model said no_evidence) Molecules containing a hydroxyl group have more favourable (more negat
+  supported    (model said supported) Molecules with two or more hydrogen-bond acceptors have more favourabl
+  no_evidence  (model said no_evidence) Molecules containing a primary amine not attached to a carbonyl have m
+  no_evidence  (model said no_evidence) Molecules with MolLogP above 3 have less favorable hydration free ener
+  contradicted (model said contradicted) Molecules with more than one rotatable bond have less favorable hydrat

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "87d6eece8d",
+    "text": "Molecules with polar surface area above the training median (17.1 A^2) have more favourable hydration free energy."
+  },
+  {
+    "id": "b40fa877c9",
+    "text": "Molecules with at least one hydrogen-bond donor have more favourable hydration free energy."
+  },
+  {
+    "id": "e5755212f1",
+    "text": "Molecules containing a hydroxyl group have more favourable (more negative) hydration free energy."
+  },
+  {
+    "id": "a28a2c9ecd",
+    "text": "Molecules with two or more hydrogen-bond acceptors have more favourable hydration free energy."
+  },
+  {
+    "id": "d258c3456a",
+    "text": "Molecules containing a primary amine not attached to a carbonyl have more favorable hydration free energy than molecules without a primary amine at matched TPSA."
+  },
+  {
+    "id": "d50531f75d",
+    "text": "Molecules with MolLogP above 3 have less favorable hydration free energy than molecules below this threshold, independently of polar surface area."
+  },
+  {
+    "id": "daa40a7238",
+    "text": "Molecules with more than one rotatable bond have less favorable hydration free energy than more rigid molecules of the same polar surface area."
+  },
+  {
+    "id": "b5007a8c6d",
+    "text": "Molecules containing an aromatic N-H group have more favorable hydration free energy than molecules without one, even at matched TPSA."
+  },
+  {
+    "id": "8a46ca3e1b",
+    "text": "Molecules with FractionCSP3 above 0.8 are less favorably hydrated than less-saturated molecules of the same TPSA."
+  },
+  {
+    "id": "1772c87c3a",
+    "text": "Molecules containing an N-halogen bond have less favorable hydration free energy than N-alkyl counterparts of identical polar surface area."
+  },
+  {
+    "id": "50892d341f",
+    "text": "Molecules containing a thioketone or thione C=S group have less favorable hydration free energy than corresponding oxo-carbonyl compounds at matched TPSA."
+  },
+  {
+    "id": "0e78ea5a04",
+    "text": "Molecules containing a nitrile group have less favorable hydration free energy than other molecules of comparable TPSA."
+  }
+]

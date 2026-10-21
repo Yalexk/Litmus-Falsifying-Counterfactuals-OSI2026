@@ -1,0 +1,36 @@
+
+{"papers": [
+  {
+    "id": "pubmed:35370193",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "We have developed alternative strategies to improve solubility by means of chemical modification to weaken intermolecular interaction in the solid state, thereby lowering the melting point and increasing the solubility."
+  },
+  {
+    "id": "pubmed:25186803",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "crystal packing and hydration equally controlled solubility of the structural analogs"
+  },
+  {
+    "id": "pubmed:8165177",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:10479348",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "The hydrogen-bond propensity of a compound always leads to an increase in solubility, even though the Sigma alpha(2)(H) x Sigma beta(2)(H) term opposes solubility due to interactions in the liquid or solid."
+  },
+  {
+    "id": "pubmed:25451684",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "these findings point to a common origin of potency and insolubility rooted in particular amide-amide hydrogen bond patterns. The insolubility of telaprevir is shown by computational analysis to be caused by interactions in the crystal, not unfavorable hydrophobic hydration."
+  }
+],
+"overall": "supported",
+"rationale": "pubmed:25451684 directly supports the claim by demonstrating that amide-amide hydrogen bonds in crystal lattices—not hydrophobic effects—drive insolubility, and pubmed:35370193 corroborates the mechanistic link between intermolecular solid-state interactions, elevated melting points, and reduced aqueous solubility; pubmed:8165177 is off-topic (tertiary amides, no NH, organic solvents), and pubmed:10479348 is neutral at the level of the specific comparison the claim makes (fixed LogP)."
+}

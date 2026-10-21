@@ -1,0 +1,7 @@
+  supported    (model said supported) Molecules containing a fused bicyclic aromatic ring system (naphthalen
+  supported    (model said supported) Molecules with a polar surface area below 10 Å² are less soluble than 
+  supported    (model said supported) Molecules with more than 2 aromatic rings are less soluble than those 
+  mixed        (model said mixed) Molecules with more than 4 rings are less soluble than those with 4 or
+  supported    (model said supported) Primary aliphatic amines increase aqueous solubility at matched lipoph
+  contradicted (model said contradicted) Chlorine atoms directly bonded to aromatic carbons reduce aqueous solu
+  supported    (model said no_evidence) Molecules containing a pyridine ring are more soluble than those with 

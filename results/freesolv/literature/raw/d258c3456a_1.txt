@@ -1,0 +1,40 @@
+
+{"papers": [
+  {
+    "id": "pubmed:16075431",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": "",
+    "rationale": "Addresses computational reproduction of hydration trends across methylation states of amines, not a comparison of primary-amine molecules vs. non-amine molecules at matched TPSA."
+  },
+  {
+    "id": "pubmed:21545145",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": "",
+    "rationale": "Focuses on non-additive hydration behavior across methylation of ammonia/acetamide and QM/MM methodology; does not compare primary amines to non-amine molecules at matched TPSA."
+  },
+  {
+    "id": "pubmed:26613005",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": "",
+    "rationale": "Addresses intramolecular hydrogen bond effects on hydration free energy estimation accuracy; does not address primary amines relative to non-amine molecules at matched TPSA."
+  },
+  {
+    "id": "pubmed:26588320",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": "",
+    "rationale": "Reports computational vs. experimental ΔΔGsolv errors for NH2 addition but does not compare primary-amine-containing molecules to non-amine molecules at matched TPSA."
+  },
+  {
+    "id": "pubmed:12446045",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": "",
+    "rationale": "Describes a fragmental additive model for hydration free energies; does not compare primary amines to non-amine molecules at matched TPSA."
+  }
+],
+"overall": "no_evidence",
+"rationale": "None of the abstracts address the specific claim of comparing hydration free energies of primary-amine-containing molecules vs. non-amine molecules while controlling for TPSA."}

@@ -1,0 +1,268 @@
+{
+  "87d6eece8d": {
+    "query": "Molecules with polar surface area above the training median (17.1 A^2) have more favourable hydration free energy.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "0162e6fd72c4452ca44ee3f1d355e798",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "11774999",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11774999/",
+        "title": "Fast prediction of hydration free energies from molecular interaction fields."
+      },
+      {
+        "source": "pubmed",
+        "id": "39841935",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39841935/",
+        "title": "Physics-Based Machine Learning to Predict Hydration Free Energies for Small Molecules with a Minimal Number of Descriptors: Interpretable and Accurate."
+      },
+      {
+        "source": "chemrxiv",
+        "id": "10.26434/chemrxiv-2024-v8h0j",
+        "url": "https://doi.org/10.26434/chemrxiv-2024-v8h0j",
+        "title": "Physics-based Machine Learning to Predict Hydration Free Energies for Small Molecules with a minimal number of descriptors: Interpretable and Accurate"
+      },
+      {
+        "source": "pubmed",
+        "id": "27492087",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27492087/",
+        "title": "Hydration Free Energy as a Molecular Descriptor in Drug Design: A Feasibility Study."
+      },
+      {
+        "source": "pubmed",
+        "id": "36779933",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36779933/",
+        "title": "Machine Learning Prediction of Hydration Free Energy with Physically Inspired Descriptors."
+      }
+    ]
+  },
+  "b40fa877c9": {
+    "query": "Molecules with at least one hydrogen-bond donor have more favourable hydration free energy.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "e587d33d996d445d98fd24b5f23b8617",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "26613005",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26613005/",
+        "title": "Accuracy enhancement in the estimation of molecular hydration free energies by implementing the intramolecular hydrogen bond effects."
+      },
+      {
+        "source": "pubmed",
+        "id": "27492087",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27492087/",
+        "title": "Hydration Free Energy as a Molecular Descriptor in Drug Design: A Feasibility Study."
+      },
+      {
+        "source": "pubmed",
+        "id": "36914670",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36914670/",
+        "title": "Fast calculation of hydrogen-bond strengths and free energy of hydration of small molecules."
+      },
+      {
+        "source": "pubmed",
+        "id": "29561152",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29561152/",
+        "title": "Incorporation of Hydrogen Bond Angle Dependency into the Generalized Solvation Free Energy Density Model."
+      },
+      {
+        "source": "pubmed",
+        "id": "39841935",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39841935/",
+        "title": "Physics-Based Machine Learning to Predict Hydration Free Energies for Small Molecules with a Minimal Number of Descriptors: Interpretable and Accurate."
+      }
+    ]
+  },
+  "e5755212f1": {
+    "query": "Molecules containing a hydroxyl group have more favourable (more negative) hydration free energy.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "b12290de9bfc41718bb319457fd72bf1",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "26613005",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26613005/",
+        "title": "Accuracy enhancement in the estimation of molecular hydration free energies by implementing the intramolecular hydrogen bond effects."
+      },
+      {
+        "source": "pubmed",
+        "id": "12446045",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12446045/",
+        "title": "Hydration free energy a fragmental model and drug design."
+      },
+      {
+        "source": "pubmed",
+        "id": "21406779",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21406779/",
+        "title": "Towards a universal method for calculating hydration free energies: a 3D reference interaction site model with partial molar volume correction."
+      },
+      {
+        "source": "pubmed",
+        "id": "27492087",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27492087/",
+        "title": "Hydration Free Energy as a Molecular Descriptor in Drug Design: A Feasibility Study."
+      },
+      {
+        "source": "pubmed",
+        "id": "11774999",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11774999/",
+        "title": "Fast prediction of hydration free energies from molecular interaction fields."
+      }
+    ]
+  },
+  "a28a2c9ecd": {
+    "query": "Molecules with two or more hydrogen-bond acceptors have more favourable hydration free energy.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "a3630aadebf740df990e02230b779ccd",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "26613005",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26613005/",
+        "title": "Accuracy enhancement in the estimation of molecular hydration free energies by implementing the intramolecular hydrogen bond effects."
+      },
+      {
+        "source": "pubmed",
+        "id": "12446045",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12446045/",
+        "title": "Hydration free energy a fragmental model and drug design."
+      },
+      {
+        "source": "chemrxiv",
+        "id": "10.26434/chemrxiv-2022-0mzxq",
+        "url": "https://doi.org/10.26434/chemrxiv-2022-0mzxq",
+        "title": "Hydrogen bond donors in  drug design"
+      },
+      {
+        "source": "pubmed",
+        "id": "36914670",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36914670/",
+        "title": "Fast calculation of hydrogen-bond strengths and free energy of hydration of small molecules."
+      },
+      {
+        "source": "pubmed",
+        "id": "27492087",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27492087/",
+        "title": "Hydration Free Energy as a Molecular Descriptor in Drug Design: A Feasibility Study."
+      }
+    ]
+  },
+  "d258c3456a": {
+    "query": "Molecules containing a primary amine not attached to a carbonyl have more favorable hydration free energy than molecules without a primary amine at matched TPSA.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "00ab5ed217a847feb4ea0a43bf2fa4bb",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "16075431",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16075431/",
+        "title": "Amine hydration: a united-atom force-field solution."
+      },
+      {
+        "source": "pubmed",
+        "id": "21545145",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21545145/",
+        "title": "Use of a QM/MM-based FEP method to evaluate the anomalous hydration behavior of simple alkyl amines and amides: application to the design of FBPase inhibitors for the treatment of type-2 diabetes."
+      },
+      {
+        "source": "pubmed",
+        "id": "26613005",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26613005/",
+        "title": "Accuracy enhancement in the estimation of molecular hydration free energies by implementing the intramolecular hydrogen bond effects."
+      },
+      {
+        "source": "pubmed",
+        "id": "26588320",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26588320/",
+        "title": "Prediction of Solvation Free Energies with Thermodynamic Integration Using the General Amber Force Field."
+      },
+      {
+        "source": "pubmed",
+        "id": "12446045",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12446045/",
+        "title": "Hydration free energy a fragmental model and drug design."
+      }
+    ]
+  },
+  "d50531f75d": {
+    "query": "Molecules with MolLogP above 3 have less favorable hydration free energy than molecules below this threshold, independently of polar surface area.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "4f8bd2c9a21047f9913d9322e2602212",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "27492087",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27492087/",
+        "title": "Hydration Free Energy as a Molecular Descriptor in Drug Design: A Feasibility Study."
+      },
+      {
+        "source": "pubmed",
+        "id": "11774999",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11774999/",
+        "title": "Fast prediction of hydration free energies from molecular interaction fields."
+      },
+      {
+        "source": "pubmed",
+        "id": "12546558",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12546558/",
+        "title": "Parametrization strategy for the MolFESD concept: quantitative surface representation of local hydrophobicity."
+      },
+      {
+        "source": "pubmed",
+        "id": "12446045",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12446045/",
+        "title": "Hydration free energy a fragmental model and drug design."
+      },
+      {
+        "source": "pubmed",
+        "id": "17266351",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17266351/",
+        "title": "In silico prediction of drug solubility: 1. Free energy of hydration."
+      }
+    ]
+  },
+  "daa40a7238": {
+    "query": "Molecules with more than one rotatable bond have less favorable hydration free energy than more rigid molecules of the same polar surface area.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "cf9033618445452780ca37f338833352",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "18171044",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18171044/",
+        "title": "Treating entropy and conformational changes in implicit solvent simulations of small molecules."
+      },
+      {
+        "source": "pubmed",
+        "id": "12446045",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12446045/",
+        "title": "Hydration free energy a fragmental model and drug design."
+      },
+      {
+        "source": "pubmed",
+        "id": "25164952",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25164952/",
+        "title": "The importance of hydration thermodynamics in fragment-to-lead optimization."
+      },
+      {
+        "source": "pubmed",
+        "id": "15537364",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/15537364/",
+        "title": "Influence of molecular flexibility and polar surface area metrics on oral bioavailability in the rat."
+      },
+      {
+        "source": "pubmed",
+        "id": "12036371",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12036371/",
+        "title": "Molecular properties that influence the oral bioavailability of drug candidates."
+      }
+    ]
+  }
+}

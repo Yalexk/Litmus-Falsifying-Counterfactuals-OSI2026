@@ -1,0 +1,37 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:26613005",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:12446045",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv-2022-0mzxq",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "Hydrogen bond donors are generally less polar than hydrogen bond acceptors and desolvation penalty is therefore an implausible explanation for deleterious effects of hydrogen bond donors."
+    },
+    {
+      "id": "pubmed:36914670",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:27492087",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    }
+  ],
+  "overall": "supported",
+  "rationale": "Only one abstract (chemrxiv:10.26434/chemrxiv-2022-0mzxq) is relevant; it indirectly supports the claim by stating HB acceptors are generally more polar than HB donors, implying that a greater number of HB acceptors would drive more favourable (more negative) hydration free energies, but no abstract directly tests the specific threshold of two or more acceptors."
+}

@@ -1,0 +1,458 @@
+{
+  "5c3a1f79df": {
+    "query": "Molecules with LogP above the training median (1.79) are less soluble.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "02fa6c5088c44e4ab3c30a0bd82a3cac",
+    "papers": [
+      {
+        "source": "chemrxiv",
+        "id": "10.26434/chemrxiv-2025-xq8v3",
+        "url": "https://doi.org/10.26434/chemrxiv-2025-xq8v3",
+        "title": "Beyond Prediction: Mechanistic Elucidation of Molecular Drivers for Aqueous Solubility Using Interpretable Machine Learning"
+      },
+      {
+        "source": "pubmed",
+        "id": "18484495",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18484495/",
+        "title": "Prediction of drug solubility from molecular structure using a drug-like training set."
+      },
+      {
+        "source": "pubmed",
+        "id": "31176566",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31176566/",
+        "title": "Predictive models of aqueous solubility of organic compounds built on A large dataset of high integrity."
+      },
+      {
+        "source": "pubmed",
+        "id": "32685821",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32685821/",
+        "title": "Pruned Machine Learning Models to Predict Aqueous Solubility."
+      },
+      {
+        "source": "pubmed",
+        "id": "18419111",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18419111/",
+        "title": "Straightforward recursive partitioning model for discarding insoluble compounds in the drug discovery process."
+      }
+    ]
+  },
+  "1d2de037ba": {
+    "query": "Molecules heavier than the training median (204 Da) are less soluble.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "42e5d22c55ec40c38d4912804cb9a49b",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "18419111",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18419111/",
+        "title": "Straightforward recursive partitioning model for discarding insoluble compounds in the drug discovery process."
+      },
+      {
+        "source": "pubmed",
+        "id": "18484495",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18484495/",
+        "title": "Prediction of drug solubility from molecular structure using a drug-like training set."
+      },
+      {
+        "source": "pubmed",
+        "id": "32685821",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32685821/",
+        "title": "Pruned Machine Learning Models to Predict Aqueous Solubility."
+      },
+      {
+        "source": "chemrxiv",
+        "id": "10.26434/chemrxiv-2025-46nx1/v4",
+        "url": "https://doi.org/10.26434/chemrxiv-2025-46nx1/v4",
+        "title": "How Molecular Weight Shapes the Relative Importance of Chemical and Structural Descriptors for Aqueous Solubility"
+      },
+      {
+        "source": "pubmed",
+        "id": "15154768",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/15154768/",
+        "title": "ESOL: estimating aqueous solubility directly from molecular structure."
+      }
+    ]
+  },
+  "d48058757a": {
+    "query": "Molecules with two or more aromatic rings are less soluble.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "485524528b524b6a8e38f8ef87b3854a",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "19729075",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/19729075/",
+        "title": "The impact of aromatic ring count on compound developability--are too many aromatic rings a liability in drug design?"
+      },
+      {
+        "source": "pubmed",
+        "id": "18396854",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18396854/",
+        "title": "Molecular characteristics for solid-state limited solubility."
+      },
+      {
+        "source": "pubmed",
+        "id": "21129497",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21129497/",
+        "title": "The impact of aromatic ring count on compound developability: further insights by examining carbo- and hetero-aromatic and -aliphatic ring types."
+      },
+      {
+        "source": "pubmed",
+        "id": "512858",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/512858/",
+        "title": "Solubility determination of barely aqueous-soluble organic solids."
+      },
+      {
+        "source": "pubmed",
+        "id": "1474393",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/1474393/",
+        "title": "Enhancement of the solubilities of polycyclic aromatic hydrocarbons by weak hydrogen bonds with water."
+      }
+    ]
+  },
+  "44a0b868ab": {
+    "query": "Molecules with at least one hydrogen-bond donor are more soluble.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "8ed4c9f0dd1940659ee9977abfa9800c",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "36282210",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36282210/",
+        "title": "Hydrogen-Bond Donors in Drug Design."
+      },
+      {
+        "source": "chemrxiv",
+        "id": "10.26434/chemrxiv-2022-0mzxq",
+        "url": "https://doi.org/10.26434/chemrxiv-2022-0mzxq",
+        "title": "Hydrogen bond donors in  drug design"
+      },
+      {
+        "source": "pubmed",
+        "id": "10479348",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10479348/",
+        "title": "The correlation and prediction of the solubility of compounds in water using an amended solvation energy relationship."
+      },
+      {
+        "source": "pubmed",
+        "id": "32787270",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32787270/",
+        "title": "\"Flexible-Acceptor\" General Solubility Equation for beyond Rule of 5 Drugs."
+      },
+      {
+        "source": "pubmed",
+        "id": "12115811",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12115811/",
+        "title": "Prediction of aqueous solubility of organic compounds using a quantitative structure-property relationship."
+      }
+    ]
+  },
+  "91ef0b2b32": {
+    "query": "Molecules with sp3 fraction above the training median (0.41) are more soluble.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "0153cb4539fa490b88d39c9c466a0315",
+    "papers": [
+      {
+        "source": "chemrxiv",
+        "id": "10.26434/chemrxiv-2025-xq8v3",
+        "url": "https://doi.org/10.26434/chemrxiv-2025-xq8v3",
+        "title": "Beyond Prediction: Mechanistic Elucidation of Molecular Drivers for Aqueous Solubility Using Interpretable Machine Learning"
+      },
+      {
+        "source": "pubmed",
+        "id": "36758178",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36758178/",
+        "title": "Blinded Predictions and Post Hoc Analysis of the Second Solubility Challenge Data: Exploring Training Data and Feature Set Selection for Machine and Deep Learning Models."
+      },
+      {
+        "source": "chemrxiv",
+        "id": "10.26434/chemrxiv-2025-46nx1/v4",
+        "url": "https://doi.org/10.26434/chemrxiv-2025-46nx1/v4",
+        "title": "How Molecular Weight Shapes the Relative Importance of Chemical and Structural Descriptors for Aqueous Solubility"
+      },
+      {
+        "source": "pubmed",
+        "id": "18484495",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18484495/",
+        "title": "Prediction of drug solubility from molecular structure using a drug-like training set."
+      },
+      {
+        "source": "pubmed",
+        "id": "33437941",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33437941/",
+        "title": "Pushing the limits of solubility prediction via quality-oriented data selection."
+      }
+    ]
+  },
+  "caf2db817a": {
+    "query": "Molecules with more than two aromatic rings are less soluble than molecules with two or fewer aromatic rings at the same MolLogP, because extended aromatic systems enable tighter pi-stacking in the crystal phase.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "1ff6ab205d3249c59e516001532852b8",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "18396854",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18396854/",
+        "title": "Molecular characteristics for solid-state limited solubility."
+      },
+      {
+        "source": "pubmed",
+        "id": "19729075",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/19729075/",
+        "title": "The impact of aromatic ring count on compound developability--are too many aromatic rings a liability in drug design?"
+      },
+      {
+        "source": "pubmed",
+        "id": "35370193",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35370193/",
+        "title": "[Improvement in Aqueous Solubility of Bioactive Molecules by Decreasing Intermolecular Interaction]."
+      },
+      {
+        "source": "pubmed",
+        "id": "33331380",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33331380/",
+        "title": "meta-Non-flat substituents: a novel molecular design to improve aqueous solubility in small molecule drug discovery."
+      },
+      {
+        "source": "pubmed",
+        "id": "21129497",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21129497/",
+        "title": "The impact of aromatic ring count on compound developability: further insights by examining carbo- and hetero-aromatic and -aliphatic ring types."
+      }
+    ]
+  },
+  "e7070f548a": {
+    "query": "Molecules containing a primary amine group are less soluble than analogs lacking primary amines at the same MolLogP, because NH2 groups strengthen intermolecular hydrogen bonding in the crystal lattice, raising lattice energy and reducing aqueous solubility beyond what lipophilicity predicts.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "a46b48ff7f1f405fb5379483f45f940d",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "35370193",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35370193/",
+        "title": "[Improvement in Aqueous Solubility of Bioactive Molecules by Decreasing Intermolecular Interaction]."
+      },
+      {
+        "source": "pubmed",
+        "id": "23718811",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23718811/",
+        "title": "Aqueous solubility prediction: do crystal lattice interactions help?"
+      },
+      {
+        "source": "pubmed",
+        "id": "18290628",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18290628/",
+        "title": "Predicting intrinsic aqueous solubility by a thermodynamic cycle."
+      },
+      {
+        "source": "pubmed",
+        "id": "25186803",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25186803/",
+        "title": "Substituent effect on the thermodynamic solubility of structural analogs: relative contribution of crystal packing and hydration."
+      },
+      {
+        "source": "pubmed",
+        "id": "20166998",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/20166998/",
+        "title": "Predicting aqueous solubility: the role of crystallinity."
+      }
+    ]
+  },
+  "4563a0c525": {
+    "query": "Molecules with more than three hydrogen-bond donors have lower aqueous solubility than molecules with three or fewer hydrogen-bond donors at the same MolLogP, because high donor counts favour strong intermolecular H-bonding in the crystal lattice, raising the melting-point penalty and reducing solubility independently of lipophilicity.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "081ab4f5ccce4613964c122dd5d82bf5",
+    "papers": [
+      {
+        "source": "chemrxiv",
+        "id": "10.26434/chemrxiv-2022-0mzxq",
+        "url": "https://doi.org/10.26434/chemrxiv-2022-0mzxq",
+        "title": "Hydrogen bond donors in  drug design"
+      },
+      {
+        "source": "pubmed",
+        "id": "36282210",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36282210/",
+        "title": "Hydrogen-Bond Donors in Drug Design."
+      },
+      {
+        "source": "pubmed",
+        "id": "35370193",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35370193/",
+        "title": "[Improvement in Aqueous Solubility of Bioactive Molecules by Decreasing Intermolecular Interaction]."
+      },
+      {
+        "source": "pubmed",
+        "id": "10479348",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10479348/",
+        "title": "The correlation and prediction of the solubility of compounds in water using an amended solvation energy relationship."
+      },
+      {
+        "source": "pubmed",
+        "id": "33331380",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33331380/",
+        "title": "meta-Non-flat substituents: a novel molecular design to improve aqueous solubility in small molecule drug discovery."
+      }
+    ]
+  },
+  "0e3e48b7f0": {
+    "query": "Molecules with FractionCSP3 greater than 0.5 are more soluble than molecules with FractionCSP3 at or below 0.5, at the same MolLogP, because higher sp3 character reduces molecular planarity and disrupts crystal packing, lowering the melting-point penalty in the solubility equation independently of lipophilicity.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "f03662422bd946f68c30cada636e48eb",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "19827778",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/19827778/",
+        "title": "Escape from flatland: increasing saturation as an approach to improving clinical success."
+      },
+      {
+        "source": "pubmed",
+        "id": "32712310",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32712310/",
+        "title": "Fsp3: A new parameter for drug-likeness."
+      },
+      {
+        "source": "pubmed",
+        "id": "42425067",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42425067/",
+        "title": "Retrospective Analysis of the Impact of the \"Escape from Flatland\" Publication on the Merck & Co., Inc., Small Molecule Portfolio."
+      },
+      {
+        "source": "pubmed",
+        "id": "35370193",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35370193/",
+        "title": "[Improvement in Aqueous Solubility of Bioactive Molecules by Decreasing Intermolecular Interaction]."
+      },
+      {
+        "source": "pubmed",
+        "id": "33331380",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33331380/",
+        "title": "meta-Non-flat substituents: a novel molecular design to improve aqueous solubility in small molecule drug discovery."
+      }
+    ]
+  },
+  "f3ada1e161": {
+    "query": "Molecules containing a nitrile group are less soluble than structurally similar molecules without a nitrile at the same MolLogP, because nitrile groups stabilize crystal packing without providing proportional hydration benefit.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "7a28318128544f88a073bde9fc9681cd",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "30518255",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30518255/",
+        "title": "A survey of the role of nitrile groups in protein-ligand interactions."
+      },
+      {
+        "source": "pubmed",
+        "id": "35370193",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35370193/",
+        "title": "[Improvement in Aqueous Solubility of Bioactive Molecules by Decreasing Intermolecular Interaction]."
+      },
+      {
+        "source": "pubmed",
+        "id": "17539661",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17539661/",
+        "title": "A computational model for the prediction of aqueous solubility that includes crystal packing, intrinsic solubility, and ionization effects."
+      },
+      {
+        "source": "pubmed",
+        "id": "25880016",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25880016/",
+        "title": "Low solubility in drug development: de-convoluting the relative importance of solvation and crystal packing."
+      },
+      {
+        "source": "pubmed",
+        "id": "8165177",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/8165177/",
+        "title": "Solubility predictions for solid nitriles and tertiary amides based on the mobile order theory."
+      }
+    ]
+  },
+  "2c8d4ee9a6": {
+    "query": "Molecules containing a non-aromatic hydrazone or imine linkage (C=N bonded to another nitrogen) are less soluble than analogs without such linkages at the same MolLogP, because these planar, conjugated groups stabilize crystal packing.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "c4651b1525f641cdb002e16451f93178",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "18396854",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18396854/",
+        "title": "Molecular characteristics for solid-state limited solubility."
+      },
+      {
+        "source": "pubmed",
+        "id": "35370193",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35370193/",
+        "title": "[Improvement in Aqueous Solubility of Bioactive Molecules by Decreasing Intermolecular Interaction]."
+      },
+      {
+        "source": "pubmed",
+        "id": "25186803",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25186803/",
+        "title": "Substituent effect on the thermodynamic solubility of structural analogs: relative contribution of crystal packing and hydration."
+      },
+      {
+        "source": "pubmed",
+        "id": "25451684",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25451684/",
+        "title": "The potency-insolubility conundrum in pharmaceuticals: Mechanism and solution for hepatitis C protease inhibitors."
+      },
+      {
+        "source": "pubmed",
+        "id": "28105287",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28105287/",
+        "title": "Systematic Study of Effects of Structural Modifications on the Aqueous Solubility of Drug-like Molecules."
+      }
+    ]
+  },
+  "4ba0ce4abb": {
+    "query": "Molecules bearing a primary or secondary amide NH are less soluble than structural analogs without an amide NH at the same MolLogP, because amide NH donors form strong intermolecular hydrogen bonds that stabilize crystal lattices and raise the melting point, reducing dissolution beyond what lipophilicity alone predicts.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "65a5e6eb879b463592476210047b4158",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "35370193",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35370193/",
+        "title": "[Improvement in Aqueous Solubility of Bioactive Molecules by Decreasing Intermolecular Interaction]."
+      },
+      {
+        "source": "pubmed",
+        "id": "25186803",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25186803/",
+        "title": "Substituent effect on the thermodynamic solubility of structural analogs: relative contribution of crystal packing and hydration."
+      },
+      {
+        "source": "pubmed",
+        "id": "8165177",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/8165177/",
+        "title": "Solubility predictions for solid nitriles and tertiary amides based on the mobile order theory."
+      },
+      {
+        "source": "pubmed",
+        "id": "10479348",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10479348/",
+        "title": "The correlation and prediction of the solubility of compounds in water using an amended solvation energy relationship."
+      },
+      {
+        "source": "pubmed",
+        "id": "25451684",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25451684/",
+        "title": "The potency-insolubility conundrum in pharmaceuticals: Mechanism and solution for hepatitis C protease inhibitors."
+      }
+    ]
+  }
+}

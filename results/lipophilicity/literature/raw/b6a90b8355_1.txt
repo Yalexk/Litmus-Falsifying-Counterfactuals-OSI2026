@@ -1,0 +1,8 @@
+
+{"papers": [{"id": "pubmed:35359246", "relevant": false, "stance": "neutral", "evidence": "", "note": "Discusses using ClogP and pKa as descriptors in a logD correction model but does not report or test the directional relationship between LogP above a specific threshold and logD7.4 values."},
+            {"id": "pubmed:31869226", "relevant": false, "stance": "neutral", "evidence": "", "note": "Develops QSPR models for log D7.4 using multiple descriptors but does not address a LogP threshold of 3.30 or the directional claim."},
+            {"id": "pubmed:37670374", "relevant": false, "stance": "neutral", "evidence": "", "note": "Incorporates logP as an auxiliary task in a multitask logD model but does not evaluate or report the specific claim about LogP > 3.30 and higher logD7.4."},
+            {"id": "pubmed:42588417", "relevant": false, "stance": "neutral", "evidence": "", "note": "Focused exclusively on LogP prediction; does not discuss logD7.4 or the directional relationship claimed."},
+            {"id": "pubmed:36926888", "relevant": false, "stance": "neutral", "evidence": "", "note": "Uses LC retention time with ML to predict Log P and Log D but does not address a LogP median threshold of 3.30 or the directional relationship with logD7.4."}],
+ "overall": "no_evidence",
+ "rationale": "None of the five abstracts directly test or report on whether molecules with calculated LogP above a specific threshold of 3.30 have higher logD7.4; they discuss logP as a general descriptor for logD modeling but provide no data bearing on the specific directional claim."}

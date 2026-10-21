@@ -1,0 +1,37 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:21601448",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "Evidence is presented that under typical experimental conditions ion pair partitioning can contribute greatly to log D(7.4) results for acidic compounds; if this is ignored it may compromise data analysis within drug discovery projects where the modulation of lipophilicity is a primary design strategy."
+    },
+    {
+      "id": "pubmed:20979082",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "Key physicochemical and ADMET-PK properties from a dataset of drugs containing a carboxylate (COOH) moiety were assembled and compared with those of a broader, general drug dataset."
+    },
+    {
+      "id": "pubmed:23303535",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "the charge state of a molecule greatly influences its lipophilicity and biopharmaceutical characteristics"
+    },
+    {
+      "id": "pubmed:37295616",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "a series of representative examples have been characterized by experimentally determining physicochemical properties, such as acidity (pKa), lipophilicity (logD7.4), and permeability (PAMPA)"
+    },
+    {
+      "id": "pubmed:26967507",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "a systematic assessment of the physicochemical properties of carboxylic acid isosteres would be desirable to enable more informed decisions of potential replacements to be used for analog design"
+    }
+  ],
+  "overall": "supported",
+  "rationale": "One abstract (pubmed:23303535) explicitly states that the charge state of a molecule greatly influences its lipophilicity, which directly supports the mechanism underlying the claim that ionised carboxylic acids at pH 7.4 would have reduced logD7.4; the remaining abstracts are topically relevant but do not provide quotes explicitly stating the direction of the logD7.4 effect."
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "5c3a1f79df",
+    "text": "Molecules with LogP above the training median (1.79) are less soluble."
+  },
+  {
+    "id": "1d2de037ba",
+    "text": "Molecules heavier than the training median (204 Da) are less soluble."
+  },
+  {
+    "id": "d48058757a",
+    "text": "Molecules with two or more aromatic rings are less soluble."
+  },
+  {
+    "id": "44a0b868ab",
+    "text": "Molecules with at least one hydrogen-bond donor are more soluble."
+  },
+  {
+    "id": "91ef0b2b32",
+    "text": "Molecules with sp3 fraction above the training median (0.41) are more soluble."
+  },
+  {
+    "id": "caf2db817a",
+    "text": "Molecules with more than two aromatic rings are less soluble than molecules with two or fewer aromatic rings at the same MolLogP, because extended aromatic systems enable tighter pi-stacking in the crystal phase."
+  },
+  {
+    "id": "e7070f548a",
+    "text": "Molecules containing a primary amine group are less soluble than analogs lacking primary amines at the same MolLogP, because NH2 groups strengthen intermolecular hydrogen bonding in the crystal lattice, raising lattice energy and reducing aqueous solubility beyond what lipophilicity predicts."
+  },
+  {
+    "id": "4563a0c525",
+    "text": "Molecules with more than three hydrogen-bond donors have lower aqueous solubility than molecules with three or fewer hydrogen-bond donors at the same MolLogP, because high donor counts favour strong intermolecular H-bonding in the crystal lattice, raising the melting-point penalty and reducing solubility independently of lipophilicity."
+  },
+  {
+    "id": "0e3e48b7f0",
+    "text": "Molecules with FractionCSP3 greater than 0.5 are more soluble than molecules with FractionCSP3 at or below 0.5, at the same MolLogP, because higher sp3 character reduces molecular planarity and disrupts crystal packing, lowering the melting-point penalty in the solubility equation independently of lipophilicity."
+  },
+  {
+    "id": "f3ada1e161",
+    "text": "Molecules containing a nitrile group are less soluble than structurally similar molecules without a nitrile at the same MolLogP, because nitrile groups stabilize crystal packing without providing proportional hydration benefit."
+  },
+  {
+    "id": "2c8d4ee9a6",
+    "text": "Molecules containing a non-aromatic hydrazone or imine linkage (C=N bonded to another nitrogen) are less soluble than analogs without such linkages at the same MolLogP, because these planar, conjugated groups stabilize crystal packing."
+  },
+  {
+    "id": "4ba0ce4abb",
+    "text": "Molecules bearing a primary or secondary amide NH are less soluble than structural analogs without an amide NH at the same MolLogP, because amide NH donors form strong intermolecular hydrogen bonds that stabilize crystal lattices and raise the melting point, reducing dissolution beyond what lipophilicity alone predicts."
+  }
+]

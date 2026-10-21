@@ -1,0 +1,19 @@
+# Data vs literature
+
+Data: verdict on the held-out test split. Literature: blind judge over the top-5 Valency abstracts per claim, stances kept only with a verified verbatim quote. **DISAGREE** rows are the interesting ones.
+
+| run | family | data verdict | data says | raw | binned | literature | agree? | claim | papers |
+|---|---|---|---|---|---|---|---|---|---|
+| final | textbook | untestable_beyond_control | supported | +0.64 |  | no_evidence | n/a | Molecules with calculated LogP above the training median (3.30) have higher logD7.4. |  |
+| final | textbook | survives_beyond_control | supported | -1.28 | -1.77 | supported | agree | Molecules containing a carboxylic acid have lower logD7.4 (ionised at pH 7.4). | [pubmed:23303535](https://pubmed.ncbi.nlm.nih.gov/23303535/) supports |
+| final | textbook | survives_beyond_control | supported | -0.34 | -0.33 | no_evidence | n/a | Molecules with two or more hydrogen-bond donors have lower logD7.4. |  |
+| final | textbook | fails | unclear | -0.14 | -0.48 | no_evidence | n/a | Molecules containing a basic aliphatic amine have lower logD7.4 (protonated at pH 7.4). |  |
+| final | llm | survives_beyond_control | supported | -1.28 | -1.77 | supported | agree | Molecules containing a carboxylic acid group have lower logD7.4 than structurally similar molecules without it, because the carboxylate anion dominates at pH 7.4 (pKa ~4.5) and creates a charged species whose aqueous affinity is not captured by neutral-form MolLogP. | [pubmed:21601448](https://pubmed.ncbi.nlm.nih.gov/21601448/) supports |
+| final | llm | survives_beyond_control | supported | +0.60 | +0.60 | contradicted | DISAGREE | Molecules with zero hydrogen bond donors have higher logD7.4 than molecules possessing at least one NH or OH, because the complete absence of H-bond donation eliminates a major aqueous solvation pathway at pH 7.4. | [chemrxiv:10.26434/chemrxiv-2022-0mzxq](https://doi.org/10.26434/chemrxiv-2022-0mzxq) contradicts [pubmed:36282210](https://pubmed.ncbi.nlm.nih.gov/36282210/) contradicts |
+| final | llm | survives_beyond_control | supported | -0.52 | -0.51 | contradicted | DISAGREE | Molecules with more than two hydrogen bond donors have lower logD7.4 than molecules with two or fewer, because multiple NH/OH groups increase aqueous solvation beyond what calculated lipophilicity alone accounts for. | [pubmed:36282210](https://pubmed.ncbi.nlm.nih.gov/36282210/) contradicts |
+| final | llm | survives_beyond_control | supported | -0.61 | -0.48 | no_evidence | n/a | Molecules with TPSA above 110 Å² have lower logD7.4 than molecules with lower TPSA, reflecting polarity-driven aqueous partitioning that persists independently of MolLogP. |  |
+| final | llm | control_only | supported | -1.01 | -0.46 | no_evidence | n/a | Molecules containing a guanidine or amidine motif (NH2 attached to an sp2 C=N carbon) have lower logD7.4 than analogs lacking it, because the conjugate acid pKa exceeds 8 and the cationic form dominates at pH 7.4, creating ionization-driven hydrophilicity invisible to neutral-form MolLogP. |  |
+| final | llm | fails | unclear | -0.17 | -0.40 | supported | n/a | Molecules containing a primary aliphatic amine (NH2 on sp3 carbon, not adjacent to a carbonyl or aromatic ring) have lower logD7.4 than analogs lacking this group, because aliphatic primary amines are predominantly protonated at pH 7.4 (pKa ~9–10) and the resulting cation is far more hydrophilic than neutral-form MolLogP predicts. | [pubmed:31417667](https://pubmed.ncbi.nlm.nih.gov/31417667/) supports |
+| final | llm | fails | unclear | -0.11 | -0.14 | contradicted | n/a | Molecules bearing a secondary sulfonamide NH group have lower logD7.4 than N-alkyl sulfonamide analogs of comparable logP, because the sulfonamide NH donates strong H-bonds to water that the N-methyl version cannot. | [pubmed:42674732](https://pubmed.ncbi.nlm.nih.gov/42674732/) contradicts |
+
+agree 2 · DISAGREE 2 · n/a 7

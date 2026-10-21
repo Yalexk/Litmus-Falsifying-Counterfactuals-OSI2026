@@ -1,0 +1,8 @@
+
+{"papers": [{"id": "pubmed:18396854", "relevant": true, "stance": "supports", "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures.", "rationale": ""},
+             {"id": "pubmed:35370193", "relevant": true, "stance": "supports", "evidence": "modification of molecules in ways that would disrupt molecular planarity by increasing the dihedral angle, that would bend the molecular structure, that would disrupt molecular symmetry, or that introduce a non-flat substituent at the meta position of a benzene substructure. We showed that these strategies can increase the aqueous solubility of molecules even if their hydrophobicity is concomitantly increased.", "rationale": ""},
+             {"id": "pubmed:33331380", "relevant": false, "stance": "neutral", "evidence": "", "rationale": ""},
+             {"id": "pubmed:19729075", "relevant": true, "stance": "supports", "evidence": "Data are also presented that demonstrate that even within a defined lipophilicity range, increased aromatic ring count leads to decreased aqueous solubility.", "rationale": ""},
+             {"id": "pubmed:34662544", "relevant": false, "stance": "neutral", "evidence": "", "rationale": ""}],
+ "overall": "supported",
+ "rationale": "Two abstracts directly support the mechanism (planarity/rigidity of fused/extended aromatic systems reducing solubility via crystal packing), and one supports the lipophilicity-controlled direction of the effect; none contradict the claim, though no abstract makes the exact naphthalene-vs-biphenyl comparison explicitly."}

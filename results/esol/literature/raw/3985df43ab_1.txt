@@ -1,0 +1,36 @@
+
+{"papers": [
+  {
+    "id": "pubmed:18396854",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures."
+  },
+  {
+    "id": "pubmed:19729075",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "Data are also presented that demonstrate that even within a defined lipophilicity range, increased aromatic ring count leads to decreased aqueous solubility."
+  },
+  {
+    "id": "pubmed:35370193",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "the solubility of a solid solute in water is also dependent on the crystal packing of the solute suggesting the existence of another principle of solvation."
+  },
+  {
+    "id": "pubmed:33331380",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:39841135",
+    "relevant": true,
+    "stance": "contradicts",
+    "evidence": "We found that macrocyclization substantially improves kinetic solubility while not impairing the other measured parameters."
+  }
+],
+"overall": "mixed",
+"rationale": "Two papers directly support the claim (extended ring systems reduce solubility, including at matched lipophilicity, via crystal packing), one corroborates the crystal-packing mechanism, but one shows that macrocyclization—a form of ring-count increase—improves kinetic solubility, contradicting a blanket assertion that more rings always reduce solubility."
+}

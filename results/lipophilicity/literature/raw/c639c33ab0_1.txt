@@ -1,0 +1,35 @@
+
+{"papers": [
+  {
+    "id": "pubmed:17530727",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "The article starts with a case study of tricyclic thrombin inhibitors featuring a tertiary amine center with pK(a) values that can be tuned over a wide range, from the usual value of around 10 to below 2 by (remote) neighboring functionalities commonly encountered in medicinal chemistry."
+  },
+  {
+    "id": "pubmed:30189136",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:31417667",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "This may seem counterintuitive, as the net change in the molecule is the addition of a single carbon atom, but it may be rationalized in terms of increased basicity."
+  },
+  {
+    "id": "pubmed:32044185",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:31938466",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "A molecular matched pair analysis of median ΔlogD 7.4 contributions for substituents commonly used in drug discovery programs at Genentech is reported."
+  }
+],
+"overall": "supported",
+"rationale": "pubmed:31417667 directly supports the mechanistic core of the claim—that greater amine basicity (higher pKa, more protonation at pH 7.4) lowers measured logD7.4—though it concerns cyclic secondary amines rather than primary aliphatic amines specifically, and no abstract provides direct matched-pair data for a primary aliphatic NH2 group."}

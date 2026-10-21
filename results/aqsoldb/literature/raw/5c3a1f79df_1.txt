@@ -1,0 +1,35 @@
+
+{"papers": [
+  {
+    "id": "chemrxiv:10.26434/chemrxiv-2025-xq8v3",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "SHAP identified the octanol–water partition coefficient (LogP) as the most influential descriptor, contributing nearly 40% of predictive variance. This directly reflects the hydrophobic effect, where transferring non-polar molecules into water incurs an entropic penalty from ordering solvent molecules."
+  },
+  {
+    "id": "pubmed:18484495",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "increasing molecular size, rigidity and lipophilicity decrease solubility whereas increasing conformational flexibility and the presence of a non-conjugated amine group increase the solubility of drug-like compounds."
+  },
+  {
+    "id": "pubmed:31176566",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:32685821",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:18419111",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  }
+],
+"overall": "supported",
+"rationale": "Two abstracts directly confirm that higher LogP (lipophilicity) correlates with lower aqueous solubility, supporting the directional claim that molecules above the LogP median of 1.79 are less soluble, though neither abstract addresses the specific threshold of 1.79."}

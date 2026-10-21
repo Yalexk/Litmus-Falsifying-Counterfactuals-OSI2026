@@ -90,5 +90,37 @@
   {
     "id": "60bbfd29c7",
     "text": "Molecules containing an aromatic C\u2013F bond are more soluble than molecules of comparable MolLogP without this motif, because aromatic fluorine acts as a weak H-bond acceptor toward water while also disrupting strong edge-to-face aromatic crystal contacts."
+  },
+  {
+    "id": "93a310491c",
+    "text": "Molecules containing a fused bicyclic aromatic ring system (naphthalene-type) are less soluble than those where two aromatic rings are joined by a rotatable single bond, at matched lipophilicity, due to the planarity that facilitates crystal packing."
+  },
+  {
+    "id": "28f48b94b4",
+    "text": "Molecules with a polar surface area below 10 \u00c5\u00b2 are less soluble than those with higher TPSA at matched lipophilicity, because zero polar surface provides no direct water-interaction capacity beyond partitioning."
+  },
+  {
+    "id": "c07cf6765a",
+    "text": "Molecules with more than 2 aromatic rings are less soluble than those with 2 or fewer aromatic rings at matched lipophilicity, because planar polycyclic aromatic systems form tighter crystal lattices (higher melting points), reducing aqueous solubility independently of overall lipophilicity."
+  },
+  {
+    "id": "3985df43ab",
+    "text": "Molecules with more than 4 rings are less soluble than those with 4 or fewer rings at matched lipophilicity, because rigid polycyclic scaffolds pack with high efficiency into crystalline lattices."
+  },
+  {
+    "id": "3afc118f59",
+    "text": "Primary aliphatic amines increase aqueous solubility at matched lipophilicity because they are protonated under aqueous/physiological measurement conditions, creating a charged species whose extra solvation energy is not captured by the neutral-form MolLogP."
+  },
+  {
+    "id": "9823610133",
+    "text": "Chlorine atoms directly bonded to aromatic carbons reduce aqueous solubility more than their lipophilicity contribution alone predicts, because the C-Cl bond dipole stabilizes the crystal lattice beyond what logP captures."
+  },
+  {
+    "id": "f2e36d6d45",
+    "text": "Molecules containing a pyridine ring are more soluble than those with only carbocyclic aromatic rings at matched lipophilicity, because the ring nitrogen acts as a strong hydrogen-bond acceptor that enhances aqueous solvation well beyond its logP contribution."
+  },
+  {
+    "id": "e794426692",
+    "text": "A gem-dimethyl group on a ring carbon increases aqueous solubility independently of lipophilicity by blocking face-to-face crystal lattice contacts."
   }
 ]

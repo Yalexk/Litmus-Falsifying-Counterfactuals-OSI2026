@@ -1,0 +1,37 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:18396854",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures."
+    },
+    {
+      "id": "pubmed:35370193",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "modification of molecules in ways that would disrupt molecular planarity by increasing the dihedral angle, that would bend the molecular structure, that would disrupt molecular symmetry, or that introduce a non-flat substituent at the meta position of a benzene substructure. We showed that these strategies can increase the aqueous solubility of molecules even if their hydrophobicity is concomitantly increased."
+    },
+    {
+      "id": "pubmed:25186803",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "crystal packing and hydration equally controlled solubility of the structural analogs. All hydrophobic substituents were undesirable for solubility in terms of hydration, as expected. On the other hand, some of these hydrophobic substituents destabilized crystal packing and improved the solubility of the BPU derivatives when their impact on crystal packing exceeded their negative influence on hydration."
+    },
+    {
+      "id": "pubmed:25451684",
+      "relevant": true,
+      "stance": "neutral",
+      "evidence": "The insolubility of telaprevir is shown by computational analysis to be caused by interactions in the crystal, not unfavorable hydrophobic hydration."
+    },
+    {
+      "id": "pubmed:28105287",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "The low solubility of 3a results from its near-planar structure and an intermolecular hydrogen bond, as revealed in a small-molecule X-ray structure."
+    }
+  ],
+  "overall": "supported",
+  "rationale": "Multiple abstracts support the mechanism that molecular planarity and conjugation stabilize crystal packing and reduce aqueous solubility independently of hydrophobicity, which is the claimed mechanism for hydrazone/imine linkages, though none of the abstracts specifically test hydrazone or imine functional groups."
+}

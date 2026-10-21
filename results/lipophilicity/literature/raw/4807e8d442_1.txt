@@ -1,0 +1,35 @@
+
+{"papers": [
+  {
+    "id": "pubmed:33823393",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:42674732",
+    "relevant": true,
+    "stance": "contradicts",
+    "evidence": "The paradoxical findings presented here are indicative of secondary sulfoximines being both more hydrophilic and more lipophilic than their corresponding sulfonamides."
+  },
+  {
+    "id": "pubmed:10479348",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:25963824",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:23710574",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  }
+],
+"overall": "contradicted",
+"rationale": "pubmed:42674732 directly shows that secondary sulfoximines (which lack the NH H-bond donor present in secondary sulfonamides) are paradoxically more hydrophilic than the corresponding secondary sulfonamides, implying the sulfonamide NH does not lower logD relative to an N-substituted analog—contradicting the claim's direction and proposed mechanism."}

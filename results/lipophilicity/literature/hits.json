@@ -1,0 +1,420 @@
+{
+  "b6a90b8355": {
+    "query": "Molecules with calculated LogP above the training median (3.30) have higher logD7.4.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "52c251bbdab64119aecf06c06387d626",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "35359246",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35359246/",
+        "title": "Comparison of logP and logD correction models trained with public and proprietary data sets."
+      },
+      {
+        "source": "pubmed",
+        "id": "31869226",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31869226/",
+        "title": "Systematic Modeling of log\u202fD7.4 Based on Ensemble Machine Learning, Group Contribution, and Matched Molecular Pair Analysis."
+      },
+      {
+        "source": "pubmed",
+        "id": "37670374",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37670374/",
+        "title": "LogD7.4 prediction enhanced by transferring knowledge from chromatographic retention time, microscopic pKa and logP."
+      },
+      {
+        "source": "pubmed",
+        "id": "42588417",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42588417/",
+        "title": "LogPpred: An AI-Based Predictive Model for Accurate Estimation of Molecular LogP."
+      },
+      {
+        "source": "pubmed",
+        "id": "36926888",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36926888/",
+        "title": "Using Machine Learning To Predict Partition Coefficient (Log P) and Distribution Coefficient (Log D) with Molecular Descriptors and Liquid Chromatography Retention Time."
+      }
+    ]
+  },
+  "7a1e97b7f2": {
+    "query": "Molecules containing a carboxylic acid have lower logD7.4 (ionised at pH 7.4).",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "06dbf00d5cc849bba442697617bbcf83",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "21601448",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21601448/",
+        "title": "Lipophilicity of acidic compounds: impact of ion pair partitioning on drug design."
+      },
+      {
+        "source": "pubmed",
+        "id": "20979082",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/20979082/",
+        "title": "Development of specific \"drug-like property\" rules for carboxylate-containing oral drug candidates."
+      },
+      {
+        "source": "pubmed",
+        "id": "23303535",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23303535/",
+        "title": "A chemogenomic analysis of ionization constants--implications for drug discovery."
+      },
+      {
+        "source": "pubmed",
+        "id": "37295616",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37295616/",
+        "title": "Structure-property relationships of fluorinated carboxylic acid bioisosteres."
+      },
+      {
+        "source": "pubmed",
+        "id": "26967507",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26967507/",
+        "title": "Structure Property Relationships of Carboxylic Acid Isosteres."
+      }
+    ]
+  },
+  "ac76f0de78": {
+    "query": "Molecules with two or more hydrogen-bond donors have lower logD7.4.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "b90b49033eee45bd908ba4bf3d971076",
+    "papers": [
+      {
+        "source": "chemrxiv",
+        "id": "10.26434/chemrxiv-2022-0mzxq",
+        "url": "https://doi.org/10.26434/chemrxiv-2022-0mzxq",
+        "title": "Hydrogen bond donors in  drug design"
+      },
+      {
+        "source": "pubmed",
+        "id": "24355253",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24355253/",
+        "title": "The Block Relevance (BR) analysis supports the dominating effect of solutes hydrogen bond acidity on \u0394logP(oct-tol)."
+      },
+      {
+        "source": "pubmed",
+        "id": "36282210",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36282210/",
+        "title": "Hydrogen-Bond Donors in Drug Design."
+      },
+      {
+        "source": "pubmed",
+        "id": "23710574",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23710574/",
+        "title": "Integrating intramolecular hydrogen bonding (IMHB) considerations in drug discovery using \u0394logP as a tool."
+      },
+      {
+        "source": "pubmed",
+        "id": "30103865",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30103865/",
+        "title": "Log P as a tool in intramolecular hydrogen bond considerations."
+      }
+    ]
+  },
+  "9a1fbafc12": {
+    "query": "Molecules containing a basic aliphatic amine have lower logD7.4 (protonated at pH 7.4).",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "746c184bc38546a79ee301963c5eb496",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "21601448",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21601448/",
+        "title": "Lipophilicity of acidic compounds: impact of ion pair partitioning on drug design."
+      },
+      {
+        "source": "pubmed",
+        "id": "30189136",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30189136/",
+        "title": "Lowering Lipophilicity by Adding Carbon: One-Carbon Bridges of Morpholines and Piperazines."
+      },
+      {
+        "source": "pubmed",
+        "id": "19546239",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/19546239/",
+        "title": "Modulation of the partition coefficient between octanol and buffer at pH 7.4 and pKa to achieve the optimum balance of blood clearance and volume of distribution for a series of tetrahydropyran histamine type 3 receptor antagonists."
+      },
+      {
+        "source": "pubmed",
+        "id": "28011216",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28011216/",
+        "title": "Amine promiscuity and toxicology analysis."
+      },
+      {
+        "source": "pubmed",
+        "id": "32044185",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32044185/",
+        "title": "Second basic pKa: An overlooked parameter in predicting phospholipidosis-inducing potential of diamines."
+      }
+    ]
+  },
+  "00d4f292cc": {
+    "query": "Molecules containing a carboxylic acid group have lower logD7.4 than structurally similar molecules without it, because the carboxylate anion dominates at pH 7.4 (pKa ~4.5) and creates a charged species whose aqueous affinity is not captured by neutral-form MolLogP.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "25eb628130474fbd8178bb862539571f",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "20979082",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/20979082/",
+        "title": "Development of specific \"drug-like property\" rules for carboxylate-containing oral drug candidates."
+      },
+      {
+        "source": "pubmed",
+        "id": "21601448",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21601448/",
+        "title": "Lipophilicity of acidic compounds: impact of ion pair partitioning on drug design."
+      },
+      {
+        "source": "pubmed",
+        "id": "37295616",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37295616/",
+        "title": "Structure-property relationships of fluorinated carboxylic acid bioisosteres."
+      },
+      {
+        "source": "pubmed",
+        "id": "31938466",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31938466/",
+        "title": "LogD Contributions of Substituents Commonly Used in Medicinal Chemistry."
+      },
+      {
+        "source": "pubmed",
+        "id": "26967507",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26967507/",
+        "title": "Structure Property Relationships of Carboxylic Acid Isosteres."
+      }
+    ]
+  },
+  "3d00c036c7": {
+    "query": "Molecules with zero hydrogen bond donors have higher logD7.4 than molecules possessing at least one NH or OH, because the complete absence of H-bond donation eliminates a major aqueous solvation pathway at pH 7.4.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "e8f40fb7c06d46c9ac5328e6c11f0c3b",
+    "papers": [
+      {
+        "source": "chemrxiv",
+        "id": "10.26434/chemrxiv-2022-0mzxq",
+        "url": "https://doi.org/10.26434/chemrxiv-2022-0mzxq",
+        "title": "Hydrogen bond donors in  drug design"
+      },
+      {
+        "source": "pubmed",
+        "id": "36282210",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36282210/",
+        "title": "Hydrogen-Bond Donors in Drug Design."
+      },
+      {
+        "source": "pubmed",
+        "id": "24355253",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24355253/",
+        "title": "The Block Relevance (BR) analysis supports the dominating effect of solutes hydrogen bond acidity on \u0394logP(oct-tol)."
+      },
+      {
+        "source": "pubmed",
+        "id": "30103865",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30103865/",
+        "title": "Log P as a tool in intramolecular hydrogen bond considerations."
+      },
+      {
+        "source": "pubmed",
+        "id": "31938466",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31938466/",
+        "title": "LogD Contributions of Substituents Commonly Used in Medicinal Chemistry."
+      }
+    ]
+  },
+  "a9e8f9107a": {
+    "query": "Molecules with more than two hydrogen bond donors have lower logD7.4 than molecules with two or fewer, because multiple NH/OH groups increase aqueous solvation beyond what calculated lipophilicity alone accounts for.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "545a45f70b4e4a68a6268a72d242ad70",
+    "papers": [
+      {
+        "source": "chemrxiv",
+        "id": "10.26434/chemrxiv-2022-0mzxq",
+        "url": "https://doi.org/10.26434/chemrxiv-2022-0mzxq",
+        "title": "Hydrogen bond donors in  drug design"
+      },
+      {
+        "source": "pubmed",
+        "id": "10479348",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10479348/",
+        "title": "The correlation and prediction of the solubility of compounds in water using an amended solvation energy relationship."
+      },
+      {
+        "source": "pubmed",
+        "id": "36282210",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36282210/",
+        "title": "Hydrogen-Bond Donors in Drug Design."
+      },
+      {
+        "source": "pubmed",
+        "id": "23710574",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23710574/",
+        "title": "Integrating intramolecular hydrogen bonding (IMHB) considerations in drug discovery using \u0394logP as a tool."
+      },
+      {
+        "source": "pubmed",
+        "id": "24355253",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24355253/",
+        "title": "The Block Relevance (BR) analysis supports the dominating effect of solutes hydrogen bond acidity on \u0394logP(oct-tol)."
+      }
+    ]
+  },
+  "b5aa07b2ac": {
+    "query": "Molecules with TPSA above 110 \u00c5\u00b2 have lower logD7.4 than molecules with lower TPSA, reflecting polarity-driven aqueous partitioning that persists independently of MolLogP.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "dd8852aad7724a21807556e55324e53e",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "11020286",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11020286/",
+        "title": "Fast calculation of molecular polar surface area as a sum of fragment-based contributions and its application to the prediction of drug transport properties."
+      },
+      {
+        "source": "pubmed",
+        "id": "28035823",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28035823/",
+        "title": "Relationship between Passive Permeability and Molecular Polarity Using Block Relevance Analysis."
+      },
+      {
+        "source": "pubmed",
+        "id": "37986275",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37986275/",
+        "title": "Design Principles for Balancing Lipophilicity and Permeability in beyond Rule of 5 Space."
+      },
+      {
+        "source": "pubmed",
+        "id": "19149561",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/19149561/",
+        "title": "Topological polar surface area: a useful descriptor in 2D-QSAR."
+      },
+      {
+        "source": "pubmed",
+        "id": "23121381",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23121381/",
+        "title": "In silico prediction of aqueous solubility using simple QSPR models: the importance of phenol and phenol-like moieties."
+      }
+    ]
+  },
+  "62cb089735": {
+    "query": "Molecules containing a guanidine or amidine motif (NH2 attached to an sp2 C=N carbon) have lower logD7.4 than analogs lacking it, because the conjugate acid pKa exceeds 8 and the cationic form dominates at pH 7.4, creating ionization-driven hydrophilicity invisible to neutral-form MolLogP.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "452d6d4554f94bf6944af25be8ef3e9b",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "31458625",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31458625/",
+        "title": "Prediction of Aqueous pK a Values for Guanidine-Containing Compounds Using Ab Initio Gas-Phase Equilibrium Bond Lengths."
+      },
+      {
+        "source": "pubmed",
+        "id": "38747896",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38747896/",
+        "title": "Nonclassical Zwitterions as a Design Principle to Reduce Lipophilicity without Impacting Permeability."
+      },
+      {
+        "source": "pubmed",
+        "id": "27481593",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27481593/",
+        "title": "Predicting pKa Values in Aqueous Solution for the Guanidine Functional Group from Gas Phase Ab Initio Bond Lengths."
+      },
+      {
+        "source": "pubmed",
+        "id": "37849549",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37849549/",
+        "title": "Adaptation of Empirical Methods to Predict the LogD of Triazine Macrocycles."
+      },
+      {
+        "source": "pubmed",
+        "id": "31938466",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31938466/",
+        "title": "LogD Contributions of Substituents Commonly Used in Medicinal Chemistry."
+      }
+    ]
+  },
+  "c639c33ab0": {
+    "query": "Molecules containing a primary aliphatic amine (NH2 on sp3 carbon, not adjacent to a carbonyl or aromatic ring) have lower logD7.4 than analogs lacking this group, because aliphatic primary amines are predominantly protonated at pH 7.4 (pKa ~9\u201310) and the resulting cation is far more hydrophilic than neutral-form MolLogP predicts.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "55d27e7cb77b4dfcb513dc4a182ce264",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "17530727",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17530727/",
+        "title": "Predicting and tuning physicochemical properties in lead optimization: amine basicities."
+      },
+      {
+        "source": "pubmed",
+        "id": "30189136",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30189136/",
+        "title": "Lowering Lipophilicity by Adding Carbon: One-Carbon Bridges of Morpholines and Piperazines."
+      },
+      {
+        "source": "pubmed",
+        "id": "31417667",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31417667/",
+        "title": "Lowering Lipophilicity by Adding Carbon: AzaSpiroHeptanes, a logD Lowering Twist."
+      },
+      {
+        "source": "pubmed",
+        "id": "32044185",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32044185/",
+        "title": "Second basic pKa: An overlooked parameter in predicting phospholipidosis-inducing potential of diamines."
+      },
+      {
+        "source": "pubmed",
+        "id": "31938466",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31938466/",
+        "title": "LogD Contributions of Substituents Commonly Used in Medicinal Chemistry."
+      }
+    ]
+  },
+  "4807e8d442": {
+    "query": "Molecules bearing a secondary sulfonamide NH group have lower logD7.4 than N-alkyl sulfonamide analogs of comparable logP, because the sulfonamide NH donates strong H-bonds to water that the N-methyl version cannot.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "12ebc4e7bc2849d88409c2e504e76686",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "33823393",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33823393/",
+        "title": "Structure property relationships of N-acylsulfonamides and related bioisosteres."
+      },
+      {
+        "source": "pubmed",
+        "id": "42674732",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42674732/",
+        "title": "Sulfoximines as Secondary Sulfonamide Isosteres: Paradoxical Impact on Solubility and Plasma Protein Binding."
+      },
+      {
+        "source": "pubmed",
+        "id": "10479348",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10479348/",
+        "title": "The correlation and prediction of the solubility of compounds in water using an amended solvation energy relationship."
+      },
+      {
+        "source": "pubmed",
+        "id": "25963824",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25963824/",
+        "title": "Effect of water solvation on the lipophilicity of isomeric pyrimidine-carboxamides."
+      },
+      {
+        "source": "pubmed",
+        "id": "23710574",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23710574/",
+        "title": "Integrating intramolecular hydrogen bonding (IMHB) considerations in drug discovery using \u0394logP as a tool."
+      }
+    ]
+  }
+}

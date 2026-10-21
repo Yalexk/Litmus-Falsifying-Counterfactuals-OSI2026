@@ -1,0 +1,35 @@
+
+{"papers": [
+  {
+    "id": "chemrxiv:10.26434/chemrxiv-2022-0mzxq",
+    "relevant": true,
+    "stance": "contradicts",
+    "evidence": "Hydrogen bond donors are generally less polar than hydrogen bond acceptors and desolvation penalty is therefore an implausible explanation for deleterious effects of hydrogen bond donors."
+  },
+  {
+    "id": "pubmed:36282210",
+    "relevant": true,
+    "stance": "contradicts",
+    "evidence": "Most of the polarity in drug-like compounds comes from hydrogen-bond acceptors since they typically exceed the hydrogen-bond donors in number and are more heavily solvated on an individual basis."
+  },
+  {
+    "id": "pubmed:24355253",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:30103865",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:31938466",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": ""
+  }
+],
+"overall": "contradicted",
+"rationale": "Two directly relevant papers contradict the claim's mechanistic rationale by showing that hydrogen-bond donors are individually less polar and less heavily solvated than hydrogen-bond acceptors, making the premise that H-bond donation constitutes a 'major aqueous solvation pathway' implausible; the logD7.4-specific paper (pubmed:31938466) provides no usable data on HBD contributions in its abstract."}

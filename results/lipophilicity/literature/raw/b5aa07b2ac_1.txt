@@ -1,0 +1,8 @@
+
+{"papers": [{"id": "pubmed:11020286", "relevant": false, "stance": "neutral", "evidence": "", "rationale": "Describes TPSA calculation methodology and validates it against membrane transport data (intestinal absorption, Caco-2, BBB); does not mention logD7.4 or octanol/water distribution."},
+            {"id": "pubmed:28035823", "relevant": false, "stance": "neutral", "evidence": "", "rationale": "Focuses on EPSA as a chromatographic polarity descriptor correlated with passive permeability; does not mention logD7.4 or octanol/water partitioning."},
+            {"id": "pubmed:37986275", "relevant": false, "stance": "neutral", "evidence": "", "rationale": "Discusses TPSA/MW thresholds for oral bRo5 drugs in the context of permeability and lipophilicity (logP); does not mention logD7.4 or an octanol/water distribution coefficient at pH 7.4."},
+            {"id": "pubmed:19149561", "relevant": false, "stance": "neutral", "evidence": "", "rationale": "Demonstrates TPSA utility in 2D-QSAR for pharmacological activity data alongside ClogP; does not address logD7.4 or octanol/water distribution."},
+            {"id": "pubmed:23121381", "relevant": false, "stance": "neutral", "evidence": "", "rationale": "Uses TPSA alongside logP and melting point to model aqueous solubility; does not discuss logD7.4 or octanol/water distribution coefficients."}],
+ "overall": "no_evidence",
+ "rationale": "None of the retrieved abstracts report or discuss the octanol/water distribution coefficient at pH 7.4 (logD7.4), a specific TPSA threshold of 110 Å², or the independence of this relationship from MolLogP, so the claim cannot be evaluated from these texts."}

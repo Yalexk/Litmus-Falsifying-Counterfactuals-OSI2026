@@ -1,0 +1,501 @@
+{
+  "b6a90b8355": {
+    "papers": [
+      {
+        "id": "pubmed:35359246",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "note": "Discusses using ClogP and pKa as descriptors in a logD correction model but does not report or test the directional relationship between LogP above a specific threshold and logD7.4 values.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:31869226",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "note": "Develops QSPR models for log D7.4 using multiple descriptors but does not address a LogP threshold of 3.30 or the directional claim.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:37670374",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "note": "Incorporates logP as an auxiliary task in a multitask logD model but does not evaluate or report the specific claim about LogP > 3.30 and higher logD7.4.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:42588417",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "note": "Focused exclusively on LogP prediction; does not discuss logD7.4 or the directional relationship claimed.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:36926888",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "note": "Uses LC retention time with ML to predict Log P and Log D but does not address a LogP median threshold of 3.30 or the directional relationship with logD7.4.",
+        "quote_verified": false
+      }
+    ],
+    "overall": "no_evidence",
+    "rationale": "None of the five abstracts directly test or report on whether molecules with calculated LogP above a specific threshold of 3.30 have higher logD7.4; they discuss logP as a general descriptor for logD modeling but provide no data bearing on the specific directional claim.",
+    "overall_verified": "no_evidence",
+    "model": "claude-sonnet-4-6"
+  },
+  "7a1e97b7f2": {
+    "papers": [
+      {
+        "id": "pubmed:21601448",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "Evidence is presented that under typical experimental conditions ion pair partitioning can contribute greatly to log D(7.4) results for acidic compounds; if this is ignored it may compromise data analysis within drug discovery projects where the modulation of lipophilicity is a primary design strategy.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:20979082",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "Key physicochemical and ADMET-PK properties from a dataset of drugs containing a carboxylate (COOH) moiety were assembled and compared with those of a broader, general drug dataset.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:23303535",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "the charge state of a molecule greatly influences its lipophilicity and biopharmaceutical characteristics",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:37295616",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "a series of representative examples have been characterized by experimentally determining physicochemical properties, such as acidity (pKa), lipophilicity (logD7.4), and permeability (PAMPA)",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:26967507",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "a systematic assessment of the physicochemical properties of carboxylic acid isosteres would be desirable to enable more informed decisions of potential replacements to be used for analog design",
+        "quote_verified": true
+      }
+    ],
+    "overall": "supported",
+    "rationale": "One abstract (pubmed:23303535) explicitly states that the charge state of a molecule greatly influences its lipophilicity, which directly supports the mechanism underlying the claim that ionised carboxylic acids at pH 7.4 would have reduced logD7.4; the remaining abstracts are topically relevant but do not provide quotes explicitly stating the direction of the logD7.4 effect.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "ac76f0de78": {
+    "papers": [
+      {
+        "id": "chemrxiv:10.26434/chemrxiv-2022-0mzxq",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "note": "Discusses HBDs and lipophilicity in general drug design terms but never mentions logD7.4 or a threshold of two or more HBDs; closest statement ('without resulting in unacceptable increases in lipophilicity') is too indirect to bear on the specific claim.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:24355253",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "note": "Entirely focused on \u0394logP(oct-tol) as a descriptor for HBD properties and IMHB; does not address logD7.4 or the effect of HBD count on distribution coefficients.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:36282210",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "note": "Discusses polarity contributions of HBDs vs. HBAs in drug design but does not report logD7.4 values or address the specific claim about two or more HBDs.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:23710574",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "note": "Focuses on \u0394logP(oct-tol) as a descriptor for intramolecular hydrogen bonding; off-topic with respect to logD7.4 and HBD count.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:30103865",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "note": "Introduces \u0394log Poct-tol for IMHB assessment and critiques logPoct for this purpose; does not address logD7.4 or the effect of HBD count on distribution coefficients.",
+        "quote_verified": false
+      }
+    ],
+    "overall": "no_evidence",
+    "rationale": "None of the abstracts report or discuss logD7.4 in relation to the number of hydrogen-bond donors; they address related but distinct topics (\u0394logP as an IMHB descriptor, general polarity arguments) and provide no direct evidence for or against the claim.",
+    "overall_verified": "no_evidence",
+    "model": "claude-sonnet-4-6"
+  },
+  "9a1fbafc12": {
+    "papers": [
+      {
+        "id": "pubmed:21601448",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Focuses exclusively on acidic compounds and ion-pair partitioning effects on logD7.4; does not address basic aliphatic amines.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:30189136",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "bridging morpholines across the ring with one-carbon tethers leads to a counterintuitive reduction in lipophilicity. This effect was also found to occur in piperazines and piperidines and lowered the measured log D7.4 of the bridged molecules by as much as -0.8 relative to their unbridged counterparts.",
+        "rationale": "Discusses logD7.4 of basic-amine-containing rings but attributes lipophilicity changes to structural bridging, not to protonation of the basic amine per se.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:19546239",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "for a given clog P, the strong second base subseries showed higher V(d) than the weak second base subseries, which in turn exhibited higher values than the monobasic subseries.",
+        "rationale": "Discusses logD7.4 and pKa of basic compounds but compares volume of distribution at fixed clogP rather than explicitly stating that protonation of basic amines lowers logD7.4 relative to logP.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:28011216",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Discusses amine promiscuity and toxicology; mentions volume of distribution for basic compounds but does not address logD7.4 or the protonation effect on lipophilicity.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:32044185",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Focuses on phospholipidosis-inducing potential and pKa of diamines; does not report or discuss logD7.4 measurements or the protonation-lipophilicity relationship.",
+        "quote_verified": false
+      }
+    ],
+    "overall": "no_evidence",
+    "rationale": "None of the abstracts explicitly states or provides data showing that basic aliphatic amines have lower logD7.4 because of protonation at pH 7.4; the most relevant abstracts discuss related physicochemical properties but do not directly bear on the claimed direction of the effect.",
+    "overall_verified": "no_evidence",
+    "model": "claude-sonnet-4-6"
+  },
+  "00d4f292cc": {
+    "papers": [
+      {
+        "id": "pubmed:20979082",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "predictions of lipophilic character (calculated log P and log D values), topological polar surface area (TPSA), and the pK(a) value of the carboxylate moiety",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:21601448",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "The superiority of measured lipophilicity data over calculated data for a set of AZ proprietary acidic compounds is also presented.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:37295616",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "A series of representative examples have been characterized by experimentally determining physicochemical properties, such as acidity (pKa), lipophilicity (logD7.4), and permeability (PAMPA).",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:31938466",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:26967507",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "a systematic assessment of the physicochemical properties of carboxylic acid isosteres would be desirable to enable more informed decisions of potential replacements to be used for analog design",
+        "quote_verified": true
+      }
+    ],
+    "overall": "mixed",
+    "rationale": "Only pubmed:21601448 bears directly on the claim's reasoning, supporting that neutral-form calculated logP is inadequate for acidic compounds at physiological pH, but it simultaneously complicates the directional claim by showing that ion-pair partitioning can substantially raise measured logD7.4 above what ionisation alone would predict; no abstract explicitly demonstrates that COOH-bearing molecules have lower logD7.4 than matched non-COOH analogues.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "3d00c036c7": {
+    "papers": [
+      {
+        "id": "chemrxiv:10.26434/chemrxiv-2022-0mzxq",
+        "relevant": true,
+        "stance": "contradicts",
+        "evidence": "Hydrogen bond donors are generally less polar than hydrogen bond acceptors and desolvation penalty is therefore an implausible explanation for deleterious effects of hydrogen bond donors.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:36282210",
+        "relevant": true,
+        "stance": "contradicts",
+        "evidence": "Most of the polarity in drug-like compounds comes from hydrogen-bond acceptors since they typically exceed the hydrogen-bond donors in number and are more heavily solvated on an individual basis.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:24355253",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:30103865",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:31938466",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      }
+    ],
+    "overall": "contradicted",
+    "rationale": "Two directly relevant papers contradict the claim's mechanistic rationale by showing that hydrogen-bond donors are individually less polar and less heavily solvated than hydrogen-bond acceptors, making the premise that H-bond donation constitutes a 'major aqueous solvation pathway' implausible; the logD7.4-specific paper (pubmed:31938466) provides no usable data on HBD contributions in its abstract.",
+    "overall_verified": "contradicted",
+    "model": "claude-sonnet-4-6"
+  },
+  "a9e8f9107a": {
+    "papers": [
+      {
+        "id": "chemrxiv:10.26434/chemrxiv-2022-0mzxq",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "Hydrogen bond donors are generally less polar than hydrogen bond acceptors and desolvation penalty is therefore an implausible explanation for deleterious effects of hydrogen bond donors. The weaker hydration of hydrogen bond donors implies that attempts to address polarity surfeit in optimization of permeability should be focused on hydrogen bond acceptors.",
+        "quote_verified": false,
+        "stance_discarded": "contradicts"
+      },
+      {
+        "id": "pubmed:10479348",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:36282210",
+        "relevant": true,
+        "stance": "contradicts",
+        "evidence": "Most of the polarity in drug-like compounds comes from hydrogen-bond acceptors since they typically exceed the hydrogen-bond donors in number and are more heavily solvated on an individual basis.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:23710574",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:24355253",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      }
+    ],
+    "overall": "contradicted",
+    "rationale": "Two relevant papers directly contradict the claim's mechanism, stating that hydrogen bond donors are less polar than acceptors, are more weakly hydrated, and that their desolvation penalty is 'implausible'\u2014the opposite of the claimed aqueous solvation increase; neither paper addresses a logD7.4 threshold at two HBDs, leaving the directional claim unsupported.",
+    "overall_verified": "contradicted",
+    "model": "claude-sonnet-4-6"
+  },
+  "b5aa07b2ac": {
+    "papers": [
+      {
+        "id": "pubmed:11020286",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Describes TPSA calculation methodology and validates it against membrane transport data (intestinal absorption, Caco-2, BBB); does not mention logD7.4 or octanol/water distribution.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:28035823",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Focuses on EPSA as a chromatographic polarity descriptor correlated with passive permeability; does not mention logD7.4 or octanol/water partitioning.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:37986275",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Discusses TPSA/MW thresholds for oral bRo5 drugs in the context of permeability and lipophilicity (logP); does not mention logD7.4 or an octanol/water distribution coefficient at pH 7.4.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:19149561",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Demonstrates TPSA utility in 2D-QSAR for pharmacological activity data alongside ClogP; does not address logD7.4 or octanol/water distribution.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:23121381",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "rationale": "Uses TPSA alongside logP and melting point to model aqueous solubility; does not discuss logD7.4 or octanol/water distribution coefficients.",
+        "quote_verified": false
+      }
+    ],
+    "overall": "no_evidence",
+    "rationale": "None of the retrieved abstracts report or discuss the octanol/water distribution coefficient at pH 7.4 (logD7.4), a specific TPSA threshold of 110 \u00c5\u00b2, or the independence of this relationship from MolLogP, so the claim cannot be evaluated from these texts.",
+    "overall_verified": "no_evidence",
+    "model": "claude-sonnet-4-6"
+  },
+  "62cb089735": {
+    "papers": [
+      {
+        "id": "pubmed:31458625",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "For a training set of 22 compounds, in the most stable conformation of their lowest energy tautomeric form, three bonds were found to exhibit r 2 and q 2 values >0.95 and root-mean-squared-error of estimation values \u22640.25 when regressed individually against pK a.",
+        "evidence_note": "Abstract addresses pKa prediction for guanidine-containing compounds but says nothing about logD7.4 or the link between ionization and lipophilicity.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:38747896",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "evidence_note": "Concerns nonclassical zwitterions (compounds with both acidic and basic groups) and their lipophilicity/permeability; does not address guanidine or amidine motifs specifically or the pKa > 8 cationic-dominance mechanism.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:27481593",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "Here we applied a novel method1a to predict pKa values of the guanidine functional group, which is a notoriously difficult.",
+        "evidence_note": "Abstract is about pKa prediction methodology for guanidines; does not address logD7.4 or any relationship between guanidine ionization and lipophilicity.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:37849549",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "evidence_note": "Addresses logD prediction for cationic triazine macrocycles, not guanidine or amidine motifs; the cationic character arises from the macrocyclic scaffold, not a guanidine/amidine NH2-on-sp2-C=N motif.",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:31938466",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "evidence_note": "Reports median \u0394logD7.4 contributions for substituents used in medicinal chemistry at Genentech, but the abstract does not mention guanidine or amidine groups, so no relevant evidence can be extracted from the text alone.",
+        "quote_verified": false
+      }
+    ],
+    "overall": "no_evidence",
+    "rationale": "None of the five abstracts, judged solely from their text, provides data or statements that either support or contradict the specific claim that guanidine/amidine motifs lower logD7.4 via a pKa-driven cationic-dominance mechanism at pH 7.4.",
+    "overall_verified": "no_evidence",
+    "model": "claude-sonnet-4-6"
+  },
+  "c639c33ab0": {
+    "papers": [
+      {
+        "id": "pubmed:17530727",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "The article starts with a case study of tricyclic thrombin inhibitors featuring a tertiary amine center with pK(a) values that can be tuned over a wide range, from the usual value of around 10 to below 2 by (remote) neighboring functionalities commonly encountered in medicinal chemistry.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:30189136",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:31417667",
+        "relevant": true,
+        "stance": "supports",
+        "evidence": "This may seem counterintuitive, as the net change in the molecule is the addition of a single carbon atom, but it may be rationalized in terms of increased basicity.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:32044185",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:31938466",
+        "relevant": true,
+        "stance": "neutral",
+        "evidence": "A molecular matched pair analysis of median \u0394logD 7.4 contributions for substituents commonly used in drug discovery programs at Genentech is reported.",
+        "quote_verified": true
+      }
+    ],
+    "overall": "supported",
+    "rationale": "pubmed:31417667 directly supports the mechanistic core of the claim\u2014that greater amine basicity (higher pKa, more protonation at pH 7.4) lowers measured logD7.4\u2014though it concerns cyclic secondary amines rather than primary aliphatic amines specifically, and no abstract provides direct matched-pair data for a primary aliphatic NH2 group.",
+    "overall_verified": "supported",
+    "model": "claude-sonnet-4-6"
+  },
+  "4807e8d442": {
+    "papers": [
+      {
+        "id": "pubmed:33823393",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:42674732",
+        "relevant": true,
+        "stance": "contradicts",
+        "evidence": "The paradoxical findings presented here are indicative of secondary sulfoximines being both more hydrophilic and more lipophilic than their corresponding sulfonamides.",
+        "quote_verified": true
+      },
+      {
+        "id": "pubmed:10479348",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:25963824",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      },
+      {
+        "id": "pubmed:23710574",
+        "relevant": false,
+        "stance": "neutral",
+        "evidence": "",
+        "quote_verified": false
+      }
+    ],
+    "overall": "contradicted",
+    "rationale": "pubmed:42674732 directly shows that secondary sulfoximines (which lack the NH H-bond donor present in secondary sulfonamides) are paradoxically more hydrophilic than the corresponding secondary sulfonamides, implying the sulfonamide NH does not lower logD relative to an N-substituted analog\u2014contradicting the claim's direction and proposed mechanism.",
+    "overall_verified": "contradicted",
+    "model": "claude-sonnet-4-6"
+  }
+}

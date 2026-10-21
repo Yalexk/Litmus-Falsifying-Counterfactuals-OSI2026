@@ -1,0 +1,42 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:18396854",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "Molecules with extended ring structures and large conjugated systems were less soluble, indicating that structural features related to rigidity and aromaticity result in solubility restricted by stable crystal structures.",
+      "rationale_note": "Supports the crystal-phase mechanism and aromaticity link, but does not control for LogP or name pi-stacking explicitly."
+    },
+    {
+      "id": "pubmed:19729075",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "Data are also presented that demonstrate that even within a defined lipophilicity range, increased aromatic ring count leads to decreased aqueous solubility.",
+      "rationale_note": "Directly supports the LogP-controlled claim; threshold cited is >3 rings rather than >2, but direction is the same."
+    },
+    {
+      "id": "pubmed:35370193",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "We have developed alternative strategies to improve solubility by means of chemical modification to weaken intermolecular interaction in the solid state, thereby lowering the melting point and increasing the solubility.",
+      "rationale_note": "Supports the crystal-packing mechanism (planarity/pi-stacking implied) but does not address aromatic ring count directly."
+    },
+    {
+      "id": "pubmed:33331380",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": "",
+      "rationale_note": "Focuses on regioisomer effects of substituents on a benzene ring, not on aromatic ring count vs. solubility."
+    },
+    {
+      "id": "pubmed:21129497",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "Increasing aromatic ring count exerts effects on several developability parameters that are lipophilicity- and size-independent, and fused aromatic systems have a beneficial effect relative to their nonfused counterparts.",
+      "rationale_note": "The lipophilicity-independence supports the LogP-controlled claim; however, 'fused aromatic systems have a beneficial effect relative to their nonfused counterparts' complicates the pi-stacking mechanism for extended/fused systems specifically."
+    }
+  ],
+  "overall": "supported",
+  "rationale": "Two directly relevant abstracts (pubmed:19729075 and pubmed:21129497) confirm that increased aromatic ring count reduces aqueous solubility independently of lipophilicity, and pubmed:18396854 and pubmed:35370193 attribute reduced solubility to stable crystal packing driven by planarity/conjugation, collectively supporting the claim's empirical core, though none explicitly names pi-stacking as the mechanism."
+}

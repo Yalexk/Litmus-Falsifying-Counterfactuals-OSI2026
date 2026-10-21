@@ -1,0 +1,37 @@
+
+{
+  "papers": [
+    {
+      "id": "pubmed:22196228",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "incorporating TPSA into the GSE in addition to log P and melting point gives a three descriptor model that improves accurate prediction of aqueous solubility over the GSE by 5.1% for the full and 6.6% for the reduced data set, respectively."
+    },
+    {
+      "id": "pubmed:23121381",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "a robust QSPR model of aqueous solubility which exploited the computationally derived molecular descriptor topographical polar surface area (TPSA) alongside experimentally determined melting point and logP"
+    },
+    {
+      "id": "pubmed:11020286",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:19149561",
+      "relevant": false,
+      "stance": "neutral",
+      "evidence": ""
+    },
+    {
+      "id": "pubmed:26891978",
+      "relevant": true,
+      "stance": "supports",
+      "evidence": "good solubility requires a topological polar surface area (TPSA, in Å(2)) of ≥0.2×molecular weight (MW)"
+    }
+  ],
+  "overall": "supported",
+  "rationale": "Three relevant abstracts collectively establish that TPSA contributes positively to aqueous solubility independently of logP, consistent with the directional claim that very low TPSA compounds are less soluble; however, none specifically examines the 10 Å² threshold or the stated mechanistic explanation about water-interaction capacity."
+}

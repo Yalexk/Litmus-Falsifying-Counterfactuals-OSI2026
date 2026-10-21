@@ -1,0 +1,41 @@
+
+{"papers": [
+  {
+    "id": "pubmed:35370193",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "the solubility of a solid solute in water is also dependent on the crystal packing of the solute suggesting the existence of another principle of solvation",
+    "note": "Supports the general principle that crystal-packing/intermolecular interactions affect solubility beyond LogP, but makes no mention of primary amine groups specifically."
+  },
+  {
+    "id": "pubmed:23718811",
+    "relevant": true,
+    "stance": "contradicts",
+    "evidence": "including descriptors that captured crystal lattice interactions did not significantly improve the quality of these aqueous solubility models",
+    "note": "Challenges the mechanistic premise that crystal lattice energy is a meaningful additional predictor of solubility beyond lipophilicity-related descriptors, but does not address primary amines specifically."
+  },
+  {
+    "id": "pubmed:18290628",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "The model includes a calculated crystal lattice energy which provides a computational method to account for the interactions in the solid state.",
+    "note": "Supports the role of crystal lattice energy in solubility prediction but says nothing about primary amines or NH2 groups."
+  },
+  {
+    "id": "pubmed:25186803",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "crystal packing and hydration equally controlled solubility of the structural analogs",
+    "note": "Confirms crystal packing matters as much as hydration for solubility of structural analogs, but studies benzoylphenylurea derivatives with no mention of primary amines."
+  },
+  {
+    "id": "pubmed:20166998",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "log P alone is only half of the solution, and that there is a need to include the melting point when dealing with crystalline solutes",
+    "note": "Supports the idea that lipophilicity alone cannot predict solubility and crystal lattice energy (proxied by melting point) matters, but does not address primary amines."
+  }
+],
+"overall": "no_evidence",
+"rationale": "All five abstracts are topically related to the role of crystal lattice / intermolecular interactions in aqueous solubility, but none of them mentions primary amine groups, NH2 substituents, or any comparison between amine-bearing and amine-free analogs at fixed LogP, so the specific claim cannot be evaluated from these texts."
+}

@@ -872,5 +872,271 @@
         "url": "https://pubmed.ncbi.nlm.nih.gov/38460313/"
       }
     ]
+  },
+  "93a310491c": {
+    "query": "Molecules containing a fused bicyclic aromatic ring system (naphthalene-type) are less soluble than those where two aromatic rings are joined by a rotatable single bond, at matched lipophilicity, due to the planarity that facilitates crystal packing.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "6b4e6ff88ebd4b67bef41b262aaf4d8b",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "18396854",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18396854/",
+        "title": "Molecular characteristics for solid-state limited solubility."
+      },
+      {
+        "source": "pubmed",
+        "id": "35370193",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35370193/",
+        "title": "[Improvement in Aqueous Solubility of Bioactive Molecules by Decreasing Intermolecular Interaction]."
+      },
+      {
+        "source": "pubmed",
+        "id": "33331380",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33331380/",
+        "title": "meta-Non-flat substituents: a novel molecular design to improve aqueous solubility in small molecule drug discovery."
+      },
+      {
+        "source": "pubmed",
+        "id": "19729075",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/19729075/",
+        "title": "The impact of aromatic ring count on compound developability--are too many aromatic rings a liability in drug design?"
+      },
+      {
+        "source": "pubmed",
+        "id": "34662544",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34662544/",
+        "title": "Atropisomerism - A Neglected Way to Escape Out of Solubility Flatlands."
+      }
+    ]
+  },
+  "28f48b94b4": {
+    "query": "Molecules with a polar surface area below 10 \u00c5\u00b2 are less soluble than those with higher TPSA at matched lipophilicity, because zero polar surface provides no direct water-interaction capacity beyond partitioning.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "0f0fddb85b2c49d78ecf6ec07a9692b3",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "22196228",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/22196228/",
+        "title": "Revisiting the general solubility equation: in silico prediction of aqueous solubility incorporating the effect of topographical polar surface area."
+      },
+      {
+        "source": "pubmed",
+        "id": "23121381",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23121381/",
+        "title": "In silico prediction of aqueous solubility using simple QSPR models: the importance of phenol and phenol-like moieties."
+      },
+      {
+        "source": "pubmed",
+        "id": "11020286",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11020286/",
+        "title": "Fast calculation of molecular polar surface area as a sum of fragment-based contributions and its application to the prediction of drug transport properties."
+      },
+      {
+        "source": "pubmed",
+        "id": "19149561",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/19149561/",
+        "title": "Topological polar surface area: a useful descriptor in 2D-QSAR."
+      },
+      {
+        "source": "pubmed",
+        "id": "26891978",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26891978/",
+        "title": "Quantifying the chameleonic properties of macrocycles and other high-molecular-weight drugs."
+      }
+    ]
+  },
+  "c07cf6765a": {
+    "query": "Molecules with more than 2 aromatic rings are less soluble than those with 2 or fewer aromatic rings at matched lipophilicity, because planar polycyclic aromatic systems form tighter crystal lattices (higher melting points), reducing aqueous solubility independently of overall lipophilicity.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "643f58548b134a2ebbc28089333de24c",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "19729075",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/19729075/",
+        "title": "The impact of aromatic ring count on compound developability--are too many aromatic rings a liability in drug design?"
+      },
+      {
+        "source": "pubmed",
+        "id": "18396854",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18396854/",
+        "title": "Molecular characteristics for solid-state limited solubility."
+      },
+      {
+        "source": "pubmed",
+        "id": "33331380",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33331380/",
+        "title": "meta-Non-flat substituents: a novel molecular design to improve aqueous solubility in small molecule drug discovery."
+      },
+      {
+        "source": "pubmed",
+        "id": "35370193",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35370193/",
+        "title": "[Improvement in Aqueous Solubility of Bioactive Molecules by Decreasing Intermolecular Interaction]."
+      },
+      {
+        "source": "pubmed",
+        "id": "21129497",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21129497/",
+        "title": "The impact of aromatic ring count on compound developability: further insights by examining carbo- and hetero-aromatic and -aliphatic ring types."
+      }
+    ]
+  },
+  "3985df43ab": {
+    "query": "Molecules with more than 4 rings are less soluble than those with 4 or fewer rings at matched lipophilicity, because rigid polycyclic scaffolds pack with high efficiency into crystalline lattices.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "3bef176327404f6da636ff6ff893d985",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "18396854",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18396854/",
+        "title": "Molecular characteristics for solid-state limited solubility."
+      },
+      {
+        "source": "pubmed",
+        "id": "19729075",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/19729075/",
+        "title": "The impact of aromatic ring count on compound developability--are too many aromatic rings a liability in drug design?"
+      },
+      {
+        "source": "pubmed",
+        "id": "35370193",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35370193/",
+        "title": "[Improvement in Aqueous Solubility of Bioactive Molecules by Decreasing Intermolecular Interaction]."
+      },
+      {
+        "source": "pubmed",
+        "id": "33331380",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33331380/",
+        "title": "meta-Non-flat substituents: a novel molecular design to improve aqueous solubility in small molecule drug discovery."
+      },
+      {
+        "source": "pubmed",
+        "id": "39841135",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39841135/",
+        "title": "Macrocyclization as a Strategy for Kinetic Solubility Improvement: A Comparative Analysis of Matched Molecular Pairs."
+      }
+    ]
+  },
+  "3afc118f59": {
+    "query": "Primary aliphatic amines increase aqueous solubility at matched lipophilicity because they are protonated under aqueous/physiological measurement conditions, creating a charged species whose extra solvation energy is not captured by the neutral-form MolLogP.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "ee0d0d2cf0404de992d1286e6db22d65",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "10479348",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10479348/",
+        "title": "The correlation and prediction of the solubility of compounds in water using an amended solvation energy relationship."
+      },
+      {
+        "source": "pubmed",
+        "id": "18484495",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18484495/",
+        "title": "Prediction of drug solubility from molecular structure using a drug-like training set."
+      },
+      {
+        "source": "pubmed",
+        "id": "38747896",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38747896/",
+        "title": "Nonclassical Zwitterions as a Design Principle to Reduce Lipophilicity without Impacting Permeability."
+      },
+      {
+        "source": "pubmed",
+        "id": "21906951",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/21906951/",
+        "title": "Deep understanding of structure-solubility relationship for a diverse set of organic compounds using matched molecular pairs."
+      },
+      {
+        "source": "pubmed",
+        "id": "28218330",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28218330/",
+        "title": "Predicting the phospholipophilicity of monoprotic positively charged amines."
+      }
+    ]
+  },
+  "9823610133": {
+    "query": "Chlorine atoms directly bonded to aromatic carbons reduce aqueous solubility more than their lipophilicity contribution alone predicts, because the C-Cl bond dipole stabilizes the crystal lattice beyond what logP captures.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "da698f8ec93047148c3803f689444b4b",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "38460313",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38460313/",
+        "title": "Unexpected effect of halogenation on the water solubility of small organic compounds."
+      },
+      {
+        "source": "pubmed",
+        "id": "23718811",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23718811/",
+        "title": "Aqueous solubility prediction: do crystal lattice interactions help?"
+      },
+      {
+        "source": "pubmed",
+        "id": "11604037",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11604037/",
+        "title": "Estimating the water solubilities of crystalline compounds from their chemical structures alone."
+      },
+      {
+        "source": "pubmed",
+        "id": "20166998",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/20166998/",
+        "title": "Predicting aqueous solubility: the role of crystallinity."
+      },
+      {
+        "source": "pubmed",
+        "id": "18290628",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18290628/",
+        "title": "Predicting intrinsic aqueous solubility by a thermodynamic cycle."
+      }
+    ]
+  },
+  "f2e36d6d45": {
+    "query": "Molecules containing a pyridine ring are more soluble than those with only carbocyclic aromatic rings at matched lipophilicity, because the ring nitrogen acts as a strong hydrogen-bond acceptor that enhances aqueous solvation well beyond its logP contribution.",
+    "tool": "semantic_search_papers",
+    "limit": 5,
+    "request_id": "14033d751ad6408fabbb630a3fcc76a6",
+    "papers": [
+      {
+        "source": "pubmed",
+        "id": "25963824",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25963824/",
+        "title": "Effect of water solvation on the lipophilicity of isomeric pyrimidine-carboxamides."
+      },
+      {
+        "source": "pubmed",
+        "id": "30189136",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30189136/",
+        "title": "Lowering Lipophilicity by Adding Carbon: One-Carbon Bridges of Morpholines and Piperazines."
+      },
+      {
+        "source": "pubmed",
+        "id": "40236529",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40236529/",
+        "title": "Comparative Hydrophobicity, Solubility, and Metabolic Stability of 4(1H)-Pyridones, 4(1H)-Quinolones, and 9(10H)-Acridones."
+      },
+      {
+        "source": "pubmed",
+        "id": "28054187",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28054187/",
+        "title": "The influence of hydrogen bonding on partition coefficients."
+      },
+      {
+        "source": "pubmed",
+        "id": "10479348",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10479348/",
+        "title": "The correlation and prediction of the solubility of compounds in water using an amended solvation energy relationship."
+      }
+    ]
   }
 }

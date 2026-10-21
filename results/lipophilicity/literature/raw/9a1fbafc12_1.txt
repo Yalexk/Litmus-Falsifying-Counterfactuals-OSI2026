@@ -1,0 +1,40 @@
+
+{"papers": [
+  {
+    "id": "pubmed:21601448",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": "",
+    "rationale": "Focuses exclusively on acidic compounds and ion-pair partitioning effects on logD7.4; does not address basic aliphatic amines."
+  },
+  {
+    "id": "pubmed:30189136",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "bridging morpholines across the ring with one-carbon tethers leads to a counterintuitive reduction in lipophilicity. This effect was also found to occur in piperazines and piperidines and lowered the measured log D7.4 of the bridged molecules by as much as -0.8 relative to their unbridged counterparts.",
+    "rationale": "Discusses logD7.4 of basic-amine-containing rings but attributes lipophilicity changes to structural bridging, not to protonation of the basic amine per se."
+  },
+  {
+    "id": "pubmed:19546239",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "for a given clog P, the strong second base subseries showed higher V(d) than the weak second base subseries, which in turn exhibited higher values than the monobasic subseries.",
+    "rationale": "Discusses logD7.4 and pKa of basic compounds but compares volume of distribution at fixed clogP rather than explicitly stating that protonation of basic amines lowers logD7.4 relative to logP."
+  },
+  {
+    "id": "pubmed:28011216",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": "",
+    "rationale": "Discusses amine promiscuity and toxicology; mentions volume of distribution for basic compounds but does not address logD7.4 or the protonation effect on lipophilicity."
+  },
+  {
+    "id": "pubmed:32044185",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": "",
+    "rationale": "Focuses on phospholipidosis-inducing potential and pKa of diamines; does not report or discuss logD7.4 measurements or the protonation-lipophilicity relationship."
+  }
+],
+"overall": "no_evidence",
+"rationale": "None of the abstracts explicitly states or provides data showing that basic aliphatic amines have lower logD7.4 because of protonation at pH 7.4; the most relevant abstracts discuss related physicochemical properties but do not directly bear on the claimed direction of the effect."}

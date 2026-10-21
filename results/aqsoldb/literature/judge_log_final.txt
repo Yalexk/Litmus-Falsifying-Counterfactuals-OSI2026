@@ -1,0 +1,12 @@
+  supported    (model said supported) Molecules with LogP above the training median (1.79) are less soluble.
+  supported    (model said supported) Molecules heavier than the training median (204 Da) are less soluble.
+  supported    (model said supported) Molecules with two or more aromatic rings are less soluble.
+  supported    (model said supported) Molecules with at least one hydrogen-bond donor are more soluble.
+  no_evidence  (model said no_evidence) Molecules with sp3 fraction above the training median (0.41) are more 
+  supported    (model said supported) Molecules with more than two aromatic rings are less soluble than mole
+  contradicted (model said no_evidence) Molecules containing a primary amine group are less soluble than analo
+  mixed        (model said mixed) Molecules with more than three hydrogen-bond donors have lower aqueous
+  supported    (model said supported) Molecules with FractionCSP3 greater than 0.5 are more soluble than mol
+  no_evidence  (model said no_evidence) Molecules containing a nitrile group are less soluble than structurall
+  supported    (model said supported) Molecules containing a non-aromatic hydrazone or imine linkage (C=N bo
+  supported    (model said supported) Molecules bearing a primary or secondary amide NH are less soluble tha

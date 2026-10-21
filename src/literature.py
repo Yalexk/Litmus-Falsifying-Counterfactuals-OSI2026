@@ -103,6 +103,20 @@ def _arxiv(ids):
     return out
 
 
+def _crossref(dois):
+    """chemRxiv preprints: title and abstract (JATS, tags stripped) from Crossref."""
+    out = {}
+    for doi in dois:
+        try:
+            msg = json.loads(_get(f"https://api.crossref.org/works/{doi}"))["message"]
+        except Exception as e:  # one missing record shouldn't stop the fetch
+            print(f"  crossref {doi}: {e}")
+            continue
+        abstract = re.sub(r"<[^>]+>", " ", msg.get("abstract", ""))
+        out[doi] = ((msg.get("title") or [""])[0], " ".join(abstract.split()))
+    return out
+
+
 def fetch():
     """Cache abstracts by id, and fill each hit's title from the same record
     (hits.json stores only what Valency returned: source, id, rank)."""
@@ -112,13 +126,13 @@ def fetch():
     cache = json.loads(cache_p.read_text()) if cache_p.exists() else {}
     titles_p = LIT / "titles.json"
     titles = json.loads(titles_p.read_text()) if titles_p.exists() else {}
-    want = {"pubmed": set(), "arxiv": set()}
+    want = {"pubmed": set(), "arxiv": set(), "chemrxiv": set()}
     for h in hits.values():
         for p in h["papers"]:
             key = f"{p['source']}:{p['id']}"
             if key not in cache and p["source"] in want:
                 want[p["source"]].add(p["id"])
-    for src, fn in (("pubmed", _pubmed), ("arxiv", _arxiv)):
+    for src, fn in (("pubmed", _pubmed), ("arxiv", _arxiv), ("chemrxiv", _crossref)):
         if want[src]:
             for pid, (title, abstract) in fn(sorted(want[src])).items():
                 cache[f"{src}:{pid}"] = abstract

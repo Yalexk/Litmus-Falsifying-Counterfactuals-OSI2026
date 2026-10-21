@@ -1,0 +1,18 @@
+
+{"papers": [{"id": "pubmed:18171044", "relevant": true,
+             "stance": "contradicts",
+             "evidence": "Interestingly, these changes in conformational entropy correlate poorly (R2 = 0.03) with the number of rotatable bonds."},
+            {"id": "pubmed:12446045", "relevant": false,
+             "stance": "neutral",
+             "evidence": ""},
+            {"id": "pubmed:25164952", "relevant": false,
+             "stance": "neutral",
+             "evidence": ""},
+            {"id": "pubmed:15537364", "relevant": false,
+             "stance": "neutral",
+             "evidence": ""},
+            {"id": "pubmed:12036371", "relevant": false,
+             "stance": "neutral",
+             "evidence": ""}],
+ "overall": "contradicted",
+ "rationale": "The only abstract directly addressing rotatable bonds and hydration free energy (pubmed:18171044) reports that conformational entropy changes upon hydration correlate poorly (R²=0.03) with rotatable bond count, contradicting the claim that more rotatable bonds predict less favorable hydration free energy; the remaining abstracts concern oral bioavailability or fragment binding and are off-topic."}

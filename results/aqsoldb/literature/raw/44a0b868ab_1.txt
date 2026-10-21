@@ -1,0 +1,40 @@
+
+{"papers": [
+  {
+    "id": "pubmed:36282210",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "The implications of this polarity imbalance for optimization of permeability and aqueous solubility are discussed.",
+    "note": "Mentions aqueous solubility optimization in the context of HBD/HBA asymmetry but does not state a directional effect of HBD on solubility."
+  },
+  {
+    "id": "chemrxiv:10.26434/chemrxiv-2022-0mzxq",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "Hydrogen bond donors are generally less polar than hydrogen bond acceptors and desolvation penalty is therefore an implausible explanation for deleterious effects of hydrogen bond donors.",
+    "note": "Discusses HBD properties but does not make a directional claim about aqueous solubility."
+  },
+  {
+    "id": "pubmed:10479348",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "The hydrogen-bond propensity of a compound always leads to an increase in solubility, even though the Sigma alpha(2)(H) x Sigma beta(2)(H) term opposes solubility due to interactions in the liquid or solid."
+  },
+  {
+    "id": "pubmed:32787270",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": "",
+    "note": "Focuses on H-bond acceptor potential (B) and molecular flexibility for beyond-Ro5 molecules; does not address H-bond donors and their effect on solubility."
+  },
+  {
+    "id": "pubmed:12115811",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "A series of molecular descriptors was calculated directly from chemical structures and a set of eight descriptors, including dipole moment, surface area, volume, molecular weight, number of rotatable bonds/total bonds, number of hydrogen-bond acceptors, number of hydrogen-bond donors and density, was chosen for the final model.",
+    "note": "Includes number of HBDs as a predictor but does not report the sign or direction of its coefficient."
+  }
+],
+"overall": "supported",
+"rationale": "pubmed:10479348 directly states that hydrogen-bond propensity always leads to an increase in aqueous solubility, supporting the claim; the other relevant abstracts address the topic but do not provide directional evidence."
+}

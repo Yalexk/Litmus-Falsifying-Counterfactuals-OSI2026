@@ -1,0 +1,22 @@
+{
+  "pubmed:11774999": "Fast prediction of hydration free energies from molecular interaction fields.",
+  "pubmed:12036371": "Molecular properties that influence the oral bioavailability of drug candidates.",
+  "pubmed:12446045": "Hydration free energy a fragmental model and drug design.",
+  "pubmed:12546558": "Parametrization strategy for the MolFESD concept: quantitative surface representation of local hydrophobicity.",
+  "pubmed:15537364": "Influence of molecular flexibility and polar surface area metrics on oral bioavailability in the rat.",
+  "pubmed:16075431": "Amine hydration: a united-atom force-field solution.",
+  "pubmed:17266351": "In silico prediction of drug solubility: 1. Free energy of hydration.",
+  "pubmed:18171044": "Treating entropy and conformational changes in implicit solvent simulations of small molecules.",
+  "pubmed:21406779": "Towards a universal method for calculating hydration free energies: a 3D reference interaction site model with partial molar volume correction.",
+  "pubmed:21545145": "Use of a QM/MM-based FEP method to evaluate the anomalous hydration behavior of simple alkyl amines and amides: application to the design of FBPase inhibitors for the treatment of type-2 diabetes.",
+  "pubmed:25164952": "The importance of hydration thermodynamics in fragment-to-lead optimization.",
+  "pubmed:26588320": "Prediction of Solvation Free Energies with Thermodynamic Integration Using the General Amber Force Field.",
+  "pubmed:26613005": "Accuracy enhancement in the estimation of molecular hydration free energies by implementing the intramolecular hydrogen bond effects.",
+  "pubmed:27492087": "Hydration Free Energy as a Molecular Descriptor in Drug Design: A Feasibility Study.",
+  "pubmed:29561152": "Incorporation of Hydrogen Bond Angle Dependency into the Generalized Solvation Free Energy Density Model.",
+  "pubmed:36779933": "Machine Learning Prediction of Hydration Free Energy with Physically Inspired Descriptors.",
+  "pubmed:36914670": "Fast calculation of hydrogen-bond strengths and free energy of hydration of small molecules.",
+  "pubmed:39841935": "Physics-Based Machine Learning to Predict Hydration Free Energies for Small Molecules with a Minimal Number of Descriptors: Interpretable and Accurate.",
+  "chemrxiv:10.26434/chemrxiv-2022-0mzxq": "Hydrogen bond donors in  drug design",
+  "chemrxiv:10.26434/chemrxiv-2024-v8h0j": "Physics-based Machine Learning to Predict Hydration Free Energies for Small Molecules with a minimal number of descriptors: Interpretable and Accurate"
+}

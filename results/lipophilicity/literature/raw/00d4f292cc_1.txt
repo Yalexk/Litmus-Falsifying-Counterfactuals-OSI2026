@@ -1,0 +1,35 @@
+
+{"papers": [
+  {
+    "id": "pubmed:20979082",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "predictions of lipophilic character (calculated log P and log D values), topological polar surface area (TPSA), and the pK(a) value of the carboxylate moiety"
+  },
+  {
+    "id": "pubmed:21601448",
+    "relevant": true,
+    "stance": "supports",
+    "evidence": "The superiority of measured lipophilicity data over calculated data for a set of AZ proprietary acidic compounds is also presented."
+  },
+  {
+    "id": "pubmed:37295616",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "A series of representative examples have been characterized by experimentally determining physicochemical properties, such as acidity (pKa), lipophilicity (logD7.4), and permeability (PAMPA)."
+  },
+  {
+    "id": "pubmed:31938466",
+    "relevant": false,
+    "stance": "neutral",
+    "evidence": ""
+  },
+  {
+    "id": "pubmed:26967507",
+    "relevant": true,
+    "stance": "neutral",
+    "evidence": "a systematic assessment of the physicochemical properties of carboxylic acid isosteres would be desirable to enable more informed decisions of potential replacements to be used for analog design"
+  }
+],
+"overall": "mixed",
+"rationale": "Only pubmed:21601448 bears directly on the claim's reasoning, supporting that neutral-form calculated logP is inadequate for acidic compounds at physiological pH, but it simultaneously complicates the directional claim by showing that ion-pair partitioning can substantially raise measured logD7.4 above what ionisation alone would predict; no abstract explicitly demonstrates that COOH-bearing molecules have lower logD7.4 than matched non-COOH analogues."}
