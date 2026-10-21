@@ -56,7 +56,82 @@ falsified against held-out measurements and cross-checked against literature.
 
 ## Results
 
-<!-- RESULTS -->
+**In short:** most of the LLM's claims pass a naive held-out test; far fewer
+say anything beyond the descriptor that already dominates the property.
+Asking it to revise weak rules made things worse: it reversed correct claims
+into confident wrong ones with an invented mechanism. And the literature
+check and the data check catch different failures.
+
+### Headline numbers
+
+One final run per dataset (prompt v2, 20 base molecules, one round of
+revision). Each rule is tested on the held-out scaffold test split.
+
+| Dataset | Test molecules | Model R² | LLM: holds raw | LLM: holds beyond control | LLM: contradicted | Textbook: holds beyond control |
+|---|---|---|---|---|---|---|
+| ESOL | 169 | 0.11 | 5/8 | 3/8 | 0 | 0/5 |
+| Lipophilicity (logD 7.4) | 630 | 0.33 | 5/7 | **4/7** | 0 | 2/4 |
+| FreeSolv | 148 | 0.65 | 2/8 | 1/8 | 1 | 2/4 |
+| AqSolDB | 1,497 | 0.08 | 2/7 | 1/7 | **3** | 1/5 |
+
+"Beyond control" means the effect survives within bins of the control
+descriptor (calculated LogP; TPSA for FreeSolv), after Benjamini–Hochberg and
+above the experimental noise floor.
+
+- **How much a rule says beyond the obvious depends on the property.** logD
+  has chemistry that calculated LogP misses (ionisation: carboxylic acids
+  −1.77 log units at matched cLogP), and the LLM finds it. For solubility,
+  most rules restate lipophilicity. Textbook rules follow the same pattern,
+  so this reflects the chemistry rather than a quirk of the test.
+- **LLM output varies between runs.** On ESOL, three development runs scored
+  1/8, 0/8 and 3/8 beyond control. Treat each row as one sample, not a
+  stable rate.
+- **The LLM ignores what the data can test.** On FreeSolv, 5 of 8 rules
+  matched too few test molecules to evaluate (thiones, N-halogens …).
+
+### Exhibit 1 · Revision reverses correct claims
+
+Shown validation feedback, the LLM rewrote correct rules as their opposites,
+justified by crystal-lattice energy:
+
+| Original (correct) | Revised | Effect on test |
+|---|---|---|
+| Primary amines → **more** soluble | "…**less** soluble, because NH₂ groups strengthen hydrogen bonding in the crystal lattice, raising lattice energy" | +1.05 log units, p = 4×10⁻¹², n = 175 (AqSolDB) |
+| >3 H-bond donors → **more** soluble | "…**lower** solubility … high donor counts favour strong intermolecular H-bonding in the crystal lattice" | +1.08, p = 1×10⁻⁸, n = 181 (AqSolDB) |
+| H-bond donors → more soluble | ">1 donor → lower solubility" | +1.61, p = 3×10⁻⁸ (ESOL development run 2) |
+
+The originals are still scored on test for the record: both AqSolDB
+originals were right. The literature agrees with the data: *"The
+hydrogen-bond propensity of a compound always leads to an increase in
+solubility"* ([Abraham & Le, 1999](https://pubmed.ncbi.nlm.nih.gov/10479348/)).
+One caveat: the revise prompt explicitly allows proposing the opposite
+direction. The lattice-energy mechanism is the model's own.
+
+### Exhibit 2 · A rule that survives beyond the control
+
+*"Molecules with a polar surface area below 10 Å² are less soluble than those
+with higher TPSA at matched lipophilicity"* (ESOL): −3.70 raw, **−2.17 within
+LogP bins**, n = 26. It appeared independently in two runs. The literature
+supports TPSA as a solubility descriptor beyond logP in general, but nothing
+at this threshold. It could be real chemistry, or Crippen LogP
+under-predicting the hydrophobicity of hydrocarbons and halocarbons. That
+question needs a chemist.
+
+### Exhibit 3 · Literature and data disagree
+
+Over the final runs the blind judge agreed with the data on 20 claims,
+disagreed on 3, and had no usable evidence for 25; 166 of 169 quotes were
+verified verbatim. The disagreements show why both checks are needed. The
+judge rules on a claim's stated *mechanism*, the data on its *effect*:
+
+- *"Zero H-bond donors → higher logD"* holds beyond cLogP in the data, but
+  the literature rejects the stated reason (donors are less solvated than
+  acceptors).
+- *"Hydrazones/imines → less soluble, because planar groups stabilise
+  crystal packing"* is contradicted by data (+0.74, p = 0.01) yet "supported"
+  by literature, because the generic mechanism is well documented.
+
+Per-dataset tables: `results/<dataset>/literature/adjudication.md`.
 
 Full table: [`results/summary.md`](results/summary.md) (regenerate with
 `python -m src.summary`). Every run keeps its counterfactuals, all rules with
