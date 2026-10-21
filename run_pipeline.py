@@ -50,18 +50,22 @@ def main(a):
     rules = propose(records, PROPERTY, n=a.n_rules)
     print(f"\n{len(rules)} well-formed hypotheses proposed")
 
+    # Revision feedback comes from the valid split only. The test split is
+    # scored exactly once per final rule and never shown to the LLM.
     results, final = [], []
     for r in rules:
-        res = evaluate(r, test)
-        if not res.get("holds") and a.revise:
-            r2 = revise(r, res, PROPERTY)
-            if r2:
-                res2 = evaluate(r2, test)
-                res2["revised_from"] = r.text
-                results.append(res2)
-                final.append(r2)
-                continue
-        results.append(res)
+        if a.revise:
+            res_valid = evaluate(r, valid)
+            if not res_valid.get("holds"):
+                r2 = revise(r, res_valid, PROPERTY)
+                if r2:
+                    res2 = evaluate(r2, test)
+                    res2["revised_from"] = r.text
+                    res2["parent_valid"] = res_valid
+                    results.append(res2)
+                    final.append(r2)
+                    continue
+        results.append(evaluate(r, test))
         final.append(r)
 
     scored = report(results, noise_floor=a.noise_floor)

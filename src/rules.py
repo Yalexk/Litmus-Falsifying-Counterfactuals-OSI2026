@@ -138,7 +138,13 @@ def report(results: list[dict], alpha: float = 0.05, noise_floor: float = 0.6):
         r["survives"] = bool(
             r["holds"] and r["bh_significant"] and abs(r["effect"]) >= noise_floor
         )
+    for r in results:
+        if r.get("status") != "evaluated":
+            r["bh_significant"] = False
+            r["survives"] = False
     n_sur = sum(r["survives"] for r in ev)
     print(f"\n{n_sur}/{len(results)} LLM hypotheses survived held-out testing "
           f"({n_sur / max(len(results), 1):.0%})")
-    return ev
+    # Return every rule, including insufficient-support ones, so the saved
+    # artefact has the same denominator as the headline.
+    return ev + [r for r in results if r.get("status") != "evaluated"]

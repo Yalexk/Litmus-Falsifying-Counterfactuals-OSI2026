@@ -4,3 +4,4 @@ __pycache__/
 out/
 data/*.csv
 .venv/
+claude.md

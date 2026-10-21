@@ -1,6 +1,7 @@
 """LLM stage: counterfactual sets -> structured, executable hypotheses.
 
-Needs ANTHROPIC_API_KEY in the environment. The model is told to emit JSON
+Uses ANTHROPIC_API_KEY if set, otherwise the `claude` CLI (Claude Code login,
+no key needed). The model is told to emit JSON
 only. Everything it emits is treated as untrusted input and run through
 rules.validate() before it touches the data.
 """
@@ -8,6 +9,8 @@ from __future__ import annotations
 
 import json
 import os
+import subprocess
+import tempfile
 
 import anthropic
 
@@ -46,11 +49,29 @@ def _client():
     return anthropic.Anthropic()
 
 
+def _ask_cli(prompt: str) -> str:
+    """No API key: use the Claude Code CLI. All tools are disabled and it runs
+    from an empty temp dir, so the model sees only this prompt -- it cannot
+    read the test split, this repo, or its CLAUDE.md."""
+    with tempfile.TemporaryDirectory() as tmp:
+        r = subprocess.run(
+            ["claude", "-p", "--tools", "", "--system-prompt", SYSTEM,
+             "--model", MODEL, "--no-session-persistence", "--output-format", "text"],
+            input=prompt, capture_output=True, text=True, cwd=tmp, timeout=600,
+        )
+    if r.returncode != 0:
+        raise RuntimeError(f"claude CLI failed: {r.stderr.strip()[:500]}")
+    return r.stdout
+
+
 def _ask(messages, max_tokens=2000) -> dict:
-    r = _client().messages.create(
-        model=MODEL, max_tokens=max_tokens, system=SYSTEM, messages=messages
-    )
-    txt = "".join(b.text for b in r.content if b.type == "text")
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        r = _client().messages.create(
+            model=MODEL, max_tokens=max_tokens, system=SYSTEM, messages=messages
+        )
+        txt = "".join(b.text for b in r.content if b.type == "text")
+    else:
+        txt = _ask_cli(messages[-1]["content"])
     txt = txt.strip().removeprefix("```json").removeprefix("```").removesuffix("```")
     return json.loads(txt)
 
