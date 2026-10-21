@@ -1,0 +1,45 @@
+{
+  "name": "freesolv",
+  "preregistered": true,
+  "preregistration_note": "Drafted 2026-10-21 before any run on this dataset; only the file's comment header and first line were inspected. Noise floor, control and baseline come from the cited literature; cf_threshold follows the fixed rule 5/3 x noise floor rounded to 0.1 (ESOL's ratio). The 'calc' column holds computed values and must never be used as the target.",
+  "source": {
+    "url": "https://raw.githubusercontent.com/MobleyLab/FreeSolv/master/database.txt",
+    "citation": "Mobley & Guthrie 2014, J. Comput.-Aided Mol. Des., PMID 24928188 (FreeSolv v0.52)",
+    "read_csv": {
+      "sep": ";", "comment": "#", "header": null, "skipinitialspace": true,
+      "names": ["compound_id", "smiles", "iupac", "expt", "expt_uncertainty",
+                "calc", "calc_uncertainty", "expt_ref", "calc_ref", "notes"]
+    }
+  },
+  "smiles_col": "smiles",
+  "target_col": "expt",
+  "property": "hydration free energy (gas to water)",
+  "units": "kcal/mol",
+  "unit_word": "kcal/mol",
+  "higher_means": "less favourable hydration (less negative)",
+  "noise_floor": 0.6,
+  "noise_floor_source": "FreeSolv assigns a default experimental uncertainty of 0.60 kcal/mol where none is available ('Experimental uncertainty not presently available, so assigned a default value'), per the database file itself.",
+  "cf_threshold": 1.0,
+  "control": {
+    "descriptor": "TPSA",
+    "name": "polar surface area",
+    "test_name": "Matched-TPSA",
+    "proxies": "hydrogen-bond donor or acceptor counts",
+    "rationale": "'Hydration Gibbs energy predominantly depends on hydrogen bonding between solute and water molecules'; TPSA is the standard 2D proxy for H-bonding polar surface.",
+    "ref": "Raevsky et al. 2009, SAR QSAR Environ. Res., PMID 19916111; Ertl et al. 2000, PMID 11020286"
+  },
+  "baseline": [
+    {"text": "Molecules containing a hydroxyl group have more favourable (more negative) hydration free energy.",
+     "condition": {"kind": "smarts", "pattern": "[OX2H]"},
+     "direction": "lower", "ref": "Raevsky et al. 2009 (PMID 19916111)"},
+    {"text": "Molecules with at least one hydrogen-bond donor have more favourable hydration free energy.",
+     "condition": {"kind": "descriptor", "name": "NumHDonors", "op": ">=", "value": 1},
+     "direction": "lower", "ref": "Raevsky et al. 2009 (PMID 19916111)"},
+    {"text": "Molecules with two or more hydrogen-bond acceptors have more favourable hydration free energy.",
+     "condition": {"kind": "descriptor", "name": "NumHAcceptors", "op": ">=", "value": 2},
+     "direction": "lower", "ref": "Raevsky et al. 2009 (PMID 19916111)"},
+    {"text": "Molecules with polar surface area above the training median ({value:.1f} A^2) have more favourable hydration free energy.",
+     "condition": {"kind": "descriptor", "name": "TPSA", "op": ">", "value": "train_median"},
+     "direction": "lower", "ref": "Raevsky et al. 2009 (PMID 19916111); Ertl et al. 2000 (PMID 11020286)"}
+  ]
+}

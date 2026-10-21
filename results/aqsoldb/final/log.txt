@@ -1,0 +1,53 @@
+[aqsoldb] 9980 molecules -> train 6986 valid 1497 test 1497
+[train] n=6986  R2=0.955  MAE=0.339
+[valid] n=1497  R2=0.317  MAE=1.369
+[test] n=1497  R2=0.082  MAE=1.681
+generating counterfactuals for 20 base molecules...
+  [1/20] CC1(C)[C@H](C(=O)O[C@H](C#N)c2cccc(Oc3ccccc3)c2)[C@@H]1C=C(Br)Br -> 5 cfs
+  [2/20] CC(C)N.CCCCOCC1CO1.FB(F)F -> 5 cfs
+  [3/20] CCCCCCCCCNC(=O)OCC1OC(O)C(O)C(O)C1O -> 5 cfs
+  [4/20] O=S(=O)(c1ccc(O)cc1)c1ccc(O)cc1 -> 5 cfs
+  [5/20] C[C@H](CCC(=O)O)[C@H]1CC[C@H]2[C@@H]3[C@H](O)C[C@@H]4C[C@H](O)CC[C@]4(C)[C@H]3CC[C@]12C -> 5 cfs
+  [6/20] N=C(N)NC(=N)Nc1cccc2ccccc12 -> 5 cfs
+  [7/20] OCc1ccccc1OC1OC(CO)C(O)C(O)C1O -> 5 cfs
+  [8/20] NC(=O)c1ccc(NC(=O)c2ccc(N)cc2)cc1 -> 5 cfs
+  [9/20] Cc1cc(S(=O)(=O)[O-])c(N/N=C2/C(=O)C(C(=O)[O-])=Cc3ccccc32)cc1Cl.[Ba+2] -> 5 cfs
+  [10/20] Nc1c2ccccc2nc2cc(C(F)(F)F)ccc12 -> 5 cfs
+  [11/20] Cc1nc(Cl)ncc1N(C)C -> 5 cfs
+  [12/20] CCCCNC1CC(C)(C)NC(C)(C)C1 -> 5 cfs
+  [13/20] CCn1ccc(NS(=O)(=O)c2ccc(N)cc2)nc1=O -> 5 cfs
+  [14/20] COc1cc(-c2ccc(N=NC(C(C)=O)C(=O)Nc3ccccc3)c(OC)c2)ccc1N=NC(C(C)=O)C(=O)Nc1ccccc1 -> 5 cfs
+  [15] CC(C)(C)c1ccc(OP(=O)(Oc2ccccc2)Oc2ccccc2)cc1 FAILED: symbols not in alphabet{'P'}
+  [16/20] CCCCCCCCCCCCCCCC(=O)O[C@@H]1C[C@@H](C(=O)O)N(C(=O)CCCCCCCCCCCCCCC)C1 -> 5 cfs
+  [17/20] CC(C)(C)c1nnc(NS(=O)(=O)c2ccc(N)cc2)s1 -> 5 cfs
+  [18/20] CCN(/N=C/c1ccc([N+](=O)[O-])o1)C(N)=O -> 5 cfs
+  [19/20] N#Cc1ccc2c(c1)C(=O)OC2 -> 5 cfs
+  [20/20] CC1NC(=O)CNC1=O -> 5 cfs
+
+4/5 textbook rules survived held-out testing (80%)
+1/5 survived beyond MolLogP, binned (20%); 1 untestable at coverage < 50%
+0/5 contradicted (wrong sign, real effect)
+  verdict                      raw    binned  cov   n  rule
+  untestable_beyond_control   -2.64    n/a   0% 904  Molecules with LogP above the training median (1.79) are less soluble.
+  survives_beyond_control     -1.89  -0.66 100% 1254  Molecules heavier than the training median (204 Da) are less soluble.
+  control_only                -1.35  -0.59 100% 963  Molecules with two or more aromatic rings are less soluble.
+  control_only                +1.06  -0.02 100% 902  Molecules with at least one hydrogen-bond donor are more soluble.
+  fails                       +0.53  +0.45 100% 513  Molecules with sp3 fraction above the training median (0.41) are more soluble.
+
+8 well-formed hypotheses proposed
+
+1 duplicate rule(s) set aside; scoring 7 unique claims
+
+2/7 LLM hypotheses survived held-out testing (29%)
+1/7 survived beyond MolLogP, binned (14%); 0 untestable at coverage < 50%
+3/7 contradicted (wrong sign, real effect)
+  verdict                      raw    binned  cov   n  rule
+  control_only                -1.35  -0.39 100% 496  Molecules with more than two aromatic rings are less soluble than molecules with two or fewer aromatic rings at the same MolLogP, because extended aromatic systems enable tighter pi-stacking in the crystal phase.
+  contradicted                +1.05  -0.10 100% 175  Molecules containing a primary amine group are less soluble than analogs lacking primary amines at the same MolLogP, because NH2 groups strengthen intermolecular hydrogen bonding in the crystal lattice, raising lattice energy and reducing aqueous solubility beyond what lipophilicity predicts.
+  contradicted                +1.08  -0.01 100% 181  Molecules with more than three hydrogen-bond donors have lower aqueous solubility than molecules with three or fewer hydrogen-bond donors at the same MolLogP, because high donor counts favour strong intermolecular H-bonding in the crystal lattice, raising the melting-point penalty and reducing solubility independently of lipophilicity.
+  fails                       +0.55  +0.47 100% 378  Molecules with FractionCSP3 greater than 0.5 are more soluble than molecules with FractionCSP3 at or below 0.5, at the same MolLogP, because higher sp3 character reduces molecular planarity and disrupts crystal packing, lowering the melting-point penalty in the solubility equation independently of lipophilicity.
+  survives_beyond_control     -1.45  -0.76  97%  31  Molecules containing a nitrile group are less soluble than structurally similar molecules without a nitrile at the same MolLogP, because nitrile groups stabilize crystal packing without providing proportional hydration benefit.
+  contradicted                +0.74  -0.41 100%  73  Molecules containing a non-aromatic hydrazone or imine linkage (C=N bonded to another nitrogen) are less soluble than analogs without such linkages at the same MolLogP, because these planar, conjugated groups stabilize crystal packing.
+  fails                       +0.35  -0.25 100% 253  Molecules bearing a primary or secondary amide NH are less soluble than structural analogs without an amide NH at the same MolLogP, because amide NH donors form strong intermolecular hydrogen bonds that stabilize crystal lattices and raise the melting point, reducing dissolution beyond what lipophilicity alone predicts.
+
+archived to results/aqsoldb/final/

@@ -1,0 +1,32 @@
+[lipophilicity] 4200 molecules -> train 2940 valid 630 test 630
+[train] n=2940  R2=0.944  MAE=0.209
+[valid] n=630  R2=0.302  MAE=0.759
+[test] n=630  R2=0.328  MAE=0.803
+reusing 20 cached counterfactual sets
+
+3/4 textbook rules survived held-out testing (75%)
+2/4 survived beyond MolLogP, binned (50%); 1 untestable at coverage < 50%
+0/4 contradicted (wrong sign, real effect)
+  verdict                      raw    binned  cov   n  rule
+  untestable_beyond_control   +0.64    n/a   0% 281  Molecules with calculated LogP above the training median (3.30) have higher logD7.4.
+  survives_beyond_control     -1.28  -1.77  97%  58  Molecules containing a carboxylic acid have lower logD7.4 (ionised at pH 7.4).
+  survives_beyond_control     -0.34  -0.33 100% 314  Molecules with two or more hydrogen-bond donors have lower logD7.4.
+  fails                       -0.14  -0.48 100% 209  Molecules containing a basic aliphatic amine have lower logD7.4 (protonated at pH 7.4).
+
+8 well-formed hypotheses proposed
+
+1 duplicate rule(s) set aside; scoring 7 unique claims
+
+5/7 LLM hypotheses survived held-out testing (71%)
+4/7 survived beyond MolLogP, binned (57%); 0 untestable at coverage < 50%
+0/7 contradicted (wrong sign, real effect)
+  verdict                      raw    binned  cov   n  rule
+  survives_beyond_control     -1.28  -1.77  97%  58  Molecules containing a carboxylic acid group have lower logD7.4 than structurally similar molecules without it, because the carboxylate anion dominates at pH 7.4 (pKa ~4.5) and creates a charged species whose aqueous affinity is not captured by neutral-form MolLogP.
+  survives_beyond_control     +0.60  +0.60 100%  86  Molecules with zero hydrogen bond donors have higher logD7.4 than molecules possessing at least one NH or OH, because the complete absence of H-bond donation eliminates a major aqueous solvation pathway at pH 7.4.
+  survives_beyond_control     -0.52  -0.51 100% 128  Molecules with more than two hydrogen bond donors have lower logD7.4 than molecules with two or fewer, because multiple NH/OH groups increase aqueous solvation beyond what calculated lipophilicity alone accounts for.
+  survives_beyond_control     -0.61  -0.48 100%  62  Molecules with TPSA above 110 Å² have lower logD7.4 than molecules with lower TPSA, reflecting polarity-driven aqueous partitioning that persists independently of MolLogP.
+  control_only                -1.01  -0.46  62%  16  Molecules containing a guanidine or amidine motif (NH2 attached to an sp2 C=N carbon) have lower logD7.4 than analogs lacking it, because the conjugate acid pKa exceeds 8 and the cationic form dominates at pH 7.4, creating ionization-driven hydrophilicity invisible to neutral-form MolLogP.
+  fails                       -0.17  -0.40  89%  38  Molecules containing a primary aliphatic amine (NH2 on sp3 carbon, not adjacent to a carbonyl or aromatic ring) have lower logD7.4 than analogs lacking this group, because aliphatic primary amines are predominantly protonated at pH 7.4 (pKa ~9–10) and the resulting cation is far more hydrophilic than neutral-form MolLogP predicts.
+  fails                       -0.11  -0.14 100%  30  Molecules bearing a secondary sulfonamide NH group have lower logD7.4 than N-alkyl sulfonamide analogs of comparable logP, because the sulfonamide NH donates strong H-bonds to water that the N-methyl version cannot.
+
+archived to results/lipophilicity/final/

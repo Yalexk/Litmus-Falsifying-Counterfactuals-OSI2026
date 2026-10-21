@@ -1,0 +1,37 @@
+{
+  "dataset": "esol",
+  "run_name": "final",
+  "timestamp": "2026-10-21T15:05:23",
+  "git_commit": "ab68368",
+  "git_dirty": true,
+  "config_first_commit": "ca8c77c 2026-10-21T13:25:36+02:00",
+  "preregistered": false,
+  "args": {
+    "dataset": "configs/esol.json",
+    "n_bases": 10,
+    "n_rules": 8,
+    "num_samples": 1500,
+    "threshold": null,
+    "noise_floor": null,
+    "min_coverage": 0.5,
+    "run_name": "final",
+    "refresh_cf": false,
+    "skip_llm": false,
+    "revise": true
+  },
+  "noise_floor_used": 0.6,
+  "cf_threshold_used": 1.0,
+  "control_descriptor": "MolLogP",
+  "baseline_verdicts": {
+    "untestable_beyond_control": 3,
+    "control_only": 2
+  },
+  "llm_verdicts": {
+    "survives_beyond_control": 3,
+    "control_only": 2,
+    "fails": 2,
+    "insufficient_support": 1
+  },
+  "prompt_version": "v2",
+  "llm_model": "claude-sonnet-4-6"
+}

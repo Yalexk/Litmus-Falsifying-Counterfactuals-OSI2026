@@ -1,0 +1,32 @@
+[
+  {
+    "text": "Molecules with FractionCSP3 greater than 0.5 are more soluble than more planar or aromatic molecules of the same MolLogP, because high sp3 content prevents the ordered crystal lattices that reduce aqueous solubility.",
+    "condition": {
+      "kind": "descriptor",
+      "name": "FractionCSP3",
+      "op": ">",
+      "value": 0.5
+    },
+    "direction": "higher",
+    "support": 378,
+    "support_frac": 0.25250501002004005,
+    "status": "evaluated",
+    "effect": 0.5465036719261249,
+    "cohens_d": 0.23772697874392454,
+    "p_value": 0.0001026664560976676,
+    "mean_match": -3.1319573363555557,
+    "mean_other": -3.6784610082816807,
+    "holds": true,
+    "effect_adj": 0.7030745423816619,
+    "cohens_d_adj": 0.3181424972210962,
+    "p_value_adj": 7.01366921855214e-07,
+    "mean_match_adj": -0.062349133857768316,
+    "mean_other_adj": -0.7654236762394302,
+    "holds_adj": true,
+    "effect_strat": 0.4722210992614013,
+    "p_value_strat": 0.0004997501249375312,
+    "holds_strat": true,
+    "strat_bins_used": 6,
+    "strat_coverage": 1.0
+  }
+]

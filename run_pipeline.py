@@ -88,7 +88,10 @@ def main(a):
             res_valid = evaluate(r, valid, control=control)
             beyond_control_fails = (res_valid.get("strat_coverage", 0) >= a.min_coverage
                                     and not res_valid.get("holds_strat"))
-            if not res_valid.get("holds") or beyond_control_fails:
+            # Too rare to test on valid is not evidence against the rule; revising
+            # it just swapped specific claims for generic ones (ESOL final, 4/4).
+            testable = res_valid.get("status") == "evaluated"
+            if testable and (not res_valid.get("holds") or beyond_control_fails):
                 try:
                     r2 = revise(r, res_valid, cfg)
                 except Exception as e:  # one flaky CLI call shouldn't cost the run
@@ -108,7 +111,19 @@ def main(a):
                     continue
         results.append(evaluate(r, test, control=control))
 
-    scored = report(results, **rep)
+    # Count each claim once: a rule with the same condition and direction as an
+    # earlier one (revision can reproduce one verbatim) is set aside, not scored,
+    # so it can't inflate the survival rate or the BH family.
+    seen, unique, dupes = set(), [], []
+    for res in results:
+        key = (json.dumps(res["condition"], sort_keys=True), res["direction"])
+        (dupes if key in seen else unique).append(res)
+        seen.add(key)
+    (out / "rules_duplicates.json").write_text(json.dumps(dupes, indent=2))
+    if dupes:
+        print(f"\n{len(dupes)} duplicate rule(s) set aside; scoring {len(unique)} unique claims")
+
+    scored = report(unique, **rep)
     (out / "rules.json").write_text(json.dumps(scored, indent=2))
     show(scored)
     archive(a, cfg, out, base, scored, noise_floor, threshold)
@@ -124,7 +139,7 @@ def archive(a, cfg, out, base, scored, noise_floor, threshold):
     dest.mkdir(parents=True, exist_ok=True)
     files = ["model_metrics.json", "counterfactuals.json", "baseline.json"]
     if scored is not None:
-        files.append("rules.json")
+        files += ["rules.json", "rules_duplicates.json"]
     for f in files:
         shutil.copy(out / f, dest / f)
     shutil.copy(cfg["_path"], dest / "config.json")

@@ -1,0 +1,43 @@
+{
+  "name": "esol",
+  "preregistered": false,
+  "preregistration_note": "Written after ESOL results existed: it transcribes the settings the ESOL runs already used (noise floor 0.6, MolLogP control, Delaney/Lovering baseline) so the pipeline reproduces them. Not a pre-registration.",
+  "source": {
+    "url": "https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/delaney-processed.csv",
+    "citation": "Delaney 2004, J. Chem. Inf. Comput. Sci. 44, 1000 (ESOL)"
+  },
+  "smiles_col": "smiles",
+  "target_col": "measured log solubility in mols per litre",
+  "property": "aqueous solubility",
+  "units": "log mol/L",
+  "unit_word": "log units",
+  "higher_means": "more soluble",
+  "noise_floor": 0.6,
+  "noise_floor_source": "ESOL logS experimental error is commonly quoted at ~0.5-0.7 log units; 0.6 was set in the original harness before any results.",
+  "cf_threshold": 1.0,
+  "control": {
+    "descriptor": "MolLogP",
+    "name": "lipophilicity",
+    "test_name": "Matched-lipophilicity",
+    "proxies": "overall size or overall polarity",
+    "rationale": "logS is dominated by lipophilicity; the ESOL equation's largest term is cLogP.",
+    "ref": "Delaney 2004"
+  },
+  "baseline": [
+    {"text": "Molecules with LogP above the training median ({value:.2f}) are less soluble.",
+     "condition": {"kind": "descriptor", "name": "MolLogP", "op": ">", "value": "train_median"},
+     "direction": "lower", "ref": "Delaney 2004"},
+    {"text": "Molecules heavier than the training median ({value:.0f} Da) are less soluble.",
+     "condition": {"kind": "descriptor", "name": "MolWt", "op": ">", "value": "train_median"},
+     "direction": "lower", "ref": "Delaney 2004"},
+    {"text": "Molecules with two or more aromatic rings are less soluble.",
+     "condition": {"kind": "descriptor", "name": "NumAromaticRings", "op": ">=", "value": 2},
+     "direction": "lower", "ref": "Delaney 2004"},
+    {"text": "Molecules with sp3 fraction above the training median ({value:.2f}) are more soluble.",
+     "condition": {"kind": "descriptor", "name": "FractionCSP3", "op": ">", "value": "train_median"},
+     "direction": "higher", "ref": "Lovering 2009"},
+    {"text": "Molecules with at least one hydrogen-bond donor are more soluble.",
+     "condition": {"kind": "descriptor", "name": "NumHDonors", "op": ">=", "value": 1},
+     "direction": "higher", "ref": "textbook"}
+  ]
+}

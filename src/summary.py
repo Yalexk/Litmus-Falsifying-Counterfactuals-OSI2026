@@ -41,8 +41,13 @@ def row(run: Path) -> str | None:
     revised = sum("revised_from" in r for r in rules)
     # Revision can reproduce an existing rule verbatim (same condition and
     # direction); those inflate the counts, so show how many.
-    keys = [(json.dumps(r["condition"], sort_keys=True), r["direction"]) for r in rules]
-    dupes = len(keys) - len(set(keys))
+    # Newer runs set duplicates aside before scoring (rules_duplicates.json);
+    # for older runs they are still inside rules.json.
+    if (run / "rules_duplicates.json").exists():
+        dupes = len(json.loads((run / "rules_duplicates.json").read_text()))
+    else:
+        keys = [(json.dumps(r["condition"], sort_keys=True), r["direction"]) for r in rules]
+        dupes = len(keys) - len(set(keys))
     return (f"| {run.parent.name} | {run.name} | {man.get('control_descriptor', 'MolLogP')} "
             f"| {test.get('n', '')} | {test.get('r2', float('nan')):.2f} "
             f"| {_frac(llm['raw'], llm['n'])} | {_frac(llm['beyond'], llm['n'])} "

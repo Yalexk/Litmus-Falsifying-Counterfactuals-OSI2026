@@ -1,0 +1,37 @@
+{
+  "dataset": "freesolv",
+  "run_name": "final",
+  "timestamp": "2026-10-21T15:11:59",
+  "git_commit": "ab68368",
+  "git_dirty": true,
+  "config_first_commit": "e19147c 2026-10-21T13:34:48+02:00",
+  "preregistered": true,
+  "args": {
+    "dataset": "configs/freesolv.json",
+    "n_bases": 20,
+    "n_rules": 8,
+    "num_samples": 1500,
+    "threshold": null,
+    "noise_floor": null,
+    "min_coverage": 0.5,
+    "run_name": "final",
+    "refresh_cf": false,
+    "skip_llm": false,
+    "revise": true
+  },
+  "noise_floor_used": 0.6,
+  "cf_threshold_used": 1.0,
+  "control_descriptor": "TPSA",
+  "baseline_verdicts": {
+    "untestable_beyond_control": 2,
+    "survives_beyond_control": 2
+  },
+  "llm_verdicts": {
+    "control_only": 1,
+    "survives_beyond_control": 1,
+    "contradicted": 1,
+    "insufficient_support": 5
+  },
+  "prompt_version": "v2",
+  "llm_model": "claude-sonnet-4-6"
+}

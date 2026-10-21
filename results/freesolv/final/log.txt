@@ -1,0 +1,51 @@
+[freesolv] 624 molecules -> train 436 valid 40 test 148
+[train] n=436  R2=0.957  MAE=0.448
+[valid] n=40  R2=0.529  MAE=1.959
+[test] n=148  R2=0.647  MAE=1.484
+generating counterfactuals for 20 base molecules...
+  [1/20] Clc1c(Cl)c(Cl)c2c(c1Cl)Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1O2 -> 5 cfs
+  [2/20] C[C@@H]1CCCC[C@@H]1C -> 5 cfs
+  [3/20] Cc1cnccn1 -> 5 cfs
+  [4/20] CN1CCOCC1 -> 5 cfs
+  [5/20] CC1=CC(=O)CC(C)(C)C1 -> 5 cfs
+  [6/20] C1CC1 -> 5 cfs
+  [7/20] Cc1nc(N(C)C)nc(OC(=O)N(C)C)c1C -> 5 cfs
+  [8/20] CN1CCCCC1 -> 5 cfs
+  [9/20] CCNc1nc(NC(C)(C)C)nc(SC)n1 -> 5 cfs
+  [10/20] CCCCCC1CCCC1 -> 5 cfs
+  [11/20] CCc1ccccn1 -> 5 cfs
+  [12/20] C1CCOCC1 -> 5 cfs
+  [13/20] COC(=O)C(C)(C)C -> 5 cfs
+  [14/20] c1c[nH]cn1 -> 5 cfs
+  [15/20] C=C(C)[C@@H]1CC[C@@H](C)C(=O)C1 -> 5 cfs
+  [16/20] CNC(=O)Oc1cccc2ccccc12 -> 5 cfs
+  [17/20] O=C1NC(=O)c2ccccc21 -> 5 cfs
+  [18/20] C1CCOC1 -> 5 cfs
+  [19/20] CC(=O)N1CCCC1 -> 5 cfs
+  [20/20] Clc1cc(-c2ccccc2)c(Cl)c(Cl)c1Cl -> 5 cfs
+
+4/4 textbook rules survived held-out testing (100%)
+2/4 survived beyond TPSA, binned (50%); 2 untestable at coverage < 50%
+0/4 contradicted (wrong sign, real effect)
+  verdict                      raw    binned  cov   n  rule
+  untestable_beyond_control   -5.22  -1.82  32%  91  Molecules with polar surface area above the training median (17.1 A^2) have more favourable hydration free energy.
+  survives_beyond_control     -3.98  -1.31  97%  68  Molecules with at least one hydrogen-bond donor have more favourable hydration free energy.
+  survives_beyond_control     -3.32  -1.20 100%  49  Molecules containing a hydroxyl group have more favourable (more negative) hydration free energy.
+  untestable_beyond_control   -3.35  +1.02  24%  51  Molecules with two or more hydrogen-bond acceptors have more favourable hydration free energy.
+
+8 well-formed hypotheses proposed
+
+2/8 LLM hypotheses survived held-out testing (25%)
+1/8 survived beyond TPSA, binned (12%); 0 untestable at coverage < 50%
+1/8 contradicted (wrong sign, real effect)
+  verdict                      raw    binned  cov   n  rule
+  control_only                -2.02  +0.40 100%  14  Molecules containing a primary amine not attached to a carbonyl have more favorable hydration free energy than molecules without a primary amine at matched TPSA.
+  survives_beyond_control     +2.51  +1.12  91%  23  Molecules with MolLogP above 3 have less favorable hydration free energy than molecules below this threshold, independently of polar surface area.
+  contradicted                -1.33  +0.15 100%  44  Molecules with more than one rotatable bond have less favorable hydration free energy than more rigid molecules of the same polar surface area.
+  insufficient_support          n/a    n/a   0%   0  Molecules containing an aromatic N-H group have more favorable hydration free energy than molecules without one, even at matched TPSA.
+  insufficient_support          n/a    n/a   0%   0  Molecules with FractionCSP3 above 0.8 are less favorably hydrated than less-saturated molecules of the same TPSA.
+  insufficient_support          n/a    n/a   0%   0  Molecules containing an N-halogen bond have less favorable hydration free energy than N-alkyl counterparts of identical polar surface area.
+  insufficient_support          n/a    n/a   0%   0  Molecules containing a thioketone or thione C=S group have less favorable hydration free energy than corresponding oxo-carbonyl compounds at matched TPSA.
+  insufficient_support          n/a    n/a   0%   0  Molecules containing a nitrile group have less favorable hydration free energy than other molecules of comparable TPSA.
+
+archived to results/freesolv/final/

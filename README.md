@@ -1,70 +1,257 @@
-# Falsifiable counterfactuals
+<h1 align="center">Falsifying Counterfactuals</h1>
 
-Counterfactual explanations of a molecular property model are turned into
-natural-language hypotheses by an LLM, converted into executable predicates,
-and then **tested on held-out data the LLM never saw**. The headline output
-is a number: what fraction of confident LLM structure–property claims actually
-survive falsification.
+<p align="center"><em>Do an LLM's explanations of a molecular property model survive contact with held-out data?</em></p>
 
-Generating counterfactuals is a `pip install` ([exmol / MMACE](https://doi.org/10.1039/D1SC05259D)).
-Generating prose explanations from them has been done ([XpertAI](https://doi.org/10.1038/s42004-024-01393-y)).
-**Measuring whether those explanations are true has not.** That is this repo.
+When a model predicts a chemical property, counterfactual explanations show
+which small structural changes would flip its prediction. An LLM can read
+those and write confident rules: *"hydroxyl groups raise solubility"*,
+*"carboxylic acids lower logD at pH 7.4"*. This project turns every such rule
+into an executable test and checks it against measurements the LLM never saw,
+then asks the published literature for a second, independent opinion.
 
-## Pipeline
+What the pipeline does:
 
-```
-dataset (SMILES, y)
-  └─ scaffold split                     src/data.py
-      └─ black-box model (ECFP + RF)    src/model.py
-          └─ counterfactuals (exmol)    src/counterfactuals.py
-              └─ LLM → hypotheses       src/hypotheses.py
-                  └─ rule → predicate → held-out eval   src/rules.py
-                      └─ BH correction + noise floor → scored table
-```
+- **Explains a black-box property model** with counterfactuals (exmol), using
+  only training molecules.
+- **Has an isolated LLM propose rules**, each a sentence plus an executable
+  condition (an RDKit descriptor threshold or a SMARTS pattern) and a
+  direction.
+- **Falsifies every rule on a held-out scaffold split**: raw effect, effect
+  *beyond* the descriptor that already dominates the property, false-discovery
+  control, and the dataset's experimental noise floor.
+- **Benchmarks against textbook chemistry**: published rules go through the
+  identical harness.
+- **Cross-checks each claim against the literature**: Valency search, PubMed
+  abstracts, and a blind judge whose quotes are verified word for word.
+- **Runs on any molecular regression dataset** described by a pre-registered
+  config file. Four ship with the repo.
 
-## Setup
+<p align="center">
+  <img src="docs/workflow.png" alt="Pipeline: explain the model, falsify on held-out data, cross-check against the literature" width="900">
+</p>
+
+---
+
+## Goals
+
+1. **One honest number per dataset**: what fraction of an LLM's confident
+   structure–property claims survive falsification, and how many say anything
+   beyond the obvious.
+2. **The claims that fail, quoted verbatim**, next to the effect size that
+   contradicts them.
+3. **A harness, not a one-off study**: the same code and the same rules of
+   evidence on every dataset, with analysis choices fixed before results exist.
+
+### Where this sits
+
+Hypothesis evaluation has been benchmarked in general domains: HypoBench
+(arXiv 2504.11524) reports that the best model/method recovers 38.8% of
+ground-truth hypotheses on synthetic tasks. Chemistry explanations have been
+generated from XAI output and validated by expert judgement and
+self-consistency ([XpertAI](https://doi.org/10.1038/s42004-024-01393-y)). This
+project combines the two: counterfactual-derived chemistry hypotheses,
+falsified against held-out measurements and cross-checked against literature.
+
+---
+
+## Results
+
+<!-- RESULTS -->
+
+Full table: [`results/summary.md`](results/summary.md) (regenerate with
+`python -m src.summary`). Every run keeps its counterfactuals, all rules with
+their statistics, the textbook baseline, the exact system prompt, a copy of
+the config and a manifest recording the git commit, under
+`results/<dataset>/<run>/`.
+
+---
+
+## Quick start
+
+**Needs:** Python 3.11+ and either an `ANTHROPIC_API_KEY` or the
+[Claude Code](https://docs.anthropic.com/claude-code) CLI logged in. No other
+keys.
 
 ```bash
-git clone <your repo> && cd cf-chem
-./setup_git.sh                       # sets your git identity for this repo only
+git clone <this repo> && cd OSI-Falsifying-Counterfactuals
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-export ANTHROPIC_API_KEY=...
+
+# data, model, counterfactuals and textbook baseline; no LLM needed
+python run_pipeline.py --dataset configs/esol.json --n-bases 20 --skip-llm
+
+# the full loop, archived to results/esol/my-run/
+python run_pipeline.py --dataset configs/esol.json --n-bases 20 --revise --run-name my-run
+
+# one row per run, across datasets
+python -m src.summary
 ```
 
-## Run
+Datasets download on first use and are cached in `data/`. Counterfactuals
+are cached in `out/<dataset>/`, so rerunning the LLM stage takes minutes.
+
+---
+
+## How it works
+
+### 1 · Explain the model
+
+| Step | Module | What happens |
+|---|---|---|
+| Config | `src/config.py` | Loads and validates `configs/<name>.json` |
+| Split | `src/data.py` | Canonicalise and dedupe SMILES; Murcko-scaffold split 70/15/15 |
+| Model | `src/model.py` | Random forest on 2048-bit ECFP4, trained on train only |
+| Counterfactuals | `src/counterfactuals.py` | exmol/STONED look-alikes for 20 training molecules, one per scaffold |
+| Rules | `src/hypotheses.py` | The LLM proposes up to 8 rules; each is validated before scoring |
+
+### 2 · Falsify on held-out data
+
+`src/rules.py` scores each rule on the test split, which no LLM ever sees:
+
+1. **Raw test**: matching vs non-matching molecules, Welch t-test, in the
+   claimed direction.
+2. **Beyond the control**: the same comparison within bins of the config's
+   control descriptor (e.g. calculated LogP), with a within-bin permutation
+   test. A rule that only restates the control shows nothing here.
+3. **Rules of evidence**: Benjamini–Hochberg across the rule family, and the
+   effect must exceed the experimental noise floor.
+
+Each rule ends with one verdict:
+
+| Verdict | Meaning |
+|---|---|
+| `survives_beyond_control` | Holds raw and at matched control descriptor |
+| `control_only` | Holds raw, explained by the control |
+| `untestable_beyond_control` | Holds raw, too collinear with the control to check |
+| `fails` | No real effect in the claimed direction |
+| `contradicted` | A real effect in the **opposite** direction |
+| `insufficient_support` | Too few matching molecules to test |
+
+With `--revise`, a rule with evidence against it on the validation split gets
+**one** revision, from validation feedback only. The original is still scored
+on test for the record, never shown to the LLM. Duplicate rules are set aside
+so each claim counts once.
+
+### 3 · Cross-check against the literature
+
+`src/literature.py` runs as a separate stage:
 
 ```bash
-python run_pipeline.py --n-bases 10 --skip-llm    # everything except the LLM stage
-python run_pipeline.py --n-bases 20 --revise      # full loop
+python -m src.literature configs/<name>.json export results/<name>/<run>
+#   retrieval: in an interactive Claude Code session with the Valency
+#   connector, one semantic search per claim (query = claim text verbatim,
+#   top 5), recorded in results/<name>/literature/hits.json
+python -m src.literature configs/<name>.json fetch   # PubMed abstracts by ID
+python -m src.literature configs/<name>.json judge   # blind, zero-tool judge
+python -m src.literature configs/<name>.json table   # adjudication.md
 ```
 
-Outputs land in `out/`: `model_metrics.json`, `counterfactuals.json`,
-`rules.json`. The counterfactual stage is cached — rerun the LLM stage freely
-without regenerating it.
+The judge sees only the claim and the abstracts, never the data verdict, and
+every stance must rest on a quote that appears verbatim in an abstract.
+Disagreements between data and literature are the most interesting rows.
 
-## Read this before writing code
+### What keeps it honest
 
-[`CHEMISTRY.md`](CHEMISTRY.md) — the domain knowledge required to run this
-honestly. Fifteen minutes, and it covers the three things that will otherwise
-sink the submission: experimental noise floors, scaffold splits, and the fact
-that these explain the *model*, not chemistry.
+- **Information barrier.** Counterfactuals come from training molecules; the
+  test split reaches no LLM call.
+- **Isolated LLM calls.** Without an API key the pipeline runs `claude -p` in
+  an empty directory with `--tools "" --strict-mcp-config` and no MCP servers.
+- **Pre-registration.** Noise floor, control descriptor and textbook rules are
+  committed in the config before a dataset's first run; manifests record the
+  config's first commit.
+- **Scaffold split.** Test molecules have scaffolds the model never trained on.
 
-## Swapping the dataset
+---
 
-`src/data.py` ships an ESOL loader and a [BigSolDB 2.0](https://doi.org/10.5281/zenodo.15094979)
-loader. BigSolDB gives a second counterfactual axis — perturb the *solvent*,
-not just the solute, which MMACE does not do. Download the CSV from Zenodo to
-`data/` and pass `--csv`. If it fights you in the first hour, fall back to
-ESOL and move on.
+## Datasets
 
-## Known soft spots
+| Config | Property | Molecules | Control | Noise floor | Pre-registered |
+|---|---|---|---|---|---|
+| `esol` | aqueous solubility (log mol/L) | 1,117 | MolLogP | 0.6 | no (development set) |
+| `lipophilicity` | logD at pH 7.4 | 4,200 | MolLogP | 0.3 | yes |
+| `freesolv` | hydration free energy (kcal/mol) | 624 | TPSA | 0.6 | yes |
+| `aqsoldb` | aqueous solubility (log mol/L) | 9,980 | MolLogP | 0.6 | yes |
 
-- **SMARTS generation is the likely failure point.** Descriptor-based rules
-  run reliably; LLM-authored SMARTS often parse but match the wrong thing.
-  Everything is validated before evaluation, and rejected rules are logged
-  rather than silently dropped — the rejection rate is itself a result.
-- `--revise` allows one retry per failed rule. Resist turning it into a loop;
-  unbounded revision just overfits the test set and destroys the headline number.
-- No applicability-domain filter yet. Adding nearest-training-neighbour
-  Tanimoto per counterfactual is the highest-value hour of work left.
+Every noise floor, control and textbook rule cites its source inside the
+config.
+
+### Add your own
+
+Any CSV with a SMILES column and one continuous target:
+
+1. Copy a file from `configs/` and set the source, columns and property
+   description, then the analysis choices: `noise_floor` (with
+   `noise_floor_source`), `cf_threshold` (the shipped configs use 5/3 × noise
+   floor), `control` (or `null`), and `baseline` rules with references.
+2. Set `"preregistered": true` and **commit the config before the first run**.
+3. `python run_pipeline.py --dataset configs/<name>.json --skip-llm` checks the
+   config, split and baseline.
+4. Run the full loop, then the literature stage.
+
+---
+
+## Project structure
+
+```
+OSI-Falsifying-Counterfactuals/
+├── configs/                 # one JSON per dataset: source, property, pre-registered choices
+├── run_pipeline.py          # end-to-end run for one dataset
+├── src/
+│   ├── config.py            # config loading and validation
+│   ├── data.py              # loading, cleaning, scaffold split, base selection
+│   ├── model.py             # black-box predictor (RF on ECFP4)
+│   ├── counterfactuals.py   # exmol wrapper, RDKit descriptors
+│   ├── hypotheses.py        # isolated LLM: propose and revise
+│   ├── rules.py             # the harness: evaluation, control bins, BH, verdicts
+│   ├── baseline.py          # textbook rules from the config
+│   ├── literature.py        # Valency -> PubMed -> blind judge -> adjudication
+│   └── summary.py           # cross-dataset table
+├── results/                 # committed artefacts per dataset and run
+├── docs/                    # pipeline figures
+└── CHEMISTRY.md             # the chemistry background needed to read the results
+```
+
+---
+
+## Troubleshooting
+
+- **`claude CLI failed` or a timeout during the LLM stage.** Calls get 20
+  minutes and one automatic retry; a failed revision keeps the original rule.
+  Rerun the same command: counterfactuals are cached.
+- **A dataset download is refused.** Some hosts block default clients; the
+  loader sends a user agent. Or download the file yourself and set
+  `source.path` in the config.
+- **A rule is `insufficient_support`.** It matched fewer than 10 test
+  molecules (or nearly all of them). That is a finding about the claim's
+  scope, not a crash.
+- **Changing a pre-registered config.** Don't edit it after its first run;
+  copy it under a new name, commit, and rerun.
+
+---
+
+## Limitations
+
+- Continuous targets only.
+- The predictor is deliberately simple and generalises modestly to unseen
+  scaffolds. The rules explain *this model*, which is why every rule is
+  tested against measurements rather than predictions.
+- Public datasets may sit in any LLM's pretraining data; isolation stops the
+  model reading the test split during a run, not remembering chemistry.
+- AqSolDB likely overlaps ESOL; FreeSolv's validation split is small (40).
+
+---
+
+## Built with
+
+- **Chemistry:** RDKit, exmol (STONED/SELFIES)
+- **Modelling and statistics:** scikit-learn, NumPy, SciPy, pandas
+- **LLM:** Claude, via the Anthropic SDK or the Claude Code CLI
+- **Literature:** Valency search, NCBI E-utilities (PubMed)
+
+## Acknowledgements
+
+- Wellawatte, Seshadri & White for MMACE/exmol counterfactuals.
+- The dataset authors: Delaney (ESOL), AstraZeneca via ChEMBL and MoleculeNet
+  (Lipophilicity), Mobley & Guthrie (FreeSolv), Sorkun, Khetan & Er (AqSolDB).
+- The literature behind each config's noise floor and textbook rules (cited
+  inside the configs).
