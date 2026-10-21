@@ -1,6 +1,9 @@
-<h1 align="center">Falsifying Counterfactuals</h1>
+<p align="center"><img src="docs/icon.png" alt="Litmus icon: a test strip dipped in a drop, its wet end changed colour" width="112"></p>
 
-<p align="center"><em>Do an LLM's explanations of a molecular property model survive contact with held-out data?</em></p>
+<h1 align="center">Litmus</h1>
+
+<p align="center"><strong>A litmus test for AI explanations of molecular models.</strong><br>
+<em>Do an LLM's chemistry claims survive contact with held-out data?</em></p>
 
 An LLM reads counterfactual explanations of a property model and writes
 confident chemistry rules (*"carboxylic acids lower logD"*). This pipeline
